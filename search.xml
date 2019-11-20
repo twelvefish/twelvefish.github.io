@@ -44,7 +44,7 @@
     <title>test</title>
     <url>/2019/11/19/test/</url>
     <content><![CDATA[<hr>
-<p>:blush:</p>
+<p>:blush:<br>123你好</p>
 <pre class="line-numbers language-js"><code class="language-js">這邊是程式碼
 <span class="token keyword">function</span> <span class="token function">aaa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     a <span class="token operator">=</span> b<span class="token operator">+</span><span class="token number">1</span>
