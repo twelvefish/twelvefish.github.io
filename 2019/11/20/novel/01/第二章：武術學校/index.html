@@ -1,0 +1,845 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="第二章：武術學校, 程式,小說,遊戲製作">
+    <meta name="description" content="第二章：武術學校武上尊乃一所歷史悠久的武術學校，在各大武術競賽中，選手往往都能夠嶄露頭角，獲得佳績，而此校特以拳法為出名。
+拳法又分為許多派別，每一門派的拳法都各有所長，如太極拳講究的是以柔克剛，以靜制動，以四兩撥千金達到出人意料的效果，而">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>第二章：武術學校 | twelvefish</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<link rel="alternate" href="/atom.xml" title="twelvefish" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-hopscotch.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo" style="width: 210px;">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">twelvefish</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首頁</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>標籤</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="far fa-folder-open" style="zoom: 0.6;"></i>
+      
+      <span>專題</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-id-card" style="zoom: 0.6;"></i>
+      
+      <span>關於</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-list-ul" style="zoom: 0.6;"></i>
+      
+      <span>清單</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">twelvefish</div>
+        <div class="logo-desc">
+            
+            撰寫資訊筆記和小說及各式小品遊戲製作
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首頁
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			標籤
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw far fa-folder-open"></i>
+			
+			專題
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-id-card"></i>
+			
+			關於
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-list-ul"></i>
+			
+			清單
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('請輸入訪問本文章的密碼')).toString(CryptoJS.enc.Hex)) {
+                alert('密碼錯誤，請返回主頁');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/novel/01/02.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        第二章：武術學校
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%B0%8F%E8%AA%AA/">
+                                <span class="chip bg-color">小說</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/" class="post-category">
+                                古之惡來者為王
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>發布日期:&nbsp;&nbsp;
+                    2019-11-20
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-11-20
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
+                    2.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>閲讀次數:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="第二章：武術學校"><a href="#第二章：武術學校" class="headerlink" title="第二章：武術學校"></a>第二章：武術學校</h2><p>武上尊乃一所歷史悠久的武術學校，在各大武術競賽中，選手往往都能夠嶄露頭角，獲得佳績，而此校特以拳法為出名。</p>
+<p>拳法又分為許多派別，每一門派的拳法都各有所長，如太極拳講究的是以柔克剛，以靜制動，以四兩撥千金達到出人意料的效果，而八極拳則剛好相反，拳法特色剛猛暴烈，直接狠辣，性格火辣之人修練此法可得到事半功倍效果，當然還有醉拳、形意拳…等等，不過任何拳法都離不開基礎功，武術沒有強弱之分，武者才有強弱之分。</p>
+<p>「李余，你這小子，行啊，這次可給我們長面子了，連當個替身都能昏倒，教教我們吧！」一名男子諷刺著對著剛踏入練武堂的人嘲笑著，也驚動了其餘人。</p>
+<p>「師兄，師兄，拜託也教教我們吧！」看著有人帶頭，其餘人也在旁隨之起鬨，反應了剛進來的人在這裡人緣似乎不是很好。</p>
+<p>每個地方總是有二世祖，靠著家裡的臭錢，成群結黨、臭味相同聚在一起，常常在校園虎假虎威，在今日之前，向來火爆脾氣的李余，都會上前拳腳相向，不過以一敵多，當然總是輸多贏少，不過自從經歷過穿越之後，這幾句話變得稀鬆平常，無傷大雅，哥可是見過世面的，才不跟一群狗在那邊一般見識。</p>
+<p>「拜見師傅」李余對著坐在太師椅上的老人行了一個大禮。</p>
+<p>「乖徒，無大礙否，打一套拳給為師瞧瞧」坐在椅上的老人看似弱不禁風，但一說話那個氣勢，自他體內如狂瀾巨嘯般散發出來，他就是八極拳的現任門主，年輕時一手八極拳頗負盛名，當然牛脾氣也是赫赫有名，在當年武術競賽中連奪三年冠軍，更是一位江湖大哥，但不知何時金盆洗手，跑來當起門主了。</p>
+<p>「是，師傅」李余不愧擁有一身壯漢的體格，將八極拳揮舞的虎虎生風。</p>
+<p>八極拳講究的是貼身靠近對手，上封纏手，下綑鎖腳，硬逼緊攻，攻勢如連珠炮發，讓敵人措手不及，而李余已深得八極拳的精髓，看的門主憑憑點頭。</p>
+<p>「徒兒，不錯，看來這屆冠軍我們勢在必得。」</p>
+<p>「誠師傅誇獎，徒兒定當全力以赴，夜色已晚，如若沒事，徒兒先行告退」說完滿懷心事的李余慢慢退去。</p>
+<p>看著離去的徒兒，師父心中感嘆著，「不錯的資質，依靠修練外家功夫也能修練到目前程度，不愧是我八極拳的好苗子，不過大概也是極限了，這輩子大概也就如此吧！不是師傅不幫你撐腰，而是要讓你體驗現實，沒有錢、沒有勢，那就忍氣吞聲，不是猛龍不過江，希望有朝一日，徒兒能夠幻化風雲，蛻變成龍。」</p>
+<p>走進後院，看著四周濃密的樹林，望著夜空那淡淡的星光，呼著那清涼的空氣，終於有時間讓李余思考這段期間發生的稀奇怪事。</p>
+<p>首先，是莫名地穿越至古戰場，接著，腦中竟擁有三國時代著名武將的人格，還和自己說一些莫名其妙的話，真是怪事年年有，今年特別多，不過記憶中這典韋說傳給我內功心法，這可是百年難得一見的好事。</p>
+<p>在如此高科技的年代，武俠小說中的內功心法、輕功、飛簷走壁，根本都已經失傳，只剩下一些拳法、刀法，但都和武俠小說裡的形容差距太多，只剩下強健身體的效果，而有的更是淪落為表演娛樂、取悅眾人，對於李余來說兒時的武俠夢更本是一場空，直至遇到了他。</p>
+<p>雖然他展現了那非凡的實力，激起了李余對於行走江湖，快意恩仇的動力，但遲遲不給李余修練內功心法，一直推遲說「若還沒學會爬，就想走路」真是不自量力，不過也替李余打下厚實的基礎。</p>
+<p>既然腦中已有內功心法，迫不及待地李余趕緊找個位置修練起來。</p>
+<p>「惡來之心」這名稱聽起來一點也沒有染指天下的氣勢，更別說在武俠小說中更本默默無名，看著腦中浮現出的封面名稱，李余一時之間不知是否修練，不過渴望有朝一日能夠呼風喚雨，氣指江山，思考之後還是死馬當活馬醫吧！</p>
+<p>「此乃典家心法，傳子不傳女，欲練心法者，必定要滿十八歲、保有童子之身，且身強體壯之人才可修練，以免陽剛之氣無法順勢全身，輕則癱瘓，重則自燃而亡，望後人切記。」</p>
+<p>「好險，我還以為是避邪劍法哩，欲練神功必先自宮，真是嚇死我的毛了，不過滿十八歲、保有童子之身，這我都還有，欺負人家還純潔，沒交過女友，真是的，怎內功心法都這麼不靠譜啊！」</p>
+<p>「此心法共分十八層，前六層，練體，在亂世中已有自保能力，中六層，練氣，千軍萬馬中取敵將首級，後六層，練勢，領袖氣度，捨我其誰。」</p>
+<p>「已氣導引，慣注全身，強激增力，滌淨身心…」第一次得到內功心法的李余一下子就忘我地沉浸於其中。</p>
+<p>隨著時間的流逝，李余身上的氣勢也隨之改變，肉眼見不著的變化正悄悄地展開，皮膚下層的肌膚，隨著氣的流動，有如脫胎換骨般，更緊繃，更有彈性，隨著運轉心法第一層一個周天後，李余一個氣勢突然飛奔暴漲，慢慢從七品、八品、九品，再一點點，突破了，晉身為一階武者，只不過這時的他對於武者世界的修為計算方法毫不知情，只感覺全身神清氣爽，恨不得仰天長嘯。</p>
+<p>此時武上尊一間密室中突然傳出動靜，「有學員修為突破為一階武者！」「通知各派門主、校長，八極拳後院，一階。」說完此人就化為一陣風迅速消失。</p>
+<p>「呵呵，果然當初沒看錯八極拳這老頭，這一屆門下的弟子是最快突破的，看來應該稟報尊主給予獎勵啊！」</p>
+<p>「不過竟然是他？這不是當初那謝老頭硬塞進來的嗎？說要躲危難，懇求我收留，還天機不可洩漏，沒想到竟然成為一階武者了。」<br>話說剛運轉完內功心法的李余，只覺得全身一團糟，身體上流滿黑濁濁的</p>
+<p>汗水，像從水溝蓋中爬出似的，不過一想到這好像是武俠中的排除體內雜質，心中就莫名的興奮，不過一睜開眼睛，突然發現，眼前出現各派門主和神出鬼沒的「校長」，一時之間李余心中冏冏起來。</p>
+<p>「該不會是哪個家長又來投訴孩子被我打得不成人形，還是剛剛修練時動靜過大，等等，該不會是發現我得到內功心法了吧！這些老狐狸，平時裝的道貌岸然的樣子，還不是現出原形。」</p>
+<p>「徒兒，恭喜突破了〜」八極拳門主首先打破了沉默。</p>
+<p>「不過既然突破了，也應該和你說一說你未曾接觸過的武者世界以及一些規則，這方面就由校長和你聊聊吧！」</p>
+<p>「武者世界！！！」充滿疑惑的李余將頭轉向校長。</p>
+<p>「咳、咳，所謂的武者世界，就是練武之人突破一階之後的稱呼，武者共分九階，每階又分九品，一般人修為幾乎都是在零階三品之下，憑著健身、極限運動才會慢慢的上升至六品至九品不等，不過只要自身無法突破至一階都是無法接觸到武者世界的。」</p>
+<p>「所以這位學員，恭喜進入了武者世界，明日你就直接來我辦公室報到，你將會大開雙眼，好好見識這奇妙的世界吧！」</p>
+<p>Photo by <a href="https://unsplash.com/@charleingracia" target="_blank" rel="noopener">Charlein Gracia</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://twelvefish.github.io" rel="external nofollow noreferrer">twelvefish</a>
+                </span>
+            </div>
+            <!-- <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章鏈接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://twelvefish.github.io/2019/11/20/novel/01/%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E6%AD%A6%E8%A1%93%E5%AD%B8%E6%A0%A1/">http://twelvefish.github.io/2019/11/20/novel/01/%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E6%AD%A6%E8%A1%93%E5%AD%B8%E6%A0%A1/</a>
+                </span>
+            </div> -->
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版權聲明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本Blog所有文章除特別聲明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    許可協議。轉載請注明来源
+                    <a href="http://twelvefish.github.io" target="_blank">twelvefish</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>複製成功，请遵循本文的轉載規則</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%B0%8F%E8%AA%AA/">
+                                    <span class="chip bg-color">小說</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="facebook,google" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/11/20/novel/01/%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E4%B8%89%E9%AD%82%E4%B8%83%E9%AD%84/">
+                    <div class="card-image">
+                        
+                        <img src="/images/novel/01/03.jpg" class="responsive-img" alt="第三章：三魂七魄">
+                        
+                        <span class="card-title">第三章：三魂七魄</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            早晨的陽光，照射著大地，樹枝上的小鳥，奏著美妙音符的旋律，像歌頌著上天帶來這美好的開始...
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/" class="post-category">
+                                    古之惡來者為王
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B0%8F%E8%AA%AA/">
+                        <span class="chip bg-color">小說</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/19/novel/01/%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%8B%8D%E6%94%9D%E4%B8%89%E5%9C%8B/">
+                    <div class="card-image">
+                        
+                        <img src="/images/novel/01/01.jpg" class="responsive-img" alt="第一章：拍攝三國">
+                        
+                        <span class="card-title">第一章：拍攝三國</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            「來，動作快一點，東西搬一搬、場地清一清，下一幕十分鐘後開拍，我們要拍攝典韋英勇救主，而死於亂箭之下...
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/" class="post-category">
+                                    古之惡來者為王
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B0%8F%E8%AA%AA/">
+                        <span class="chip bg-color">小說</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '來源: twelvefish<br />'
+            + '文章作者: twelvefish<br />'
+            + '文章鏈接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作權歸twelvefish所有，任何形式的轉載請註明出處。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本部落格由&nbsp;&copy;
+            <a href="http://twelvefish.github.io" target="_blank">twelvefish</a>
+            基於
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 網誌框架的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            主題所搭建而成
+            <br>
+
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
+                class="white-color">20k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;總訪問量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;總訪問人數:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            <span id="year" style="display:none">年份</span> 
+            
+            <span id="sitetime">載入運行時間...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "11";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "部落格已安全運行 " + diffDays + " 天 " + diffHours +
+                            " 小時 " + diffMinutes + " 分鐘 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全運行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小時 " + diffMinutes + " 分鐘 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/twelvefish" class="tooltipped" target="_blank" data-tooltip="訪問我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="https://medium.com/%E7%98%8B%E7%98%8B%E7%99%B2%E7%99%B2%E5%8D%81%E9%B1%B7%E9%AD%9A" class="tooltipped" target="_blank" data-tooltip="訪問我的Medium" data-position="top" data-delay="50">
+        <i class="fab fa-medium"></i>
+    </a>
+
+
+
+    <a href="http://twelvefish.github.io/" class="tooltipped" target="_blank" data-tooltip="訪問我的Youtube" data-position="top" data-delay="50">
+        <i class="fab fa-youtube"></i>
+    </a>
+
+
+
+    <a href="mailto:amingo08131@gmail.com" class="tooltipped" target="_blank" data-tooltip="電子信箱聯繫我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 訂閱" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="請輸入搜索的關鍵字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152725853-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-152725853-1');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
