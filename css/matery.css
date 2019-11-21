@@ -551,8 +551,8 @@ header .go-back i {
 }
 
 .bg-cover:after {
-    -webkit-animation: rainbow 60s infinite;
-    animation: rainbow 60s infinite;
+    -webkit-animation: grayback 60s infinite;
+    animation: grayback 60s infinite;
 }
 
 .bg-cover:before,
@@ -594,6 +594,26 @@ header .go-back i {
     font-size: 3rem;
 }
 
+/* twelvefish animation grayback*/
+@keyframes grayback {
+
+    0%, 100%, 16%, 32%, 48%, 64%, 80% {
+        background: #aaa;
+        background: linear-gradient(45deg, rgba(170, 170, 170, 0.8) 0%, rgba(170, 170, 170, 0.8) 100%);
+        background: -moz-linear-gradient(135deg, rgba(170, 170, 170, 0.8) 0%, rgba(170, 170, 170, 0.8) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(170, 170, 170, 0.8) 0%, rgba(170, 170, 170, 0.8) 100%);
+    }
+}
+
+@-webkit-keyframes grayback {
+
+    0%, 100%, 16%, 32%, 48%, 64%, 80% {
+        background: linear-gradient(45deg, rgba(170, 170, 170, 0.8) 0%, rgba(170, 170, 170, 0.8) 100%);
+        background: -moz-linear-gradient(135deg, rgba(170, 170, 170, 0.8) 0%, rgba(170, 170, 170, 0.8) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(170, 170, 170, 0.8) 0%, rgba(170, 170, 170, 0.8) 100%);
+    }
+}
+/* ---------------------------------- */
 @-webkit-keyframes rainbow {
 
     0%,
