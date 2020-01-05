@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>給我滿滿的推播大平台-01：申請 Line2.0官方帳號</title>
+    <url>/2020/01/05/program/bot/Line_chatbot._dev/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>《每日一句》</strong>Many people start a career with a dream,then get busy forgetting it</p>
+<p>很多人一開始為了夢想而忙，後來忙得忘了夢想</p>
+</blockquote>
+<p><img src="/images/program/pushCenter/01/12.png" alt="圖片來源自UnDraw"></p>
+<p>2017、18、19年可以說是聊天機器人的時代，隨著FB、Line紛紛釋出聊天機器人的API，各家新創也紛紛看準這個趨勢，打造出自家的推播平台，何謂推播平台呢 ? 簡單來說就是結合各種通訊頻道，Line、Wechat、FB messenger…等等，進行各種自動化訊息發送，利用平台發送給不同使用通訊軟體習慣的消費者，店家資訊、促銷活動等，那麼現在先來認識一下在建立推播平台之前，如何串接Line官方帳號，打造一個屬於自己的對話機器人。</p>
+<h2 id="Line官方網站"><a href="#Line官方網站" class="headerlink" title="Line官方網站"></a>Line官方網站</h2><blockquote>
+<p><a href="https://developers.line.biz/en/" target="_blank" rel="noopener">Line Developers</a> 官網</p>
+</blockquote>
+<p>點選右上角Log in按鈕登入，使用Line帳號登入官網</p>
+<p><img src="/images/program/pushCenter/01/01.png" alt=""></p>
+<h2 id="創建Provider"><a href="#創建Provider" class="headerlink" title="創建Provider"></a>創建Provider</h2><p>一進去會看到Provider，同一組Provider底下的官方帳號，針對同樣的user會給予相同的Line ID，Line ID為機器人識別user身分的唯一ID，而同一人使用不同組Provider底下的官方帳號，Line ID則不相同，因此可以藉由在相同Provider底下創建兩個官方帳號，一個做為上線環境，一個做為開發環境。</p>
+<p><img src="/images/program/pushCenter/01/02.png" alt=""></p>
+<p>點選 Create New Provider 創建新的Provider</p>
+<p><img src="/images/program/pushCenter/01/03.png" alt=""></p>
+<p>點選 Confirm button 創建成功</p>
+<h2 id="建立官方帳號"><a href="#建立官方帳號" class="headerlink" title="建立官方帳號"></a>建立官方帳號</h2><p>開始建立官方帳號，分為三種類型，在此文選擇 <font color="red"><strong>Messaging API</strong></font></p>
+<p>LINE Login ：以Line帳號驗證登入網站，剛剛的官網就是最好的例子，如同 Google、FB一樣，提供第三方帳號登入，對開發者來說可以免去管理使用者帳密，而對使用者來說，可以不用特別去記憶小型網站的帳密(使用Oauth2認證)。</p>
+<p>Messaging API： 透過Messaging API將自己的服務內容串聯到LINE@上，建立屬於自己的官方帳號。</p>
+<p>Clova Skill：Line提供的語音智慧助理</p>
+<p><img src="/images/program/pushCenter/01/04.png" alt=""></p>
+<p>根據表單，填寫官方帳號所需的icon、name等等…<br>ps.官方帳號的名稱一旦設定，七天後才能再次更改<br>ps.官方帳號的icon一旦設定，一小時後才能再次更改</p>
+<p><img src="/images/program/pushCenter/01/05.png" alt=""></p>
+<p>Privacy policy URL、Terms of use URL 可之後再進行設定<br>再次確認資訊後，點選已閲讀並同意使用條款，才算創建成功</p>
+<p><img src="/images/program/pushCenter/01/06.png" alt=""></p>
+<p>點選創建好的Line官方帳號，拉到下面Messaging settings，設置以下內容<br>以下內容皆可之後重新進行設定</p>
+<p><img src="/images/program/pushCenter/01/07.png" alt=""></p>
+<p>將 Channel access token旁的Issue按鈕按下，設置token失效時間為0，即可設置永久token</p>
+<p><img src="/images/program/pushCenter/01/08.png" alt=""></p>
+<p>Use webhooks：設置為 Enabled，才可串接webhooks，開發對話機器人<br>Webhook URL：必須使用https協定，下一章節將下載ngrok來進行設定<br>Allow bot to join group chats：是否允許將機器人拉至群組中，可自行決定，2.0版本會跳至Line Manager進行設置</p>
+<p><img src="/images/program/pushCenter/01/09.png" alt=""></p>
+<p>掃描下面QRcode，即可看到剛剛創立好的機器人</p>
+<p><img src="/images/program/pushCenter/01/10.png" alt=""></p>
+<p><img src="/images/program/pushCenter/01/11.jpeg" alt=""></p>
+<hr>
+<p>這一章節，純粹建立Line官方帳號，下一章節將串接Webhook，讓我們自己的Server端接收到使用者的訊息…<br>如果你喜歡我的創作，請大力地給我拍拍手 🐊 🐊 🐊</p>
+<blockquote>
+<p>參考資料: <a href="http://at-blog.line.me/tw/messaging_api_intro" target="_blank" rel="noopener">http://at-blog.line.me/tw/messaging_api_intro</a></p>
+</blockquote>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>給我滿滿的推播大平台</category>
+      </categories>
+      <tags>
+        <tag>pushCenter</tag>
+        <tag>chatobt</tag>
+        <tag>Line</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第四章：武者世界</title>
     <url>/2019/11/20/novel/01/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E6%AD%A6%E8%80%85%E4%B8%96%E7%95%8C/</url>
     <content><![CDATA[<h2 id="第四章：武者世界"><a href="#第四章：武者世界" class="headerlink" title="第四章：武者世界"></a>第四章：武者世界</h2><p>走進校門，映入眼簾的是百花盛開的景象，香氣隨著風兒蔓延開來，帶給人們神清氣爽的感覺，而我們主角跟平常一樣走進校園，卻發現校園和平時相比有種說不出的變化。</p>

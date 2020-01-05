@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="文章專題, 程式,小說,遊戲製作">
-    <meta name="description" content="文章專題 | twelvefish">
+    <meta name="keywords" content="標籤: Line, 程式,小說,遊戲製作">
+    <meta name="description" content="標籤: Line | twelvefish">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>文章專題 | twelvefish</title>
+    <title>標籤: Line | twelvefish</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -228,33 +228,49 @@
 
     
 
-<div id="category-cloud" class="container chip-container">
+<div id="tags" class="container chip-container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;專題系列
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章標籤
             </div>
             <div class="tag-chips">
                 
                 
-                
-                <a href="/categories/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/" title="古之惡來者為王: 6">
+                <a href="/tags/%E5%B0%8F%E8%AA%AA/" title="小說: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">古之惡來者為王
+                            data-tagname="小說" style="background-color: #F9EBEA;">小說
                         <span class="tag-length">6</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E7%B5%A6%E6%88%91%E6%BB%BF%E6%BB%BF%E7%9A%84%E6%8E%A8%E6%92%AD%E5%A4%A7%E5%B9%B3%E5%8F%B0/" title="給我滿滿的推播大平台: 1">
+                <a href="/tags/pushCenter/" title="pushCenter: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">給我滿滿的推播大平台
+                            data-tagname="pushCenter" style="background-color: #F5EEF8;">pushCenter
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
+                
+                <a href="/tags/chatobt/" title="chatobt: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="chatobt" style="background-color: #D5F5E3;">chatobt
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Line/" title="Line: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Line" style="background-color: #E8F8F5;">Line
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
                 
             </div>
         </div>
@@ -262,64 +278,46 @@
 </div>
 
     
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
-
-    
-
-    let option = {
-        title: {
-            left: 'center',
-            text: '專題系列雷達圖',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"古之惡來者為王","max":7},{"name":"給我滿滿的推播大平台","max":7}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [6,1],
-                    name : '專題系列數量'
-                }
-            ]
-        }]
-    };
-
-    radarChart.setOption(option);
-</script>
-    
-
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="pushCenter, chatobt, Line" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2020/01/05/program/bot/Line_chatbot._dev/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/images/program/pushCenter/01/00.png" class="responsive-img" alt="給我滿滿的推播大平台-01：申請 Line2.0官方帳號">
+                            
+                            <span class="card-title">給我滿滿的推播大平台-01：申請 Line2.0官方帳號</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%B5%A6%E6%88%91%E6%BB%BF%E6%BB%BF%E7%9A%84%E6%8E%A8%E6%92%AD%E5%A4%A7%E5%B9%B3%E5%8F%B0/" class="post-category">
+                                給我滿滿的推播大平台
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer bg-color">
