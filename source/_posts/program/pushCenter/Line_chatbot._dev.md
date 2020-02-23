@@ -1,6 +1,6 @@
 ---
-title: 給我滿滿的推播大平台-01：申請 Line2.0官方帳號
-date: 2020-01-05 18:51:52
+title: 1-1：申請 Line2.0官方帳號
+date: 2020-02-09 11:51:52
 author: twelvefish
 img: /images/program/pushCenter/01/00.png
 top: false
@@ -10,7 +10,6 @@ mathjax: false
 summary: 2017、18、19年可以說是聊天機器人的時代，隨著FB、Line紛紛釋出聊天機器人的API，各家新創也紛紛看準這個趨勢...
 categories: 給我滿滿的推播大平台
 tags:
-    - pushCenter
     - chatobt
     - Line
 ---
@@ -19,7 +18,7 @@ tags:
 > 
 > 很多人一開始為了夢想而忙，後來忙得忘了夢想
 
-![圖片來源自UnDraw](/images/program/pushCenter/01/12.png)
+![](/images/program/pushCenter/01/00.png)
 
 2017、18、19年可以說是聊天機器人的時代，隨著FB、Line紛紛釋出聊天機器人的API，各家新創也紛紛看準這個趨勢，打造出自家的推播平台，何謂推播平台呢 ? 簡單來說就是結合各種通訊頻道，Line、Wechat、FB messenger...等等，進行各種自動化訊息發送，利用平台發送給不同使用通訊軟體習慣的消費者，店家資訊、促銷活動等，那麼現在先來認識一下在建立推播平台之前，如何串接Line官方帳號，打造一個屬於自己的對話機器人。
 
@@ -93,5 +92,3 @@ Allow bot to join group chats：是否允許將機器人拉至群組中，可自
 如果你喜歡我的創作，請大力地給我拍拍手 🐊 🐊 🐊
 
 > 參考資料: http://at-blog.line.me/tw/messaging_api_intro
-
-
