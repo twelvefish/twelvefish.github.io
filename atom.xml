@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://twelvefish.github.io/"/>
-  <updated>2020-02-23T10:12:33.868Z</updated>
+  <updated>2020-02-23T14:26:02.641Z</updated>
   <id>http://twelvefish.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>網頁開發知識筆記</title>
+    <link href="http://twelvefish.github.io/2020/02/23/note/web-Knowledge/"/>
+    <id>http://twelvefish.github.io/2020/02/23/note/web-Knowledge/</id>
+    <published>2020-02-23T13:44:44.000Z</published>
+    <updated>2020-02-23T14:26:02.641Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;HTTP-META&quot;&gt;&lt;a href=&quot;#HTTP-META&quot; class=&quot;headerlink&quot; title=&quot;HTTP META&quot;&gt;&lt;/a&gt;HTTP
+        
+      
+    
+    </summary>
+    
+    
+      <category term="筆記" scheme="http://twelvefish.github.io/categories/%E7%AD%86%E8%A8%98/"/>
+    
+    
+      <category term="note" scheme="http://twelvefish.github.io/tags/note/"/>
+    
+      <category term="web" scheme="http://twelvefish.github.io/tags/web/"/>
+    
+  </entry>
   
   <entry>
     <title>1-1：就決定是你了，物件皮卡丘</title>
