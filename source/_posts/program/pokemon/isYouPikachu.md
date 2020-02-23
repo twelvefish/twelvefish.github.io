@@ -92,8 +92,7 @@ public class PikachuTest {
 	}
 }
 ```
-![](/images/program/pokemon/01/01.jpg)
-
+![](/images/program/pokemon/01/01.png)
 ---
 
 這一章節，我們介紹了物件和類別的知識，並且建立了皮卡丘class和物件，下一章節將介紹物件導向的三大特徵之一封裝…
