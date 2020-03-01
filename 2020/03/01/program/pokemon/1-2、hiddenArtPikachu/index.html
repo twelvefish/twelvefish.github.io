@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="1-1：就決定是你了，物件皮卡丘, 程式,小說,遊戲製作">
+    <meta name="keywords" content="1-2、隱藏之術，封裝皮卡丘, 程式,小說,遊戲製作">
     <meta name="description" content="
-《每日一句》To program without reflecting is like eating without digesting.
-寫程式而不思考，等於吃飯而不消化
+《每日一句》It’s lucky to gain and fated to miss.
+得知，我幸。不得，我命。
 
 
-何謂物件導向(OOP)物件導向(Object Oriente">
+前言從上一章我們創建出皮卡丘的Class以及建立了兩個皮卡丘的物件，但實際上我們因為方便，而只為這兩隻皮卡丘物件創建各自">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>1-1：就決定是你了，物件皮卡丘 | twelvefish</title>
+    <title>1-2、隱藏之術，封裝皮卡丘 | twelvefish</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -216,13 +216,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/program/pokemon/01/00.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/program/pokemon/02/00.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        1-1：就決定是你了，物件皮卡丘
+                        1-2、隱藏之術，封裝皮卡丘
                     </div>
                 </div>
             </div>
@@ -363,21 +363,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>發布日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-03-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-03-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
-                    896
+                    941
                 </div>
                 
 
@@ -401,60 +401,87 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p><strong>《每日一句》</strong>To program without reflecting is like eating without digesting.</p>
-<p>寫程式而不思考，等於吃飯而不消化</p>
+<p><strong>《每日一句》</strong>It’s lucky to gain and fated to miss.</p>
+<p>得知，我幸。不得，我命。</p>
 </blockquote>
-<p><img src="/images/program/pokemon/01/00.jpg" alt=""></p>
-<h2 id="何謂物件導向-OOP"><a href="#何謂物件導向-OOP" class="headerlink" title="何謂物件導向(OOP)"></a>何謂物件導向(OOP)</h2><p>物件導向(Object Oriented Programming)簡稱OOP，是指程式設計的過程中，使用物件的方式，進行設計，而何謂物件?物件就是…，這樣介紹物件導向太…，讓我們換個說法。</p>
-<p>現在我們要做一個Pokémon遊戲，那麼舉凡其中的寶可夢、神奇寶貝球、招式機…等等都算是一種元素，也是一個個的物體，而物件導向就是指我們程式設計的方式都是用這些物體去進行設計，使他們彼此互相關聯，產生愛恨情仇XD。</p>
-<h2 id="物件-Object"><a href="#物件-Object" class="headerlink" title="物件(Object)"></a>物件(Object)</h2><p>現在我們想要一隻皮卡丘，那麼這隻皮卡丘就是我們的物件，而現在我們想要一隻小火龍，那麼這隻小火龍也是我們的物件，物件可以算是一種帶有多種屬性、多種功能的物體，以皮卡丘舉例，每隻皮卡丘的三圍都不同，它們的屬性HP、攻擊、防禦、特功…等數值都會因為不同隻皮卡丘而有所不同，而每隻皮卡丘所學會的招式也不相同，這反映在物件的功能上，畢竟真正的皮神只有一個。</p>
-<p>所以拉回來，何謂物件，物件算是一種物體，在程式設計中我們稱為物件或是也有人稱為<font color="red">實例(instance)</font>，而這些實例，都會擁有自己專屬的<font color="red">屬性（properties）</font>或<font color="red">功能（functions)</font>。</p>
-<h2 id="類別-class"><a href="#類別-class" class="headerlink" title="類別(class)"></a>類別(class)</h2><p>話說回來，我們實作出這麼多隻不同屬性、不同IV值、會不同招式的皮卡丘，但是每隻實作時都要記得它需要哪些屬性欄位或是功能，是否太不方便了呢?如果這時有個設計稿，能讓我們依循設計稿實作，一來可以統一定義皮卡丘這個物件，二來也能告訴別人皮卡丘物件就是長安內啦~</p>
-<p>這就是類別class，用來形成物件object的設計稿。</p>
-<h2 id="建立皮卡丘類別，和產生物件"><a href="#建立皮卡丘類別，和產生物件" class="headerlink" title="建立皮卡丘類別，和產生物件"></a>建立皮卡丘類別，和產生物件</h2><p>建立 Pikachu class，可依照需求自由設計出相對應的屬性和功能。</p>
-<p>關鍵字 : class + 類別名稱</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">*</span><span class="token operator">*</span>
- <span class="token operator">*</span> 建立皮卡丘類別
- <span class="token operator">*</span> <span class="token annotation punctuation">@Description</span>
- <span class="token operator">*</span> <span class="token annotation punctuation">@author</span> twelvefish
- <span class="token operator">*</span> <span class="token annotation punctuation">@date</span> <span class="token number">2020</span>年<span class="token number">2</span>月<span class="token number">23</span>日上午<span class="token number">11</span><span class="token operator">:</span><span class="token number">16</span><span class="token operator">:</span><span class="token number">05</span>
- <span class="token operator">*</span><span class="token operator">/</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Pikachu</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> String name <span class="token operator">=</span> <span class="token string">"皮卡丘"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 名稱</span>
-    <span class="token keyword">public</span> String Abilities<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// 能力</span>
-    <span class="token keyword">public</span> String types <span class="token operator">=</span> <span class="token string">"電系"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 屬性</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> HP<span class="token punctuation">;</span>                    <span class="token comment" spellcheck="true">// 血量</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> attack<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// 攻擊力</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> defense<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// 防禦力</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> spAtk<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// 特攻</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> spDef<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// 特防</span>
-    <span class="token keyword">public</span> <span class="token keyword">double</span> speed<span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 速度</span>
-    <span class="token keyword">public</span> String move<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// 招式</span>
+<p><img src="/images/program/pokemon/02/00.jpeg" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>從上一章我們創建出皮卡丘的Class以及建立了兩個皮卡丘的物件，但實際上我們因為方便，而只為這兩隻皮卡丘物件創建各自的名字和招式方法，而其餘在Class中的HP、攻擊、速度…等都沒有特別去附值，就請讀者以此類推就能產生出相對應的屬性了。</p>
+<h2 id="封裝"><a href="#封裝" class="headerlink" title="封裝"></a>封裝</h2><p>現在我們有一個皮卡丘的Class，裡面包含了眾多屬性，例如HP、攻擊、速度…，如果我們現在想讓這些屬性的數值都是正數，也就是大於0的數字，但這個觀念如果在每次創建皮卡丘物件時都要特別去記住、去撰寫這個規則，是否麻煩了點，而現在只是規定大於0，那如果是更複雜的邏輯，例如 : 依照等級不同，最低的血量值是多少，那每次創建時都需要請開發者寫一份邏輯，是否過於沒有效率，而這種邏輯其實是皮卡丘物件通用型的，因此我們可以將之邏輯寫進皮卡丘Class，而在創建物件時就可以直接調用，調用時我們不用了解邏輯是如何實作的，只需要使用它即可，這就是封裝的第一個概念。</p>
+<h2 id="public、protected、private-修飾詞"><a href="#public、protected、private-修飾詞" class="headerlink" title="public、protected、private 修飾詞"></a>public、protected、private 修飾詞</h2><p>雖然我們已經將這些判斷邏輯寫進class裡面了，但是開發者依舊可以直接用點屬性 (.)的方法取得這些屬性並賦予值，因此我們可以設定public、protected、private 修飾詞，讓開發者無法去直接調用參數這就是封裝的第二個概念。</p>
+<table>
+<thead>
+<tr>
+<th>修飾符</th>
+<th>內部Class</th>
+<th>同個package</th>
+<th>不同包的Class</th>
+<th>相同專案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(沒寫)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>public</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
+<p>而各個修飾符所賦予的權限就如表所示，但通常通常通常…大家在定義Class時，會將參數給private，而功能 (function) 會 public。</p>
+<h2 id="setXxx-和-getXxx"><a href="#setXxx-和-getXxx" class="headerlink" title="setXxx()  和 getXxx()"></a>setXxx()  和 getXxx()</h2><p>由於我們已經將參數給私有化 (private)，因此開發時是永遠調用不到此屬性，因此我們可以藉由功能 (function)去調用他，而國際認證標準命名方式通常是使用setXxx() 和 getXxx()去實現對此參數的調用，藉由set function，將屬性附值，藉由get function 取得屬性的值。</p>
+<p>如此這般的好處 : </p>
+<ul>
+<li><p>我們可以隱藏一個Class不需要對外提供實現細節</p>
+</li>
+<li><p>開發者只能通過制定好的功能(set、get) 去訪問屬性參數，可以更方便加入邏輯控制，防止開發者對屬性的不合理操作</p>
+</li>
+<li><p>如有更動，只需對Class進行修改，即可對全部new出來的物件進行維護</p>
+</li>
+</ul>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><ul>
+<li><p>為啥麼我們需要封裝的概念?</p>
+<ul>
+<li>如同我們看電視，我們只要按下開關，而不用去知道他的內部構造是如何組裝</li>
+</ul>
+</li>
+<li><p>程式設計追求 高內聚、低耦合</p>
+<ul>
+<li><p>高內聚 : Class 的內部屬性 (property) 操作細節自己完成，不允許外部干擾</p>
+</li>
+<li><p>低耦合 : 只提供最少量的功能 (function) 提供外部使用</p>
+</li>
+</ul>
+</li>
+<li><p>提高擴展性、維護性</p>
+<ul>
+<li>隱藏內部的複雜性，只對外提供簡單的功能 (function)調用</li>
+</ul>
+</li>
+</ul>
+<p>總而言之，<font color="red">封裝的設計思想</font>就是</p>
+ <div style="color:red;font-size: 40px;text-align: center;">把該隱藏的隱藏起來，該暴露的暴露出來 </div>
 
-    <span class="token comment" spellcheck="true">// 使出攻擊招式</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">attackMove</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">" 使出 "</span> <span class="token operator">+</span> move<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token punctuation">}</span>    
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>產生物件，可建立出不同的皮卡丘物件，使出不同招式。</p>
-<p>關鍵字 :  new 類別名稱()</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PikachuTest</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Test</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Pikachu pikachuA <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pikachu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 產生物件A</span>
-        pikachuA<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"皮卡丘A"</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 替物件A命名</span>
-        pikachuA<span class="token punctuation">.</span>move <span class="token operator">=</span> <span class="token string">"電光一閃"</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 物件A會使用的招式</span>
-        pikachuA<span class="token punctuation">.</span><span class="token function">attackMove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=========="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Pikachu pikachuB <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pikachu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 產生物件B</span>
-        pikachuB<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"皮卡丘B"</span><span class="token punctuation">;</span>
-        pikachuB<span class="token punctuation">.</span>move <span class="token operator">=</span> <span class="token string">"十萬伏特"</span><span class="token punctuation">;</span>
-        pikachuB<span class="token punctuation">.</span><span class="token function">attackMove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="/images/program/pokemon/01/01.png" alt=""></h2><p>這一章節，我們介紹了物件和類別的知識，並且建立了皮卡丘class和物件，下一章節將介紹物件導向的三大特徵之一封裝…<br>如果你喜歡我的創作，請大力地給我拍拍手 🐊 🐊 🐊</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -498,7 +525,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://twelvefish.github.io/2020/02/23/program/pokemon/isYouPikachu/">http://twelvefish.github.io/2020/02/23/program/pokemon/isYouPikachu/</a>
+                    <a href="http://twelvefish.github.io/2020/03/01/program/pokemon/1-2%E3%80%81hiddenArtPikachu/">http://twelvefish.github.io/2020/03/01/program/pokemon/1-2%E3%80%81hiddenArtPikachu/</a>
                 </span>
             </div> -->
             <div class="reprint__notice">
@@ -582,17 +609,71 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/23/note/web-Knowledge/">
+                <a href="/2020/03/01/program/pokemon/1-2%E3%80%81hiddenArtPikachu/">
+                    <div class="card-image">
+                        
+                        <img src="/images/program/pokemon/02/00.jpeg" class="responsive-img" alt="1-2、隱藏之術，封裝皮卡丘">
+                        
+                        <span class="card-title">1-2、隱藏之術，封裝皮卡丘</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            從上一章我們創建出皮卡丘的Class以及建立了兩個皮卡丘的物件，但實際上我們因為方便，而只為這兩隻皮卡丘物件創建各自的...
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%88%90%E7%82%BAPokemon%E5%A4%A7%E5%B8%AB%E4%B9%8B%E8%B7%AF/" class="post-category">
+                                    成為Pokémon大師之路
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/OOP/">
+                        <span class="chip bg-color">OOP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/26/note/ricky_en/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="網頁開發知識筆記">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Ricky 英文小蛋糕 多益">
                         
-                        <span class="card-title">網頁開發知識筆記</span>
+                        <span class="card-title">Ricky 英文小蛋糕 多益</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -602,9 +683,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -624,68 +705,8 @@
                         <span class="chip bg-color">note</span>
                     </a>
                     
-                    <a href="/tags/web/">
-                        <span class="chip bg-color">web</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/02/16/program/pushCenter/Line-webhook/">
-                    <div class="card-image">
-                        
-                        <img src="/images/program/pushCenter/02/00.png" class="responsive-img" alt="1-2：建置 Line Webhook">
-                        
-                        <span class="card-title">1-2：建置 Line Webhook</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            使用者在通訊軟體上傳遞訊息，訊息只會被這些通訊軟體的服務廠商catch到，因此我們需要提供一組API掛在...
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%B5%A6%E6%88%91%E6%BB%BF%E6%BB%BF%E7%9A%84%E6%8E%A8%E6%92%AD%E5%A4%A7%E5%B9%B3%E5%8F%B0/" class="post-category">
-                                    給我滿滿的推播大平台
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/chatobt/">
-                        <span class="chip bg-color">chatobt</span>
-                    </a>
-                    
-                    <a href="/tags/Line/">
-                        <span class="chip bg-color">Line</span>
-                    </a>
-                    
-                    <a href="/tags/ngrok/">
-                        <span class="chip bg-color">ngrok</span>
-                    </a>
-                    
-                    <a href="/tags/TypeScript/">
-                        <span class="chip bg-color">TypeScript</span>
+                    <a href="/tags/english/">
+                        <span class="chip bg-color">english</span>
                     </a>
                     
                 </div>
@@ -874,7 +895,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
-                class="white-color">23.6k</span>&nbsp;字
+                class="white-color">26.2k</span>&nbsp;字
             
             
             

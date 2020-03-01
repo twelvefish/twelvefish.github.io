@@ -1,24 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1-2、隱藏之術，封裝皮卡丘</title>
+    <url>/2020/03/01/program/pokemon/1-2%E3%80%81hiddenArtPikachu/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>《每日一句》</strong>It’s lucky to gain and fated to miss.</p>
+<p>得知，我幸。不得，我命。</p>
+</blockquote>
+<p><img src="/images/program/pokemon/02/00.jpeg" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>從上一章我們創建出皮卡丘的Class以及建立了兩個皮卡丘的物件，但實際上我們因為方便，而只為這兩隻皮卡丘物件創建各自的名字和招式方法，而其餘在Class中的HP、攻擊、速度…等都沒有特別去附值，就請讀者以此類推就能產生出相對應的屬性了。</p>
+<h2 id="封裝"><a href="#封裝" class="headerlink" title="封裝"></a>封裝</h2><p>現在我們有一個皮卡丘的Class，裡面包含了眾多屬性，例如HP、攻擊、速度…，如果我們現在想讓這些屬性的數值都是正數，也就是大於0的數字，但這個觀念如果在每次創建皮卡丘物件時都要特別去記住、去撰寫這個規則，是否麻煩了點，而現在只是規定大於0，那如果是更複雜的邏輯，例如 : 依照等級不同，最低的血量值是多少，那每次創建時都需要請開發者寫一份邏輯，是否過於沒有效率，而這種邏輯其實是皮卡丘物件通用型的，因此我們可以將之邏輯寫進皮卡丘Class，而在創建物件時就可以直接調用，調用時我們不用了解邏輯是如何實作的，只需要使用它即可，這就是封裝的第一個概念。</p>
+<h2 id="public、protected、private-修飾詞"><a href="#public、protected、private-修飾詞" class="headerlink" title="public、protected、private 修飾詞"></a>public、protected、private 修飾詞</h2><p>雖然我們已經將這些判斷邏輯寫進class裡面了，但是開發者依舊可以直接用點屬性 (.)的方法取得這些屬性並賦予值，因此我們可以設定public、protected、private 修飾詞，讓開發者無法去直接調用參數這就是封裝的第二個概念。</p>
+<table>
+<thead>
+<tr>
+<th>修飾符</th>
+<th>內部Class</th>
+<th>同個package</th>
+<th>不同包的Class</th>
+<th>相同專案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(沒寫)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>public</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
+<p>而各個修飾符所賦予的權限就如表所示，但通常通常通常…大家在定義Class時，會將參數給private，而功能 (function) 會 public。</p>
+<h2 id="setXxx-和-getXxx"><a href="#setXxx-和-getXxx" class="headerlink" title="setXxx()  和 getXxx()"></a>setXxx()  和 getXxx()</h2><p>由於我們已經將參數給私有化 (private)，因此開發時是永遠調用不到此屬性，因此我們可以藉由功能 (function)去調用他，而國際認證標準命名方式通常是使用setXxx() 和 getXxx()去實現對此參數的調用，藉由set function，將屬性附值，藉由get function 取得屬性的值。</p>
+<p>如此這般的好處 : </p>
+<ul>
+<li><p>我們可以隱藏一個Class不需要對外提供實現細節</p>
+</li>
+<li><p>開發者只能通過制定好的功能(set、get) 去訪問屬性參數，可以更方便加入邏輯控制，防止開發者對屬性的不合理操作</p>
+</li>
+<li><p>如有更動，只需對Class進行修改，即可對全部new出來的物件進行維護</p>
+</li>
+</ul>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><ul>
+<li><p>為啥麼我們需要封裝的概念?</p>
+<ul>
+<li>如同我們看電視，我們只要按下開關，而不用去知道他的內部構造是如何組裝</li>
+</ul>
+</li>
+<li><p>程式設計追求 高內聚、低耦合</p>
+<ul>
+<li><p>高內聚 : Class 的內部屬性 (property) 操作細節自己完成，不允許外部干擾</p>
+</li>
+<li><p>低耦合 : 只提供最少量的功能 (function) 提供外部使用</p>
+</li>
+</ul>
+</li>
+<li><p>提高擴展性、維護性</p>
+<ul>
+<li>隱藏內部的複雜性，只對外提供簡單的功能 (function)調用</li>
+</ul>
+</li>
+</ul>
+<p>總而言之，<font color="red">封裝的設計思想</font>就是</p>
+ <div style="color:red;font-size: 40px;text-align: center;">把該隱藏的隱藏起來，該暴露的暴露出來 </div>
+
+
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>成為Pokémon大師之路</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>OOP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ricky 英文小蛋糕 多益</title>
     <url>/2020/02/26/note/ricky_en/</url>
-    <content><![CDATA[<h2 id="一人獨照相片"><a href="#一人獨照相片" class="headerlink" title="一人獨照相片"></a>一人獨照相片</h2><pre><code>清潔 sweeping / cleaning
+    <content><![CDATA[<h2 id="一、聽力-看圖辨義"><a href="#一、聽力-看圖辨義" class="headerlink" title="一、聽力 - 看圖辨義"></a>一、聽力 - 看圖辨義</h2><h3 id="1-1、一人獨照相片"><a href="#1-1、一人獨照相片" class="headerlink" title="1-1、一人獨照相片"></a>1-1、一人獨照相片</h3><pre><code>清潔 sweeping / cleaning
 彎下 bending over
 放置 resting (休息) / laying / placing / putting
 伸手拿 reaching out
-看著 examing / staring at
+看著 examining (檢查) / staring at
 說 lecturing (演講) / addressing(處理、演講、地址)
 寫 filling out
-商品 merchandies
+商品 merchandises
 帶著眼鏡 beV with glasses
 調整 adjusting
 背心 vest
 跪著 kneeling
 手拖著下巴 resting the chin on the hand
-手抱胸 hanving arms folded</code></pre><h2 id="兩人以上情境題"><a href="#兩人以上情境題" class="headerlink" title="兩人以上情境題"></a>兩人以上情境題</h2><pre><code>彈奏樂器 playing instrument
+手抱胸 handing arms folded</code></pre><h3 id="1-2、兩人以上情境題"><a href="#1-2、兩人以上情境題" class="headerlink" title="1-2、兩人以上情境題"></a>1-2、兩人以上情境題</h3><pre><code>彈奏樂器 playing instrument
 散步 strolling
-出席演唱會 attending a concert</code></pre><h2 id="對物件-amp-背景描述"><a href="#對物件-amp-背景描述" class="headerlink" title="對物件&amp;背景描述"></a>對物件&amp;背景描述</h2><pre><code>展示 displayed
+出席演唱會 attending a concert</code></pre><h3 id="1-3、對物件-amp-背景描述"><a href="#1-3、對物件-amp-背景描述" class="headerlink" title="1-3、對物件&amp;背景描述"></a>1-3、對物件&amp;背景描述</h3><pre><code>展示 displayed / on display
 堆放 stacked / stocked
 擺放 arranged
 坐滿 occupied
@@ -32,10 +144,44 @@
 (小路) 通往leading to
 (椅子) 靠著 leaning against
 被丈量 being measured
-被購買 a purshase is being made
+被購買 a purchase is being made
 覆蓋著 covered with
-噴泉在噴水 a fountin is spraying water
-煙往上飄 smoke is rising</code></pre><script>
+噴泉在噴水 a fountain is spraying water
+煙往上飄 smoke is rising</code></pre><h3 id="1-4、考試超愛考的情境"><a href="#1-4、考試超愛考的情境" class="headerlink" title="1-4、考試超愛考的情境"></a>1-4、考試超愛考的情境</h3><pre><code>交易正在進行中 a purchase is being made
+掛著 hanged
+上菜 / 服務 serving
+倒 (水) pouring
+擦 (桌子) wiping
+(服務生) 點菜 taking an order
+(椅子) 被坐走 occupied
+餐具 utensil / silverware
+上車 embarking on (著手)/ entering
+下車 getting off / getting out of
+等紅綠燈 waiting at a traffic light
+並列著 lined up
+挖 digging
+捶打 hammering
+搬運 carrying
+在工地 on a construction site
+握著梯子 holding a ladder
+(梯子) 倚靠著 leaning against the wall
+被丈量 measured
+被抬高 lifted
+施工中 under construction
+專心做事 concentrating on a task
+堆疊 stacked / piled
+修剪 (花草) trimming
+在露台休息 resting on a porch
+工廠 plant / factory
+灑水 spraying water
+噴水 sprinkling
+每間公寓都有陽台 a balcony is attached to every apartment
+依附於 is attached to 
+散步 strolling
+划船 rowing
+演奏 playing the instrument
+被綁著 tied up
+籬笆沿著路 a fence runs along the road</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -104,36 +250,163 @@
       </tags>
   </entry>
   <entry>
-    <title>網頁開發知識筆記</title>
+    <title>web開發知識筆記</title>
     <url>/2020/02/23/note/web-Knowledge/</url>
     <content><![CDATA[<h2 id="HTTP-META"><a href="#HTTP-META" class="headerlink" title="HTTP META"></a>HTTP META</h2><p>meta標籤主要用來描述html檔裡面的屬性，關鍵字、描述…等資訊，用來提升瀏覽器、搜尋引擎去解析這個網站。</p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
-    <span class="token comment" spellcheck="true">&lt;!-- 網頁編碼 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 網頁編碼 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-    <span class="token comment" spellcheck="true">&lt;!-- 網頁所使用的語言種類 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content-Language<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>zh-TW<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 網頁所使用的語言種類 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content-Language<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>zh-TW<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-    <span class="token comment" spellcheck="true">&lt;!-- 手機端、寬度等於手機設備寬、手機縮放1.0不縮放 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 手機端、寬度等於手機設備寬、手機縮放1.0不縮放 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>網頁簡短描述<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>網頁關鍵字<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>    
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>author<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>作者姓名<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>copyright<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>網頁版權<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>網頁簡短描述<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>網頁關鍵字<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>author<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>作者姓名<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>copyright<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>網頁版權<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-    <span class="token comment" spellcheck="true">&lt;!-- 禁止瀏覽器用快取開啟網頁 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Pragma<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>no-cache<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 禁止瀏覽器用快取開啟網頁 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Pragma<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>no-cache<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-    <span class="token comment" spellcheck="true">&lt;!-- 強制在單一視窗中顯示網頁 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>windows-Target<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_top<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token comment" spellcheck="true">&lt;!-- 強制在單一視窗中顯示網頁 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>windows-Target<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_top<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!-- 將頁面重新導向到另一个網站， content : n秒之後 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>refresh<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>3;url<span class="token punctuation">=</span>https://www.mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>description、keywords 盡可能寫清楚點，搜索引擎主要去查找這兩項去做網頁的排序。</p>
 <p>生成meta工具，去FB轉發能夠依照自己想要秀出縮圖、介紹<br><a href="https://www.heymeta.com/" target="_blank" rel="noopener">https://www.heymeta.com/</a></p>
 <blockquote>
 <p>參考資料:<br><a href="https://www.youtube.com/watch?v=V0d9dgn3mdc&amp;list=PLK2w-tGRdrj7BxYFryNVGgAVD7nTzfSoA&amp;index=7&amp;t=0s" target="_blank" rel="noopener">揭開HTML META的面纱</a><br><a href="https://www.wibibi.com/info.php?tid=415" target="_blank" rel="noopener">https://www.wibibi.com/info.php?tid=415</a></p>
 </blockquote>
-<script>
+<h2 id="文檔聲明"><a href="#文檔聲明" class="headerlink" title="文檔聲明"></a>文檔聲明</h2><p>&lt;  !DOCTYPE html  &gt; 用來告訴瀏覽器當前版本，不區分大小寫，寫在html tag 前面</p>
+<h2 id="HTML字符實體"><a href="#HTML字符實體" class="headerlink" title="HTML字符實體"></a>HTML字符實體</h2><p>&amp; + 實體的名字 + 分號:<br>    &amp;nbsp ; 空格符號<br>    &amp;gt ; 大於符號<br>    &amp;copy ; 版權符號</p>
+<h2 id="blockquote、q-長短引用標籤"><a href="#blockquote、q-長短引用標籤" class="headerlink" title="blockquote、q 長短引用標籤"></a>blockquote、q 長短引用標籤</h2><p>長引用 (blockquote)<br>短引用 (q)</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- blockquote 表示一个長引用，引用別人的話 --></span>
+老子說 : 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">></span></span>
+        这句话我是从来没有说过的！
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- q表示一个短引用 --></span>
+    子曰<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>q</span><span class="token punctuation">></span></span>學而時習之，樂呵樂呵！<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>q</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Content-sectioning-布局標籤"><a href="#Content-sectioning-布局標籤" class="headerlink" title="Content sectioning 布局標籤"></a>Content sectioning 布局標籤</h2><p>h5之後產生的標籤</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span> 網站頭部
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span> 網頁主體 (只能有一個)
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span> 網頁底部
+<span class="token comment" spellcheck="true">&lt;!-- 以下少用 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span> 網頁中的導航
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span> 網頁和主體相關的內容 (側邊攔)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="定義列表"><a href="#定義列表" class="headerlink" title="定義列表"></a>定義列表</h2><p>定義列表，使用dl标签来创建一个定義列表<br>使用dt来表示定义的内容<br>使用dd来对内容进行解释说明</p>
+<pre><code>&lt;dl&gt;
+    &lt;dt&gt;结构&lt;/dt&gt;
+    &lt;dd&gt;结构表示网页的结构，结构用来规定网页中哪里是标题，哪里是段落&lt;/dd&gt;
+    &lt;dd&gt;结构表示网页的结构，结构用来规定网页中哪里是标题，哪里是段落&lt;/dd&gt;
+    &lt;dd&gt;结构表示网页的结构，结构用来规定网页中哪里是标题，哪里是段落&lt;/dd&gt;
+&lt;/dl&gt;</code></pre><h2 id="超連結"><a href="#超連結" class="headerlink" title="超連結"></a>超連結</h2><p>target属性，用来指定超链接打开的位置<br>可选值：<br>_self 默认值 在当前页面中打开超链接<br>_blank 在一个新的要么中打开超链接</p>
+<pre><code>&lt;a href="07.列表.html" target="_blank"&gt;超链接&lt;/a&gt;
+
+&lt;a href="#bottom"&gt;去底部&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;
+&lt;a href="#p3"&gt;去第三个自然段&lt;/a&gt;
+
+&lt;!-- 在开发中可以将#作为超链接的路径的展位符使用 --&gt;
+&lt;a href="#"&gt;这是一个新的超链接&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;!-- 可以使用 javascript:; 来作为href的属性，此时点击这个超链接什么也不会发生 --&gt;
+&lt;a href="javascript:;"&gt;这是一个新的超链接&lt;/a&gt;
+
+&lt;!-- 
+    可以直接将超链接的href属性设置为#，这样点击超链接以后
+        页面不会发生跳转，而是转到当前页面的顶部的位置
+
+    可以跳转到页面的指定位置，只需将href属性设置 #目标元素的id属性值
+
+    id属性（唯一不重复的）
+        - 每一个标签都可以添加一个id属性
+        - id属性就是元素的唯一标识，同一个页面中不能出现重复的id属性    
+ --&gt;
+
+ &lt;a id="bottom" href="#"&gt;回到顶部&lt;/a&gt;</code></pre><h2 id="圖片標籤"><a href="#圖片標籤" class="headerlink" title="圖片標籤"></a>圖片標籤</h2><p>img<br>         属性：<br>            src 属性指定的是外部图片的路径（路径规则和超链接是一样的）</p>
+<pre><code>        alt 图片的描述，这个描述默认情况下不会显示，有些浏览器会图片无法加载时显示
+            搜索引擎会根据alt中的内容来识别图片，如果不写alt属性则图片不会被搜索引擎所收录
+
+        width 图片的宽度 (单位是像素)
+        height 图片的高度    
+            - 宽度和高度中如果只修改了一个，则另一个会等比例缩放
+
+        注意：
+            一般情况在pc端，不建议修改图片的大小，需要多大的图片就裁多大
+            但是在移动端，经常需要对图片进行缩放（大图缩小）
+
+
+    图片的格式：
+        jpeg(jpg)
+            - 支持的颜色比较丰富，不支持透明效果，不支持动图
+            - 一般用来显示照片
+        gif
+            - 支持的颜色比较少，支持简单透明，支持动图
+            - 颜色单一的图片，动图
+        png
+            - 支持的颜色丰富，支持复杂透明，不支持动图
+            - 颜色丰富，复杂透明图片（专为网页而生）
+        webp
+            - 这种格式是谷歌新推出的专门用来表示网页中的图片的一种格式
+            - 它具备其他图片格式的所有优点，而且文件还特别的小
+            - 缺点：兼容性不好
+
+        base64 
+            - 将图片使用base64编码，这样可以将图片转换为字符，通过字符的形式来引入图片    
+            - 一般都是一些需要和网页一起加载的图片才会使用base64
+
+        效果一样，用小的
+        效果不一样，用效果好的</code></pre><h2 id="内联框架"><a href="#内联框架" class="headerlink" title="内联框架"></a>内联框架</h2><pre><code>    内联框架，用于向当前页面中引入一个其他页面
+        src 指定要引入的网页的路径
+        frameborder 指定内联框架的边框</code></pre><p>&lt; + iframe src=”” width=”800” height=”600” frameborder=”0”&gt;</p>
+<h2 id="音頻"><a href="#音頻" class="headerlink" title="音頻"></a>音頻</h2><!-- 
+        audio 标签用来向页面中引入一个外部的音频文件的
+            音视频文件引入时，默认情况下不允许用户自己控制播放停止
+
+        属性：
+            controls 是否允许用户控制播放
+            autoplay 音频文件是否自动播放
+                - 如果设置了autoplay 则音乐在打开页面时会自动播放
+                    但是目前来讲大部分浏览器都不会自动对音乐进行播放 
+            loop 音乐是否循环播放  
+     -->
+<pre><code>&lt;!-- &lt;audio src="./source/audio.mp3" controls autoplay loop&gt;&lt;/audio&gt; --&gt;
+
+&lt;!-- &lt;audio src="./source/audio.mp3" controls&gt;&lt;/audio&gt; --&gt;
+
+
+&lt;!-- 除了通过src来指定外部文件的路径以外，还可以通过source来指定文件的路径 --&gt;
+以source寫法載入音頻，支持此標籤的瀏覽器就會出現音頻，而不支持的瀏覽器就會出現提示訊息
+&lt;audio controls&gt;
+    &lt;!-- 对不起，您的浏览器不支持播放音频！请升级浏览器！ --&gt; 
+    &lt;source src="./source/audio.mp3"&gt;
+    &lt;source src="./source/audio.ogg"&gt;
+    embed 支持IE8 會自動撥放
+    &lt;embed src="./source/audio.mp3" type="audio/mp3" width="300" height="100"&gt;
+&lt;/audio&gt;
+
+&lt;!-- 
+    使用video标签来向网页中引入一个视频
+        - 使用方式和audio基本上是一样的
+ --&gt;
+&lt;video controls&gt;
+    &lt;source src="./source/flower.webm"&gt;
+    &lt;source src="./source/flower.mp4"&gt;
+    &lt;embed src="./source/flower.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b00318l66nt" allowFullScreen="true" width="500" height="300"&gt;&lt;/iframe&gt;</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -162,14 +435,14 @@
   </entry>
   <entry>
     <title>1-1：就決定是你了，物件皮卡丘</title>
-    <url>/2020/02/23/program/pokemon/isYouPikachu/</url>
+    <url>/2020/02/23/program/pokemon/1-1%E3%80%81isYouPikachu/</url>
     <content><![CDATA[<blockquote>
 <p><strong>《每日一句》</strong>To program without reflecting is like eating without digesting.</p>
 <p>寫程式而不思考，等於吃飯而不消化</p>
 </blockquote>
 <p><img src="/images/program/pokemon/01/00.jpg" alt=""></p>
 <h2 id="何謂物件導向-OOP"><a href="#何謂物件導向-OOP" class="headerlink" title="何謂物件導向(OOP)"></a>何謂物件導向(OOP)</h2><p>物件導向(Object Oriented Programming)簡稱OOP，是指程式設計的過程中，使用物件的方式，進行設計，而何謂物件?物件就是…，這樣介紹物件導向太…，讓我們換個說法。</p>
-<p>現在我們要做一個Pokémon遊戲，那麼舉凡其中的寶可夢、神奇寶貝球、招式機…等等都算是一種元素，也是一個個的物體，而物件導向就是指我們程式設計的方式都是用這些物體去進行設計，使他們彼此互相關聯，產生愛恨情仇XD。</p>
+<p>現在我們要做一個Pokémon遊戲，那麼舉凡其中的寶可夢、神奇寶貝球、招式機…等等都算是一種元素，也是一個個的物體，而物件導向就是指我們程式設計的方式都是用這些物體去進行設計，使他們彼此互相關聯，產生愛恨情仇的糾葛XD。</p>
 <h2 id="物件-Object"><a href="#物件-Object" class="headerlink" title="物件(Object)"></a>物件(Object)</h2><p>現在我們想要一隻皮卡丘，那麼這隻皮卡丘就是我們的物件，而現在我們想要一隻小火龍，那麼這隻小火龍也是我們的物件，物件可以算是一種帶有多種屬性、多種功能的物體，以皮卡丘舉例，每隻皮卡丘的三圍都不同，它們的屬性HP、攻擊、防禦、特功…等數值都會因為不同隻皮卡丘而有所不同，而每隻皮卡丘所學會的招式也不相同，這反映在物件的功能上，畢竟真正的皮神只有一個。</p>
 <p>所以拉回來，何謂物件，物件算是一種物體，在程式設計中我們稱為物件或是也有人稱為<font color="red">實例(instance)</font>，而這些實例，都會擁有自己專屬的<font color="red">屬性（properties）</font>或<font color="red">功能（functions)</font>。</p>
 <h2 id="類別-class"><a href="#類別-class" class="headerlink" title="類別(class)"></a>類別(class)</h2><p>話說回來，我們實作出這麼多隻不同屬性、不同IV值、會不同招式的皮卡丘，但是每隻實作時都要記得它需要哪些屬性欄位或是功能，是否太不方便了呢?如果這時有個設計稿，能讓我們依循設計稿實作，一來可以統一定義皮卡丘這個物件，二來也能告訴別人皮卡丘物件就是長安內啦~</p>
@@ -293,9 +566,9 @@
 <pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
 <span class="token keyword">import</span> <span class="token operator">*</span> as Line <span class="token keyword">from</span> <span class="token string">'@line/bot-sdk'</span>
 
-router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/webhook'</span><span class="token punctuation">,</span> Line<span class="token punctuation">.</span><span class="token function">middleware</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>LineConfig<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/webhook'</span><span class="token punctuation">,</span> Line<span class="token punctuation">.</span><span class="token function">middleware</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>LineConfig<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> events<span class="token punctuation">:</span> WebhookEvent<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>events
-    events<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>event <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    events<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>event <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
 
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>

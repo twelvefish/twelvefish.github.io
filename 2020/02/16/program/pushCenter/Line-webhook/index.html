@@ -454,9 +454,9 @@ Webhook（Webhook）是一種通過自訂回呼函式來增加或更改網頁表
 <pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
 <span class="token keyword">import</span> <span class="token operator">*</span> as Line <span class="token keyword">from</span> <span class="token string">'@line/bot-sdk'</span>
 
-router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/webhook'</span><span class="token punctuation">,</span> Line<span class="token punctuation">.</span><span class="token function">middleware</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>LineConfig<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/webhook'</span><span class="token punctuation">,</span> Line<span class="token punctuation">.</span><span class="token function">middleware</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>LineConfig<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> events<span class="token punctuation">:</span> WebhookEvent<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>events
-    events<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>event <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    events<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>event <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
 
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -605,7 +605,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/23/program/pokemon/isYouPikachu/">
+                <a href="/2020/02/23/program/pokemon/1-1%E3%80%81isYouPikachu/">
                     <div class="card-image">
                         
                         <img src="/images/program/pokemon/01/00.jpg" class="responsive-img" alt="1-1：就決定是你了，物件皮卡丘">
@@ -884,7 +884,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
-                class="white-color">23.6k</span>&nbsp;字
+                class="white-color">26.2k</span>&nbsp;字
             
             
             
