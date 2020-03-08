@@ -181,7 +181,33 @@
 划船 rowing
 演奏 playing the instrument
 被綁著 tied up
-籬笆沿著路 a fence runs along the road</code></pre><script>
+籬笆沿著路 a fence runs along the road</code></pre><h2 id="1-5-Who疑問句型考題"><a href="#1-5-Who疑問句型考題" class="headerlink" title="1-5 Who疑問句型考題"></a>1-5 Who疑問句型考題</h2><pre><code>確保 ensure
+保險 insure
+負責 in charge of / take charge of / take the responsibility for
+     responsible for / deal with / handle / organize
+離開、遺留 leave
+拾起、接送、獲得、學會、收拾 pick up
+
+拾起 :  請拾起你的鉛筆
+        Please pick up your pencil.
+
+學會 :  兒童自然學會一種語言
+        Children pick up a language naturally.
+
+獲得 :  他在歐洲時染上怪病
+        He picked up a rare illness while he was in Europe.    
+接送 :  我6點到機場接你
+        I’ll pick you up at the airport at six.    
+收拾 :  書讀完要收拾好
+        Pick up all the books after you finish reading. 
+
+總監、導演 director
+主管 supervisor
+秘書 secretary
+實習生 intern / trainee
+人事部門 personnel department
+參加 take part in
+桃子 peaches</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -206,6 +232,129 @@
       <tags>
         <tag>note</tag>
         <tag>english</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA筆記</title>
+    <url>/2020/02/24/note/java/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="第一階段-基本語法"><a href="#第一階段-基本語法" class="headerlink" title="第一階段_基本語法"></a>第一階段_基本語法</h2><h2 id="第二階段-物件導向-174"><a href="#第二階段-物件導向-174" class="headerlink" title="第二階段_物件導向 #174"></a>第二階段_物件導向 #174</h2><h3 id="Java面向对象学习的三条主线："><a href="#Java面向对象学习的三条主线：" class="headerlink" title="Java面向对象学习的三条主线："></a>Java面向对象学习的三条主线：</h3><p> 1.Java类及类的成员：属性、方法、构造器；代码块、内部类<br> 2.面向对象的三大特征：封装性、继承性、多态性、(抽象性)<br> 3.其它关键字：this、super、static、final、abstract、interface、package、import等</p>
+<p> “大处着眼，小处着手”</p>
+<h3 id="“人把大象装进冰箱”"><a href="#“人把大象装进冰箱”" class="headerlink" title="“人把大象装进冰箱”"></a>“人把大象装进冰箱”</h3><p> 面向过程 (POP ) 与 面向对象 OOP<br><br>二者 都是一种思想，面向对象是相对于面向过程而言的。面向过程， 强调的<br>是 功能 行为，以函数为最小单位，考虑怎么做 。 面向对象，将功能封装进对<br>象， 强调具备了功能 的 对象，以类 对象为最小单位，考虑谁来做。</p>
+<ul>
+<li></li>
+<li>1.面向过程：强调的是功能行为，以函数为最小单位，考虑怎么做。</li>
+<li></li>
+<li>① 把冰箱门打开</li>
+<li>② 抬起大象，塞进冰箱</li>
+<li>② 把冰箱门关闭</li>
+<li></li>
+<li>2.面向对象：强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。</li>
+<li></li>
+<li>人{</li>
+<li>打开(冰箱){</li>
+<li>冰箱.开开();</li>
+<li>}</li>
+<li></li>
+<li>抬起(大象){</li>
+<li>大象.进入(冰箱);</li>
+<li>}</li>
+<li></li>
+<li>关闭(冰箱){</li>
+<li>冰箱.闭合();</li>
+<li>}</li>
+<li></li>
+<li>}</li>
+<li></li>
+<li></li>
+<li>冰箱{</li>
+<li>开开(){}</li>
+<li>闭合(){}</li>
+<li>}</li>
+<li></li>
+<li>大象{</li>
+<li>进入(冰箱){</li>
+<li>}</li>
+<li>}</li>
+</ul>
+<p>面向对象更加强调运用人类在日常的思维逻辑中采用的思想方法与原则，如<br>抽象、分类、继承、聚合、多态等。</p>
+<p>小公司 身兼多職 事情來了，一蜂窩上去 VS 大企業 部門的展現</p>
+<h3 id="面向对象分析方法分析问题的思路和步骤"><a href="#面向对象分析方法分析问题的思路和步骤" class="headerlink" title="面向对象分析方法分析问题的思路和步骤"></a>面向对象分析方法分析问题的思路和步骤</h3><p><br>根据问题需要，选择问题所针对的 现实世界中的实体 。<br><br>从实体中寻找解决问题相关的属性和功能，这些属性和功能就形成了 概念世界中的类 。<br><br>把抽象的实体用计算机语言进行描述， 形成计算机世界中类的定义 。即借助某种程序<br>语言，把类构造成计算机能够识别和处理的数据结构。<br><br>将 类实例化成计算机世界中的对象 。对象是计算机世界中解决问题的最终工具。</p>
+<h3 id="面向对象的两个要素："><a href="#面向对象的两个要素：" class="headerlink" title="面向对象的两个要素："></a>面向对象的两个要素：</h3><ul>
+<li>类：对一类事物的描述，是抽象的、概念上的定义</li>
+<li>对象：是实际存在的该类事物的每个个体，因而也称为实例(instance)</li>
+<li><blockquote>
+<p>面向对象程序设计的重点是类的设计</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>设计类，就是设计类的成员。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="面向对象的思想概述"><a href="#面向对象的思想概述" class="headerlink" title="面向对象的思想概述"></a>面向对象的思想概述</h3><p><br>类 (Class 和 对象 (Object 是面向对象的核心概念。<br><br>类 是对 一类事物的描述 ，是 抽象的 、概念上的定义<br><br>对象 是 实际存在 的该类事物的每个个体，因而 也称为 实例 ( 。<br><br>万事万物皆对象”</p>
+<p>可以理解为： 类 = 抽象概念的人； 对象 = 实实在在的某个人<br><br>面向对象程序设计的重点是 类的设计<br><br>类的设计， 其实就是类的成员的设计</p>
+<h3 id="Java类及类的成员"><a href="#Java类及类的成员" class="headerlink" title="Java类及类的成员"></a>Java类及类的成员</h3><p><br>现实世界的生物体，大到鲸鱼，小到蚂蚁，都是由最基本的 细胞 构成的。同<br>理 Java 代码世界是由诸多个不同功能的 类 构成的。<br><br>现实生物世界中的细胞又是 由什么构成的 呢？细胞核、细胞质、 … 那么<br>Java 中用类 class 来描述事物也 是 如此。常见的类的成员有：<br><br>属 性 ：对应类中的成员变量<br><br>行 为 ：对应类中的成员方法<br>Field</p>
+<p>Field = 属性 = 成员变量， Method = ( 成员 方法 = 函数</p>
+<p>一、设计类，其实就是设计类的成员</p>
+<ul>
+<li></li>
+<li>属性 = 成员变量 = field = 域、字段</li>
+<li>方法 = 成员方法 = 函数 = method</li>
+<li></li>
+<li>创建类的对象 = 类的实例化 = 实例化类</li>
+</ul>
+<p>//1.创建类，设计类的成员<br>class Person{</p>
+<pre><code>//属性
+String name;
+int age = 1;
+boolean isMale;
+
+//方法
+public void eat(){
+    System.out.println("人可以吃饭");
+}
+
+public void sleep(){
+    System.out.println("人可以睡觉");
+}
+
+public void talk(String language){
+    System.out.println("人可以说话,使用的是：" + language);
+}</code></pre><p>}</p>
+<h3 id="类和对象的使用（面向对象思想落地的实现）："><a href="#类和对象的使用（面向对象思想落地的实现）：" class="headerlink" title="类和对象的使用（面向对象思想落地的实现）："></a>类和对象的使用（面向对象思想落地的实现）：</h3><ul>
+<li><p>1.创建类，设计类的成员</p>
+</li>
+<li><p>2.创建类的对象</p>
+</li>
+<li><p>3.通过“对象.属性”或“对象.方法”调用对象的结构</p>
+<p>步骤：<br>1.<br>定义类（考虑修饰符、类名）<br>2.<br>编写类的属性 考虑修饰符、属性 类型、属性名 、 初始化值）<br>3.<br>编写类的方法 考虑修饰符、返回 值类型、方法名、形参等）</p>
+</li>
+</ul>
+<h2 id="第四階段-多線程-thread-404"><a href="#第四階段-多線程-thread-404" class="headerlink" title="第四階段_多線程 (thread) #404"></a>第四階段_多線程 (thread) #404</h2><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>筆記</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -406,7 +555,316 @@
     &lt;embed src="./source/flower.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
-&lt;iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b00318l66nt" allowFullScreen="true" width="500" height="300"&gt;&lt;/iframe&gt;</code></pre><script>
+&lt;iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b00318l66nt" allowFullScreen="true" width="500" height="300"&gt;&lt;/iframe&gt;</code></pre><h2 id="關係選擇器"><a href="#關係選擇器" class="headerlink" title="關係選擇器"></a>關係選擇器</h2><p>/*<br>            为div的子元素span设置一个字体颜色红色<br>            （为div直接包含的span设置一个字体颜色）</p>
+<pre><code>        子元素选择器
+            作用：选中指定父元素的指定子元素
+            语法：父元素 &gt; 子元素
+     */
+
+    /* div.box &gt; span{
+        color: orange;
+    } */
+
+    /* 
+        后代元素选择器：
+            作用：选中指定元素内的指定后代元素
+            语法：祖先 后代
+     */
+     /* div span{
+         color: skyblue
+     } */
+
+     /* div &gt; p &gt; span{
+         color: red;
+     } */
+
+     /* 
+        选择下一个兄弟
+            语法：前一个 + 下一个
+        选择下边所有的兄弟
+            语法：兄 ~ 弟
+      */
+
+      p + span{
+          color: red;
+      }
+
+
+      p ~ span{
+          color: red;
+      }
+
+      */</code></pre><h2 id="屬性選擇器"><a href="#屬性選擇器" class="headerlink" title="屬性選擇器"></a>屬性選擇器</h2><pre><code>      /* 
+        [属性名] 选择含有指定属性的元素
+        [属性名=属性值] 选择含有指定属性和属性值的元素
+        [属性名^=属性值] 选择属性值以指定值开头的元素
+        [属性名$=属性值] 选择属性值以指定值结尾的元素
+        [属性名*=属性值] 选择属性值中含有某值的元素的元素
+     */
+    /* p[title]{ */
+    /* p[title=abc]{ */
+    /* p[title^=abc]{ */
+    /* p[title$=abc]{ */
+    p[title*=e]{
+        color: orange;
+    }</code></pre><h2 id="偽類選擇器"><a href="#偽類選擇器" class="headerlink" title="偽類選擇器"></a>偽類選擇器</h2><p>伪类（不存在的类，特殊的类）<br>            - 伪类用来描述一个元素的特殊状态<br>                比如：第一个子元素、被点击的元素、鼠标移入的元素…<br>            - 伪类一般情况下都是使用:开头<br>                :first-child 第一个子元素<br>                :last-child 最后一个子元素<br>                :nth-child() 选中第n个子元素<br>                    特殊值：<br>                        n 第n个 n的范围0到正无穷<br>                        2n 或 even 表示选中偶数位的元素<br>                        2n+1 或 odd 表示选中奇数位的元素</p>
+<pre><code>                - 以上这些伪类都是根据所有的子元素进行排序
+
+            :first-of-type
+            :last-of-type
+            :nth-of-type()
+                - 这几个伪类的功能和上述的类似，不通点是他们是在同类型元素中进行排序
+
+        - :not() 否定伪类
+            - 将符合条件的元素从选择器中去除</code></pre><p> <em>/<br>        /</em> ul &gt; li:first-child{<br>            color: red;<br>        } */</p>
+<pre><code>    /* ul &gt; li:last-child{
+        color: red;
+    } */
+
+    /* ul &gt; li:nth-child(2n+1){
+        color: red;
+    } */
+
+    /* ul &gt; li:nth-child(even){
+        color: red;
+    } */
+
+    /* ul &gt; li:first-of-type{
+        color: red;
+    } */
+
+    ul &gt; li:not(:nth-of-type(3)){
+        color: yellowgreen;
+    }</code></pre><h2 id="a元素的偽類"><a href="#a元素的偽類" class="headerlink" title="a元素的偽類"></a>a元素的偽類</h2><p>/*<br>            :link 用来表示没访问过的链接（正常的链接）<br>            超連結獨有<br>         */<br>        a:link{<br>            color: red;</p>
+<pre><code>    }
+
+    /* 
+        :visited 用来表示访问过的链接
+        由于隐私的原因，所以visited这个伪类只能修改链接的颜色
+        超連結獨有
+    */
+    a:visited{
+        color: orange; 
+        /* font-size: 50px;   */
+    }
+
+    /* 
+        :hover 用来表示鼠标移入的状态
+        任何元素皆有
+     */
+     a:hover{
+         color: aqua;
+         font-size: 50px;
+     }
+
+     /*
+        :active 用来表示鼠标点击
+        任何元素皆有
+     */
+     a:active{
+         color: yellowgreen;
+
+     }</code></pre><h2 id="偽元素選擇器"><a href="#偽元素選擇器" class="headerlink" title="偽元素選擇器"></a>偽元素選擇器</h2><p>/*<br>            伪元素，表示页面中一些特殊的并不真实的存在的元素（特殊的位置）<br>                伪元素使用 :: 开头</p>
+<pre><code>            ::first-letter 表示第一个字母
+            ::first-line 表示第一行
+            ::selection 表示选中的内容
+            ::before 元素的开始 
+            ::after 元素的最后
+                - before 和 after 必须结合content属性来使用
+    */
+    p::first-letter{
+        font-size: 50px;
+    }
+
+    p::first-line{
+        background-color: yellow; 
+    }
+
+    p::selection{
+        background-color: greenyellow;
+    }
+
+    /* div::before{
+        content: 'abc';
+        color: red;
+    }
+
+    div::after{
+        content: 'haha';
+        color: blue;
+    } */
+
+    div::before{
+        content: '『';
+     }
+
+    div::after{
+        content: '』';
+    }</code></pre><h2 id="important"><a href="#important" class="headerlink" title="!important"></a>!important</h2><p>可以在某一个样式的后边添加 !important ，则此时该样式会获取到最高的优先级，甚至超过内联样式，<br>                注意：在开发中这个玩意一定要慎用！</p>
+<h2 id="长度单位："><a href="#长度单位：" class="headerlink" title="长度单位："></a>长度单位：</h2><pre><code>                像素
+                    - 屏幕（显示器）实际上是由一个一个的小点点构成的
+                    - 不同屏幕的像素大小是不同的，像素越小的屏幕显示的效果越清晰
+                    - 所以同样的200px在不同的设备下显示效果不一样
+
+                百分比
+                    - 也可以将属性值设置为相对于其父元素属性的百分比
+                    - 设置百分比可以使子元素跟随父元素的改变而改变
+
+                em
+                    - em是相对于元素的字体大小来计算的
+                    - 1em = 1font-size
+                    - em会根据字体大小的改变而改变
+
+                rem
+                    - rem是相对于根元素 (html) 的字体大小来计算
+                    html{
+                        font-size
+                    }</code></pre><h2 id="颜色单位："><a href="#颜色单位：" class="headerlink" title="颜色单位："></a>颜色单位：</h2><pre><code>                在CSS中可以直接使用颜色名来设置各种颜色
+                    比如：red、orange、yellow、blue、green ... ...
+                    但是在css中直接使用颜色名是非常的不方便
+
+                RGB值：
+                    - RGB通过三种颜色的不同浓度来调配出不同的颜色
+                    - R red，G green ，B blue
+                    - 每一种颜色的范围在 0 - 255 (0% - 100%) 之间
+                    - 语法：RGB(红色,绿色,蓝色)
+
+                RGBA:
+                    - 就是在rgb的基础上增加了一个a表示不透明度
+                    - 需要四个值，前三个和rgb一样，第四个表示不透明度
+                        1表示完全不透明   0表示完全透明  .5半透明
+                        background-color: rgba(106,153,85,0.5);
+
+                十六进制的RGB值：
+                    - 语法：#红色绿色蓝色
+                    - 颜色浓度通过 00-ff
+                    - 如果颜色两位两位重复可以进行简写  
+                        #aabbcc --&gt; #abc
+                        background-color: #ff0000;
+
+                HSL值 HSLA值
+                    H 色相(0 - 360)
+                    S 饱和度，颜色的浓度 0% - 100%
+                    L 亮度，颜色的亮度 0% - 100%
+                    background-color: hsla(98, 48%, 40%, 0.658);</code></pre><h2 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h2><h3 id="文档流（normal-flow）"><a href="#文档流（normal-flow）" class="headerlink" title="文档流（normal flow）"></a>文档流（normal flow）</h3><pre><code>        - 网页是一个多层的结构，一层摞着一层
+        - 通过CSS可以分别为每一层来设置样式
+        - 作为用户来讲只能看到最顶上一层
+        - 这些层中，最底下的一层称为文档流，文档流是网页的基础
+            我们所创建的元素默认都是在文档流中进行排列
+        - 对于我们来元素主要有两个状态
+            在文档流中
+            不在文档流中（脱离文档流）
+
+        - 元素在文档流中有什么特点：
+            - 块元素
+                - 块元素会在页面中独占一行(自上向下垂直排列)
+                - 默认宽度是父元素的全部（会把父元素撑满）
+                - 默认高度是被内容撑开（子元素）
+
+            - 行内元素
+                - 行内元素不会独占页面的一行，只占自身的大小
+                - 行内元素在页面中左向右水平排列，如果一行之中不能容纳下所有的行内元素
+                    则元素会换到第二行继续自左向右排列（书写习惯一致）
+                - 行内元素的默认宽度和高度都是被内容撑开</code></pre><h2 id="盒模型、盒子模型、框模型（box-model）"><a href="#盒模型、盒子模型、框模型（box-model）" class="headerlink" title="盒模型、盒子模型、框模型（box model）"></a>盒模型、盒子模型、框模型（box model）</h2><pre><code>        - CSS将页面中的所有元素都设置为了一个矩形的盒子
+        - 将元素设置为矩形的盒子后，对页面的布局就变成将不同的盒子摆放到不同的位置
+        - 每一个盒子都由一下几个部分组成：
+            内容区（content）
+            内边距（padding）
+            边框（border）
+            外边距（margin）</code></pre><p>内容区（content），元素中的所有的子元素和文本内容都在内容区中排列<br>                    内容区的大小由width 和 height两个属性来设置<br>                        width 设置内容区的宽度<br>                        height 设置内容区的高度</p>
+<pre><code>            边框（border），边框属于盒子边缘，边框里边属于盒子内部，出了边框都是盒子的外部
+                边框的大小会影响到整个盒子的大小
+            要设置边框，需要至少设置三个样式：
+                边框的宽度 border-width，默认值，一般都是 3个像素
+                    可以用来指定四个方向的边框的宽度
+                    值的情况
+                        四个值：上 右 下 左
+                        三个值：上 左右 下
+                        两个值：上下 左右
+                        一个值：上下左右
+
+                边框的颜色 border-color，border-color也可以省略不写，如果省略了则自动使用color的颜色值
+                边框的样式 border-style
+                    solid 表示实线
+                    dotted 点状虚线
+                    dashed 虚线
+                    double 双线
+
+                    border-style的默认值是none 表示没有边框
+
+                border简写属性，通过该属性可以同时设置边框所有的相关样式，并且没有顺序要求
+
+                除了border以外还有四个 border-xxx
+                    border-top
+                    border-right
+                    border-bottom
+                    border-left</code></pre><h2 id="水平方向的布局"><a href="#水平方向的布局" class="headerlink" title="水平方向的布局"></a>水平方向的布局</h2><p>元素的水平方向的布局：<br>                    元素在其父元素中水平方向的位置由以下几个属性共同决定“<br>                        margin-left<br>                        border-left<br>                        padding-left<br>                        width<br>                        padding-right<br>                        border-right<br>                        margin-right</p>
+<pre><code>                一个元素在其父元素中，水平布局必须要满足以下的等式</code></pre><p>margin-left+border-left+padding-left+width+padding-right+border-right+margin-right = 其父元素内容区的宽度 （必须满足）</p>
+<p>以上等式必须满足，如果相加结果使等式不成立，则称为过度约束，则等式会自动调整<br>                        - 调整的情况：<br>                            - 如果这七个值中没有为 auto 的情况，则浏览器会自动调整margin-right值以使等式满足<br>                    - 这七个值中有三个值和设置为auto<br>                        width<br>                        margin-left<br>                        maring-right<br>                        - 如果某个值为auto，则会自动调整为auto的那个值以使等式成立<br>                            0 + 0 + 0 + auto + 0 + 0 + 0 = 800  auto = 800<br>                            0 + 0 + 0 + auto + 0 + 0 + 200 = 800  auto = 600<br>                            200 + 0 + 0 + auto + 0 + 0 + 200 = 800  auto = 400</p>
+<pre><code>                        auto + 0 + 0 + 200 + 0 + 0 + 200 = 800  auto = 400
+
+
+                        auto + 0 + 0 + 200 + 0 + 0 + auto = 800  auto = 300
+
+                    - 如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0
+                    - 如果将三个值都设置为auto，则外边距都是0，宽度最大
+                    - 如果将两个外边距设置为auto，宽度固定值，则会将外边距设置为相同的值
+                        所以我们经常利用这个特点来使一个元素在其父元素中水平居中
+                        示例：
+                            width:xxxpx;
+                            margin:0 auto;</code></pre><h2 id="51-垂直布局"><a href="#51-垂直布局" class="headerlink" title="51-垂直布局"></a>51-垂直布局</h2><p>默认情况下父元素的高度被内容 ( 子元素 )撑开</p>
+<p>子元素是在父元素的内容区中排列的，<br>                    如果子元素的大小超过了父元素，则子元素会从父元素中溢出<br>                    使用 overflow 属性来设置父元素如何处理溢出的子元素</p>
+<pre><code>                可选值：
+                    visible，默认值 子元素会从父元素中溢出，在父元素外部的位置显示
+                    hidden 溢出内容将会被裁剪不会显示
+                    scroll 生成两个滚动条，通过滚动条来查看完整的内容
+                    auto 根据需要生成滚动条
+
+            overflow-x: 
+            overflow-y:
+            overflow: auto;
+
+        垂直外边距的重叠（折叠）
+            - 相邻的垂直方向外边距会发生重叠现象
+            - 兄弟元素
+                - 兄弟元素间的相邻垂直外边距会取两者之间的较大值（两者都是正值）
+                - 特殊情况：
+                    如果相邻的外边距一正一负，则取两者的和
+                    如果相邻的外边距都是负值，则取两者中绝对值较大的
+
+                - 兄弟元素之间的外边距的重叠，对于开发是有利的，所以我们不需要进行处理
+
+
+            - 父子元素
+                - 父子元素间相邻外边距，子元素的会传递给父元素（上外边距）
+                - 父子外边距的折叠会影响到页面的布局，必须要进行处理</code></pre><h2 id="行内元素的盒模型"><a href="#行内元素的盒模型" class="headerlink" title="行内元素的盒模型"></a>行内元素的盒模型</h2><pre><code>                - 行内元素不支持设置宽度和高度
+                - 行内元素可以设置padding，但是垂直方向padding不会影响页面的布局
+                - 行内元素可以设置border，垂直方向的border不会影响页面的布局
+                - 行内元素可以设置margin，垂直方向的margin不会影响布局</code></pre><h2 id="display-用来设置元素显示的类型"><a href="#display-用来设置元素显示的类型" class="headerlink" title="display 用来设置元素显示的类型"></a>display 用来设置元素显示的类型</h2><pre><code>                可选值：
+                    inline 将元素设置为行内元素
+                    block 将元素设置为块元素
+                    inline-block 将元素设置为行内块元素 
+                            行内块，既可以设置宽度和高度又不会独占一行
+                    table 将元素设置为一个表格
+                    none 元素不在页面中显示</code></pre><h2 id="visibility-用来设置元素的显示状态"><a href="#visibility-用来设置元素的显示状态" class="headerlink" title="visibility 用来设置元素的显示状态"></a>visibility 用来设置元素的显示状态</h2><pre><code>                可选值：
+                    visible 默认值，元素在页面中正常显示
+                    hidden 元素在页面中隐藏 不显示，但是依然占据页面的位置</code></pre><h2 id="默认样式："><a href="#默认样式：" class="headerlink" title="默认样式："></a>默认样式：</h2><pre><code>            - 通常情况，浏览器都会为元素设置一些默认样式
+            - 默认样式的存在会影响到页面的布局，
+                通常情况下编写网页时必须要去除浏览器的默认样式（PC端的页面）
+
+                重置样式表：专门用来对浏览器的样式进行重置的
+                        reset.css 直接去除了浏览器的默认样式
+                        normalize.css 对默认样式进行了统一
+                        &lt;link rel="stylesheet" href="./css/reset.css"&gt; --&gt;
+                        &lt;link rel="stylesheet" href="./css/normalize.css"&gt;
+
+/* 去除项目符号 * /
+        list-style:none; 
+
+        /* *{
+        margin: 0;
+        padding: 0;
+    } */</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }

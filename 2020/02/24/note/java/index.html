@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="古之惡來者為王, 程式,小說,遊戲製作">
-    <meta name="description" content="古之惡來者為王 | twelvefish">
+    <meta name="keywords" content="JAVA筆記, 程式,小說,遊戲製作">
+    <meta name="description" content="前言第一階段_基本語法第二階段_物件導向 #174Java面向对象学习的三条主线： 1.Java类及类的成员：属性、方法、构造器；代码块、内部类 2.面向对象的三大特征：封装性、继承性、多态性、(抽象性) 3.其它关键字：this、supe">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>古之惡來者為王 | twelvefish</title>
+    <title>JAVA筆記 | twelvefish</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -217,7 +217,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        古之惡來者為王
+                        JAVA筆記
                     </div>
                 </div>
             </div>
@@ -327,12 +327,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">無標籤</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/note/">
+                                <span class="chip bg-color">note</span>
+                            </a>
+                        
+                            <a href="/tags/JAVA/">
+                                <span class="chip bg-color">JAVA</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AD%86%E8%A8%98/" class="post-category">
+                                筆記
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -341,28 +358,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>發布日期:&nbsp;&nbsp;
-                    2019-11-20
+                    2020-02-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-20
+                    2020-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
-                    52
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 				
@@ -378,7 +395,100 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="第一階段-基本語法"><a href="#第一階段-基本語法" class="headerlink" title="第一階段_基本語法"></a>第一階段_基本語法</h2><h2 id="第二階段-物件導向-174"><a href="#第二階段-物件導向-174" class="headerlink" title="第二階段_物件導向 #174"></a>第二階段_物件導向 #174</h2><h3 id="Java面向对象学习的三条主线："><a href="#Java面向对象学习的三条主线：" class="headerlink" title="Java面向对象学习的三条主线："></a>Java面向对象学习的三条主线：</h3><p> 1.Java类及类的成员：属性、方法、构造器；代码块、内部类<br> 2.面向对象的三大特征：封装性、继承性、多态性、(抽象性)<br> 3.其它关键字：this、super、static、final、abstract、interface、package、import等</p>
+<p> “大处着眼，小处着手”</p>
+<h3 id="“人把大象装进冰箱”"><a href="#“人把大象装进冰箱”" class="headerlink" title="“人把大象装进冰箱”"></a>“人把大象装进冰箱”</h3><p> 面向过程 (POP ) 与 面向对象 OOP<br><br>二者 都是一种思想，面向对象是相对于面向过程而言的。面向过程， 强调的<br>是 功能 行为，以函数为最小单位，考虑怎么做 。 面向对象，将功能封装进对<br>象， 强调具备了功能 的 对象，以类 对象为最小单位，考虑谁来做。</p>
+<ul>
+<li></li>
+<li>1.面向过程：强调的是功能行为，以函数为最小单位，考虑怎么做。</li>
+<li></li>
+<li>① 把冰箱门打开</li>
+<li>② 抬起大象，塞进冰箱</li>
+<li>② 把冰箱门关闭</li>
+<li></li>
+<li>2.面向对象：强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。</li>
+<li></li>
+<li>人{</li>
+<li>打开(冰箱){</li>
+<li>冰箱.开开();</li>
+<li>}</li>
+<li></li>
+<li>抬起(大象){</li>
+<li>大象.进入(冰箱);</li>
+<li>}</li>
+<li></li>
+<li>关闭(冰箱){</li>
+<li>冰箱.闭合();</li>
+<li>}</li>
+<li></li>
+<li>}</li>
+<li></li>
+<li></li>
+<li>冰箱{</li>
+<li>开开(){}</li>
+<li>闭合(){}</li>
+<li>}</li>
+<li></li>
+<li>大象{</li>
+<li>进入(冰箱){</li>
+<li>}</li>
+<li>}</li>
+</ul>
+<p>面向对象更加强调运用人类在日常的思维逻辑中采用的思想方法与原则，如<br>抽象、分类、继承、聚合、多态等。</p>
+<p>小公司 身兼多職 事情來了，一蜂窩上去 VS 大企業 部門的展現</p>
+<h3 id="面向对象分析方法分析问题的思路和步骤"><a href="#面向对象分析方法分析问题的思路和步骤" class="headerlink" title="面向对象分析方法分析问题的思路和步骤"></a>面向对象分析方法分析问题的思路和步骤</h3><p><br>根据问题需要，选择问题所针对的 现实世界中的实体 。<br><br>从实体中寻找解决问题相关的属性和功能，这些属性和功能就形成了 概念世界中的类 。<br><br>把抽象的实体用计算机语言进行描述， 形成计算机世界中类的定义 。即借助某种程序<br>语言，把类构造成计算机能够识别和处理的数据结构。<br><br>将 类实例化成计算机世界中的对象 。对象是计算机世界中解决问题的最终工具。</p>
+<h3 id="面向对象的两个要素："><a href="#面向对象的两个要素：" class="headerlink" title="面向对象的两个要素："></a>面向对象的两个要素：</h3><ul>
+<li>类：对一类事物的描述，是抽象的、概念上的定义</li>
+<li>对象：是实际存在的该类事物的每个个体，因而也称为实例(instance)</li>
+<li><blockquote>
+<p>面向对象程序设计的重点是类的设计</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>设计类，就是设计类的成员。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="面向对象的思想概述"><a href="#面向对象的思想概述" class="headerlink" title="面向对象的思想概述"></a>面向对象的思想概述</h3><p><br>类 (Class 和 对象 (Object 是面向对象的核心概念。<br><br>类 是对 一类事物的描述 ，是 抽象的 、概念上的定义<br><br>对象 是 实际存在 的该类事物的每个个体，因而 也称为 实例 ( 。<br><br>万事万物皆对象”</p>
+<p>可以理解为： 类 = 抽象概念的人； 对象 = 实实在在的某个人<br><br>面向对象程序设计的重点是 类的设计<br><br>类的设计， 其实就是类的成员的设计</p>
+<h3 id="Java类及类的成员"><a href="#Java类及类的成员" class="headerlink" title="Java类及类的成员"></a>Java类及类的成员</h3><p><br>现实世界的生物体，大到鲸鱼，小到蚂蚁，都是由最基本的 细胞 构成的。同<br>理 Java 代码世界是由诸多个不同功能的 类 构成的。<br><br>现实生物世界中的细胞又是 由什么构成的 呢？细胞核、细胞质、 … 那么<br>Java 中用类 class 来描述事物也 是 如此。常见的类的成员有：<br><br>属 性 ：对应类中的成员变量<br><br>行 为 ：对应类中的成员方法<br>Field</p>
+<p>Field = 属性 = 成员变量， Method = ( 成员 方法 = 函数</p>
+<p>一、设计类，其实就是设计类的成员</p>
+<ul>
+<li></li>
+<li>属性 = 成员变量 = field = 域、字段</li>
+<li>方法 = 成员方法 = 函数 = method</li>
+<li></li>
+<li>创建类的对象 = 类的实例化 = 实例化类</li>
+</ul>
+<p>//1.创建类，设计类的成员<br>class Person{</p>
+<pre><code>//属性
+String name;
+int age = 1;
+boolean isMale;
+
+//方法
+public void eat(){
+    System.out.println("人可以吃饭");
+}
+
+public void sleep(){
+    System.out.println("人可以睡觉");
+}
+
+public void talk(String language){
+    System.out.println("人可以说话,使用的是：" + language);
+}</code></pre><p>}</p>
+<h3 id="类和对象的使用（面向对象思想落地的实现）："><a href="#类和对象的使用（面向对象思想落地的实现）：" class="headerlink" title="类和对象的使用（面向对象思想落地的实现）："></a>类和对象的使用（面向对象思想落地的实现）：</h3><ul>
+<li><p>1.创建类，设计类的成员</p>
+</li>
+<li><p>2.创建类的对象</p>
+</li>
+<li><p>3.通过“对象.属性”或“对象.方法”调用对象的结构</p>
+<p>步骤：<br>1.<br>定义类（考虑修饰符、类名）<br>2.<br>编写类的属性 考虑修饰符、属性 类型、属性名 、 初始化值）<br>3.<br>编写类的方法 考虑修饰符、返回 值类型、方法名、形参等）</p>
+</li>
+</ul>
+<h2 id="第四階段-多線程-thread-404"><a href="#第四階段-多線程-thread-404" class="headerlink" title="第四階段_多線程 (thread) #404"></a>第四階段_多線程 (thread) #404</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -421,7 +531,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://twelvefish.github.io/novel/01/index.html">http://twelvefish.github.io/novel/01/index.html</a>
+                    <a href="http://twelvefish.github.io/2020/02/24/note/java/">http://twelvefish.github.io/2020/02/24/note/java/</a>
                 </span>
             </div> -->
             <div class="reprint__notice">
@@ -458,7 +568,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">無標籤</span>
+                            
+                                <a href="/tags/note/">
+                                    <span class="chip bg-color">note</span>
+                                </a>
+                            
+                                <a href="/tags/JAVA/">
+                                    <span class="chip bg-color">JAVA</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -497,42 +615,53 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/novel/01/index.html">
+                <a href="/2020/02/26/note/ricky_en/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="古之惡來者為王">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Ricky 英文小蛋糕 多益">
                         
-                        <span class="card-title">古之惡來者為王</span>
+                        <span class="card-title">Ricky 英文小蛋糕 多益</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            學習筆記
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            twelvefish
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AD%86%E8%A8%98/" class="post-category">
+                                    筆記
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/note/">
+                        <span class="chip bg-color">note</span>
+                    </a>
+                    
+                    <a href="/tags/english/">
+                        <span class="chip bg-color">english</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -540,40 +669,52 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/novel/01/index.html">
+                <a href="/2020/02/24/note/rwd/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="古之惡來者為王">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="六角筆記">
                         
-                        <span class="card-title">古之惡來者為王</span>
+                        <span class="card-title">六角筆記</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            學習筆記
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            twelvefish
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AD%86%E8%A8%98/" class="post-category">
+                                    筆記
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/note/">
+                        <span class="chip bg-color">note</span>
+                    </a>
+                    
+                    <a href="/tags/RWD/">
+                        <span class="chip bg-color">RWD</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
