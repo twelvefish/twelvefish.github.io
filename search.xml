@@ -235,6 +235,47 @@
       </tags>
   </entry>
   <entry>
+    <title>六角筆記</title>
+    <url>/2020/02/24/note/rwd/</url>
+    <content><![CDATA[<h2 id="RWD"><a href="#RWD" class="headerlink" title="RWD"></a>RWD</h2><h3 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h3><p>width=device-width 瀏覽器顯示寬度 = 裝置的寬度<br>initial-scale=1.0 縮放比為1</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 手機端、寬度等於手機設備寬、手機縮放1.0不縮放 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>emmet快速鍵生成，meta:vp</p>
+<h3 id="media"><a href="#media" class="headerlink" title="@media"></a>@media</h3><p>電腦=&gt;平板=&gt;手機 從大到小吃</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span><span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span>768px<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>最小設計到320px</p>
+<p>RWD絕對不能出現X軸 ，max-width:600px，設置最大寬度，當螢幕寬小於最大寬度時，可不用擔心出現X軸</p>
+<h3 id=""><a href="#" class="headerlink" title="%"></a>%</h3><p>跟從父元素的寬度去算%數</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>筆記</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>RWD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA筆記</title>
     <url>/2020/02/24/note/java/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="第一階段-基本語法"><a href="#第一階段-基本語法" class="headerlink" title="第一階段_基本語法"></a>第一階段_基本語法</h2><h2 id="第二階段-物件導向-174"><a href="#第二階段-物件導向-174" class="headerlink" title="第二階段_物件導向 #174"></a>第二階段_物件導向 #174</h2><h3 id="Java面向对象学习的三条主线："><a href="#Java面向对象学习的三条主线：" class="headerlink" title="Java面向对象学习的三条主线："></a>Java面向对象学习的三条主线：</h3><p> 1.Java类及类的成员：属性、方法、构造器；代码块、内部类<br> 2.面向对象的三大特征：封装性、继承性、多态性、(抽象性)<br> 3.其它关键字：this、super、static、final、abstract、interface、package、import等</p>
@@ -355,47 +396,6 @@ public void talk(String language){
       <tags>
         <tag>note</tag>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>六角筆記</title>
-    <url>/2020/02/24/note/rwd/</url>
-    <content><![CDATA[<h2 id="RWD"><a href="#RWD" class="headerlink" title="RWD"></a>RWD</h2><h3 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h3><p>width=device-width 瀏覽器顯示寬度 = 裝置的寬度<br>initial-scale=1.0 縮放比為1</p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 手機端、寬度等於手機設備寬、手機縮放1.0不縮放 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>emmet快速鍵生成，meta:vp</p>
-<h3 id="media"><a href="#media" class="headerlink" title="@media"></a>@media</h3><p>電腦=&gt;平板=&gt;手機 從大到小吃</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span><span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span>768px<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
-
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>最小設計到320px</p>
-<p>RWD絕對不能出現X軸 ，max-width:600px，設置最大寬度，當螢幕寬小於最大寬度時，可不用擔心出現X軸</p>
-<h3 id=""><a href="#" class="headerlink" title="%"></a>%</h3><p>跟從父元素的寬度去算%數</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>筆記</category>
-      </categories>
-      <tags>
-        <tag>note</tag>
-        <tag>RWD</tag>
       </tags>
   </entry>
   <entry>
