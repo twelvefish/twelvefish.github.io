@@ -81,29 +81,11 @@
 </ul>
 </li>
 </ul>
-<p>總而言之，<font color="red">封裝的設計思想</font>就是</p>
+<p>總而言之，<font color=red>封裝的設計思想</font>就是</p>
  <div style="color:red;font-size: 40px;text-align: center;">把該隱藏的隱藏起來，該暴露的暴露出來 </div>
 
 
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>成為Pokémon大師之路</category>
       </categories>
@@ -207,25 +189,7 @@
 實習生 intern / trainee
 人事部門 personnel department
 參加 take part in
-桃子 peaches</code></pre><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+桃子 peaches</code></pre>]]></content>
       <categories>
         <category>筆記</category>
       </categories>
@@ -248,25 +212,7 @@
 <p>最小設計到320px</p>
 <p>RWD絕對不能出現X軸 ，max-width:600px，設置最大寬度，當螢幕寬小於最大寬度時，可不用擔心出現X軸</p>
 <h3 id=""><a href="#" class="headerlink" title="%"></a>%</h3><p>跟從父元素的寬度去算%數</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>筆記</category>
       </categories>
@@ -278,118 +224,127 @@
   <entry>
     <title>JAVA筆記</title>
     <url>/2020/02/24/note/java/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="第一階段-基本語法"><a href="#第一階段-基本語法" class="headerlink" title="第一階段_基本語法"></a>第一階段_基本語法</h2><h2 id="第二階段-物件導向-174"><a href="#第二階段-物件導向-174" class="headerlink" title="第二階段_物件導向 #174"></a>第二階段_物件導向 #174</h2><h3 id="Java面向对象学习的三条主线："><a href="#Java面向对象学习的三条主线：" class="headerlink" title="Java面向对象学习的三条主线："></a>Java面向对象学习的三条主线：</h3><p> 1.Java类及类的成员：属性、方法、构造器；代码块、内部类<br> 2.面向对象的三大特征：封装性、继承性、多态性、(抽象性)<br> 3.其它关键字：this、super、static、final、abstract、interface、package、import等</p>
-<p> “大处着眼，小处着手”</p>
-<h3 id="“人把大象装进冰箱”"><a href="#“人把大象装进冰箱”" class="headerlink" title="“人把大象装进冰箱”"></a>“人把大象装进冰箱”</h3><p> 面向过程 (POP ) 与 面向对象 OOP<br><br>二者 都是一种思想，面向对象是相对于面向过程而言的。面向过程， 强调的<br>是 功能 行为，以函数为最小单位，考虑怎么做 。 面向对象，将功能封装进对<br>象， 强调具备了功能 的 对象，以类 对象为最小单位，考虑谁来做。</p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="第一階段-基本語法"><a href="#第一階段-基本語法" class="headerlink" title="第一階段_基本語法"></a>第一階段_基本語法</h2><h2 id="第二階段-物件導向-174"><a href="#第二階段-物件導向-174" class="headerlink" title="第二階段_物件導向 #174"></a>第二階段_物件導向 #174</h2><h2 id="第四階段-執行緒-thread-415"><a href="#第四階段-執行緒-thread-415" class="headerlink" title="第四階段_執行緒 (thread) #415"></a>第四階段_執行緒 (thread) #415</h2><p>主要學習思路<br>有幾種方式來創建多線程 =&gt; 四種<br>有幾種方式解決線程安全問題 =&gt; 三種</p>
+<h3 id="program、process、thread-的基本概念"><a href="#program、process、thread-的基本概念" class="headerlink" title="program、process、thread 的基本概念"></a>program、process、thread 的基本概念</h3><ul>
+<li><p>程序(program) : 完成特定任務，用某種語言編寫的指令集合。<span style="color:red">即指一段靜態的代碼</span>，靜態對象</p>
+</li>
+<li><p>進程(process) : 指程序的一次執行過程，或是<span style="color:red">正在運行的一个程序</span>。他有屬於自身的產生、存在和消亡的過程 =&gt; <span style="color:red">生命周期</span></p>
 <ul>
-<li></li>
-<li>1.面向过程：强调的是功能行为，以函数为最小单位，考虑怎么做。</li>
-<li></li>
-<li>① 把冰箱门打开</li>
-<li>② 抬起大象，塞进冰箱</li>
-<li>② 把冰箱门关闭</li>
-<li></li>
-<li>2.面向对象：强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。</li>
-<li></li>
-<li>人{</li>
-<li>打开(冰箱){</li>
-<li>冰箱.开开();</li>
-<li>}</li>
-<li></li>
-<li>抬起(大象){</li>
-<li>大象.进入(冰箱);</li>
-<li>}</li>
-<li></li>
-<li>关闭(冰箱){</li>
-<li>冰箱.闭合();</li>
-<li>}</li>
-<li></li>
-<li>}</li>
-<li></li>
-<li></li>
-<li>冰箱{</li>
-<li>开开(){}</li>
-<li>闭合(){}</li>
-<li>}</li>
-<li></li>
-<li>大象{</li>
-<li>进入(冰箱){</li>
-<li>}</li>
-<li>}</li>
+<li><span style="color:red">program是静態的，process是動態的</span></li>
 </ul>
-<p>面向对象更加强调运用人类在日常的思维逻辑中采用的思想方法与原则，如<br>抽象、分类、继承、聚合、多态等。</p>
-<p>小公司 身兼多職 事情來了，一蜂窩上去 VS 大企業 部門的展現</p>
-<h3 id="面向对象分析方法分析问题的思路和步骤"><a href="#面向对象分析方法分析问题的思路和步骤" class="headerlink" title="面向对象分析方法分析问题的思路和步骤"></a>面向对象分析方法分析问题的思路和步骤</h3><p><br>根据问题需要，选择问题所针对的 现实世界中的实体 。<br><br>从实体中寻找解决问题相关的属性和功能，这些属性和功能就形成了 概念世界中的类 。<br><br>把抽象的实体用计算机语言进行描述， 形成计算机世界中类的定义 。即借助某种程序<br>语言，把类构造成计算机能够识别和处理的数据结构。<br><br>将 类实例化成计算机世界中的对象 。对象是计算机世界中解决问题的最终工具。</p>
-<h3 id="面向对象的两个要素："><a href="#面向对象的两个要素：" class="headerlink" title="面向对象的两个要素："></a>面向对象的两个要素：</h3><ul>
-<li>类：对一类事物的描述，是抽象的、概念上的定义</li>
-<li>对象：是实际存在的该类事物的每个个体，因而也称为实例(instance)</li>
-<li><blockquote>
-<p>面向对象程序设计的重点是类的设计</p>
-</blockquote>
 </li>
-<li><blockquote>
-<p>设计类，就是设计类的成员。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="面向对象的思想概述"><a href="#面向对象的思想概述" class="headerlink" title="面向对象的思想概述"></a>面向对象的思想概述</h3><p><br>类 (Class 和 对象 (Object 是面向对象的核心概念。<br><br>类 是对 一类事物的描述 ，是 抽象的 、概念上的定义<br><br>对象 是 实际存在 的该类事物的每个个体，因而 也称为 实例 ( 。<br><br>万事万物皆对象”</p>
-<p>可以理解为： 类 = 抽象概念的人； 对象 = 实实在在的某个人<br><br>面向对象程序设计的重点是 类的设计<br><br>类的设计， 其实就是类的成员的设计</p>
-<h3 id="Java类及类的成员"><a href="#Java类及类的成员" class="headerlink" title="Java类及类的成员"></a>Java类及类的成员</h3><p><br>现实世界的生物体，大到鲸鱼，小到蚂蚁，都是由最基本的 细胞 构成的。同<br>理 Java 代码世界是由诸多个不同功能的 类 构成的。<br><br>现实生物世界中的细胞又是 由什么构成的 呢？细胞核、细胞质、 … 那么<br>Java 中用类 class 来描述事物也 是 如此。常见的类的成员有：<br><br>属 性 ：对应类中的成员变量<br><br>行 为 ：对应类中的成员方法<br>Field</p>
-<p>Field = 属性 = 成员变量， Method = ( 成员 方法 = 函数</p>
-<p>一、设计类，其实就是设计类的成员</p>
+<li><p>線程(thread) : process可進一步细分為thread，是指一个program内部的一條執行路徑</p>
 <ul>
-<li></li>
-<li>属性 = 成员变量 = field = 域、字段</li>
-<li>方法 = 成员方法 = 函数 = method</li>
-<li></li>
-<li>创建类的对象 = 类的实例化 = 实例化类</li>
-</ul>
-<p>//1.创建类，设计类的成员<br>class Person{</p>
-<pre><code>//属性
-String name;
-int age = 1;
-boolean isMale;
-
-//方法
-public void eat(){
-    System.out.println("人可以吃饭");
-}
-
-public void sleep(){
-    System.out.println("人可以睡觉");
-}
-
-public void talk(String language){
-    System.out.println("人可以说话,使用的是：" + language);
-}</code></pre><p>}</p>
-<h3 id="类和对象的使用（面向对象思想落地的实现）："><a href="#类和对象的使用（面向对象思想落地的实现）：" class="headerlink" title="类和对象的使用（面向对象思想落地的实现）："></a>类和对象的使用（面向对象思想落地的实现）：</h3><ul>
-<li><p>1.创建类，设计类的成员</p>
+<li><p>若一個process同一時間並行執行多個thread，就是支持多thread的</p>
 </li>
-<li><p>2.创建类的对象</p>
+<li><p>每個thread 擁有獨立的運行棧和程序計數器(pc)</p>
 </li>
-<li><p>3.通过“对象.属性”或“对象.方法”调用对象的结构</p>
-<p>步骤：<br>1.<br>定义类（考虑修饰符、类名）<br>2.<br>编写类的属性 考虑修饰符、属性 类型、属性名 、 初始化值）<br>3.<br>编写类的方法 考虑修饰符、返回 值类型、方法名、形参等）</p>
+<li><p>一個process中的多個thread共享相同的内存單元、内存地址空間。但多個thread操作共享的系统資源可能會<span style="color:red">帶來安全的隱患</span></p>
+</li>
+<li><p><span style="color:red">一個 Java 應用程序 java.exe，至少有三個thread</span>，main()主thread、gc()垃圾回收thread、異常處理thread，如果其餘thread發生異常，會影響主thread</p>
 </li>
 </ul>
-<h2 id="第四階段-多線程-thread-404"><a href="#第四階段-多線程-thread-404" class="headerlink" title="第四階段_多線程 (thread) #404"></a>第四階段_多線程 (thread) #404</h2><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+</li>
+<li><p>並行與並發</p>
+<ul>
+<li><p>並行：多個CPU同时執行多個任务。例如：多個人同时做不同的事</p>
+</li>
+<li><p>並發： 一個CPU(採用時間片)同時執行多個任务。例如：搶票、多個人同时做一件事</p>
+</li>
+</ul>
+</li>
+<li><p>使用多thread的優點</p>
+<ul>
+<li><p>提高應用程序的響應，對圖形化界面更有意義，可增强用戶體驗</p>
+</li>
+<li><p>提高計算機器統 CPU 的利用率</p>
+</li>
+<li><p>改善程序結構，將複雜的 process 分為多個 thread，獨立運行，利於理解和修改</p>
+</li>
+</ul>
+</li>
+<li><p>何時需要多thread</p>
+<ul>
+<li><p>program 需要同時執行兩個或多個任務</p>
+</li>
+<li><p>程序需要實現一些需要等待的任務時，如用戶輸入、文件讀寫操作、網路操作、搜索等</p>
+</li>
+<li><p>需要後台運行 program 時</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="thread-的創建和使用"><a href="#thread-的創建和使用" class="headerlink" title="thread 的創建和使用"></a>thread 的創建和使用</h3><ul>
+<li><p>Java 語言的 JVM 允許程序運行多个 thread，它通過 java.lang.Thread　類来實現</p>
+</li>
+<li><p>Thread 類的特性</p>
+<ul>
+<li><p>每個 thread 都是通過某個特定 Thread 的 run() 方法來完成操作的，經常把 run() 方法的主體稱為線程體</p>
+</li>
+<li><p>通過該 Thread 對象的 start() 方法 来啟動這個線程，而非直接調用 run()</p>
+</li>
+</ul>
+</li>
+<li><p>API 中創建 thread 的兩種方式</p>
+<ul>
+<li><p><span style="color:red">方式一：繼承於 Thread 類</span></p>
+<p>  1、創建一個繼承於 Thread 類的子類</p>
+<p>  2、重寫Thread類的run() –&gt; 將此線程執行的操作聲明在run()中</p>
+<p>  3、創建Thread類的子類的對象</p>
+<p>  4、通過此對象調用start()</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * 多線程的創建，方式一：繼承於 Thread 類
+ * 1、創建一個繼承於 Thread 類的子類
+ * 2、重寫Thread類的run() --> 將此線程執行的操作聲明在run()中
+ * 3、創建Thread類的子類的對象
+ * 4、通過此對象調用start()
+ * &lt;p>
+ * 例子：遍例100以内的所有的偶数
+ *
+ * @create 2020-03-09 下午 08:33
+ */</span>
+
+<span class="token comment" spellcheck="true">//1、創建一個繼承於 Thread 類的子類</span>
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//2、重寫Thread類的run()</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//      3、創建Thread類的子類的對象</span>
+        MyThread myThread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//      4、通過此對象調用start()</span>
+        myThread<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//以下操作仍然是在main線程中執行的</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>注意點：</p>
+<p>  1、如果自己手動調用 run() 方法，那麼就只是普通方法，沒有啟動多 thread 模式</p>
+<p>  2、run 方法由 JVM 調用，什麼時候調用，執行的過程控制都有操作系统的 CPU 調度決定</p>
+<p>  3、想要啟動多thread，必須調用 start 方法</p>
+</li>
+</ul>
+<p>4.<br>一 个线程对象只能调用一次 start() 方法启动，如果重复调用了，则将抛出以上<br>的异常“ IllegalThreadStateException</p>
+<pre><code>![](/images/note/java/thread01.PNG)</code></pre>]]></content>
       <categories>
         <category>筆記</category>
       </categories>
@@ -430,7 +385,7 @@ public void talk(String language){
 <p>description、keywords 盡可能寫清楚點，搜索引擎主要去查找這兩項去做網頁的排序。</p>
 <p>生成meta工具，去FB轉發能夠依照自己想要秀出縮圖、介紹<br><a href="https://www.heymeta.com/" target="_blank" rel="noopener">https://www.heymeta.com/</a></p>
 <blockquote>
-<p>參考資料:<br><a href="https://www.youtube.com/watch?v=V0d9dgn3mdc&amp;list=PLK2w-tGRdrj7BxYFryNVGgAVD7nTzfSoA&amp;index=7&amp;t=0s" target="_blank" rel="noopener">揭開HTML META的面纱</a><br><a href="https://www.wibibi.com/info.php?tid=415" target="_blank" rel="noopener">https://www.wibibi.com/info.php?tid=415</a></p>
+<p>參考資料:<br><a href="https://www.youtube.com/watch?v=V0d9dgn3mdc&list=PLK2w-tGRdrj7BxYFryNVGgAVD7nTzfSoA&index=7&t=0s" target="_blank" rel="noopener">揭開HTML META的面纱</a><br><a href="https://www.wibibi.com/info.php?tid=415" target="_blank" rel="noopener">https://www.wibibi.com/info.php?tid=415</a></p>
 </blockquote>
 <h2 id="文檔聲明"><a href="#文檔聲明" class="headerlink" title="文檔聲明"></a>文檔聲明</h2><p>&lt;  !DOCTYPE html  &gt; 用來告訴瀏覽器當前版本，不區分大小寫，寫在html tag 前面</p>
 <h2 id="HTML字符實體"><a href="#HTML字符實體" class="headerlink" title="HTML字符實體"></a>HTML字符實體</h2><p>&amp; + 實體的名字 + 分號:<br>    &amp;nbsp ; 空格符號<br>    &amp;gt ; 大於符號<br>    &amp;copy ; 版權符號</p>
@@ -457,20 +412,20 @@ public void talk(String language){
     &lt;dd&gt;结构表示网页的结构，结构用来规定网页中哪里是标题，哪里是段落&lt;/dd&gt;
     &lt;dd&gt;结构表示网页的结构，结构用来规定网页中哪里是标题，哪里是段落&lt;/dd&gt;
 &lt;/dl&gt;</code></pre><h2 id="超連結"><a href="#超連結" class="headerlink" title="超連結"></a>超連結</h2><p>target属性，用来指定超链接打开的位置<br>可选值：<br>_self 默认值 在当前页面中打开超链接<br>_blank 在一个新的要么中打开超链接</p>
-<pre><code>&lt;a href="07.列表.html" target="_blank"&gt;超链接&lt;/a&gt;
+<pre><code>&lt;a href=&quot;07.列表.html&quot; target=&quot;_blank&quot;&gt;超链接&lt;/a&gt;
 
-&lt;a href="#bottom"&gt;去底部&lt;/a&gt;
+&lt;a href=&quot;#bottom&quot;&gt;去底部&lt;/a&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;a href="#p3"&gt;去第三个自然段&lt;/a&gt;
+&lt;a href=&quot;#p3&quot;&gt;去第三个自然段&lt;/a&gt;
 
 &lt;!-- 在开发中可以将#作为超链接的路径的展位符使用 --&gt;
-&lt;a href="#"&gt;这是一个新的超链接&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;这是一个新的超链接&lt;/a&gt;
 
 &lt;br&gt;&lt;br&gt;
 
 &lt;!-- 可以使用 javascript:; 来作为href的属性，此时点击这个超链接什么也不会发生 --&gt;
-&lt;a href="javascript:;"&gt;这是一个新的超链接&lt;/a&gt;
+&lt;a href=&quot;javascript:;&quot;&gt;这是一个新的超链接&lt;/a&gt;
 
 &lt;!-- 
     可以直接将超链接的href属性设置为#，这样点击超链接以后
@@ -483,7 +438,7 @@ public void talk(String language){
         - id属性就是元素的唯一标识，同一个页面中不能出现重复的id属性    
  --&gt;
 
- &lt;a id="bottom" href="#"&gt;回到顶部&lt;/a&gt;</code></pre><h2 id="圖片標籤"><a href="#圖片標籤" class="headerlink" title="圖片標籤"></a>圖片標籤</h2><p>img<br>         属性：<br>            src 属性指定的是外部图片的路径（路径规则和超链接是一样的）</p>
+ &lt;a id=&quot;bottom&quot; href=&quot;#&quot;&gt;回到顶部&lt;/a&gt;</code></pre><h2 id="圖片標籤"><a href="#圖片標籤" class="headerlink" title="圖片標籤"></a>圖片標籤</h2><p>img<br>         属性：<br>            src 属性指定的是外部图片的路径（路径规则和超链接是一样的）</p>
 <pre><code>        alt 图片的描述，这个描述默认情况下不会显示，有些浏览器会图片无法加载时显示
             搜索引擎会根据alt中的内容来识别图片，如果不写alt属性则图片不会被搜索引擎所收录
 
@@ -518,7 +473,7 @@ public void talk(String language){
         效果一样，用小的
         效果不一样，用效果好的</code></pre><h2 id="内联框架"><a href="#内联框架" class="headerlink" title="内联框架"></a>内联框架</h2><pre><code>    内联框架，用于向当前页面中引入一个其他页面
         src 指定要引入的网页的路径
-        frameborder 指定内联框架的边框</code></pre><p>&lt; + iframe src=”” width=”800” height=”600” frameborder=”0”&gt;</p>
+        frameborder 指定内联框架的边框</code></pre><p>&lt; + iframe src=”” width=”800” height=”600” frameborder=”0”&gt;</iframe></p>
 <h2 id="音頻"><a href="#音頻" class="headerlink" title="音頻"></a>音頻</h2><!-- 
         audio 标签用来向页面中引入一个外部的音频文件的
             音视频文件引入时，默认情况下不允许用户自己控制播放停止
@@ -530,19 +485,19 @@ public void talk(String language){
                     但是目前来讲大部分浏览器都不会自动对音乐进行播放 
             loop 音乐是否循环播放  
      -->
-<pre><code>&lt;!-- &lt;audio src="./source/audio.mp3" controls autoplay loop&gt;&lt;/audio&gt; --&gt;
+<pre><code>&lt;!-- &lt;audio src=&quot;./source/audio.mp3&quot; controls autoplay loop&gt;&lt;/audio&gt; --&gt;
 
-&lt;!-- &lt;audio src="./source/audio.mp3" controls&gt;&lt;/audio&gt; --&gt;
+&lt;!-- &lt;audio src=&quot;./source/audio.mp3&quot; controls&gt;&lt;/audio&gt; --&gt;
 
 
 &lt;!-- 除了通过src来指定外部文件的路径以外，还可以通过source来指定文件的路径 --&gt;
 以source寫法載入音頻，支持此標籤的瀏覽器就會出現音頻，而不支持的瀏覽器就會出現提示訊息
 &lt;audio controls&gt;
     &lt;!-- 对不起，您的浏览器不支持播放音频！请升级浏览器！ --&gt; 
-    &lt;source src="./source/audio.mp3"&gt;
-    &lt;source src="./source/audio.ogg"&gt;
+    &lt;source src=&quot;./source/audio.mp3&quot;&gt;
+    &lt;source src=&quot;./source/audio.ogg&quot;&gt;
     embed 支持IE8 會自動撥放
-    &lt;embed src="./source/audio.mp3" type="audio/mp3" width="300" height="100"&gt;
+    &lt;embed src=&quot;./source/audio.mp3&quot; type=&quot;audio/mp3&quot; width=&quot;300&quot; height=&quot;100&quot;&gt;
 &lt;/audio&gt;
 
 &lt;!-- 
@@ -550,12 +505,12 @@ public void talk(String language){
         - 使用方式和audio基本上是一样的
  --&gt;
 &lt;video controls&gt;
-    &lt;source src="./source/flower.webm"&gt;
-    &lt;source src="./source/flower.mp4"&gt;
-    &lt;embed src="./source/flower.mp4" type="video/mp4"&gt;
+    &lt;source src=&quot;./source/flower.webm&quot;&gt;
+    &lt;source src=&quot;./source/flower.mp4&quot;&gt;
+    &lt;embed src=&quot;./source/flower.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 
-&lt;iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b00318l66nt" allowFullScreen="true" width="500" height="300"&gt;&lt;/iframe&gt;</code></pre><h2 id="關係選擇器"><a href="#關係選擇器" class="headerlink" title="關係選擇器"></a>關係選擇器</h2><p>/*<br>            为div的子元素span设置一个字体颜色红色<br>            （为div直接包含的span设置一个字体颜色）</p>
+&lt;iframe frameborder=&quot;0&quot; src=&quot;https://v.qq.com/txp/iframe/player.html?vid=b00318l66nt&quot; allowFullScreen=&quot;true&quot; width=&quot;500&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;</code></pre><h2 id="關係選擇器"><a href="#關係選擇器" class="headerlink" title="關係選擇器"></a>關係選擇器</h2><p>/*<br>            为div的子元素span设置一个字体颜色红色<br>            （为div直接包含的span设置一个字体颜色）</p>
 <pre><code>        子元素选择器
             作用：选中指定父元素的指定子元素
             语法：父元素 &gt; 子元素
@@ -685,21 +640,21 @@ public void talk(String language){
     }
 
     /* div::before{
-        content: 'abc';
+        content: &#39;abc&#39;;
         color: red;
     }
 
     div::after{
-        content: 'haha';
+        content: &#39;haha&#39;;
         color: blue;
     } */
 
     div::before{
-        content: '『';
+        content: &#39;『&#39;;
      }
 
     div::after{
-        content: '』';
+        content: &#39;』&#39;;
     }</code></pre><h2 id="important"><a href="#important" class="headerlink" title="!important"></a>!important</h2><p>可以在某一个样式的后边添加 !important ，则此时该样式会获取到最高的优先级，甚至超过内联样式，<br>                注意：在开发中这个玩意一定要慎用！</p>
 <h2 id="长度单位："><a href="#长度单位：" class="headerlink" title="长度单位："></a>长度单位：</h2><pre><code>                像素
                     - 屏幕（显示器）实际上是由一个一个的小点点构成的
@@ -855,8 +810,8 @@ public void talk(String language){
                 重置样式表：专门用来对浏览器的样式进行重置的
                         reset.css 直接去除了浏览器的默认样式
                         normalize.css 对默认样式进行了统一
-                        &lt;link rel="stylesheet" href="./css/reset.css"&gt; --&gt;
-                        &lt;link rel="stylesheet" href="./css/normalize.css"&gt;
+                        &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/reset.css&quot;&gt; --&gt;
+                        &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/normalize.css&quot;&gt;
 
 /* 去除项目符号 * /
         list-style:none; 
@@ -864,25 +819,7 @@ public void talk(String language){
         /* *{
         margin: 0;
         padding: 0;
-    } */</code></pre><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+    } */</code></pre>]]></content>
       <categories>
         <category>筆記</category>
       </categories>
@@ -902,7 +839,7 @@ public void talk(String language){
 <h2 id="何謂物件導向-OOP"><a href="#何謂物件導向-OOP" class="headerlink" title="何謂物件導向(OOP)"></a>何謂物件導向(OOP)</h2><p>物件導向(Object Oriented Programming)簡稱OOP，是指程式設計的過程中，使用物件的方式，進行設計，而何謂物件?物件就是…，這樣介紹物件導向太…，讓我們換個說法。</p>
 <p>現在我們要做一個Pokémon遊戲，那麼舉凡其中的寶可夢、神奇寶貝球、招式機…等等都算是一種元素，也是一個個的物體，而物件導向就是指我們程式設計的方式都是用這些物體去進行設計，使他們彼此互相關聯，產生愛恨情仇的糾葛XD。</p>
 <h2 id="物件-Object"><a href="#物件-Object" class="headerlink" title="物件(Object)"></a>物件(Object)</h2><p>現在我們想要一隻皮卡丘，那麼這隻皮卡丘就是我們的物件，而現在我們想要一隻小火龍，那麼這隻小火龍也是我們的物件，物件可以算是一種帶有多種屬性、多種功能的物體，以皮卡丘舉例，每隻皮卡丘的三圍都不同，它們的屬性HP、攻擊、防禦、特功…等數值都會因為不同隻皮卡丘而有所不同，而每隻皮卡丘所學會的招式也不相同，這反映在物件的功能上，畢竟真正的皮神只有一個。</p>
-<p>所以拉回來，何謂物件，物件算是一種物體，在程式設計中我們稱為物件或是也有人稱為<font color="red">實例(instance)</font>，而這些實例，都會擁有自己專屬的<font color="red">屬性（properties）</font>或<font color="red">功能（functions)</font>。</p>
+<p>所以拉回來，何謂物件，物件算是一種物體，在程式設計中我們稱為物件或是也有人稱為<font color=red>實例(instance)</font>，而這些實例，都會擁有自己專屬的<font color=red>屬性（properties）</font>或<font color=red>功能（functions)</font>。</p>
 <h2 id="類別-class"><a href="#類別-class" class="headerlink" title="類別(class)"></a>類別(class)</h2><p>話說回來，我們實作出這麼多隻不同屬性、不同IV值、會不同招式的皮卡丘，但是每隻實作時都要記得它需要哪些屬性欄位或是功能，是否太不方便了呢?如果這時有個設計稿，能讓我們依循設計稿實作，一來可以統一定義皮卡丘這個物件，二來也能告訴別人皮卡丘物件就是長安內啦~</p>
 <p>這就是類別class，用來形成物件object的設計稿。</p>
 <h2 id="建立皮卡丘類別，和產生物件"><a href="#建立皮卡丘類別，和產生物件" class="headerlink" title="建立皮卡丘類別，和產生物件"></a>建立皮卡丘類別，和產生物件</h2><p>建立 Pikachu class，可依照需求自由設計出相對應的屬性和功能。</p>
@@ -949,25 +886,7 @@ public void talk(String language){
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id=""><a href="#" class="headerlink" title=""></a><img src="/images/program/pokemon/01/01.png" alt=""></h2><p>這一章節，我們介紹了物件和類別的知識，並且建立了皮卡丘class和物件，下一章節將介紹物件導向的三大特徵之一封裝…<br>如果你喜歡我的創作，請大力地給我拍拍手 🐊 🐊 🐊</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>成為Pokémon大師之路</category>
       </categories>
@@ -1036,25 +955,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <blockquote>
 <p>參考資料: 以上連結</p>
 </blockquote>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>給我滿滿的推播大平台</category>
       </categories>
@@ -1084,7 +985,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <p>點選 Create New Provider 創建新的Provider</p>
 <p><img src="/images/program/pushCenter/01/03.png" alt=""></p>
 <p>點選 Confirm button 創建成功</p>
-<h2 id="建立官方帳號"><a href="#建立官方帳號" class="headerlink" title="建立官方帳號"></a>建立官方帳號</h2><p>開始建立官方帳號，分為三種類型，在此文選擇 <font color="red"><strong>Messaging API</strong></font></p>
+<h2 id="建立官方帳號"><a href="#建立官方帳號" class="headerlink" title="建立官方帳號"></a>建立官方帳號</h2><p>開始建立官方帳號，分為三種類型，在此文選擇 <font color=red><strong>Messaging API</strong></font></p>
 <p>LINE Login ：以Line帳號驗證登入網站，剛剛的官網就是最好的例子，如同 Google、FB一樣，提供第三方帳號登入，對開發者來說可以免去管理使用者帳密，而對使用者來說，可以不用特別去記憶小型網站的帳密(使用Oauth2認證)。</p>
 <p>Messaging API： 透過Messaging API將自己的服務內容串聯到LINE@上，建立屬於自己的官方帳號。</p>
 <p>Clova Skill：Line提供的語音智慧助理</p>
@@ -1107,25 +1008,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <blockquote>
 <p>參考資料: <a href="http://at-blog.line.me/tw/messaging_api_intro" target="_blank" rel="noopener">http://at-blog.line.me/tw/messaging_api_intro</a></p>
 </blockquote>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>給我滿滿的推播大平台</category>
       </categories>
@@ -1179,25 +1062,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <p>遠處一名女子看著疑惑的李余，自言自語的道，「看見「武」字的字畫，難道師傅他老人家，又看見中意的苗子嗎？」</p>
 <p>※苗子：新出現的人才。</p>
 <p>Photo by <a href="https://unsplash.com/@h4x0r3" target="_blank" rel="noopener">Thao Le Hoang</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>古之惡來者為王</category>
       </categories>
@@ -1237,25 +1102,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <p>「今日前去時可多加小心，別露出馬腳，只剩下一魂二魄的我，果真無法支撐太久，先去休息了。」說完又陷入寂靜。</p>
 <p>「原來這世界還有許多未知的事情正等我去發掘，我得趕緊提升實力，才能爬得更高，走得更遠。」李余趕緊走到陽台，在陽光的照射下，靜坐晨練「惡來之心」。</p>
 <p>Photo by <a href="https://unsplash.com/@tunagraphy" target="_blank" rel="noopener">meriç tuna</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>古之惡來者為王</category>
       </categories>
@@ -1300,25 +1147,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <p>「咳、咳，所謂的武者世界，就是練武之人突破一階之後的稱呼，武者共分九階，每階又分九品，一般人修為幾乎都是在零階三品之下，憑著健身、極限運動才會慢慢的上升至六品至九品不等，不過只要自身無法突破至一階都是無法接觸到武者世界的。」</p>
 <p>「所以這位學員，恭喜進入了武者世界，明日你就直接來我辦公室報到，你將會大開雙眼，好好見識這奇妙的世界吧！」</p>
 <p>Photo by <a href="https://unsplash.com/@charleingracia" target="_blank" rel="noopener">Charlein Gracia</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>古之惡來者為王</category>
       </categories>
@@ -1370,25 +1199,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <p>「大姊，你和姪子慢慢聊聊吧，我出去替你們張羅食物。」看著這溫馨感人的畫面，深知要留給大姐一點空間的舅舅藉機找個藉口離開。<br>「嘟〜嘟〜」</p>
 <p>「事情進行十分順利，剩下就看他的造化了，能否乘風破浪，化為蛟龍，一切交由命運安排吧！」</p>
 <p>Photo by <a href="https://unsplash.com/@sammcghee" target="_blank" rel="noopener">Sam McGhee</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>古之惡來者為王</category>
       </categories>
@@ -1429,25 +1240,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <p>一百多名弓箭手，分上中下三排，各個拉滿弓準備就緒，而典韋身處平坦之地，胸無片甲，雖然奮力的揮舞著雙戟，但也不可能不漏下任何一支箭，漸漸地，一枝、兩枝、三枝，箭如雨下，耗盡氣血的典韋雖狂笑不已，但也深知自己將死於此處，風蕭蕭兮易水寒，一代英雄終死於亂箭之下，久久，士兵才敢向前查看，典韋依舊睜大著雙眼，筆直的身軀，但人已經死亡多時了。</p>
 <p>他用他的生命守護了救主，他用他的武藝捍衛了尊嚴，他為曹操而戰，為曹操而死，他的忠心、他的威猛讓世人流傳，三國之中誰能比的上他，他就是<strong>古之惡來：典韋。</strong></p>
 <p>Photo by <a href="https://unsplash.com/@stijnswinnen" target="_blank" rel="noopener">Stijn Swinnen</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>古之惡來者為王</category>
       </categories>
@@ -1630,25 +1423,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <p>遠處一名女子看著疑惑的李余，自言自語的道，「看見「武」字的字畫，難道師傅他老人家，又看見中意的苗子嗎？」</p>
 <p>※苗子：新出現的人才。</p>
 <p>Photo by <a href="https://unsplash.com/@impatrickt" target="_blank" rel="noopener">Patrick Tomasso</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
+]]></content>
       <categories>
         <category>古之惡來者為王</category>
       </categories>

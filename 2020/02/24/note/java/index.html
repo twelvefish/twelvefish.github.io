@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="JAVA筆記, 程式,小說,遊戲製作">
-    <meta name="description" content="前言第一階段_基本語法第二階段_物件導向 #174Java面向对象学习的三条主线： 1.Java类及类的成员：属性、方法、构造器；代码块、内部类 2.面向对象的三大特征：封装性、继承性、多态性、(抽象性) 3.其它关键字：this、supe">
+    <meta name="description" content="前言第一階段_基本語法第二階段_物件導向 #174第四階段_執行緒 (thread) #415主要學習思路有幾種方式來創建多線程 =&amp;gt; 四種有幾種方式解決線程安全問題 =&amp;gt; 三種
+program、process、thread 的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -365,21 +366,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-08
+                    2020-03-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
-                    1.2k
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 				
@@ -395,118 +396,127 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="第一階段-基本語法"><a href="#第一階段-基本語法" class="headerlink" title="第一階段_基本語法"></a>第一階段_基本語法</h2><h2 id="第二階段-物件導向-174"><a href="#第二階段-物件導向-174" class="headerlink" title="第二階段_物件導向 #174"></a>第二階段_物件導向 #174</h2><h3 id="Java面向对象学习的三条主线："><a href="#Java面向对象学习的三条主线：" class="headerlink" title="Java面向对象学习的三条主线："></a>Java面向对象学习的三条主线：</h3><p> 1.Java类及类的成员：属性、方法、构造器；代码块、内部类<br> 2.面向对象的三大特征：封装性、继承性、多态性、(抽象性)<br> 3.其它关键字：this、super、static、final、abstract、interface、package、import等</p>
-<p> “大处着眼，小处着手”</p>
-<h3 id="“人把大象装进冰箱”"><a href="#“人把大象装进冰箱”" class="headerlink" title="“人把大象装进冰箱”"></a>“人把大象装进冰箱”</h3><p> 面向过程 (POP ) 与 面向对象 OOP<br><br>二者 都是一种思想，面向对象是相对于面向过程而言的。面向过程， 强调的<br>是 功能 行为，以函数为最小单位，考虑怎么做 。 面向对象，将功能封装进对<br>象， 强调具备了功能 的 对象，以类 对象为最小单位，考虑谁来做。</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="第一階段-基本語法"><a href="#第一階段-基本語法" class="headerlink" title="第一階段_基本語法"></a>第一階段_基本語法</h2><h2 id="第二階段-物件導向-174"><a href="#第二階段-物件導向-174" class="headerlink" title="第二階段_物件導向 #174"></a>第二階段_物件導向 #174</h2><h2 id="第四階段-執行緒-thread-415"><a href="#第四階段-執行緒-thread-415" class="headerlink" title="第四階段_執行緒 (thread) #415"></a>第四階段_執行緒 (thread) #415</h2><p>主要學習思路<br>有幾種方式來創建多線程 =&gt; 四種<br>有幾種方式解決線程安全問題 =&gt; 三種</p>
+<h3 id="program、process、thread-的基本概念"><a href="#program、process、thread-的基本概念" class="headerlink" title="program、process、thread 的基本概念"></a>program、process、thread 的基本概念</h3><ul>
+<li><p>程序(program) : 完成特定任務，用某種語言編寫的指令集合。<span style="color:red">即指一段靜態的代碼</span>，靜態對象</p>
+</li>
+<li><p>進程(process) : 指程序的一次執行過程，或是<span style="color:red">正在運行的一个程序</span>。他有屬於自身的產生、存在和消亡的過程 =&gt; <span style="color:red">生命周期</span></p>
 <ul>
-<li></li>
-<li>1.面向过程：强调的是功能行为，以函数为最小单位，考虑怎么做。</li>
-<li></li>
-<li>① 把冰箱门打开</li>
-<li>② 抬起大象，塞进冰箱</li>
-<li>② 把冰箱门关闭</li>
-<li></li>
-<li>2.面向对象：强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。</li>
-<li></li>
-<li>人{</li>
-<li>打开(冰箱){</li>
-<li>冰箱.开开();</li>
-<li>}</li>
-<li></li>
-<li>抬起(大象){</li>
-<li>大象.进入(冰箱);</li>
-<li>}</li>
-<li></li>
-<li>关闭(冰箱){</li>
-<li>冰箱.闭合();</li>
-<li>}</li>
-<li></li>
-<li>}</li>
-<li></li>
-<li></li>
-<li>冰箱{</li>
-<li>开开(){}</li>
-<li>闭合(){}</li>
-<li>}</li>
-<li></li>
-<li>大象{</li>
-<li>进入(冰箱){</li>
-<li>}</li>
-<li>}</li>
+<li><span style="color:red">program是静態的，process是動態的</span></li>
 </ul>
-<p>面向对象更加强调运用人类在日常的思维逻辑中采用的思想方法与原则，如<br>抽象、分类、继承、聚合、多态等。</p>
-<p>小公司 身兼多職 事情來了，一蜂窩上去 VS 大企業 部門的展現</p>
-<h3 id="面向对象分析方法分析问题的思路和步骤"><a href="#面向对象分析方法分析问题的思路和步骤" class="headerlink" title="面向对象分析方法分析问题的思路和步骤"></a>面向对象分析方法分析问题的思路和步骤</h3><p><br>根据问题需要，选择问题所针对的 现实世界中的实体 。<br><br>从实体中寻找解决问题相关的属性和功能，这些属性和功能就形成了 概念世界中的类 。<br><br>把抽象的实体用计算机语言进行描述， 形成计算机世界中类的定义 。即借助某种程序<br>语言，把类构造成计算机能够识别和处理的数据结构。<br><br>将 类实例化成计算机世界中的对象 。对象是计算机世界中解决问题的最终工具。</p>
-<h3 id="面向对象的两个要素："><a href="#面向对象的两个要素：" class="headerlink" title="面向对象的两个要素："></a>面向对象的两个要素：</h3><ul>
-<li>类：对一类事物的描述，是抽象的、概念上的定义</li>
-<li>对象：是实际存在的该类事物的每个个体，因而也称为实例(instance)</li>
-<li><blockquote>
-<p>面向对象程序设计的重点是类的设计</p>
-</blockquote>
 </li>
-<li><blockquote>
-<p>设计类，就是设计类的成员。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="面向对象的思想概述"><a href="#面向对象的思想概述" class="headerlink" title="面向对象的思想概述"></a>面向对象的思想概述</h3><p><br>类 (Class 和 对象 (Object 是面向对象的核心概念。<br><br>类 是对 一类事物的描述 ，是 抽象的 、概念上的定义<br><br>对象 是 实际存在 的该类事物的每个个体，因而 也称为 实例 ( 。<br><br>万事万物皆对象”</p>
-<p>可以理解为： 类 = 抽象概念的人； 对象 = 实实在在的某个人<br><br>面向对象程序设计的重点是 类的设计<br><br>类的设计， 其实就是类的成员的设计</p>
-<h3 id="Java类及类的成员"><a href="#Java类及类的成员" class="headerlink" title="Java类及类的成员"></a>Java类及类的成员</h3><p><br>现实世界的生物体，大到鲸鱼，小到蚂蚁，都是由最基本的 细胞 构成的。同<br>理 Java 代码世界是由诸多个不同功能的 类 构成的。<br><br>现实生物世界中的细胞又是 由什么构成的 呢？细胞核、细胞质、 … 那么<br>Java 中用类 class 来描述事物也 是 如此。常见的类的成员有：<br><br>属 性 ：对应类中的成员变量<br><br>行 为 ：对应类中的成员方法<br>Field</p>
-<p>Field = 属性 = 成员变量， Method = ( 成员 方法 = 函数</p>
-<p>一、设计类，其实就是设计类的成员</p>
+<li><p>線程(thread) : process可進一步细分為thread，是指一个program内部的一條執行路徑</p>
 <ul>
-<li></li>
-<li>属性 = 成员变量 = field = 域、字段</li>
-<li>方法 = 成员方法 = 函数 = method</li>
-<li></li>
-<li>创建类的对象 = 类的实例化 = 实例化类</li>
-</ul>
-<p>//1.创建类，设计类的成员<br>class Person{</p>
-<pre><code>//属性
-String name;
-int age = 1;
-boolean isMale;
-
-//方法
-public void eat(){
-    System.out.println("人可以吃饭");
-}
-
-public void sleep(){
-    System.out.println("人可以睡觉");
-}
-
-public void talk(String language){
-    System.out.println("人可以说话,使用的是：" + language);
-}</code></pre><p>}</p>
-<h3 id="类和对象的使用（面向对象思想落地的实现）："><a href="#类和对象的使用（面向对象思想落地的实现）：" class="headerlink" title="类和对象的使用（面向对象思想落地的实现）："></a>类和对象的使用（面向对象思想落地的实现）：</h3><ul>
-<li><p>1.创建类，设计类的成员</p>
+<li><p>若一個process同一時間並行執行多個thread，就是支持多thread的</p>
 </li>
-<li><p>2.创建类的对象</p>
+<li><p>每個thread 擁有獨立的運行棧和程序計數器(pc)</p>
 </li>
-<li><p>3.通过“对象.属性”或“对象.方法”调用对象的结构</p>
-<p>步骤：<br>1.<br>定义类（考虑修饰符、类名）<br>2.<br>编写类的属性 考虑修饰符、属性 类型、属性名 、 初始化值）<br>3.<br>编写类的方法 考虑修饰符、返回 值类型、方法名、形参等）</p>
+<li><p>一個process中的多個thread共享相同的内存單元、内存地址空間。但多個thread操作共享的系统資源可能會<span style="color:red">帶來安全的隱患</span></p>
+</li>
+<li><p><span style="color:red">一個 Java 應用程序 java.exe，至少有三個thread</span>，main()主thread、gc()垃圾回收thread、異常處理thread，如果其餘thread發生異常，會影響主thread</p>
 </li>
 </ul>
-<h2 id="第四階段-多線程-thread-404"><a href="#第四階段-多線程-thread-404" class="headerlink" title="第四階段_多線程 (thread) #404"></a>第四階段_多線程 (thread) #404</h2><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+</li>
+<li><p>並行與並發</p>
+<ul>
+<li><p>並行：多個CPU同时執行多個任务。例如：多個人同时做不同的事</p>
+</li>
+<li><p>並發： 一個CPU(採用時間片)同時執行多個任务。例如：搶票、多個人同时做一件事</p>
+</li>
+</ul>
+</li>
+<li><p>使用多thread的優點</p>
+<ul>
+<li><p>提高應用程序的響應，對圖形化界面更有意義，可增强用戶體驗</p>
+</li>
+<li><p>提高計算機器統 CPU 的利用率</p>
+</li>
+<li><p>改善程序結構，將複雜的 process 分為多個 thread，獨立運行，利於理解和修改</p>
+</li>
+</ul>
+</li>
+<li><p>何時需要多thread</p>
+<ul>
+<li><p>program 需要同時執行兩個或多個任務</p>
+</li>
+<li><p>程序需要實現一些需要等待的任務時，如用戶輸入、文件讀寫操作、網路操作、搜索等</p>
+</li>
+<li><p>需要後台運行 program 時</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="thread-的創建和使用"><a href="#thread-的創建和使用" class="headerlink" title="thread 的創建和使用"></a>thread 的創建和使用</h3><ul>
+<li><p>Java 語言的 JVM 允許程序運行多个 thread，它通過 java.lang.Thread　類来實現</p>
+</li>
+<li><p>Thread 類的特性</p>
+<ul>
+<li><p>每個 thread 都是通過某個特定 Thread 的 run() 方法來完成操作的，經常把 run() 方法的主體稱為線程體</p>
+</li>
+<li><p>通過該 Thread 對象的 start() 方法 来啟動這個線程，而非直接調用 run()</p>
+</li>
+</ul>
+</li>
+<li><p>API 中創建 thread 的兩種方式</p>
+<ul>
+<li><p><span style="color:red">方式一：繼承於 Thread 類</span></p>
+<p>  1、創建一個繼承於 Thread 類的子類</p>
+<p>  2、重寫Thread類的run() –&gt; 將此線程執行的操作聲明在run()中</p>
+<p>  3、創建Thread類的子類的對象</p>
+<p>  4、通過此對象調用start()</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * 多線程的創建，方式一：繼承於 Thread 類
+ * 1、創建一個繼承於 Thread 類的子類
+ * 2、重寫Thread類的run() --> 將此線程執行的操作聲明在run()中
+ * 3、創建Thread類的子類的對象
+ * 4、通過此對象調用start()
+ * &lt;p>
+ * 例子：遍例100以内的所有的偶数
+ *
+ * @create 2020-03-09 下午 08:33
+ */</span>
+
+<span class="token comment" spellcheck="true">//1、創建一個繼承於 Thread 類的子類</span>
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//2、重寫Thread類的run()</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//      3、創建Thread類的子類的對象</span>
+        MyThread myThread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//      4、通過此對象調用start()</span>
+        myThread<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//以下操作仍然是在main線程中執行的</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>注意點：</p>
+<p>  1、如果自己手動調用 run() 方法，那麼就只是普通方法，沒有啟動多 thread 模式</p>
+<p>  2、run 方法由 JVM 調用，什麼時候調用，執行的過程控制都有操作系统的 CPU 調度決定</p>
+<p>  3、想要啟動多thread，必須調用 start 方法</p>
+</li>
+</ul>
+<p>4.<br>一 个线程对象只能调用一次 start() 方法启动，如果重复调用了，则将抛出以上<br>的异常“ IllegalThreadStateException</p>
+<pre><code>![](/images/note/java/thread01.PNG)</code></pre>
             </div>
             <hr/>
 
@@ -900,7 +910,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
-                class="white-color">30.6k</span>&nbsp;字
+                class="white-color">29.9k</span>&nbsp;字
             
             
             
