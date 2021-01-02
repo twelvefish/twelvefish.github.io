@@ -2002,7 +2002,7 @@ footer .copy-right {
 }
 
 /* create the ... style */
-.block-with-text:before {
+/* .block-with-text:before {
     /* points in the end */
     content: '...';
     /* absolute position */
@@ -2010,7 +2010,7 @@ footer .copy-right {
     /* set position to right bottom corner of block */
     right: 0;
     bottom: 0;
-}
+} */
 
 /* hide ... if we have text, which is less than or equal to max lines */
 .block-with-text:after {
