@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://twelvefish.github.io/"/>
-  <updated>2020-03-08T12:27:02.511Z</updated>
+  <updated>2019-11-20T14:43:42.275Z</updated>
   <id>http://twelvefish.github.io/</id>
   
   <author>
@@ -15,136 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>1-2、隱藏之術，封裝皮卡丘</title>
-    <link href="http://twelvefish.github.io/2020/03/01/program/pokemon/1-2%E3%80%81hiddenArtPikachu/"/>
-    <id>http://twelvefish.github.io/2020/03/01/program/pokemon/1-2%E3%80%81hiddenArtPikachu/</id>
-    <published>2020-03-01T01:30:08.000Z</published>
-    <updated>2020-03-08T12:27:02.511Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;It’s lucky to gain and fated to miss.&lt;/p&gt;
-&lt;p&gt;得知，我幸。不得，我命。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="成為Pokémon大師之路" scheme="http://twelvefish.github.io/categories/%E6%88%90%E7%82%BAPokemon%E5%A4%A7%E5%B8%AB%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="java" scheme="http://twelvefish.github.io/tags/java/"/>
-    
-      <category term="OOP" scheme="http://twelvefish.github.io/tags/OOP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1-1：就決定是你了，物件皮卡丘</title>
-    <link href="http://twelvefish.github.io/2020/02/23/program/pokemon/1-1%E3%80%81isYouPikachu/"/>
-    <id>http://twelvefish.github.io/2020/02/23/program/pokemon/1-1%E3%80%81isYouPikachu/</id>
-    <published>2020-02-23T03:26:19.000Z</published>
-    <updated>2020-03-08T12:10:53.962Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;To program without reflecting is like eating without
-        
-      
-    
-    </summary>
-    
-    
-      <category term="成為Pokémon大師之路" scheme="http://twelvefish.github.io/categories/%E6%88%90%E7%82%BAPokemon%E5%A4%A7%E5%B8%AB%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="java" scheme="http://twelvefish.github.io/tags/java/"/>
-    
-      <category term="OOP" scheme="http://twelvefish.github.io/tags/OOP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1-2：建置 Line Webhook</title>
-    <link href="http://twelvefish.github.io/2020/02/16/program/pushCenter/Line-webhook/"/>
-    <id>http://twelvefish.github.io/2020/02/16/program/pushCenter/Line-webhook/</id>
-    <published>2020-02-16T13:59:07.000Z</published>
-    <updated>2020-02-23T04:58:51.388Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Don’t let your pride leave you all along&lt;/p&gt;
-&lt;p&gt;別讓你的驕傲使你孤獨一人&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="給我滿滿的推播大平台" scheme="http://twelvefish.github.io/categories/%E7%B5%A6%E6%88%91%E6%BB%BF%E6%BB%BF%E7%9A%84%E6%8E%A8%E6%92%AD%E5%A4%A7%E5%B9%B3%E5%8F%B0/"/>
-    
-    
-      <category term="chatobt" scheme="http://twelvefish.github.io/tags/chatobt/"/>
-    
-      <category term="Line" scheme="http://twelvefish.github.io/tags/Line/"/>
-    
-      <category term="ngrok" scheme="http://twelvefish.github.io/tags/ngrok/"/>
-    
-      <category term="TypeScript" scheme="http://twelvefish.github.io/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1-1：申請 Line2.0官方帳號</title>
-    <link href="http://twelvefish.github.io/2020/02/09/program/pushCenter/Line_chatbot._dev/"/>
-    <id>http://twelvefish.github.io/2020/02/09/program/pushCenter/Line_chatbot._dev/</id>
-    <published>2020-02-09T03:51:52.000Z</published>
-    <updated>2020-02-23T04:58:43.353Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Many people start a career with a dream,then get busy forgetting
-        
-      
-    
-    </summary>
-    
-    
-      <category term="給我滿滿的推播大平台" scheme="http://twelvefish.github.io/categories/%E7%B5%A6%E6%88%91%E6%BB%BF%E6%BB%BF%E7%9A%84%E6%8E%A8%E6%92%AD%E5%A4%A7%E5%B9%B3%E5%8F%B0/"/>
-    
-    
-      <category term="chatobt" scheme="http://twelvefish.github.io/tags/chatobt/"/>
-    
-      <category term="Line" scheme="http://twelvefish.github.io/tags/Line/"/>
-    
-  </entry>
   
   <entry>
     <title>第四章：武者世界</title>
@@ -259,7 +129,7 @@
     <link href="http://twelvefish.github.io/2019/11/19/novel/01/%E6%A5%94%E5%AD%90%EF%BC%9A%E6%AD%B7%E5%8F%B2%E5%BC%95%E8%A8%80/"/>
     <id>http://twelvefish.github.io/2019/11/19/novel/01/%E6%A5%94%E5%AD%90%EF%BC%9A%E6%AD%B7%E5%8F%B2%E5%BC%95%E8%A8%80/</id>
     <published>2019-11-19T03:41:00.000Z</published>
-    <updated>2019-11-20T13:49:27.525Z</updated>
+    <updated>2020-12-28T13:45:34.927Z</updated>
     
     <summary type="html">
     
