@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://twelvefish.github.io/"/>
-  <updated>2021-01-02T13:43:41.509Z</updated>
+  <updated>2021-01-03T12:17:50.298Z</updated>
   <id>http://twelvefish.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初識TypeScript</title>
+    <link href="http://twelvefish.github.io/2021/01/02/technology/snake/%E5%88%9D%E8%AD%98TypeScript/"/>
+    <id>http://twelvefish.github.io/2021/01/02/technology/snake/%E5%88%9D%E8%AD%98TypeScript/</id>
+    <published>2021-01-02T14:35:33.000Z</published>
+    <updated>2021-01-03T12:17:50.298Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Dreams without execution are nothing&lt;/p&gt;
+&lt;p&gt;夢想不付出行動，等於白扯&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本系列前半部參考影片&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="TypeScript大戰貪食蛇" scheme="http://twelvefish.github.io/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/"/>
+    
+    
+      <category term="TypeScript" scheme="http://twelvefish.github.io/tags/TypeScript/"/>
+    
+  </entry>
   
   <entry>
     <title>第四章：武者世界</title>
