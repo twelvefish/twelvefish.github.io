@@ -4,7 +4,7 @@
 
 # Site
 title: twelvefish
-subtitle: 24歲的十鱷魚
+subtitle: 十鱷魚
 description: 撰寫資訊筆記和小說及各式小品遊戲製作
 keywords: 程式,小說,遊戲製作
 author: twelvefish
@@ -39,7 +39,7 @@ external_link:
   field: site # Apply to the whole site
   exclude: ''
 filename_case: 0
-render_drafts: false
+render_drafts: false #設置草稿出現 
 post_asset_folder: false
 relative_link: false
 future: true
