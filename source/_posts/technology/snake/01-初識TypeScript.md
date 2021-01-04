@@ -1,5 +1,5 @@
 ---
-title: 初識TypeScript
+title: 01-初識TypeScript
 date: 2021-01-02 22:35:33
 author: twelvefish
 img:
@@ -9,7 +9,7 @@ cover: false # 文章加到首頁輪播
 # password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
 toc: true # 文章內部目錄
 mathjax: false
-summary: 使用TypeScript撰寫自動化貪食蛇小遊戲                                                                 
+summary: 學習TypeScript和JavaScript的差異及型別                                                         
 categories: TypeScript大戰貪食蛇
 tags:
   - TypeScript
@@ -18,6 +18,7 @@ tags:
 > 
 > 夢想不付出行動，等於白扯
 
+此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲        
 
 本系列前半部參考影片[尚硅谷TypeScript快速上手](https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw)，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本
 
@@ -74,7 +75,6 @@ function fn(參數: 型別, 參數: 型別): 傳回型別{
     ...
 }
 ```
-- let、var 可自由選擇編譯後的JS是ES3還是ES6
 
 ## TypeScript 類別型態
 
@@ -93,7 +93,8 @@ function fn(參數: 型別, 參數: 型別): 傳回型別{
 |  tuple  |       [4,5]       |       TS新增類型，固定長度陣列 |
 |  enum   |    enum{A, B}     |       枚舉，TS中新增型別       |
 
-- 常數，可以藉由數值去決定變數的類型
+- 常數
+    - 可以藉由數值去決定變數的類型
 ```typescript
 let a: 10;
 // b被宣告只能給與male或是female的值，給於其他值會出錯，| or的意思
@@ -105,7 +106,8 @@ let c: boolean | string;
 c = true;
 c = 'hello';
 ```
-- any，為任意型別，當變數設置型別為any或是未設置型別，代表此變數關閉了TS類型檢測
+- any
+    - 為任意型別，當變數設置型別為any或是未設置型別，代表此變數關閉了TS類型檢測
 ```typescript
 // 不建議使用any型別
 let d;
@@ -114,7 +116,8 @@ d = 'hello';
 d = true;
 ```
 
-- unknown，表示未知型別的值，不能直接赋值给其他變數，可藉由判斷式將值賦予其餘變數
+- unknown
+    - 表示未知型別的值，不能直接赋值给其他變數，可藉由判斷式將值賦予其餘變數
 ```typescript
 let e: unknown;
 let s:string;
@@ -124,49 +127,53 @@ e = "hello";
 if(typeof e === "string"){
     s = e;
 }
-//類型斷言，可以用來告訴解析器變數的實際型別
+// 類型斷言，可以用來告訴解析器變數的實際型別
 s = e as string;
 s = <string>e;
 ```
 
-- void，用來表示空值，以function為例，表示回傳值為null或undefined
+- void
+    - 用來表示空值，以function為例，表示回傳值為null或undefined
 ```typescript
 function fn(): void{
 }
 ```
 
-- never，表示永遠不會有回傳值，使用時機為exception拋出例外
+- never
+    - 表示永遠不會有回傳值，使用時機為exception拋出例外
 ```typescript
 function fn2(): never{
     throw new Error('拋出例外！');
 }
 ```
 
-- object，表示為任意JS物件
+- object
+    - 表示為任意JS物件
 ```typescript
 // 通常不會直接給予object型別，因為在JS中萬物皆物件
 let a: object;
 a = {};
 a = function () {
 };
-//可以使用{}來指定物件必須包含哪些屬性，此案例表示必須要有name變數且string型別
+// 可以使用{}來指定物件必須包含哪些屬性，此案例表示必須要有name變數且string型別
 let b: {name: string};
 b = {name: '孫悟空'};
-//使用?表示此屬性是可選的
+// 使用?表示此屬性是可選的
 let b1: {age?: number};
 b1 = {age: 18};
 // [propName: string]: any，表示後面可填入任意個數、任意型別的參數
 // propName 純粹一個變數名稱，可替換為其他字串
 let c: {name: string, [propName: string]: any};
 c = {name: '豬八戒', age: 18, gender: '男'};
-//設置function的類別宣告：
-//語法：(變數:型別, 變數:型別 ...) => 回傳值
+// 設置function的類別宣告：
+// 語法：(變數:型別, 變數:型別 ...) => 回傳值
 let d: (a: number ,b: number)=>number;
 d = function (n1: number, n2: number): number{
     return 10;
 }
 ```
-- array陣列，有兩種宣告方式，型別[]、Array<型別>
+- array陣列
+    - 有兩種宣告方式，型別[]、Array<型別>
 ```typescript
 let e: string[];
 e = ['a', 'b', 'c'];
@@ -174,13 +181,15 @@ let g: Array<number>;
 g = [1, 2, 3];
 ```
 
-- tuple，固定長度的陣列，此例就只能有兩個數值且第一個必須為string，另一個為number
+- tuple
+    - 固定長度的陣列，此例就只能有兩個數值且第一個必須為string，另一個為number
 ```typescript
 let h: [string, number];
 h = ['hello', 123];
 ```
 
-- enum，枚舉，管理多個同系列的常數
+- enum
+    - 枚舉，管理多個同系列的常數
 ```typescript
 enum Gender{
     Male,
@@ -192,7 +201,8 @@ i = {
     gender: Gender.Male // 'male'
 }
 ```
-- 可以將類型另外取別名，讓多個變數共用類型，type XXX = 類別
+- 別名
+    - 可以將類型另外取別名，讓多個變數共用類型，type XXX = 類別
 ```typescript
 type myType = 1 | 2 | 3 | 4 | 5;
 let k: myType;
