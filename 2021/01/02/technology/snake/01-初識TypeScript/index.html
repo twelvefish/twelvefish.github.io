@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初識TypeScript, 程式,小說,遊戲製作">
+    <meta name="keywords" content="01-初識TypeScript, 程式,小說,遊戲製作">
     <meta name="description" content="
 《每日一句》Dreams without execution are nothing
 夢想不付出行動，等於白扯
 
-本系列前半部參考影片尚硅谷TypeScript快速上手，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本
-TypeScri">
+此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲        
+本系列前半部參考影片尚硅谷TypeScr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@ TypeScri">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>初識TypeScript | twelvefish</title>
+    <title>01-初識TypeScript | twelvefish</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -329,7 +329,7 @@ TypeScri">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        初識TypeScript
+                        01-初識TypeScript
                     </div>
                 </div>
             </div>
@@ -473,7 +473,7 @@ TypeScri">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-03
+                    2021-01-04
                 </div>
                 
 
@@ -507,6 +507,7 @@ TypeScri">
 <p><strong>《每日一句》</strong>Dreams without execution are nothing</p>
 <p>夢想不付出行動，等於白扯</p>
 </blockquote>
+<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲        </p>
 <p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
 <h2 id="TypeScript-介紹"><a href="#TypeScript-介紹" class="headerlink" title="TypeScript 介紹"></a>TypeScript 介紹</h2><ul>
 <li>TypeScript(TS) 為強型別的 javaScript(JS)，主要增加類型class的概念</li>
@@ -542,7 +543,6 @@ TypeScri">
   <span class="token operator">...</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li>let、var 可自由選擇編譯後的JS是ES3還是ES6</li>
 </ul>
 <h2 id="TypeScript-類別型態"><a href="#TypeScript-類別型態" class="headerlink" title="TypeScript 類別型態"></a>TypeScript 類別型態</h2><table>
 <thead>
@@ -614,8 +614,9 @@ TypeScri">
 </tr>
 </tbody></table>
 <ul>
-<li><p>常數，可以藉由數值去決定變數的類型</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> a<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<li><p>常數</p>
+<ul>
+<li>可以藉由數值去決定變數的類型<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> a<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// b被宣告只能給與male或是female的值，給於其他值會出錯，| or的意思</span>
 <span class="token keyword">let</span> b<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token operator">|</span> <span class="token string">"female"</span><span class="token punctuation">;</span>
 b <span class="token operator">=</span> <span class="token string">"male"</span><span class="token punctuation">;</span>
@@ -625,85 +626,114 @@ b <span class="token operator">=</span> <span class="token string">"female"</spa
 c <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
 c <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>any，為任意型別，當變數設置型別為any或是未設置型別，代表此變數關閉了TS類型檢測</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 不建議使用any型別</span>
+</ul>
+</li>
+<li><p>any</p>
+<ul>
+<li>為任意型別，當變數設置型別為any或是未設置型別，代表此變數關閉了TS類型檢測<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 不建議使用any型別</span>
 <span class="token keyword">let</span> d<span class="token punctuation">;</span>
 d <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 d <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
 d <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>unknown，表示未知型別的值，不能直接赋值给其他變數，可藉由判斷式將值賦予其餘變數</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> e<span class="token punctuation">:</span> unknown<span class="token punctuation">;</span>
+</ul>
+</li>
+<li><p>unknown</p>
+<ul>
+<li>表示未知型別的值，不能直接赋值给其他變數，可藉由判斷式將值賦予其餘變數<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> e<span class="token punctuation">:</span> unknown<span class="token punctuation">;</span>
 <span class="token keyword">let</span> s<span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">;</span>
 e <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 e <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 判斷e為string型別時，才將e賦值給s</span>
 <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> e <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  s <span class="token operator">=</span> e<span class="token punctuation">;</span>
+s <span class="token operator">=</span> e<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">//類型斷言，可以用來告訴解析器變數的實際型別</span>
+<span class="token comment" spellcheck="true">// 類型斷言，可以用來告訴解析器變數的實際型別</span>
 s <span class="token operator">=</span> e as <span class="token keyword">string</span><span class="token punctuation">;</span>
 s <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span>e<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>void，用來表示空值，以function為例，表示回傳值為null或undefined</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">{</span>
+</ul>
+</li>
+<li><p>void</p>
+<ul>
+<li>用來表示空值，以function為例，表示回傳值為null或undefined<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">{</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
-<li><p>never，表示永遠不會有回傳值，使用時機為exception拋出例外</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> never<span class="token punctuation">{</span>
-  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'拋出例外！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</ul>
+</li>
+<li><p>never</p>
+<ul>
+<li>表示永遠不會有回傳值，使用時機為exception拋出例外<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> never<span class="token punctuation">{</span>
+<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'拋出例外！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>object，表示為任意JS物件</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 通常不會直接給予object型別，因為在JS中萬物皆物件</span>
+</ul>
+</li>
+<li><p>object</p>
+<ul>
+<li>表示為任意JS物件<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 通常不會直接給予object型別，因為在JS中萬物皆物件</span>
 <span class="token keyword">let</span> a<span class="token punctuation">:</span> object<span class="token punctuation">;</span>
 a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 a <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//可以使用{}來指定物件必須包含哪些屬性，此案例表示必須要有name變數且string型別</span>
+<span class="token comment" spellcheck="true">// 可以使用{}來指定物件必須包含哪些屬性，此案例表示必須要有name變數且string型別</span>
 <span class="token keyword">let</span> b<span class="token punctuation">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 b <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'孫悟空'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//使用?表示此屬性是可選的</span>
+<span class="token comment" spellcheck="true">// 使用?表示此屬性是可選的</span>
 <span class="token keyword">let</span> b1<span class="token punctuation">:</span> <span class="token punctuation">{</span>age<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 b1 <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// [propName: string]: any，表示後面可填入任意個數、任意型別的參數</span>
 <span class="token comment" spellcheck="true">// propName 純粹一個變數名稱，可替換為其他字串</span>
 <span class="token keyword">let</span> c<span class="token punctuation">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>propName<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 c <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'豬八戒'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//設置function的類別宣告：</span>
-<span class="token comment" spellcheck="true">//語法：(變數:型別, 變數:型別 ...) => 回傳值</span>
+<span class="token comment" spellcheck="true">// 設置function的類別宣告：</span>
+<span class="token comment" spellcheck="true">// 語法：(變數:型別, 變數:型別 ...) => 回傳值</span>
 <span class="token keyword">let</span> d<span class="token punctuation">:</span> <span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token punctuation">,</span>b<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token keyword">number</span><span class="token punctuation">;</span>
 d <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>n1<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> n2<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>array陣列，有兩種宣告方式，型別[]、Array&lt;型別&gt;</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> e<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</ul>
+</li>
+<li><p>array陣列</p>
+<ul>
+<li>有兩種宣告方式，型別[]、Array&lt;型別&gt;<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> e<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 e <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> g<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span><span class="token keyword">number</span><span class="token operator">></span><span class="token punctuation">;</span>
 g <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>tuple，固定長度的陣列，此例就只能有兩個數值且第一個必須為string，另一個為number</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> h<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token keyword">string</span><span class="token punctuation">,</span> <span class="token keyword">number</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</ul>
+</li>
+<li><p>tuple</p>
+<ul>
+<li>固定長度的陣列，此例就只能有兩個數值且第一個必須為string，另一個為number<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> h<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token keyword">string</span><span class="token punctuation">,</span> <span class="token keyword">number</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 h <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
-<li><p>enum，枚舉，管理多個同系列的常數</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> Gender<span class="token punctuation">{</span>
-  Male<span class="token punctuation">,</span>
-  Female
+</ul>
+</li>
+<li><p>enum</p>
+<ul>
+<li>枚舉，管理多個同系列的常數<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> Gender<span class="token punctuation">{</span>
+Male<span class="token punctuation">,</span>
+Female
 <span class="token punctuation">}</span>
 <span class="token keyword">let</span> i<span class="token punctuation">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> Gender<span class="token punctuation">}</span><span class="token punctuation">;</span>
 i <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">'孫悟空'</span><span class="token punctuation">,</span>
-  gender<span class="token punctuation">:</span> Gender<span class="token punctuation">.</span>Male <span class="token comment" spellcheck="true">// 'male'</span>
+name<span class="token punctuation">:</span> <span class="token string">'孫悟空'</span><span class="token punctuation">,</span>
+gender<span class="token punctuation">:</span> Gender<span class="token punctuation">.</span>Male <span class="token comment" spellcheck="true">// 'male'</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>可以將類型另外取別名，讓多個變數共用類型，type XXX = 類別</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript">type myType <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">|</span> <span class="token number">2</span> <span class="token operator">|</span> <span class="token number">3</span> <span class="token operator">|</span> <span class="token number">4</span> <span class="token operator">|</span> <span class="token number">5</span><span class="token punctuation">;</span>
+</ul>
+</li>
+<li><p>別名</p>
+<ul>
+<li>可以將類型另外取別名，讓多個變數共用類型，type XXX = 類別<pre class="line-numbers language-typescript"><code class="language-typescript">type myType <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">|</span> <span class="token number">2</span> <span class="token operator">|</span> <span class="token number">3</span> <span class="token operator">|</span> <span class="token number">4</span> <span class="token operator">|</span> <span class="token number">5</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> k<span class="token punctuation">:</span> myType<span class="token punctuation">;</span>
 <span class="token keyword">let</span> l<span class="token punctuation">:</span> myType<span class="token punctuation">;</span>
 <span class="token keyword">let</span> m<span class="token punctuation">:</span> myType<span class="token punctuation">;</span>
 k <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
 </li>
 </ul>
 
@@ -731,7 +761,7 @@ k <span class="token operator">=</span> <span class="token number">2</span><span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://twelvefish.github.io/2021/01/02/technology/snake/%E5%88%9D%E8%AD%98TypeScript/">http://twelvefish.github.io/2021/01/02/technology/snake/%E5%88%9D%E8%AD%98TypeScript/</a>
+                    <a href="http://twelvefish.github.io/2021/01/02/technology/snake/01-%E5%88%9D%E8%AD%98TypeScript/">http://twelvefish.github.io/2021/01/02/technology/snake/01-%E5%88%9D%E8%AD%98TypeScript/</a>
                 </span>
             </div> -->
             <div class="reprint__notice">
@@ -811,30 +841,29 @@ k <span class="token operator">=</span> <span class="token number">2</span><span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m4" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m4" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/02/technology/snake/%E5%88%9D%E8%AD%98TypeScript/">
+                <a href="/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="初識TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="02-編譯TypeScript">
                         
-                        <span class="card-title">初識TypeScript</span>
+                        <span class="card-title">02-編譯TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用TypeScript撰寫自動化貪食蛇小遊戲
+                            學習編譯TypeScript的配置文件 tsconfig.json
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -847,7 +876,6 @@ k <span class="token operator">=</span> <span class="token number">2</span><span
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -865,19 +893,19 @@ k <span class="token operator">=</span> <span class="token number">2</span><span
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/01/02/technology/snake/%E5%88%9D%E8%AD%98TypeScript/">
+                <a href="/2021/01/02/technology/snake/01-%E5%88%9D%E8%AD%98TypeScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="初識TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="01-初識TypeScript">
                         
-                        <span class="card-title">初識TypeScript</span>
+                        <span class="card-title">01-初識TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用TypeScript撰寫自動化貪食蛇小遊戲
+                            學習TypeScript和JavaScript的差異及型別
                         
                     </div>
                     <div class="publish-info">
@@ -1036,12 +1064,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
@@ -1058,13 +1080,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         let i = 0;
         let tocHeading = 'toc-heading-';
         $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
+            $(this).attr('href', '#' + tocHeading + (i++));
         });
 
         // modify the heading title id to support Chinese.
         i = 0;
         $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
+            $(this).attr('id', tocHeading + (i++));
         });
 
         // Set scroll toc fixed.
@@ -1080,41 +1102,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             }
         });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
         
     });
 </script>
@@ -1138,7 +1125,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
-                class="white-color">21.1k</span>&nbsp;字
+                class="white-color">22.2k</span>&nbsp;字
             
             
             

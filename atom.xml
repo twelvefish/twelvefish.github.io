@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://twelvefish.github.io/"/>
-  <updated>2021-01-03T12:17:50.298Z</updated>
+  <updated>2021-01-04T15:16:33.550Z</updated>
   <id>http://twelvefish.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>初識TypeScript</title>
-    <link href="http://twelvefish.github.io/2021/01/02/technology/snake/%E5%88%9D%E8%AD%98TypeScript/"/>
-    <id>http://twelvefish.github.io/2021/01/02/technology/snake/%E5%88%9D%E8%AD%98TypeScript/</id>
-    <published>2021-01-02T14:35:33.000Z</published>
-    <updated>2021-01-03T12:17:50.298Z</updated>
+    <title>02-編譯TypeScript</title>
+    <link href="http://twelvefish.github.io/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/"/>
+    <id>http://twelvefish.github.io/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/</id>
+    <published>2021-01-04T12:03:15.000Z</published>
+    <updated>2021-01-04T15:16:33.550Z</updated>
     
     <summary type="html">
     
@@ -30,10 +30,35 @@
         
         
           &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Dreams without execution are nothing&lt;/p&gt;
-&lt;p&gt;夢想不付出行動，等於白扯&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本系列前半部參考影片&lt;a
+&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Just trust yourself,then you will know how to
+        
+      
+    
+    </summary>
+    
+    
+      <category term="TypeScript大戰貪食蛇" scheme="http://twelvefish.github.io/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/"/>
+    
+    
+      <category term="TypeScript" scheme="http://twelvefish.github.io/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01-初識TypeScript</title>
+    <link href="http://twelvefish.github.io/2021/01/02/technology/snake/01-%E5%88%9D%E8%AD%98TypeScript/"/>
+    <id>http://twelvefish.github.io/2021/01/02/technology/snake/01-%E5%88%9D%E8%AD%98TypeScript/</id>
+    <published>2021-01-02T14:35:33.000Z</published>
+    <updated>2021-01-04T15:17:57.937Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Dreams without execution are
         
       
     
