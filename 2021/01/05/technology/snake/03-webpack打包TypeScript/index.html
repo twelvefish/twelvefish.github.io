@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="02-編譯TypeScript, 程式,小說,遊戲製作">
+    <meta name="keywords" content="03-webpack打包TypeScript, 程式,小說,遊戲製作">
     <meta name="description" content="
-《每日一句》Just trust yourself,then you will know how to live
-只要相信自己，你就會懂得如何去生活
+《每日一句》No cross,no crown
+不經歷風雨，怎麼見彩虹
 
-此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲          ">
+此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>02-編譯TypeScript | twelvefish</title>
+    <title>03-webpack打包TypeScript | twelvefish</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -328,7 +328,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        02-編譯TypeScript
+                        03-webpack打包TypeScript
                     </div>
                 </div>
             </div>
@@ -465,28 +465,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>發布日期:&nbsp;&nbsp;
-                    2021-01-04
+                    2021-01-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-05
+                    2021-01-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
-                    1.1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 				
@@ -503,225 +503,211 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p><strong>《每日一句》</strong>Just trust yourself,then you will know how to live</p>
-<p>只要相信自己，你就會懂得如何去生活</p>
+<p><strong>《每日一句》</strong>No cross,no crown</p>
+<p>不經歷風雨，怎麼見彩虹</p>
 </blockquote>
 <p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                             </p>
 <p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
-<h2 id="自動編譯-TypeScript"><a href="#自動編譯-TypeScript" class="headerlink" title="自動編譯 TypeScript"></a>自動編譯 TypeScript</h2><ul>
-<li>編譯TS檔語法，tsc XXX.ts</li>
-<li>但是每次修改檔案都要重新編譯過於麻煩，可以在後面下 <font color=red>tsc XXX.ts -w</font>，自動編譯文件<br>PS.出現如下畫面，及此XXX.ts一旦修改後儲存，及自動編譯對應的XXX.js文件<br><img src="/images/technology/snake/11_w.gif" alt=""></li>
-<li>直接使用tsc 指令，可將當前目錄下的所有TS文件編譯成JS文件，但這個前提是必須在當前目錄下創建TS的配置文件tsconfig.json<br><img src="/images/technology/snake/12_tsc.gif" alt=""></li>
-<li>因此指令如果下 <font color=red>tsc -w</font>，則能對當前目錄下的所有ts檔進行全部自動編譯</li>
-</ul>
-<h2 id="tsconfig-json-配置說明"><a href="#tsconfig-json-配置說明" class="headerlink" title="tsconfig.json 配置說明"></a>tsconfig.json 配置說明</h2><ul>
-<li><p>tsconfig.json是TS編譯器的配置文件，TS編譯器可以根據tsconfig.json內容來對程式碼進行編譯</p>
-</li>
-<li><p>由於不一定在目錄下的所有檔案都要被編譯，因此可以使用include、exclude指令</p>
-</li>
-<li><p>include</p>
-<ul>
-<li>指定哪些TS文件需要被編譯<br>PS.** 表示任意目錄、* 表示任意文件<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-// 此範例表示在src、test資料夾下的TS檔案和更裡面的資料夾裡面的TS檔案都會被編譯
-<span class="token property">"include"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"./src/**/*"</span><span class="token punctuation">,</span> <span class="token string">"./test/**/*"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>exclude</p>
-<ul>
-<li>不需要被編譯的文件目錄<br>PS.exclude默認值：[“node_modules”, “bower_components”, “jspm_packages”]，此些本身默認不被編譯<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-// 此範例表示在src/hello資料夾下的TS檔案不需編譯
-<span class="token property">"exclude"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"./src/hello/*"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>extends</p>
-<ul>
-<li>繼承其餘配置文件<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-// 此範例表示配置文件會自動包含configs目錄下的base.json配置文件
-<span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"./configs/base.json"</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>此範例演示extends外部檔案base.json，而base.json裡面exclude hello.ts，因此運行之後，hello.js沒有被編譯出來<br><img src="/images/technology/snake/13_exclude.gif" alt=""></p>
-</li>
-<li><p>files</p>
-<ul>
-<li>和include類似，只是此需要將需編譯的TS文件一個個列出來<pre class="line-numbers language-json"><code class="language-json"><span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-  <span class="token string">"core.ts"</span><span class="token punctuation">,</span>
-  <span class="token string">"sys.ts"</span><span class="token punctuation">,</span>
-  <span class="token string">"types.ts"</span>
-<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>compilerOptions</p>
-<ul>
-<li><p>配置文件中較多子選項的編譯配置</p>
-</li>
-<li><p>target</p>
-<ul>
-<li>設置TS編譯為JS的版本</li>
-<li>ES3（默認）、ES5、ES6/ES2015、ES7/ES2016、ES2017、ES2018、ES2019、ES2020、ESNext<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"ES6"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>lib</p>
-<ul>
-<li>設置撰寫程式時，所包含的library，用於關鍵字的提示文字，默認有基本的，不需特別寫</li>
-<li>ES5、ES6/ES2015、ES7/ES2016、ES2017、ES2018、ES2019、ES2020、ESNext、DOM、WebWorker、ScriptHost …<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ES6"</span><span class="token punctuation">,</span> <span class="token string">"DOM"</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>module</p>
-<ul>
-<li>設置編譯後的JS使用的模塊化規範</li>
-<li>CommonJS、UMD、AMD、System、ES2020、ESNext、None<pre class="line-numbers language-typescript"><code class="language-typescript">  <span class="token string">"compilerOptions"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token string">"module"</span><span class="token punctuation">:</span> <span class="token string">"CommonJS"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>outDir</p>
-<ul>
-<li>編譯後JS文件所在目錄，通常將編譯後的JS檔存放於dist目錄下<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"dist"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>outFile</p>
-<ul>
-<li>將所有TS文件編譯成一個JS文件，用不太到<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"outFile"</span><span class="token operator">:</span> <span class="token string">"dist/app.js"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<img src="/images/technology/snake/14_outDir.gif" alt=""></li>
-</ul>
-</li>
-<li><p>allowJs</p>
-<ul>
-<li>是否對JS文件進行編譯，默認是false不編譯<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"allowJs"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>checkJs</p>
-<ul>
-<li>檢查JS文件是否符合與法規範，默認是false不檢查<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"checkJs"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>removeComments</p>
-<ul>
-<li>編譯為JS後，是否移除TS的註釋，默認是false不移除<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"removeComments"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>noEmit</p>
-<ul>
-<li>是否不生成編譯後的JS文件，通常用來只想檢查語法但不想用TS編譯的JS文件，默認是false要生成<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"noEmit"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>noEmitOnError</p>
-<ul>
-<li>TS程式碼有錯誤時，是否不生成編譯後的JS文件，默認是false就算錯誤也要生成<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"noEmitOnError"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>strict</p>
-<ul>
-<li>所有嚴格檢查的總開關，設為true，則將所有嚴格檢查打開，建議設為true<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"strict"</span><span class="token operator">:</span> <span class="token string">"true"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>alwaysStrict</p>
-<ul>
-<li>設置編譯後的JS文件是否使用嚴格模式，默認是false不使用，但如果TS有使用export語法，則自動使用嚴格模式<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"alwaysStrict"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>noImplicitAny</p>
-<ul>
-<li>是否允許出現隱式的any類型，默認是false可出現<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"noImplicitAny"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>noImplicitThis</p>
-<ul>
-<li>是否允許出現不明確類型的this，默認是false可出現<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"noImplicitThis"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>strictNullChecks</p>
-<ul>
-<li>嚴格檢查變數是否可能為null，默認是false，可能出現false，但不報錯<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"strictNullChecks"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// box1有可能為null，而導致後面程式碼出錯</span>
-<span class="token keyword">let</span> box1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'box1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-box1<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 可使用判斷式來避免出錯</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span>box1 <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  box1<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 或是用?表示</span>
-box1<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+<h2 id="生成-package-json"><a href="#生成-package-json" class="headerlink" title="生成 package.json"></a>生成 package.json</h2><ul>
+<li>實際工作中，都是使用整合工具進行打包編譯，在此介紹如何使用webpacke進行打包編譯</li>
+<li>使用webpack，需要使用npm去管理我們的套件，因此要先生成package.json，打開cmd，輸入<font color=red>npm init -y</font><br><img src="/images/technology/snake/15_npm_init.PNG" alt=""></li>
+<li>安裝使用webpack所需要的套件<ul>
+<li><font color=red>npm i --save-dev webpack webpack-cli typescript ts-loader</font></li>
+<li><font color=red>npm i --save-dev html-webpack-plugin clean-webpack-plugin</font></li>
+<li><font color=red>npm i --save-dev webpack-dev-server</font></li>
+<li>--save-dev : 開發模式</li>
+<li>webpack、webpack-cli : 打包工具、命令行工具</li>
+<li>ts-loader : 將 webpack、typescript 整合</li>
+<li>html-webpack-plugin : 打包時自動生成html文件</li>
+<li>clean-webpack-plugin : 先將舊有檔案刪除，確保編譯後的檔案都是最新版本的</li>
+<li>webpack-dev-server : 設置webpack內建服務器，當程式碼有修改時，修改內容會藉由服務器隨時顯示在html頁面上</li>
+<li>會看到剛剛所安裝的套件都出現在package.json中，由於是開發模式，會出現在devDependencies底下<br><img src="/images/technology/snake/16_npm_package.PNG" alt=""></li>
 </ul>
 </li>
 </ul>
+<h2 id="webpack配置文件"><a href="#webpack配置文件" class="headerlink" title="webpack配置文件"></a>webpack配置文件</h2><ul>
+<li><p>編寫webpack配置文件，webpack.config.js</p>
 </li>
-</ul>
-<h2 id="整檔tsconfig-json配置"><a href="#整檔tsconfig-json配置" class="headerlink" title="整檔tsconfig.json配置"></a>整檔tsconfig.json配置</h2><ul>
-<li>可以直接創建tsconfig.json檔案將以下json字串複製貼上</li>
-<li>或是打開cmd直接輸入<font color=red>tsc --init</font>，自動初始化tsconfig.json文件</li>
-</ul>
+<li><p>引入套件 HTMLWebpackPlugin，由webpack直接幫我們生成html文件</p>
+</li>
+<li><p>引入套件 CleanWebpackPlugin，確保編譯後的檔案是最新版本</p>
+</li>
+<li><p>webpack後生成的JS，如果不想使用箭頭函數，要將arrowFunction設為false</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入path package</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 引入html package</span>
+<span class="token keyword">const</span> HTMLWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 引入clean package</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> CleanWebpackPlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// webpack中的所有配置都應該寫在module.exports中</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 指定入口文件，通常放在src資料夾下</span>
+  entry<span class="token punctuation">:</span> <span class="token string">"./src/index.ts"</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 指定打包文件所在目錄</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 指定打包文件的路徑，通常存放在dist資料夾下 </span>
+      <span class="token comment" spellcheck="true">// path:"./dist"</span>
+      path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// 打包後文件的名字</span>
+      filename<span class="token punctuation">:</span> <span class="token string">"bundle.js"</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// 告訴webpack打包後的js文件不使用箭頭符號</span>
+      environment<span class="token punctuation">:</span><span class="token punctuation">{</span>
+          arrowFunction<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 指定webpack打包時要使用的模組</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 指定要加載的規則，因為可能打包的各文件類型有ts、img、sas.....</span>
+      rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+              <span class="token comment" spellcheck="true">// test表示對哪些文件規則生效</span>
+              test<span class="token punctuation">:</span> <span class="token regex">/\.ts$/</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//匹配所有ts結尾的文件</span>
+              <span class="token comment" spellcheck="true">// 要使用的loader</span>
+              use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                  <span class="token string">'ts-loader'</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token comment" spellcheck="true">// 要排除的文件</span>
+              exclude<span class="token punctuation">:</span> <span class="token regex">/node-modules/</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 配置Webpack插建</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// 自動生成html文件</span>
+      <span class="token keyword">new</span> <span class="token class-name">HTMLWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          title<span class="token punctuation">:</span> <span class="token string">"自定義html文件title"</span><span class="token punctuation">,</span>
+          <span class="token comment" spellcheck="true">// 指定生成出來的html都依照對應的模板</span>
+          template<span class="token punctuation">:</span> <span class="token string">"./src/index.html"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 設置引入模組的檔案類型</span>
+  resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>光配置webpack.config.js之外，還需要配置tsconfig.json，用於對ts文件進行編譯，參考上一章節</p>
+</li>
+<li><p>可藉由在package.json中scripts語法配置dev命令直接執行webpack  --mode development (開發模式) ，輸入指令<font color=red>npm run dev</font></p>
 <pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/**/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/hello/**/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"es6"</span><span class="token punctuation">,</span>
-        <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"es6"</span><span class="token punctuation">,</span>
-        <span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"./dist"</span><span class="token punctuation">,</span>
-        <span class="token property">"allowJs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">"checkJs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">"removeComments"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">"noEmit"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">"noEmitOnError"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">"strict"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"webpack_test"</span><span class="token punctuation">,</span>
+<span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+<span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span>
+<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
+  <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack  --mode development"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+<span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
+<span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"ts-loader"</span><span class="token operator">:</span> <span class="token string">"^8.0.13"</span><span class="token punctuation">,</span>
+  <span class="token property">"typescript"</span><span class="token operator">:</span> <span class="token string">"^4.1.3"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^5.11.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack-cli"</span><span class="token operator">:</span> <span class="token string">"^4.3.1"</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>由於我們設定打包後的文件設置在dist資料夾下，因此出現dist資料夾和bundle.js，及成功<br><img src="/images/technology/snake/17_wepackbuild.gif" alt=""></p>
+</li>
+<li><p>而如果有設定套用html模板，也會一起生成，並且自動幫你引入打包後文件的名字bundle.js<br><img src="/images/technology/snake/18_htmltemplate.PNG" alt=""></p>
+</li>
+<li><p>可藉由在package.json中scripts語法配置start命令，<font color=red>npm start</font>運行webpack serve</p>
+</li>
+<li><p>webpack serve為webpack內建服務器，當程式碼有修改時，修改內容會藉由服務器隨時顯示在html頁面上</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  ...略...
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
+  <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack  --mode development"</span><span class="token punctuation">,</span>
+  <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"webpack serve --open chrome.exe"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  ...略...
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/technology/snake/19_webpack_servr.PNG" alt=""></p>
+</li>
+</ul>
+<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><ul>
+<li><p>主要用於生成不同JS的版本，以利於兼容不同版本的瀏覽器，ex: let 是ES6的語法，經過babel轉換為var</p>
+</li>
+<li><p>安裝套件：</p>
+<ul>
+<li><font color=red>npm i --save -dev @babel/core @babel/preset-env babel-loader core-js</font><ul>
+<li>@babel/core<ul>
+<li>babel的核心工具</li>
+</ul>
+</li>
+<li>@babel/preset-env<ul>
+<li>babel的預定義環境，兼容不同瀏覽器</li>
+</ul>
+</li>
+<li>@babel-loader<ul>
+<li>babel在webpack中的加載器</li>
+</ul>
+</li>
+<li>core-js<ul>
+<li>core-js用來使舊版本的瀏覽器支援新版ES語法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在webpack.config.js配置babel-loader，先使用ts-loader把TS代碼轉成JS，再用babel-loader把新版JS轉換成舊版JS</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token operator">...</span>略<span class="token operator">...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 指定要加載的規則，因為可能打包的各文件類型有ts、img、sas.....</span>
+      rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+              <span class="token comment" spellcheck="true">// test表示對哪些文件規則生效</span>
+              test<span class="token punctuation">:</span> <span class="token regex">/\.ts$/</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//匹配所有ts結尾的文件</span>
+              <span class="token comment" spellcheck="true">// 要使用的loader</span>
+              use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                  <span class="token comment" spellcheck="true">// 配置babel</span>
+                  <span class="token punctuation">{</span>
+                      <span class="token comment" spellcheck="true">// 指定加載器</span>
+                      loader<span class="token punctuation">:</span><span class="token string">"babel-loader"</span><span class="token punctuation">,</span>
+                      <span class="token comment" spellcheck="true">// 設置babel</span>
+                      options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                          <span class="token comment" spellcheck="true">// 設置預定義環境</span>
+                          presets<span class="token punctuation">:</span><span class="token punctuation">[</span>
+                              <span class="token punctuation">[</span>
+                                  <span class="token comment" spellcheck="true">// 指定環境插件</span>
+                                  <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span>
+                                  <span class="token comment" spellcheck="true">// 配置信息</span>
+                                  <span class="token punctuation">{</span>
+                                      <span class="token comment" spellcheck="true">// 要兼容的目標瀏覽器版本</span>
+                                      targets<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                                          <span class="token string">"chrome"</span><span class="token punctuation">:</span><span class="token string">"87"</span><span class="token punctuation">,</span>
+                                          <span class="token string">"ie"</span><span class="token punctuation">:</span><span class="token string">"11"</span>
+                                      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                                      <span class="token comment" spellcheck="true">// 指定corejs的版本</span>
+                                      <span class="token string">"corejs"</span><span class="token punctuation">:</span><span class="token string">"3"</span><span class="token punctuation">,</span>
+                                      <span class="token comment" spellcheck="true">// 使用corejs的方式 "usage" 表示按需加載，有使用到的才加載</span>
+                                      <span class="token string">"useBuiltIns"</span><span class="token punctuation">:</span><span class="token string">"usage"</span>
+                                  <span class="token punctuation">}</span>
+                              <span class="token punctuation">]</span>
+                          <span class="token punctuation">]</span>
+                      <span class="token punctuation">}</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token string">'ts-loader'</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token comment" spellcheck="true">// 要排除的文件</span>
+              exclude<span class="token punctuation">:</span> <span class="token regex">/node-modules/</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>略<span class="token operator">...</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>配置規則中如果targets寫兼容於”chrome”:”87”，那轉換出來後的JS依舊是ES6，因為chrome87版本支援ES6，而如果額外有寫”ie”:”11”則因為IE11只支援ES3，就會轉換為ES3語法<br><img src="/images/technology/snake/20_babelES6.PNG" alt=""><br><img src="/images/technology/snake/21_babelES3.PNG" alt=""></p>
+</li>
+<li><p>至於corejs則是用來處理些不兼容的語法，ex: Promise，將Promise語法從ES6轉換為IE11可以支援的版本代碼</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -747,7 +733,7 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://twelvefish.github.io/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/">http://twelvefish.github.io/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/</a>
+                    <a href="http://twelvefish.github.io/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/">http://twelvefish.github.io/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/</a>
                 </span>
             </div> -->
             <div class="reprint__notice">
@@ -827,9 +813,10 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m4" data-aos="fade-up">
+        <div class="article col s12 m4" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/">
                     <div class="card-image">
@@ -847,9 +834,9 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -862,6 +849,7 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -879,24 +867,24 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/">
+                <a href="/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="02-編譯TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="03-webpack打包TypeScript">
                         
-                        <span class="card-title">02-編譯TypeScript</span>
+                        <span class="card-title">03-webpack打包TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            學習編譯TypeScript的配置文件 tsconfig.json
+                            使用webpack工具打包TypeScript
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-05
                             </span>
                         <span class="publish-author">
                             
@@ -929,24 +917,24 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/02/technology/snake/01-%E5%88%9D%E8%AD%98TypeScript/">
+                <a href="/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="01-初識TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="02-編譯TypeScript">
                         
-                        <span class="card-title">01-初識TypeScript</span>
+                        <span class="card-title">02-編譯TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            學習TypeScript和JavaScript的差異及型別
+                            學習編譯TypeScript的配置文件 tsconfig.json
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
                             </span>
                         <span class="publish-author">
                             
