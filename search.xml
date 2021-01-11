@@ -1,11 +1,415 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>04-物件導向觀念引入TypeScript</title>
+    <url>/2021/01/09/technology/snake/04-%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E8%A7%80%E5%BF%B5%E5%BC%95%E5%85%A5TypeScript/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>《每日一句》</strong>if you want something done,do it yourself.</p>
+<p>靠誰都不如靠自己。</p>
+</blockquote>
+<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                             </p>
+<p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
+<h2 id="物件導向簡介"><a href="#物件導向簡介" class="headerlink" title="物件導向簡介"></a>物件導向簡介</h2><ul>
+<li><p>物件導向是程式設計中一個重要思想，簡單而言就是程式中所有的操作都是需要透過物件來完成。</p>
+<ul>
+<li>操作瀏覽器要使用window物件</li>
+<li>操作網頁要使用document物件</li>
+<li>操作控制台要使用console物件</li>
+</ul>
+</li>
+<li><p>所以物件到底是什麽呢？程式的本質就是對現實事物的抽象，現實事物是具體的，而程式是抽象的，現實中的一個人、一條狗、一把槍、一顆子彈等等所有的事物，在抽象的程式中就變成了一個個物件。</p>
+</li>
+<li><p>程式中所有的物件都被分成了兩個部分，數據和功能，以人為例，人的姓名、性別、年齡、身高、體重等屬於數據，人可以說話、走路、吃飯、睡覺這些屬於人的功能。數據在物件中被稱為<font color=red>屬性</font>，而功能就被稱為<font color=red>方法</font>。所以簡而言之，在程式中<font color=red>萬物皆物件</font>。</p>
+</li>
+</ul>
+<h2 id="class-類"><a href="#class-類" class="headerlink" title="class 類"></a>class 類</h2><ul>
+<li>在操作物件之前，要先擁有他，要如何擁有它呢? 必須先創建他，要創建物件必須要先定義類(class)</li>
+<li>類(class)可以理解為物件的模型，根據class創建指定的物件，不同的類可以用來創建不同的物件。<ul>
+<li>通過Person類來創建人的物件</li>
+<li>通過Dog類創建狗的物件</li>
+<li>通過Car類來創建汽車的對象</li>
+</ul>
+</li>
+<li>物件主要包含了兩個部分：<ul>
+<li>屬性</li>
+<li>方法</li>
+</ul>
+</li>
+<li>使用static開頭的屬性是靜態屬性（類屬性），無須創建物件，可以直接通過類去訪問<ul>
+<li>static age: number = 18;</li>
+<li>Person.age</li>
+</ul>
+</li>
+<li>使用readonly開頭的屬性表示為只能讀取的屬性無法修改<ul>
+<li>readonly sex: string = “男”;     <pre class="line-numbers language-typescript"><code class="language-typescript">  <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// readonly name: string = '大帥哥';</span>
+      name <span class="token operator">=</span> <span class="token string">'大帥哥'</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// static開頭的屬性是靜態屬性（類屬性），可以直接通過類去訪問</span>
+      <span class="token keyword">static</span> readonly age<span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// readonly開頭的屬性表示為只能讀取的屬性無法修改</span>
+      readonly sex<span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token operator">=</span> <span class="token string">"男"</span><span class="token punctuation">;</span>           
+      <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello 大家好！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> per <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>per<span class="token punctuation">.</span>name<span class="token punctuation">,</span> per<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Person<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  per<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="constructor-構造器"><a href="#constructor-構造器" class="headerlink" title="constructor 構造器"></a>constructor 構造器</h2><ul>
+<li>由於一個class不會只創建一個物件，因此可以使用Constructor來創建不同屬性的物件</li>
+<li>new XXX()意味著Constructor 功能被調用</li>
+<li>創建物件時，可以將參數藉由Constructor傳進去，在方法中可以通過this來表示當前調用方法的物件<ul>
+<li>const p = new Person(‘大帥哥’, 18);</li>
+<li>const p1 = new Person(‘大美女’, 17);<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 構造器會在物件創建時調用</span>
+<span class="token keyword">class</span> 類名 <span class="token punctuation">{</span>
+  屬性名<span class="token punctuation">:</span> 類別<span class="token punctuation">;</span>        
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>參數<span class="token punctuation">:</span> 類別<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 在物件方法中，this就表示當前要新建的物件</span>
+      <span class="token comment" spellcheck="true">// 可以通過this向新建的物件中添加屬性</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>屬姓名 <span class="token operator">=</span> 參數<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>        
+  <span class="token function">方法名</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 在方法中可以通過this來表示當前調用方法的物件</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>屬性名<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 將參數藉由Constructor傳進去，賦予屬性</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`大家好，我是</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 創建物件時，在將參數藉由Constructor傳進去</span>
+<span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'大帥哥'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="extends-繼承"><a href="#extends-繼承" class="headerlink" title="extends 繼承"></a>extends 繼承</h2><ul>
+<li><p>通過繼承可以將其他class中的屬性和方法引入到當前class中</p>
+</li>
+<li><p>通過繼承可以在不修改類的情況下完成對類的擴展</p>
+</li>
+<li><p>繼承的關鍵字 extends，class 子類別 extends 父類別</p>
+</li>
+<li><p>重寫</p>
+<ul>
+<li>發生繼承時，如果子類中的方法會替換掉父類中的同名方法，這就稱為方法的重寫</li>
+</ul>
+</li>
+<li><p>Dog extends Animal</p>
+<ul>
+<li><p>此時，Animal被稱為父類，Dog被稱為子類</p>
+</li>
+<li><p>使用繼承後，子類將會擁有父類所有的方法和屬性</p>
+</li>
+<li><p>通過繼承可以將多個類中共有的代碼寫在一個父類中，這樣只需要寫一次即可讓所有的子類都同時擁有父類中的屬性和方法</p>
+</li>
+<li><p>如果希望在子類中添加一些父類中沒有的屬性或方法直接加就行</p>
+</li>
+<li><p>如果在子類中添加了和父類相同的方法，則子類方法會覆蓋掉父類的方法，這種子類覆蓋掉父類方法的形式，我們稱為方法重寫</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 父類別，將相同的屬性、方法抽出來放在父類別中 </span>
+<span class="token keyword">class</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'動物在叫~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 子類別繼承父類別，屬性、方法皆會被繼承</span>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 可以額外增加子類別沒有的方法</span>
+  <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">在跑~~~`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">// 可以重寫父類別的方法</span>
+  <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'汪汪汪汪！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">// 定義一個表示貓的類</span>
+  <span class="token comment" spellcheck="true">// 使Cat類繼承Animal類</span>
+  <span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+      <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'喵喵喵喵！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 調用使用到的類別</span>
+<span class="token keyword">const</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">'小白'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token string">'咪咪'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>dog<span class="token punctuation">)</span><span class="token punctuation">;</span>
+dog<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+dog<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>cat<span class="token punctuation">)</span><span class="token punctuation">;</span>
+cat<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="super-關鍵字"><a href="#super-關鍵字" class="headerlink" title="super 關鍵字"></a>super 關鍵字</h2><ul>
+<li>在類的方法中 super就表示當前類的父類，可以調用父類別的方法，也可以額外增加方法裡的功能</li>
+<li>如果在子類中寫了構造器，在子類構造器中必須對父類的構造器進行調用，反之，如果子類別沒寫構造器，則會自動繼承父類別的<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token operator">...</span>略<span class="token operator">...</span>
+<span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 如果在子類中寫了構造函數，在子類構造函數中必須對父類的構造函數進行調用</span>
+  <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 調用父類的構造函數</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 在類的方法中 super就表示當前類的父類</span>
+  <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">...</span>略<span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="abstract-抽象"><a href="#abstract-抽象" class="headerlink" title="abstract 抽象"></a>abstract 抽象</h2><ul>
+<li><p>主要用來禁止一個類被用來創建物件，專門用在被繼承的class上</p>
+</li>
+<li><p>以 abstract開頭的類是抽象類，抽象類和其他類區別不大，只是不能用來創建對象</p>
+</li>
+<li><p>抽象類添加抽象方法，使用 abstract開頭，沒有方法體</p>
+</li>
+<li><p>在抽象類中還有抽象方法，抽象方法只能定義在抽象類中，子類必須對抽象方法進行實現，否則會出錯</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 抽象Animal class</span>
+abstract <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 定義一個抽象方法</span>
+  <span class="token comment" spellcheck="true">// 抽象方法使用 abstract開頭，沒有方法體</span>
+  <span class="token comment" spellcheck="true">// 抽象方法只能定義在抽象類中，子類必須對抽象方法進行重寫</span>
+  abstract <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+  <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'汪汪汪汪！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+  <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'喵喵喵喵！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="interface-接口"><a href="#interface-接口" class="headerlink" title="interface 接口"></a>interface 接口</h2><ul>
+<li>interface 主要是對於class 去定義規範</li>
+<li>interface 用來定義一個類的結構，用來定義一個類中應該包含哪些屬性和方法，同時接口也可以當成類型聲明去使用<ul>
+<li>type 和 interface 都可以拿來當作一個class的類別宣告</li>
+<li>type XXX 只能寫一次，interface XXX 可以合併多組屬性<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 描述一個物件的類型</span>
+type myType <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">myInterface</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">myInterface</span> <span class="token punctuation">{</span>
+  gender<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 調用interface 的class時，必須寫上所有屬性</span>
+<span class="token keyword">const</span> obj<span class="token punctuation">:</span> myInterface <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'sss'</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> <span class="token number">111</span><span class="token punctuation">,</span>
+  gender<span class="token punctuation">:</span> <span class="token string">'男'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>接口只定義對象的結構，而不考慮實際值</li>
+<li>在接口中所有的方法都是抽象方法，而接口本身就是抽象類</li>
+<li>定義類時，可以使類去實現一個接口，實現接口就是使類滿足接口的要求<ul>
+<li>class去實現接口，必須實現接口裡面定義的屬性和方法</li>
+<li>class 類 implements 接口<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">myInter</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// class去實現接口，必須實現接口裡面定義的屬性和方法</span>
+<span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token keyword">implements</span> <span class="token class-name">myInter</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'大家好~~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="封裝"><a href="#封裝" class="headerlink" title="封裝"></a>封裝</h2><ul>
+<li><p>上述範例，屬性或方法可以任意的被修改，如果可以任意被修改將會導致物件中的參數和方法變得非常不安全</p>
+</li>
+<li><p>TS可以在屬性和方法前添加修飾符</p>
+<ul>
+<li>public 修飾的屬性可以在任意位置操作，沒寫修飾符 public 為默認值</li>
+<li>private 私有屬性，私有屬性只能在類內部進行操作，可以通過在類中添加get、set方法使得私有屬性可以被外部訪問</li>
+<li>protected 受包含的屬性，只能在當前類和當前類的子類中操作</li>
+</ul>
+</li>
+<li><p>屬性的存取器</p>
+<ul>
+<li><p>getter方法用來讀取屬性</p>
+</li>
+<li><p>setter方法用來設置屬性，利用set來控制傳入的參數是否合理 </p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">// private私有參數，外部類無法直接調用此屬性參數</span>
+<span class="token keyword">private</span> _name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> _age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+
+<span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    
+<span class="token comment" spellcheck="true">// 定義方法，用來設置name屬性</span>
+<span class="token function">setName</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_name <span class="token operator">=</span> value<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    
+<span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    
+<span class="token function">setAge</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 判斷年齡是否合法</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_age <span class="token operator">=</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 給name屬性賦值</span>
+per<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">'大美女'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>per<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>但其實在TS中有更簡單的方法設置get、set</p>
+<ul>
+<li><p>利用get XXX、set XXX，而變數呼叫時只需要<font color=red>物件變數.XXX</font>，系統自動判斷是呼叫get還是set</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+<span class="token keyword">private</span> _name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> _age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+
+<span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// TS中設置getter方法的方式</span>
+<span class="token keyword">get</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'get name()執行了！！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">set</span> <span class="token function">name</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_name <span class="token operator">=</span> value<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">get</span> <span class="token function">age</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">set</span> <span class="token function">age</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_age <span class="token operator">=</span> value
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> per <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'大帥哥'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// per.name 等同於去調用 set name的方法，給name屬性賦值</span>
+per<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'大美女'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 同理調用 set age的方法</span>
+per<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">33</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 調用get name方法，去讀取name屬性的值</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>per<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>可以將屬性定義於構造器中，省去些程式碼</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 這兩個class的例子功能相同</span>
+<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span>
+
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 可以將屬性修是符定義於構造器中</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">public</span> name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> <span class="token keyword">public</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>protected 為受包含的屬性，只能在當前類和當前類的子類中操作，否則會報錯<br><img src="/images/technology/snake/22_protected.PNG" alt=""></p>
+</li>
+</ul>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ul>
+<li>在定義函數或是類時，如果遇到類型不明確就可以使用泛型，如果使用any反而會關閉TS的類型檢查</li>
+<li>泛型可以用大寫英文字母代替，設置泛型後即可在函數中使用此大寫英文字母來表示該類型<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 泛型</span>
+<span class="token keyword">function</span> fn<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T<span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 可以直接調用具有泛型的函數</span>
+<span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 不指定泛型，TS可以自動對類型進行推斷</span>
+<span class="token keyword">let</span> result2 <span class="token operator">=</span> fn<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 指定泛型</span>
+<span class="token comment" spellcheck="true">// 泛型可以同時指定多個參數</span>
+<span class="token keyword">function</span> fn2<span class="token operator">&lt;</span>T<span class="token punctuation">,</span> K<span class="token operator">></span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> T<span class="token punctuation">,</span> b<span class="token punctuation">:</span> K<span class="token punctuation">)</span><span class="token punctuation">:</span>T<span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+fn2<span class="token operator">&lt;</span><span class="token keyword">number</span><span class="token punctuation">,</span> <span class="token keyword">string</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 宣告接口</span>
+<span class="token keyword">interface</span>  <span class="token class-name">Inter</span><span class="token punctuation">{</span>
+  length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// T extends Inter 表示泛型T必須是Inter實現類（子類）</span>
+<span class="token keyword">function</span> fn3<span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Inter</span><span class="token operator">></span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 類中同樣可以使用泛型</span>
+<span class="token keyword">class</span> <span class="token class-name">MyClass</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> T<span class="token punctuation">;</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> mc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyClass</span><span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">'大帥哥'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TypeScript大戰貪食蛇</category>
+      </categories>
+      <tags>
+        <tag>TypeScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>03-webpack打包TypeScript</title>
     <url>/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/</url>
     <content><![CDATA[<blockquote>
-<p><strong>《每日一句》</strong>No cross,no crown</p>
-<p>不經歷風雨，怎麼見彩虹</p>
+<p><strong>《每日一句》</strong>No cross,no crown.</p>
+<p>不經歷風雨，怎麼見彩虹。</p>
 </blockquote>
 <p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                             </p>
 <p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
@@ -221,8 +625,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <title>02-編譯TypeScript</title>
     <url>/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/</url>
     <content><![CDATA[<blockquote>
-<p><strong>《每日一句》</strong>Just trust yourself,then you will know how to live</p>
-<p>只要相信自己，你就會懂得如何去生活</p>
+<p><strong>《每日一句》</strong>Just trust yourself,then you will know how to live.</p>
+<p>只要相信自己，你就會懂得如何去生活。</p>
 </blockquote>
 <p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                             </p>
 <p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
@@ -452,8 +856,8 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
     <title>01-初識TypeScript</title>
     <url>/2021/01/02/technology/snake/01-%E5%88%9D%E8%AD%98TypeScript/</url>
     <content><![CDATA[<blockquote>
-<p><strong>《每日一句》</strong>Dreams without execution are nothing</p>
-<p>夢想不付出行動，等於白扯</p>
+<p><strong>《每日一句》</strong>Dreams without execution are nothing.</p>
+<p>夢想不付出行動，等於白扯。</p>
 </blockquote>
 <p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲        </p>
 <p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
@@ -489,7 +893,11 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
 <span class="token keyword">let</span> 變數<span class="token punctuation">:</span> 型別 <span class="token operator">=</span> 值<span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span>參數<span class="token punctuation">:</span> 型別<span class="token punctuation">,</span> 參數<span class="token punctuation">:</span> 型別<span class="token punctuation">)</span><span class="token punctuation">:</span> 傳回型別<span class="token punctuation">{</span>
   <span class="token operator">...</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span>
+type myType <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h2 id="TypeScript-類別型態"><a href="#TypeScript-類別型態" class="headerlink" title="TypeScript 類別型態"></a>TypeScript 類別型態</h2><table>
