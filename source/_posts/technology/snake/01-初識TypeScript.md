@@ -14,9 +14,9 @@ categories: TypeScript大戰貪食蛇
 tags:
   - TypeScript
 ---
-> **《每日一句》**Dreams without execution are nothing
+> **《每日一句》**Dreams without execution are nothing.
 > 
-> 夢想不付出行動，等於白扯
+> 夢想不付出行動，等於白扯。
 
 此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲        
 
@@ -73,6 +73,10 @@ let 變數: 型別;
 let 變數: 型別 = 值;
 function fn(參數: 型別, 參數: 型別): 傳回型別{
     ...
+}
+type myType = {
+    name: string,
+    age: number
 }
 ```
 

@@ -1,5 +1,22 @@
 {
+    "include": ["./src/**/*"],
+    "exclude": ["./src/hello/**/*"],
     "compilerOptions": {
-        "outDir": "dist"
+        "target": "es6",
+        "module": "es6",
+    //  "lib": ["es6", "dom"],
+        "outDir": "./dist",
+    //  "outFile": "./dist/app.js"
+        "allowJs": true,
+        "checkJs": true,
+        "removeComments": true,
+        "noEmit": false,
+        "noEmitOnError": true,
+        "strict": true,
+    //  由strict統一控制
+    //  "alwaysStrict": true, 
+    //  "noImplicitAny": true,
+    //  "noImplicitThis": true,
+    //  "strictNullChecks": true
     }
 }

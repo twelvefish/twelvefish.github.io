@@ -14,9 +14,9 @@ categories: TypeScript大戰貪食蛇
 tags:
   - TypeScript
 ---
-> **《每日一句》**Just trust yourself,then you will know how to live
+> **《每日一句》**Just trust yourself,then you will know how to live.
 > 
-> 只要相信自己，你就會懂得如何去生活
+> 只要相信自己，你就會懂得如何去生活。
 
 此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                             
 
