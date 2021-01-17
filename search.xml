@@ -1,6 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1-3、非對稱式加密</title>
+    <url>/2021/01/17/technology/informationSecurity/1-3%E3%80%81%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>《每日一句》</strong>Everyone has his own way of finding happiness.</p>
+<p>每個人都有各自找到幸福的方式。</p>
+</blockquote>
+<h2 id="非對稱式加密"><a href="#非對稱式加密" class="headerlink" title="非對稱式加密"></a>非對稱式加密</h2><ul>
+<li><p>非對稱式加密 (Asymmetric Encryption)</p>
+</li>
+<li><p>兩把成對的金鑰，一把將資料加密，一把解密，又被稱為Public key 公鑰、Private key 私鑰</p>
+</li>
+<li><p>又稱為公開金鑰加密法</p>
+</li>
+<li><p>兩把中的任一把都可以拿來加密，而另一把則來解密</p>
+</li>
+<li><p>私鑰自己留存，公鑰任何人都可以取得</p>
+</li>
+<li><p>只知道演算法和加密金鑰，求出解密金鑰是不可能的</p>
+</li>
+<li><p>身分驗證、不可否認</p>
+<ul>
+<li>將資料用私鑰加密，確保資訊只能由接收端用公鑰解密，能確保資料來源一定是從擁有私鑰的對像而來</li>
+</ul>
+</li>
+<li><p>機密性</p>
+<ul>
+<li>將資料用公鑰加密，只有擁有私鑰的人才能解密，確保資料只能傳遞給擁有私鑰的特殊對象</li>
+</ul>
+</li>
+<li><p>Bob要傳送一份機密文件給100人，使用非對稱方式要確保機密性，請問需要幾把金鑰?</p>
+<ul>
+<li>100把公鑰</li>
+</ul>
+</li>
+<li><p>Bob要傳送一份機密文件給100人，使用非對稱方式要確保身分認證性，請問需要幾把金鑰?</p>
+<ul>
+<li>1把私鑰</li>
+</ul>
+</li>
+</ul>
+<h2 id="RSA演算法"><a href="#RSA演算法" class="headerlink" title="RSA演算法"></a>RSA演算法</h2><h2 id="DSA-數位簽章演算法"><a href="#DSA-數位簽章演算法" class="headerlink" title="DSA 數位簽章演算法"></a>DSA 數位簽章演算法</h2><h2 id="ECC-橢圓曲線加密"><a href="#ECC-橢圓曲線加密" class="headerlink" title="ECC 橢圓曲線加密"></a>ECC 橢圓曲線加密</h2><h2 id="對稱-VS-非對稱"><a href="#對稱-VS-非對稱" class="headerlink" title="對稱 VS 非對稱"></a>對稱 VS 非對稱</h2>]]></content>
+      <categories>
+        <category>資通安全</category>
+      </categories>
+      <tags>
+        <tag>密碼學</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1-2、對稱式加密</title>
+    <url>/2021/01/17/technology/informationSecurity/1-2%E3%80%81%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>《每日一句》</strong>Love is like the wind,you can’t see it but you can feel it.</p>
+<p>愛就像風一樣，看不到，卻能感覺到。</p>
+</blockquote>
+<h2 id="對稱式加密法"><a href="#對稱式加密法" class="headerlink" title="對稱式加密法"></a>對稱式加密法</h2><ul>
+<li>對稱式加密法 (Symmetric Encryption)</li>
+<li>雙方持有同樣的金鑰來加密和解密</li>
+<li>為了安全性，金鑰必須不斷更換</li>
+<li>加密方式<ul>
+<li>取代 : 明文中每個元素被對應到另一個元素<ul>
+<li>EX:<ul>
+<li>凱薩加密</li>
+<li>Monoalphabetic</li>
+<li>Playfair 加密</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>置換 : 明文中每個元素被重新排列<ul>
+<li>EX:<ul>
+<li>柵欄加密</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>資料流加密 (Stream Cipher)<ul>
+<li>輸入連續元素，但一次只輸出一個元素，直到所有元素處理完畢</li>
+</ul>
+</li>
+<li>區塊加密 (Block Cipher)<ul>
+<li>同一個區塊密鑰對多於一塊的資料進行加密</li>
+<li>EX:<ul>
+<li>密碼塊連結 (Cipher-block chaining,CBC)<ul>
+<li>明文區塊與前一個密文區塊互斥或，再進行加密</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>實用密碼的必要條件<ul>
+<li>混淆 (Confusion)<ul>
+<li>金鑰和密文的關係複雜，凱薩加密的關係就是純粹位移，過於簡單</li>
+</ul>
+</li>
+<li>擴散 (Diffusion)<ul>
+<li>當明文有細微差別，可造成密文巨大差異<h2 id="凱薩加密"><a href="#凱薩加密" class="headerlink" title="凱薩加密"></a>凱薩加密</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/technology/informationSecurity/01_%E5%87%B1%E8%96%A9%E5%8A%A0%E5%AF%86.PNG" alt=""></p>
+<h2 id="Monoalphabetic-替換式密碼"><a href="#Monoalphabetic-替換式密碼" class="headerlink" title="Monoalphabetic 替換式密碼"></a>Monoalphabetic 替換式密碼</h2><h2 id="Playfair-加密"><a href="#Playfair-加密" class="headerlink" title="Playfair 加密"></a>Playfair 加密</h2><h2 id="柵欄加密"><a href="#柵欄加密" class="headerlink" title="柵欄加密"></a>柵欄加密</h2><h2 id="CBC-密碼塊連結"><a href="#CBC-密碼塊連結" class="headerlink" title="CBC 密碼塊連結"></a>CBC 密碼塊連結</h2><ul>
+<li>CBC 密碼塊連結 (Cipher-block chaining)</li>
+</ul>
+<h2 id="DES-加密演算法"><a href="#DES-加密演算法" class="headerlink" title="DES 加密演算法"></a>DES 加密演算法</h2><ul>
+<li>DES 加密演算法 (Data Encryption Standard)</li>
+</ul>
+<h2 id="Triple-DES-演算法"><a href="#Triple-DES-演算法" class="headerlink" title="Triple DES 演算法"></a>Triple DES 演算法</h2><h2 id="AES-高等資料加密標準"><a href="#AES-高等資料加密標準" class="headerlink" title="AES 高等資料加密標準"></a>AES 高等資料加密標準</h2><ul>
+<li>AES 高等資料加密標準 (Advanced Encryption Standard)</li>
+</ul>
+<h2 id="中途相遇攻擊"><a href="#中途相遇攻擊" class="headerlink" title="中途相遇攻擊"></a>中途相遇攻擊</h2>]]></content>
+      <categories>
+        <category>資通安全</category>
+      </categories>
+      <tags>
+        <tag>密碼學</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>1-1、密碼學基礎</title>
     <url>/2021/01/16/technology/informationSecurity/1-1%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E5%9F%BA%E7%A4%8E/</url>
     <content><![CDATA[<blockquote>
@@ -54,7 +178,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="凱薩加密"><a href="#凱薩加密" class="headerlink" title="凱薩加密"></a>凱薩加密</h2><p><img src="/images/technology/informationSecurity/01_%E5%87%B1%E8%96%A9%E5%8A%A0%E5%AF%86.PNG" alt=""></p>
 <h2 id="CAPTCHA技術"><a href="#CAPTCHA技術" class="headerlink" title="CAPTCHA技術"></a>CAPTCHA技術</h2><h2 id="reCAPTCHA技術"><a href="#reCAPTCHA技術" class="headerlink" title="reCAPTCHA技術"></a>reCAPTCHA技術</h2><h2 id="資料隱藏"><a href="#資料隱藏" class="headerlink" title="資料隱藏"></a>資料隱藏</h2><ul>
 <li>基於目的，讓傳送方和接收方約定好之規則，資料才能被解析</li>
 <li>資料隱藏可以使用圖片、音檔、文字..作為載體，避免資料被未授權人檢視、修改</li>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://twelvefish.github.io/"/>
-  <updated>2021-01-17T00:14:19.239Z</updated>
+  <updated>2021-01-17T15:03:23.483Z</updated>
   <id>http://twelvefish.github.io/</id>
   
   <author>
@@ -17,11 +17,70 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>1-3、非對稱式加密</title>
+    <link href="http://twelvefish.github.io/2021/01/17/technology/informationSecurity/1-3%E3%80%81%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/"/>
+    <id>http://twelvefish.github.io/2021/01/17/technology/informationSecurity/1-3%E3%80%81%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/</id>
+    <published>2021-01-17T13:45:01.000Z</published>
+    <updated>2021-01-17T15:03:23.483Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Everyone has his own way of finding happiness.&lt;/p&gt;
+&lt;p&gt;每個人都有各自找到幸福的方式。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="資通安全" scheme="http://twelvefish.github.io/categories/%E8%B3%87%E9%80%9A%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="密碼學" scheme="http://twelvefish.github.io/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1-2、對稱式加密</title>
+    <link href="http://twelvefish.github.io/2021/01/17/technology/informationSecurity/1-2%E3%80%81%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/"/>
+    <id>http://twelvefish.github.io/2021/01/17/technology/informationSecurity/1-2%E3%80%81%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/</id>
+    <published>2021-01-17T00:20:47.000Z</published>
+    <updated>2021-01-17T14:48:07.654Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Love is like the wind,you can’t see it but you can feel
+        
+      
+    
+    </summary>
+    
+    
+      <category term="資通安全" scheme="http://twelvefish.github.io/categories/%E8%B3%87%E9%80%9A%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="密碼學" scheme="http://twelvefish.github.io/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>1-1、密碼學基礎</title>
     <link href="http://twelvefish.github.io/2021/01/16/technology/informationSecurity/1-1%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E5%9F%BA%E7%A4%8E/"/>
     <id>http://twelvefish.github.io/2021/01/16/technology/informationSecurity/1-1%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E5%9F%BA%E7%A4%8E/</id>
     <published>2021-01-16T10:32:26.000Z</published>
-    <updated>2021-01-17T00:14:19.239Z</updated>
+    <updated>2021-01-17T02:55:17.746Z</updated>
     
     <summary type="html">
     
