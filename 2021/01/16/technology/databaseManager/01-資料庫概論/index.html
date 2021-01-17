@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="03-webpack打包TypeScript, 程式,小說,遊戲製作">
+    <meta name="keywords" content="01-資料庫概論, 程式,小說,遊戲製作">
     <meta name="description" content="
-《每日一句》No cross,no crown.
-不經歷風雨，怎麼見彩虹。
+《每日一句》Sometimes love is not a feeling but a choice.
+有時候，愛不是一種感覺，而是一種選擇。
 
-此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                               ">
+此系列文章為觀看【杰哥數位教室】資料庫系統管理課程影片的學習筆記
+【杰哥數位教室】課堂教材 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>03-webpack打包TypeScript | twelvefish</title>
+    <title>01-資料庫概論 | twelvefish</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -30,9 +31,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="twelvefish" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-hopscotch.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="twelvefish" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -328,7 +329,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        03-webpack打包TypeScript
+                        01-資料庫概論
                     </div>
                 </div>
             </div>
@@ -440,8 +441,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/TypeScript/">
-                                <span class="chip bg-color">TypeScript</span>
+                            <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/">
+                                <span class="chip bg-color">資料庫</span>
                             </a>
                         
                     </div>
@@ -452,8 +453,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
-                                TypeScript大戰貪食蛇
+                            <a href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB%E7%B3%BB%E7%B5%B1%E7%AE%A1%E7%90%86/" class="post-category">
+                                資料庫系統管理
                             </a>
                         
                     </div>
@@ -465,28 +466,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>發布日期:&nbsp;&nbsp;
-                    2021-01-05
+                    2021-01-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-09
+                    2021-01-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
-                    1.3k
+                    870
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
-                    5 分
+                    3 分
                 </div>
                 
 				
@@ -503,211 +504,116 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p><strong>《每日一句》</strong>No cross,no crown.</p>
-<p>不經歷風雨，怎麼見彩虹。</p>
+<p><strong>《每日一句》</strong>Sometimes love is not a feeling but a choice.</p>
+<p>有時候，愛不是一種感覺，而是一種選擇。</p>
 </blockquote>
-<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                             </p>
-<p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
-<h2 id="生成-package-json"><a href="#生成-package-json" class="headerlink" title="生成 package.json"></a>生成 package.json</h2><ul>
-<li>實際工作中，都是使用整合工具進行打包編譯，在此介紹如何使用webpacke進行打包編譯</li>
-<li>使用webpack，需要使用npm去管理我們的套件，因此要先生成package.json，打開cmd，輸入<font color=red>npm init -y</font><br><img src="/images/technology/snake/15_npm_init.PNG" alt=""></li>
-<li>安裝使用webpack所需要的套件<ul>
-<li><font color=red>npm i --save-dev webpack webpack-cli typescript ts-loader</font></li>
-<li><font color=red>npm i --save-dev html-webpack-plugin clean-webpack-plugin</font></li>
-<li><font color=red>npm i --save-dev webpack-dev-server</font></li>
-<li>--save-dev : 開發模式</li>
-<li>webpack、webpack-cli : 打包工具、命令行工具</li>
-<li>ts-loader : 將 webpack、typescript 整合</li>
-<li>html-webpack-plugin : 打包時自動生成html文件</li>
-<li>clean-webpack-plugin : 先將舊有檔案刪除，確保編譯後的檔案都是最新版本的</li>
-<li>webpack-dev-server : 設置webpack內建服務器，當程式碼有修改時，修改內容會藉由服務器隨時顯示在html頁面上</li>
-<li>會看到剛剛所安裝的套件都出現在package.json中，由於是開發模式，會出現在devDependencies底下<br><img src="/images/technology/snake/16_npm_package.PNG" alt=""></li>
+<p>此系列文章為觀看<a href="https://www.youtube.com/playlist?list=PLpbuzGqDFzkjVESK1m9zElyCER2xCiHU-" target="_blank" rel="noopener">【杰哥數位教室】資料庫系統管理課程</a>影片的學習筆記</p>
+<p><a href="http://debussy.im.nuu.edu.tw/sjchen/DataBaseMan_Final.html" target="_blank" rel="noopener">【杰哥數位教室】課堂教材</a> </p>
+<h2 id="使用資料庫系統的優點"><a href="#使用資料庫系統的優點" class="headerlink" title="使用資料庫系統的優點"></a>使用資料庫系統的優點</h2><ul>
+<li>避免資料重覆存放 (Data Redundancy)<ul>
+<li>透過資料集中化，避免資料重複存放</li>
+</ul>
+</li>
+<li>避免資料不一致 (Inconsistency)<ul>
+<li>確保任何更新的動作會自動地更新到其它重複的資料，以減少不一致現象</li>
+</ul>
+</li>
+<li>限制未授權的存取 Restricting Unauthorized Access<ul>
+<li>提供適當的安全性與認証機制，針對資料庫的帳密存取權限</li>
+</ul>
+</li>
+<li>提供備份與回復功能 Providing Backup and Recovery<ul>
+<li>確保資料能回到之前的狀態</li>
+</ul>
+</li>
+<li>安全性與完整性控制 (Security Constraints and Integrity Constraints)<ul>
+<li>資料庫的集中控制讓DBA更容易從事安全性(Security)與完整性(Integrity)的限制</li>
+</ul>
+</li>
+<li>資料獨立性 (Data Independence)<ul>
+<li>儲存方式的改變或資料庫結構的改變不會影響到上一層次的應用    </li>
 </ul>
 </li>
 </ul>
-<h2 id="webpack配置文件"><a href="#webpack配置文件" class="headerlink" title="webpack配置文件"></a>webpack配置文件</h2><ul>
-<li><p>編寫webpack配置文件，webpack.config.js</p>
-</li>
-<li><p>引入套件 HTMLWebpackPlugin，由webpack直接幫我們生成html文件</p>
-</li>
-<li><p>引入套件 CleanWebpackPlugin，確保編譯後的檔案是最新版本</p>
-</li>
-<li><p>webpack後生成的JS，如果不想使用箭頭函數，要將arrowFunction設為false</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入path package</span>
-<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 引入html package</span>
-<span class="token keyword">const</span> HTMLWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 引入clean package</span>
-<span class="token keyword">const</span> <span class="token punctuation">{</span> CleanWebpackPlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// webpack中的所有配置都應該寫在module.exports中</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// 指定入口文件，通常放在src資料夾下</span>
-  entry<span class="token punctuation">:</span> <span class="token string">"./src/index.ts"</span><span class="token punctuation">,</span>
-  <span class="token comment" spellcheck="true">// 指定打包文件所在目錄</span>
-  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// 指定打包文件的路徑，通常存放在dist資料夾下 </span>
-      <span class="token comment" spellcheck="true">// path:"./dist"</span>
-      path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      <span class="token comment" spellcheck="true">// 打包後文件的名字</span>
-      filename<span class="token punctuation">:</span> <span class="token string">"bundle.js"</span><span class="token punctuation">,</span>
-      <span class="token comment" spellcheck="true">// 告訴webpack打包後的js文件不使用箭頭符號</span>
-      environment<span class="token punctuation">:</span><span class="token punctuation">{</span>
-          arrowFunction<span class="token punctuation">:</span> <span class="token boolean">false</span>
-      <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token comment" spellcheck="true">// 指定webpack打包時要使用的模組</span>
-  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// 指定要加載的規則，因為可能打包的各文件類型有ts、img、sas.....</span>
-      rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-          <span class="token punctuation">{</span>
-              <span class="token comment" spellcheck="true">// test表示對哪些文件規則生效</span>
-              test<span class="token punctuation">:</span> <span class="token regex">/\.ts$/</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//匹配所有ts結尾的文件</span>
-              <span class="token comment" spellcheck="true">// 要使用的loader</span>
-              use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-                  <span class="token string">'ts-loader'</span>
-              <span class="token punctuation">]</span><span class="token punctuation">,</span>
-              <span class="token comment" spellcheck="true">// 要排除的文件</span>
-              exclude<span class="token punctuation">:</span> <span class="token regex">/node-modules/</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token comment" spellcheck="true">// 配置Webpack插建</span>
-  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-      <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      <span class="token comment" spellcheck="true">// 自動生成html文件</span>
-      <span class="token keyword">new</span> <span class="token class-name">HTMLWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-          title<span class="token punctuation">:</span> <span class="token string">"自定義html文件title"</span><span class="token punctuation">,</span>
-          <span class="token comment" spellcheck="true">// 指定生成出來的html都依照對應的模板</span>
-          template<span class="token punctuation">:</span> <span class="token string">"./src/index.html"</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token comment" spellcheck="true">// 設置引入模組的檔案類型</span>
-  resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>光配置webpack.config.js之外，還需要配置tsconfig.json，用於對ts文件進行編譯，參考上一章節</p>
-</li>
-<li><p>可藉由在package.json中scripts語法配置dev命令直接執行webpack  --mode development (開發模式) ，輸入指令<font color=red>npm run dev</font></p>
-<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"webpack_test"</span><span class="token punctuation">,</span>
-<span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
-<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-<span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span>
-<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
-  <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack  --mode development"</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-<span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
-<span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-  <span class="token property">"ts-loader"</span><span class="token operator">:</span> <span class="token string">"^8.0.13"</span><span class="token punctuation">,</span>
-  <span class="token property">"typescript"</span><span class="token operator">:</span> <span class="token string">"^4.1.3"</span><span class="token punctuation">,</span>
-  <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^5.11.1"</span><span class="token punctuation">,</span>
-  <span class="token property">"webpack-cli"</span><span class="token operator">:</span> <span class="token string">"^4.3.1"</span>
-<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>由於我們設定打包後的文件設置在dist資料夾下，因此出現dist資料夾和bundle.js，及成功<br><img src="/images/technology/snake/17_wepackbuild.gif" alt=""></p>
-</li>
-<li><p>而如果有設定套用html模板，也會一起生成，並且自動幫你引入打包後文件的名字bundle.js<br><img src="/images/technology/snake/18_htmltemplate.PNG" alt=""></p>
-</li>
-<li><p>可藉由在package.json中scripts語法配置start命令，<font color=red>npm start</font>運行webpack serve</p>
-</li>
-<li><p>webpack serve為webpack內建服務器，當程式碼有修改時，修改內容會藉由服務器隨時顯示在html頁面上</p>
-<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-  ...略...
-  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
-  <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack  --mode development"</span><span class="token punctuation">,</span>
-  <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"webpack serve --open chrome.exe"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  ...略...
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/images/technology/snake/19_webpack_servr.PNG" alt=""></p>
-</li>
+<h2 id="View-觀點、景觀"><a href="#View-觀點、景觀" class="headerlink" title="View (觀點、景觀)"></a>View (觀點、景觀)</h2><ul>
+<li>實際存在於資料庫的表格所衍生出來的關聯表格</li>
+<li>不需以實體的形式存在，為一個虛擬表格 (Virtual Table)</li>
 </ul>
-<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><ul>
-<li><p>主要用於生成不同JS的版本，以利於兼容不同版本的瀏覽器，ex: let 是ES6的語法，經過babel轉換為var</p>
-</li>
-<li><p>安裝套件：</p>
-<ul>
-<li><font color=red>npm i --save -dev @babel/core @babel/preset-env babel-loader core-js</font><ul>
-<li>@babel/core<ul>
-<li>babel的核心工具</li>
+<h2 id="Meta-data"><a href="#Meta-data" class="headerlink" title="Meta-data"></a>Meta-data</h2><ul>
+<li>用來描述資料的資料，稱之為中繼資料 (Meta-data)</li>
+<li>資料庫系統具有自我描述(Self-Description)的特性<ul>
+<li>包含資料的型態、儲存格式、關係及各種限制、實際儲存結構，ex: 循序檔、索引檔</li>
 </ul>
 </li>
-<li>@babel/preset-env<ul>
-<li>babel的預定義環境，兼容不同瀏覽器</li>
+</ul>
+<h2 id="ANSI-SPARC-三層式架構"><a href="#ANSI-SPARC-三層式架構" class="headerlink" title="ANSI/SPARC 三層式架構"></a>ANSI/SPARC 三層式架構</h2><ul>
+<li>外部層 (External Level)<ul>
+<li>資料庫的部份資料，資料於不同使用者有不同的呈現</li>
 </ul>
 </li>
-<li>@babel-loader<ul>
-<li>babel在webpack中的加載器</li>
+<li>概念層 (Conceptual Level)<ul>
+<li>是資料庫儲存的整體性資料</li>
 </ul>
 </li>
-<li>core-js<ul>
-<li>core-js用來使舊版本的瀏覽器支援新版ES語法</li>
+<li>內部層 (Internal Level)<ul>
+<li>資料實際儲存方式</li>
+<li>create table command</li>
+</ul>
+</li>
+</ul>
+<h2 id="資料獨立性-Data-Independence"><a href="#資料獨立性-Data-Independence" class="headerlink" title="資料獨立性 Data Independence"></a>資料獨立性 Data Independence</h2><ul>
+<li>目的 : 修改資料庫的某一層架構時，不影響到較高層式架構<ul>
+<li>邏輯資料獨立性 (Logical Data Independence)<ul>
+<li>改變概念綱要時，不需要跟著改變外部綱要及其應用程式</li>
+</ul>
+</li>
+<li>實體資料獨立性 (Physical Data Independence)<ul>
+<li>改變內部綱要時，不需要跟著改變概念綱要和外部綱要</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h2 id="資料庫架構"><a href="#資料庫架構" class="headerlink" title="資料庫架構"></a>資料庫架構</h2><ul>
+<li>主從式架構 Client/Server<ul>
+<li>可藉由Client端本身的運算能力，分擔Server端處理資料的負荷。</li>
+<li>當Server種類變多，Client也需因此而安裝多個介面</li>
+<li>當Client增多時，Server的負荷也會變重</li>
+</ul>
 </li>
-<li><p>在webpack.config.js配置babel-loader，先使用ts-loader把TS代碼轉成JS，再用babel-loader把新版JS轉換成舊版JS</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">{</span>
-  <span class="token operator">...</span>略<span class="token operator">...</span>
-  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// 指定要加載的規則，因為可能打包的各文件類型有ts、img、sas.....</span>
-      rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-          <span class="token punctuation">{</span>
-              <span class="token comment" spellcheck="true">// test表示對哪些文件規則生效</span>
-              test<span class="token punctuation">:</span> <span class="token regex">/\.ts$/</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//匹配所有ts結尾的文件</span>
-              <span class="token comment" spellcheck="true">// 要使用的loader</span>
-              use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-                  <span class="token comment" spellcheck="true">// 配置babel</span>
-                  <span class="token punctuation">{</span>
-                      <span class="token comment" spellcheck="true">// 指定加載器</span>
-                      loader<span class="token punctuation">:</span><span class="token string">"babel-loader"</span><span class="token punctuation">,</span>
-                      <span class="token comment" spellcheck="true">// 設置babel</span>
-                      options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                          <span class="token comment" spellcheck="true">// 設置預定義環境</span>
-                          presets<span class="token punctuation">:</span><span class="token punctuation">[</span>
-                              <span class="token punctuation">[</span>
-                                  <span class="token comment" spellcheck="true">// 指定環境插件</span>
-                                  <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span>
-                                  <span class="token comment" spellcheck="true">// 配置信息</span>
-                                  <span class="token punctuation">{</span>
-                                      <span class="token comment" spellcheck="true">// 要兼容的目標瀏覽器版本</span>
-                                      targets<span class="token punctuation">:</span><span class="token punctuation">{</span>
-                                          <span class="token string">"chrome"</span><span class="token punctuation">:</span><span class="token string">"87"</span><span class="token punctuation">,</span>
-                                          <span class="token string">"ie"</span><span class="token punctuation">:</span><span class="token string">"11"</span>
-                                      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                                      <span class="token comment" spellcheck="true">// 指定corejs的版本</span>
-                                      <span class="token string">"corejs"</span><span class="token punctuation">:</span><span class="token string">"3"</span><span class="token punctuation">,</span>
-                                      <span class="token comment" spellcheck="true">// 使用corejs的方式 "usage" 表示按需加載，有使用到的才加載</span>
-                                      <span class="token string">"useBuiltIns"</span><span class="token punctuation">:</span><span class="token string">"usage"</span>
-                                  <span class="token punctuation">}</span>
-                              <span class="token punctuation">]</span>
-                          <span class="token punctuation">]</span>
-                      <span class="token punctuation">}</span>
-                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                  <span class="token string">'ts-loader'</span>
-              <span class="token punctuation">]</span><span class="token punctuation">,</span>
-              <span class="token comment" spellcheck="true">// 要排除的文件</span>
-              exclude<span class="token punctuation">:</span> <span class="token regex">/node-modules/</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token operator">...</span>略<span class="token operator">...</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li>多層式架構 Multi-Tier Architecture( 3-tier architecture)<ul>
+<li>將應用程式代理者 (Application agent) 置於Client與Server中間，存放企業應用邏輯 (Business logic)，以處理Client與Server間往來的業務</li>
+<li>若規模不斷擴大，中間端將成為瓶頸</li>
+</ul>
 </li>
-<li><p>配置規則中如果targets寫兼容於”chrome”:”87”，那轉換出來後的JS依舊是ES6，因為chrome87版本支援ES6，而如果額外有寫”ie”:”11”則因為IE11只支援ES3，就會轉換為ES3語法<br><img src="/images/technology/snake/20_babelES6.PNG" alt=""><br><img src="/images/technology/snake/21_babelES3.PNG" alt=""></p>
-</li>
-<li><p>至於corejs則是用來處理些不兼容的語法，ex: Promise，將Promise語法從ES6轉換為IE11可以支援的版本代碼</p>
+<li>分散式資料庫系統 Distributed Database System<ul>
+<li>可視為單一資料庫系統，但實際上資料卻是分散在網路的多個地方</li>
+<li>透通性 (Transparency)：不需要了解細節，即可正常運作的特性<ul>
+<li>存取透通性</li>
+<li>位置透通性</li>
+</ul>
 </li>
 </ul>
+</li>
+</ul>
+<h2 id="ODBC"><a href="#ODBC" class="headerlink" title="ODBC"></a>ODBC</h2><ul>
+<li>Server端資料庫系統與Client端應用程式之間的介面</li>
+<li>ODBC是一種讓各種資料庫都具有相同的存取資料介面的程式<ul>
+<li>ODBC如何在 Client  Side 和 Server Side 之間運作?</li>
+</ul>
+</li>
+</ul>
+<h2 id="資料冗餘"><a href="#資料冗餘" class="headerlink" title="資料冗餘"></a>資料冗餘</h2><ul>
+<li>資料冗餘帶來的問題?</li>
+<li>何謂控制冗餘，為何有控制冗餘的發生?</li>
+</ul>
+<h2 id="資料模型"><a href="#資料模型" class="headerlink" title="資料模型"></a>資料模型</h2><ul>
+<li>階層式 (hierarchical)</li>
+<li>網路式 (network)</li>
+<li>關聯式 (relation)</li>
+<li>物件導向 (object-oriented)</li>
+</ul>
+<p>四種比較表格圖</p>
 
             </div>
             <hr/>
@@ -733,7 +639,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://twelvefish.github.io/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/">http://twelvefish.github.io/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/</a>
+                    <a href="http://twelvefish.github.io/2021/01/16/technology/databaseManager/01-%E8%B3%87%E6%96%99%E5%BA%AB%E6%A6%82%E8%AB%96/">http://twelvefish.github.io/2021/01/16/technology/databaseManager/01-%E8%B3%87%E6%96%99%E5%BA%AB%E6%A6%82%E8%AB%96/</a>
                 </span>
             </div> -->
             <div class="reprint__notice">
@@ -771,8 +677,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/TypeScript/">
-                                    <span class="chip bg-color">TypeScript</span>
+                                <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/">
+                                    <span class="chip bg-color">資料庫</span>
                                 </a>
                             
                         </div>
@@ -817,31 +723,31 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/09/technology/snake/04-%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E8%A7%80%E5%BF%B5%E5%BC%95%E5%85%A5TypeScript/">
+                <a href="/2021/01/16/technology/databaseManager/02-%E9%97%9C%E8%81%AF%E5%BC%8F%E8%B3%87%E6%96%99%E5%BA%AB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="04-物件導向觀念引入TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="02-關聯式資料庫">
                         
-                        <span class="card-title">04-物件導向觀念引入TypeScript</span>
+                        <span class="card-title">02-關聯式資料庫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            將物件導向觀念引入TypeScript
+                            學習資料庫系統管理課程-關聯式資料庫
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
-                                    TypeScript大戰貪食蛇
+                            <a href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB%E7%B3%BB%E7%B5%B1%E7%AE%A1%E7%90%86/" class="post-category">
+                                    資料庫系統管理
                                 </a>
                             
                             
@@ -851,8 +757,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TypeScript/">
-                        <span class="chip bg-color">TypeScript</span>
+                    <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/">
+                        <span class="chip bg-color">資料庫</span>
                     </a>
                     
                 </div>
@@ -865,31 +771,31 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/">
+                <a href="/2021/01/16/technology/databaseManager/01-%E8%B3%87%E6%96%99%E5%BA%AB%E6%A6%82%E8%AB%96/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="03-webpack打包TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="01-資料庫概論">
                         
-                        <span class="card-title">03-webpack打包TypeScript</span>
+                        <span class="card-title">01-資料庫概論</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用webpack工具打包TypeScript
+                            學習資料庫系統管理課程-概論
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
-                                    TypeScript大戰貪食蛇
+                            <a href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB%E7%B3%BB%E7%B5%B1%E7%AE%A1%E7%90%86/" class="post-category">
+                                    資料庫系統管理
                                 </a>
                             
                             
@@ -900,8 +806,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TypeScript/">
-                        <span class="chip bg-color">TypeScript</span>
+                    <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/">
+                        <span class="chip bg-color">資料庫</span>
                     </a>
                     
                 </div>
@@ -915,24 +821,24 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/">
+                <a href="/2021/01/09/technology/snake/1-4%E3%80%81%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E8%A7%80%E5%BF%B5%E5%BC%95%E5%85%A5TypeScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="02-編譯TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-4、物件導向觀念引入TypeScript">
                         
-                        <span class="card-title">02-編譯TypeScript</span>
+                        <span class="card-title">1-4、物件導向觀念引入TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            學習編譯TypeScript的配置文件 tsconfig.json
+                            將物件導向觀念引入TypeScript
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-09
                             </span>
                         <span class="publish-author">
                             
@@ -1098,7 +1004,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
-                class="white-color">26.3k</span>&nbsp;字
+                class="white-color">28.4k</span>&nbsp;字
             
             
             

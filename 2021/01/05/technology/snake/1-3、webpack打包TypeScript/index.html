@@ -1,0 +1,1298 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="1-3、webpack打包TypeScript, 程式,小說,遊戲製作">
+    <meta name="description" content="
+《每日一句》No cross,no crown.
+不經歷風雨，怎麼見彩虹。
+
+此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲                                                ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>1-3、webpack打包TypeScript | twelvefish</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<link rel="alternate" href="/atom.xml" title="twelvefish" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-hopscotch.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo" style="width: 210px;">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">twelvefish</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首頁</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>標籤</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="far fa-folder-open" style="zoom: 0.6;"></i>
+      
+      <span>專題</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/novels" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-book-open" style="zoom: 0.6;"></i>
+      
+      <span>小說</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/2019/11/19/novel/01/%E7%9B%AE%E9%8C%84/">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>古之惡來者為王</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/novel/02">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>三國依舊如此精采</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/novel/03">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>末日之勇者勝</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/novel/04">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>莫名的愛</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-id-card" style="zoom: 0.6;"></i>
+      
+      <span>關於</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-list-ul" style="zoom: 0.6;"></i>
+      
+      <span>清單</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">twelvefish</div>
+        <div class="logo-desc">
+            
+            撰寫資訊筆記和小說及各式小品遊戲製作
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首頁
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			標籤
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw far fa-folder-open"></i>
+			
+			專題
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a>
+			
+				<i class="fa-fw fas fa-book-open"></i>
+			
+			小說
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/2019/11/19/novel/01/%E7%9B%AE%E9%8C%84/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>古之惡來者為王</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/novel/02 " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>三國依舊如此精采</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/novel/03 " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>末日之勇者勝</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/novel/04 " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>莫名的愛</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-id-card"></i>
+			
+			關於
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-list-ul"></i>
+			
+			清單
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('請輸入訪問本文章的密碼')).toString(CryptoJS.enc.Hex)) {
+                alert('密碼錯誤，請返回主頁');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        1-3、webpack打包TypeScript
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #2828FF;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #2828FF;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #2828FF;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/TypeScript/">
+                                <span class="chip bg-color">TypeScript</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
+                                TypeScript大戰貪食蛇
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>發布日期:&nbsp;&nbsp;
+                    2021-01-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-01-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
+                    1.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
+                    5 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>閲讀次數:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p><strong>《每日一句》</strong>No cross,no crown.</p>
+<p>不經歷風雨，怎麼見彩虹。</p>
+</blockquote>
+<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲                                                             </p>
+<p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
+<h2 id="生成-package-json"><a href="#生成-package-json" class="headerlink" title="生成 package.json"></a>生成 package.json</h2><ul>
+<li>實際工作中，都是使用整合工具進行打包編譯，在此介紹如何使用webpacke進行打包編譯</li>
+<li>使用webpack，需要使用npm去管理我們的套件，因此要先生成package.json，打開cmd，輸入<font color=red>npm init -y</font><br><img src="/images/technology/snake/15_npm_init.PNG" alt=""></li>
+<li>安裝使用webpack所需要的套件<ul>
+<li><font color=red>npm i --save-dev webpack webpack-cli typescript ts-loader</font></li>
+<li><font color=red>npm i --save-dev html-webpack-plugin clean-webpack-plugin</font></li>
+<li><font color=red>npm i --save-dev webpack-dev-server</font></li>
+<li>--save-dev : 開發模式</li>
+<li>webpack、webpack-cli : 打包工具、命令行工具</li>
+<li>ts-loader : 將 webpack、typescript 整合</li>
+<li>html-webpack-plugin : 打包時自動生成html文件</li>
+<li>clean-webpack-plugin : 先將舊有檔案刪除，確保編譯後的檔案都是最新版本的</li>
+<li>webpack-dev-server : 設置webpack內建服務器，當程式碼有修改時，修改內容會藉由服務器隨時顯示在html頁面上</li>
+<li>會看到剛剛所安裝的套件都出現在package.json中，由於是開發模式，會出現在devDependencies底下<br><img src="/images/technology/snake/16_npm_package.PNG" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="webpack配置文件"><a href="#webpack配置文件" class="headerlink" title="webpack配置文件"></a>webpack配置文件</h2><ul>
+<li><p>編寫webpack配置文件，webpack.config.js</p>
+</li>
+<li><p>引入套件 HTMLWebpackPlugin，由webpack直接幫我們生成html文件</p>
+</li>
+<li><p>引入套件 CleanWebpackPlugin，確保編譯後的檔案是最新版本</p>
+</li>
+<li><p>webpack後生成的JS，如果不想使用箭頭函數，要將arrowFunction設為false</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入path package</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 引入html package</span>
+<span class="token keyword">const</span> HTMLWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 引入clean package</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> CleanWebpackPlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// webpack中的所有配置都應該寫在module.exports中</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 指定入口文件，通常放在src資料夾下</span>
+  entry<span class="token punctuation">:</span> <span class="token string">"./src/index.ts"</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 指定打包文件所在目錄</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 指定打包文件的路徑，通常存放在dist資料夾下 </span>
+      <span class="token comment" spellcheck="true">// path:"./dist"</span>
+      path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// 打包後文件的名字</span>
+      filename<span class="token punctuation">:</span> <span class="token string">"bundle.js"</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// 告訴webpack打包後的js文件不使用箭頭符號</span>
+      environment<span class="token punctuation">:</span><span class="token punctuation">{</span>
+          arrowFunction<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 指定webpack打包時要使用的模組</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 指定要加載的規則，因為可能打包的各文件類型有ts、img、sas.....</span>
+      rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+              <span class="token comment" spellcheck="true">// test表示對哪些文件規則生效</span>
+              test<span class="token punctuation">:</span> <span class="token regex">/\.ts$/</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//匹配所有ts結尾的文件</span>
+              <span class="token comment" spellcheck="true">// 要使用的loader</span>
+              use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                  <span class="token string">'ts-loader'</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token comment" spellcheck="true">// 要排除的文件</span>
+              exclude<span class="token punctuation">:</span> <span class="token regex">/node-modules/</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 配置Webpack插建</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// 自動生成html文件</span>
+      <span class="token keyword">new</span> <span class="token class-name">HTMLWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          title<span class="token punctuation">:</span> <span class="token string">"自定義html文件title"</span><span class="token punctuation">,</span>
+          <span class="token comment" spellcheck="true">// 指定生成出來的html都依照對應的模板</span>
+          template<span class="token punctuation">:</span> <span class="token string">"./src/index.html"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 設置引入模組的檔案類型</span>
+  resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>光配置webpack.config.js之外，還需要配置tsconfig.json，用於對ts文件進行編譯，參考上一章節</p>
+</li>
+<li><p>可藉由在package.json中scripts語法配置dev命令直接執行webpack  --mode development (開發模式) ，輸入指令<font color=red>npm run dev</font></p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"webpack_test"</span><span class="token punctuation">,</span>
+<span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+<span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span>
+<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
+  <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack  --mode development"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+<span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
+<span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"ts-loader"</span><span class="token operator">:</span> <span class="token string">"^8.0.13"</span><span class="token punctuation">,</span>
+  <span class="token property">"typescript"</span><span class="token operator">:</span> <span class="token string">"^4.1.3"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^5.11.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack-cli"</span><span class="token operator">:</span> <span class="token string">"^4.3.1"</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>由於我們設定打包後的文件設置在dist資料夾下，因此出現dist資料夾和bundle.js，及成功<br><img src="/images/technology/snake/17_wepackbuild.gif" alt=""></p>
+</li>
+<li><p>而如果有設定套用html模板，也會一起生成，並且自動幫你引入打包後文件的名字bundle.js<br><img src="/images/technology/snake/18_htmltemplate.PNG" alt=""></p>
+</li>
+<li><p>可藉由在package.json中scripts語法配置start命令，<font color=red>npm start</font>運行webpack serve</p>
+</li>
+<li><p>webpack serve為webpack內建服務器，當程式碼有修改時，修改內容會藉由服務器隨時顯示在html頁面上</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  ...略...
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
+  <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack  --mode development"</span><span class="token punctuation">,</span>
+  <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"webpack serve --open chrome.exe"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  ...略...
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/technology/snake/19_webpack_servr.PNG" alt=""></p>
+</li>
+</ul>
+<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><ul>
+<li><p>主要用於生成不同JS的版本，以利於兼容不同版本的瀏覽器，ex: let 是ES6的語法，經過babel轉換為var</p>
+</li>
+<li><p>安裝套件：</p>
+<ul>
+<li><font color=red>npm i --save -dev @babel/core @babel/preset-env babel-loader core-js</font><ul>
+<li>@babel/core<ul>
+<li>babel的核心工具</li>
+</ul>
+</li>
+<li>@babel/preset-env<ul>
+<li>babel的預定義環境，兼容不同瀏覽器</li>
+</ul>
+</li>
+<li>@babel-loader<ul>
+<li>babel在webpack中的加載器</li>
+</ul>
+</li>
+<li>core-js<ul>
+<li>core-js用來使舊版本的瀏覽器支援新版ES語法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在webpack.config.js配置babel-loader，先使用ts-loader把TS代碼轉成JS，再用babel-loader把新版JS轉換成舊版JS</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token operator">...</span>略<span class="token operator">...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 指定要加載的規則，因為可能打包的各文件類型有ts、img、sas.....</span>
+      rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+              <span class="token comment" spellcheck="true">// test表示對哪些文件規則生效</span>
+              test<span class="token punctuation">:</span> <span class="token regex">/\.ts$/</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//匹配所有ts結尾的文件</span>
+              <span class="token comment" spellcheck="true">// 要使用的loader</span>
+              use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                  <span class="token comment" spellcheck="true">// 配置babel</span>
+                  <span class="token punctuation">{</span>
+                      <span class="token comment" spellcheck="true">// 指定加載器</span>
+                      loader<span class="token punctuation">:</span><span class="token string">"babel-loader"</span><span class="token punctuation">,</span>
+                      <span class="token comment" spellcheck="true">// 設置babel</span>
+                      options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                          <span class="token comment" spellcheck="true">// 設置預定義環境</span>
+                          presets<span class="token punctuation">:</span><span class="token punctuation">[</span>
+                              <span class="token punctuation">[</span>
+                                  <span class="token comment" spellcheck="true">// 指定環境插件</span>
+                                  <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span>
+                                  <span class="token comment" spellcheck="true">// 配置信息</span>
+                                  <span class="token punctuation">{</span>
+                                      <span class="token comment" spellcheck="true">// 要兼容的目標瀏覽器版本</span>
+                                      targets<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                                          <span class="token string">"chrome"</span><span class="token punctuation">:</span><span class="token string">"87"</span><span class="token punctuation">,</span>
+                                          <span class="token string">"ie"</span><span class="token punctuation">:</span><span class="token string">"11"</span>
+                                      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                                      <span class="token comment" spellcheck="true">// 指定corejs的版本</span>
+                                      <span class="token string">"corejs"</span><span class="token punctuation">:</span><span class="token string">"3"</span><span class="token punctuation">,</span>
+                                      <span class="token comment" spellcheck="true">// 使用corejs的方式 "usage" 表示按需加載，有使用到的才加載</span>
+                                      <span class="token string">"useBuiltIns"</span><span class="token punctuation">:</span><span class="token string">"usage"</span>
+                                  <span class="token punctuation">}</span>
+                              <span class="token punctuation">]</span>
+                          <span class="token punctuation">]</span>
+                      <span class="token punctuation">}</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token string">'ts-loader'</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token comment" spellcheck="true">// 要排除的文件</span>
+              exclude<span class="token punctuation">:</span> <span class="token regex">/node-modules/</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>略<span class="token operator">...</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>配置規則中如果targets寫兼容於”chrome”:”87”，那轉換出來後的JS依舊是ES6，因為chrome87版本支援ES6，而如果額外有寫”ie”:”11”則因為IE11只支援ES3，就會轉換為ES3語法<br><img src="/images/technology/snake/20_babelES6.PNG" alt=""><br><img src="/images/technology/snake/21_babelES3.PNG" alt=""></p>
+</li>
+<li><p>至於corejs則是用來處理些不兼容的語法，ex: Promise，將Promise語法從ES6轉換為IE11可以支援的版本代碼</p>
+</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://twelvefish.github.io" rel="external nofollow noreferrer">twelvefish</a>
+                </span>
+            </div>
+            <!-- <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章鏈接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://twelvefish.github.io/2021/01/05/technology/snake/1-3%E3%80%81webpack%E6%89%93%E5%8C%85TypeScript/">http://twelvefish.github.io/2021/01/05/technology/snake/1-3%E3%80%81webpack%E6%89%93%E5%8C%85TypeScript/</a>
+                </span>
+            </div> -->
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版權聲明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本Blog所有文章除特別聲明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    許可協議。轉載請注明来源
+                    <a href="http://twelvefish.github.io" target="_blank">twelvefish</a>
+                    
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>複製成功，请遵循本文的轉載規則</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/TypeScript/">
+                                    <span class="chip bg-color">TypeScript</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="facebook" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m4" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/01/09/technology/snake/1-4%E3%80%81%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E8%A7%80%E5%BF%B5%E5%BC%95%E5%85%A5TypeScript/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-4、物件導向觀念引入TypeScript">
+                        
+                        <span class="card-title">1-4、物件導向觀念引入TypeScript</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            將物件導向觀念引入TypeScript
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
+                                    TypeScript大戰貪食蛇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/TypeScript/">
+                        <span class="chip bg-color">TypeScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="article col s12 m4" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/01/05/technology/snake/1-3%E3%80%81webpack%E6%89%93%E5%8C%85TypeScript/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-3、webpack打包TypeScript">
+                        
+                        <span class="card-title">1-3、webpack打包TypeScript</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用webpack工具打包TypeScript
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
+                                    TypeScript大戰貪食蛇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/TypeScript/">
+                        <span class="chip bg-color">TypeScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m4" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/01/04/technology/snake/1-2%E3%80%81%E7%B7%A8%E8%AD%AFTypeScript/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-2、編譯TypeScript">
+                        
+                        <span class="card-title">1-2、編譯TypeScript</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            學習編譯TypeScript的配置文件 tsconfig.json
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
+                                    TypeScript大戰貪食蛇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/TypeScript/">
+                        <span class="chip bg-color">TypeScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '來源: twelvefish<br />'
+            + '文章作者: twelvefish<br />'
+            + '文章鏈接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作權歸twelvefish所有，任何形式的轉載請註明出處。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目錄</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (i++));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (i++));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本部落格由&nbsp;&copy;
+            <a href="http://twelvefish.github.io" target="_blank">twelvefish</a>
+            基於
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 網誌框架的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            主題所搭建而成
+            <br>
+
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
+                class="white-color">28.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;總訪問量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;總訪問人數:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            <span id="year" style="display:none">年份</span> 
+            
+            <span id="sitetime">載入運行時間...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "11";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "部落格已安全運行 " + diffDays + " 天 " + diffHours +
+                            " 小時 " + diffMinutes + " 分鐘 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全運行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小時 " + diffMinutes + " 分鐘 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/twelvefish" class="tooltipped" target="_blank" data-tooltip="訪問我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="https://medium.com/%E7%98%8B%E7%98%8B%E7%99%B2%E7%99%B2%E5%8D%81%E9%B1%B7%E9%AD%9A" class="tooltipped" target="_blank" data-tooltip="訪問我的Medium" data-position="top" data-delay="50">
+        <i class="fab fa-medium"></i>
+    </a>
+
+
+
+
+
+    <a href="mailto:amingo08131@gmail.com" class="tooltipped" target="_blank" data-tooltip="電子信箱聯繫我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 訂閱" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="請輸入搜索的關鍵字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152725853-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-152725853-1');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

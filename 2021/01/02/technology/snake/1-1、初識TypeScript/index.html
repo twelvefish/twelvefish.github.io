@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="02-編譯TypeScript, 程式,小說,遊戲製作">
+    <meta name="keywords" content="1-1、初識TypeScript, 程式,小說,遊戲製作">
     <meta name="description" content="
-《每日一句》Just trust yourself,then you will know how to live.
-只要相信自己，你就會懂得如何去生活。
+《每日一句》Dreams without execution are nothing.
+夢想不付出行動，等於白扯。
 
-此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲        ">
+此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲        
+本系列前半部參考影片尚硅谷TypeSc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>02-編譯TypeScript | twelvefish</title>
+    <title>1-1、初識TypeScript | twelvefish</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -30,9 +31,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="twelvefish" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-hopscotch.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="twelvefish" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -328,7 +329,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        02-編譯TypeScript
+                        1-1、初識TypeScript
                     </div>
                 </div>
             </div>
@@ -465,28 +466,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>發布日期:&nbsp;&nbsp;
-                    2021-01-04
+                    2021-01-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-09
+                    2021-01-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
-                    1.1k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 				
@@ -503,225 +504,242 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p><strong>《每日一句》</strong>Just trust yourself,then you will know how to live.</p>
-<p>只要相信自己，你就會懂得如何去生活。</p>
+<p><strong>《每日一句》</strong>Dreams without execution are nothing.</p>
+<p>夢想不付出行動，等於白扯。</p>
 </blockquote>
-<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                             </p>
+<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲        </p>
 <p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
-<h2 id="自動編譯-TypeScript"><a href="#自動編譯-TypeScript" class="headerlink" title="自動編譯 TypeScript"></a>自動編譯 TypeScript</h2><ul>
-<li>編譯TS檔語法，tsc XXX.ts</li>
-<li>但是每次修改檔案都要重新編譯過於麻煩，可以在後面下 <font color=red>tsc XXX.ts -w</font>，自動編譯文件<br>PS.出現如下畫面，及此XXX.ts一旦修改後儲存，及自動編譯對應的XXX.js文件<br><img src="/images/technology/snake/11_w.gif" alt=""></li>
-<li>直接使用tsc 指令，可將當前目錄下的所有TS文件編譯成JS文件，但這個前提是必須在當前目錄下創建TS的配置文件tsconfig.json<br><img src="/images/technology/snake/12_tsc.gif" alt=""></li>
-<li>因此指令如果下 <font color=red>tsc -w</font>，則能對當前目錄下的所有ts檔進行全部自動編譯</li>
+<h2 id="TypeScript-介紹"><a href="#TypeScript-介紹" class="headerlink" title="TypeScript 介紹"></a>TypeScript 介紹</h2><ul>
+<li>TypeScript(TS) 為強型別的 javaScript(JS)，主要增加類型class的概念</li>
+<li>瀏覽器只看得懂JS，因此撰寫完TS還是必須通過編譯成JS，才能執行</li>
+<li>任何的JS語法都可在TS使用</li>
+<li>由於TS有類別型態，因此可以在編譯前完成程式的語法檢查，減少JS出錯的機率</li>
+<li>TS可以編譯成任何版本的JS，解決不同JS環境的兼容問題</li>
+<li>由於TS有類別型態，相較於JS的程式碼在後期更加容易維護</li>
+<li>可藉由config配置檔，對於TS的語法嚴格性進行控制</li>
 </ul>
-<h2 id="tsconfig-json-配置說明"><a href="#tsconfig-json-配置說明" class="headerlink" title="tsconfig.json 配置說明"></a>tsconfig.json 配置說明</h2><ul>
-<li><p>tsconfig.json是TS編譯器的配置文件，TS編譯器可以根據tsconfig.json內容來對程式碼進行編譯</p>
-</li>
-<li><p>由於不一定在目錄下的所有檔案都要被編譯，因此可以使用include、exclude指令</p>
-</li>
-<li><p>include</p>
-<ul>
-<li>指定哪些TS文件需要被編譯<br>PS.** 表示任意目錄、* 表示任意文件<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-// 此範例表示在src、test資料夾下的TS檔案和更裡面的資料夾裡面的TS檔案都會被編譯
-<span class="token property">"include"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"./src/**/*"</span><span class="token punctuation">,</span> <span class="token string">"./test/**/*"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+<h2 id="TypeScript-開發環境"><a href="#TypeScript-開發環境" class="headerlink" title="TypeScript 開發環境"></a>TypeScript 開發環境</h2><ul>
+<li>安裝Node.js是為了去使用TypeScript的編譯器</li>
+<li>官網下載 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>，下載左邊當前LTS穩定版本，至於右邊則是最新、但有可能有bug的版本<br><img src="/images/technology/snake/01_nodejs.PNG" alt=""></li>
+<li>安裝 Node.js，一直下一步…</li>
+<li>打開cmd，<font color=red>輸入node -v 指令確認安裝成功</font>，如果先前已安裝過，可自由選擇是否升級到最新穩定版本<br>PS. 由於網上找到的升級nodejs版本屢試不成，筆者建議直接將當初安裝的nodejs資料夾直接刪除，重新安裝，當然要記得將之前安裝在全域的package.json套件記錄下來，重新安裝<br><img src="/images/technology/snake/02_version.PNG" alt=""></li>
+<li>npm 是 Node.js 裡面package管理器，使用npm可以去安裝node下面各種套件</li>
+<li>而要安裝TypeScript的編譯器，打開cmd，輸入 <font color=red>npm install -g typescript</font>，沒有錯誤訊息即正確安裝<br>npm        : 使用npm套件指令開頭<br>install    : 安裝，可用i簡寫，npm i<br>g         : 使用全域安裝，沒添加的話就是在當前專案安裝<br>typescript : 想安裝的套件名稱<br><img src="/images/technology/snake/03_typescript%E6%AD%A3%E7%A2%BA%E5%AE%89%E8%A3%9D.PNG" alt=""></li>
+<li>在cmd中輸入 <font color=red>tsc</font>，確認TypeScript編譯器安裝成功，如下圖出現tsc相關指令<br><img src="/images/technology/snake/04_tsc.PNG" alt=""></li>
+<li>創建一個副檔名為.ts的文件，輸入console.log(“hello”);<br>PS: JS語法能完全相容於TS文件<br><img src="/images/technology/snake/05_hello.PNG" alt=""></li>
+<li>瀏覽器只能解析js文件，因此將ts進行編譯，在相對應的資料夾目錄打開cmd，輸入tsc xxx.ts<br><img src="/images/technology/snake/06_complier.PNG" alt=""></li>
+<li>在相同路徑下，產生相同檔名的 xxx.js，即編譯成功<br><img src="/images/technology/snake/07_newJS.PNG" alt=""></li>
 </ul>
-</li>
-<li><p>exclude</p>
-<ul>
-<li>不需要被編譯的文件目錄<br>PS.exclude默認值：[“node_modules”, “bower_components”, “jspm_packages”]，此些本身默認不被編譯<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-// 此範例表示在src/hello資料夾下的TS檔案不需編譯
-<span class="token property">"exclude"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"./src/hello/*"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>extends</p>
-<ul>
-<li>繼承其餘配置文件<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-// 此範例表示配置文件會自動包含configs目錄下的base.json配置文件
-<span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"./configs/base.json"</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>此範例演示extends外部檔案base.json，而base.json裡面exclude hello.ts，因此運行之後，hello.js沒有被編譯出來<br><img src="/images/technology/snake/13_exclude.gif" alt=""></p>
-</li>
-<li><p>files</p>
-<ul>
-<li>和include類似，只是此需要將需編譯的TS文件一個個列出來<pre class="line-numbers language-json"><code class="language-json"><span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-  <span class="token string">"core.ts"</span><span class="token punctuation">,</span>
-  <span class="token string">"sys.ts"</span><span class="token punctuation">,</span>
-  <span class="token string">"types.ts"</span>
-<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>compilerOptions</p>
-<ul>
-<li><p>配置文件中較多子選項的編譯配置</p>
-</li>
-<li><p>target</p>
-<ul>
-<li>設置TS編譯為JS的版本</li>
-<li>ES3（默認）、ES5、ES6/ES2015、ES7/ES2016、ES2017、ES2018、ES2019、ES2020、ESNext<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"ES6"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>lib</p>
-<ul>
-<li>設置撰寫程式時，所包含的library，用於關鍵字的提示文字，默認有基本的，不需特別寫</li>
-<li>ES5、ES6/ES2015、ES7/ES2016、ES2017、ES2018、ES2019、ES2020、ESNext、DOM、WebWorker、ScriptHost …<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ES6"</span><span class="token punctuation">,</span> <span class="token string">"DOM"</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>module</p>
-<ul>
-<li>設置編譯後的JS使用的模塊化規範</li>
-<li>CommonJS、UMD、AMD、System、ES2020、ESNext、None<pre class="line-numbers language-typescript"><code class="language-typescript">  <span class="token string">"compilerOptions"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token string">"module"</span><span class="token punctuation">:</span> <span class="token string">"CommonJS"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>outDir</p>
-<ul>
-<li>編譯後JS文件所在目錄，通常將編譯後的JS檔存放於dist目錄下<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"dist"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>outFile</p>
-<ul>
-<li>將所有TS文件編譯成一個JS文件，用不太到<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"outFile"</span><span class="token operator">:</span> <span class="token string">"dist/app.js"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<img src="/images/technology/snake/14_outDir.gif" alt=""></li>
-</ul>
-</li>
-<li><p>allowJs</p>
-<ul>
-<li>是否對JS文件進行編譯，默認是false不編譯<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"allowJs"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>checkJs</p>
-<ul>
-<li>檢查JS文件是否符合與法規範，默認是false不檢查<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"checkJs"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>removeComments</p>
-<ul>
-<li>編譯為JS後，是否移除TS的註釋，默認是false不移除<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"removeComments"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>noEmit</p>
-<ul>
-<li>是否不生成編譯後的JS文件，通常用來只想檢查語法但不想用TS編譯的JS文件，默認是false要生成<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"noEmit"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>noEmitOnError</p>
-<ul>
-<li>TS程式碼有錯誤時，是否不生成編譯後的JS文件，默認是false就算錯誤也要生成<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"noEmitOnError"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>strict</p>
-<ul>
-<li>所有嚴格檢查的總開關，設為true，則將所有嚴格檢查打開，建議設為true<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"strict"</span><span class="token operator">:</span> <span class="token string">"true"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>alwaysStrict</p>
-<ul>
-<li>設置編譯後的JS文件是否使用嚴格模式，默認是false不使用，但如果TS有使用export語法，則自動使用嚴格模式<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"alwaysStrict"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>noImplicitAny</p>
-<ul>
-<li>是否允許出現隱式的any類型，默認是false可出現<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"noImplicitAny"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>noImplicitThis</p>
-<ul>
-<li>是否允許出現不明確類型的this，默認是false可出現<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"noImplicitThis"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>strictNullChecks</p>
-<ul>
-<li>嚴格檢查變數是否可能為null，默認是false，可能出現false，但不報錯<pre class="line-numbers language-json"><code class="language-json">  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"strictNullChecks"</span><span class="token operator">:</span> <span class="token string">"false"</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// box1有可能為null，而導致後面程式碼出錯</span>
-<span class="token keyword">let</span> box1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'box1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-box1<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 可使用判斷式來避免出錯</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span>box1 <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  box1<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="TypeScript-語法說明"><a href="#TypeScript-語法說明" class="headerlink" title="TypeScript 語法說明"></a>TypeScript 語法說明</h2><ul>
+<li>在變數後面增加宣告型別，可讓編譯器自動檢測出型別正確與否<br><img src="/images/technology/snake/08_errorType.PNG" alt=""></li>
+<li>同時對變數宣告和賦值，則TS可以自動對變數進行類型檢測，所以有時可以省略掉類型宣告<br><img src="/images/technology/snake/09_errorType1.PNG" alt=""></li>
+<li>可對function的傳入參數和輸出參數給與型別<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 或是用?表示</span>
-box1<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true">//語法</span>
+<span class="token keyword">let</span> 變數<span class="token punctuation">:</span> 型別<span class="token punctuation">;</span>
+<span class="token keyword">let</span> 變數<span class="token punctuation">:</span> 型別 <span class="token operator">=</span> 值<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span>參數<span class="token punctuation">:</span> 型別<span class="token punctuation">,</span> 參數<span class="token punctuation">:</span> 型別<span class="token punctuation">)</span><span class="token punctuation">:</span> 傳回型別<span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+type myType <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="TypeScript-類別型態"><a href="#TypeScript-類別型態" class="headerlink" title="TypeScript 類別型態"></a>TypeScript 類別型態</h2><table>
+<thead>
+<tr>
+<th align="center">型別</th>
+<th align="center">例子</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">number</td>
+<td align="center">1, -33, 2.5</td>
+<td align="center">任意數字</td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">‘hi’, “hi”, <code>hi</code></td>
+<td align="center">任意字串</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">true、false</td>
+<td align="center">布林值true或false</td>
+</tr>
+<tr>
+<td align="center">常數</td>
+<td align="center">其本身</td>
+<td align="center">限制變數的值</td>
+</tr>
+<tr>
+<td align="center">any</td>
+<td align="center">*</td>
+<td align="center">任意型別</td>
+</tr>
+<tr>
+<td align="center">unknown</td>
+<td align="center">*</td>
+<td align="center">型別安全的any</td>
+</tr>
+<tr>
+<td align="center">void</td>
+<td align="center">空值（undefined）</td>
+<td align="center">沒有值（或undefined）</td>
+</tr>
+<tr>
+<td align="center">never</td>
+<td align="center">沒有值</td>
+<td align="center">不能是任何值</td>
+</tr>
+<tr>
+<td align="center">object</td>
+<td align="center">{name:’豬八戒’}</td>
+<td align="center">任意的JS物件</td>
+</tr>
+<tr>
+<td align="center">array</td>
+<td align="center">[1,2,3]</td>
+<td align="center">任意JS陣列</td>
+</tr>
+<tr>
+<td align="center">tuple</td>
+<td align="center">[4,5]</td>
+<td align="center">TS新增類型，固定長度陣列</td>
+</tr>
+<tr>
+<td align="center">enum</td>
+<td align="center">enum{A, B}</td>
+<td align="center">枚舉，TS中新增型別</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>常數</p>
+<ul>
+<li>可以藉由數值去決定變數的類型<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> a<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// b被宣告只能給與male或是female的值，給於其他值會出錯，| or的意思</span>
+<span class="token keyword">let</span> b<span class="token punctuation">:</span> <span class="token string">"male"</span> <span class="token operator">|</span> <span class="token string">"female"</span><span class="token punctuation">;</span>
+b <span class="token operator">=</span> <span class="token string">"male"</span><span class="token punctuation">;</span>
+b <span class="token operator">=</span> <span class="token string">"female"</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// c被宣告為可以賦予boolean型別或是string型別</span>
+<span class="token keyword">let</span> c<span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">|</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+c <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+c <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>any</p>
+<ul>
+<li>為任意型別，當變數設置型別為any或是未設置型別，代表此變數關閉了TS類型檢測<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 不建議使用any型別</span>
+<span class="token keyword">let</span> d<span class="token punctuation">;</span>
+d <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+d <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+d <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>unknown</p>
+<ul>
+<li>表示未知型別的值，不能直接赋值给其他變數，可藉由判斷式將值賦予其餘變數<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> e<span class="token punctuation">:</span> unknown<span class="token punctuation">;</span>
+<span class="token keyword">let</span> s<span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">;</span>
+e <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+e <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 判斷e為string型別時，才將e賦值給s</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> e <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+s <span class="token operator">=</span> e<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 類型斷言，可以用來告訴解析器變數的實際型別</span>
+s <span class="token operator">=</span> e as <span class="token keyword">string</span><span class="token punctuation">;</span>
+s <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span>e<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>void</p>
+<ul>
+<li>用來表示空值，以function為例，表示回傳值為null或undefined<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>never</p>
+<ul>
+<li>表示永遠不會有回傳值，使用時機為exception拋出例外<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> never<span class="token punctuation">{</span>
+<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'拋出例外！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>object</p>
+<ul>
+<li>表示為任意JS物件<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 通常不會直接給予object型別，因為在JS中萬物皆物件</span>
+<span class="token keyword">let</span> a<span class="token punctuation">:</span> object<span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 可以使用{}來指定物件必須包含哪些屬性，此案例表示必須要有name變數且string型別</span>
+<span class="token keyword">let</span> b<span class="token punctuation">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+b <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'孫悟空'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 使用?表示此屬性是可選的</span>
+<span class="token keyword">let</span> b1<span class="token punctuation">:</span> <span class="token punctuation">{</span>age<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+b1 <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// [propName: string]: any，表示後面可填入任意個數、任意型別的參數</span>
+<span class="token comment" spellcheck="true">// propName 純粹一個變數名稱，可替換為其他字串</span>
+<span class="token keyword">let</span> c<span class="token punctuation">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>propName<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+c <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'豬八戒'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 設置function的類別宣告：</span>
+<span class="token comment" spellcheck="true">// 語法：(變數:型別, 變數:型別 ...) => 回傳值</span>
+<span class="token keyword">let</span> d<span class="token punctuation">:</span> <span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token punctuation">,</span>b<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token keyword">number</span><span class="token punctuation">;</span>
+d <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>n1<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> n2<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>array陣列</p>
+<ul>
+<li>有兩種宣告方式，型別[]、Array&lt;型別&gt;<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> e<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+e <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> g<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span><span class="token keyword">number</span><span class="token operator">></span><span class="token punctuation">;</span>
+g <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>tuple</p>
+<ul>
+<li>固定長度的陣列，此例就只能有兩個數值且第一個必須為string，另一個為number<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> h<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token keyword">string</span><span class="token punctuation">,</span> <span class="token keyword">number</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+h <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>enum</p>
+<ul>
+<li>枚舉，管理多個同系列的常數<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> Gender<span class="token punctuation">{</span>
+Male<span class="token punctuation">,</span>
+Female
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> i<span class="token punctuation">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> gender<span class="token punctuation">:</span> Gender<span class="token punctuation">}</span><span class="token punctuation">;</span>
+i <span class="token operator">=</span> <span class="token punctuation">{</span>
+name<span class="token punctuation">:</span> <span class="token string">'孫悟空'</span><span class="token punctuation">,</span>
+gender<span class="token punctuation">:</span> Gender<span class="token punctuation">.</span>Male <span class="token comment" spellcheck="true">// 'male'</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>別名</p>
+<ul>
+<li>可以將類型另外取別名，讓多個變數共用類型，type XXX = 類別<pre class="line-numbers language-typescript"><code class="language-typescript">type myType <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">|</span> <span class="token number">2</span> <span class="token operator">|</span> <span class="token number">3</span> <span class="token operator">|</span> <span class="token number">4</span> <span class="token operator">|</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> k<span class="token punctuation">:</span> myType<span class="token punctuation">;</span>
+<span class="token keyword">let</span> l<span class="token punctuation">:</span> myType<span class="token punctuation">;</span>
+<span class="token keyword">let</span> m<span class="token punctuation">:</span> myType<span class="token punctuation">;</span>
+k <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="整檔tsconfig-json配置"><a href="#整檔tsconfig-json配置" class="headerlink" title="整檔tsconfig.json配置"></a>整檔tsconfig.json配置</h2><ul>
-<li>可以直接創建tsconfig.json檔案將以下json字串複製貼上</li>
-<li>或是打開cmd直接輸入<font color=red>tsc --init</font>，自動初始化tsconfig.json文件</li>
-</ul>
-<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/**/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/hello/**/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"es6"</span><span class="token punctuation">,</span>
-        <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"es6"</span><span class="token punctuation">,</span>
-        <span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"./dist"</span><span class="token punctuation">,</span>
-        <span class="token property">"allowJs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">"checkJs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">"removeComments"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">"noEmit"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">"noEmitOnError"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">"strict"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -747,7 +765,7 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://twelvefish.github.io/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/">http://twelvefish.github.io/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/</a>
+                    <a href="http://twelvefish.github.io/2021/01/02/technology/snake/1-1%E3%80%81%E5%88%9D%E8%AD%98TypeScript/">http://twelvefish.github.io/2021/01/02/technology/snake/1-1%E3%80%81%E5%88%9D%E8%AD%98TypeScript/</a>
                 </span>
             </div> -->
             <div class="reprint__notice">
@@ -831,24 +849,24 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/05/technology/snake/03-webpack%E6%89%93%E5%8C%85TypeScript/">
+                <a href="/2021/01/04/technology/snake/1-2%E3%80%81%E7%B7%A8%E8%AD%AFTypeScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="03-webpack打包TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-2、編譯TypeScript">
                         
-                        <span class="card-title">03-webpack打包TypeScript</span>
+                        <span class="card-title">1-2、編譯TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用webpack工具打包TypeScript
+                            學習編譯TypeScript的配置文件 tsconfig.json
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
                         </span>
                         <span class="publish-author">
                             
@@ -879,24 +897,24 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/01/04/technology/snake/02-%E7%B7%A8%E8%AD%AFTypeScript/">
+                <a href="/2021/01/02/technology/snake/1-1%E3%80%81%E5%88%9D%E8%AD%98TypeScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="02-編譯TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-1、初識TypeScript">
                         
-                        <span class="card-title">02-編譯TypeScript</span>
+                        <span class="card-title">1-1、初識TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            學習編譯TypeScript的配置文件 tsconfig.json
+                            學習TypeScript和JavaScript的差異及型別
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-02
                             </span>
                         <span class="publish-author">
                             
@@ -929,31 +947,30 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/02/technology/snake/01-%E5%88%9D%E8%AD%98TypeScript/">
+                <a href="/2019/11/20/novel/01/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E6%AD%A6%E8%80%85%E4%B8%96%E7%95%8C/">
                     <div class="card-image">
                         
+                        <img src="/images/novel/01/04.jpg" class="responsive-img" alt="第四章：武者世界">
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="01-初識TypeScript">
-                        
-                        <span class="card-title">01-初識TypeScript</span>
+                        <span class="card-title">第四章：武者世界</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            學習TypeScript和JavaScript的差異及型別
+                            走進校門，映入眼簾的是百花盛開的景象，...
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
-                                    TypeScript大戰貪食蛇
+                            <a href="/categories/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/" class="post-category">
+                                    古之惡來者為王
                                 </a>
                             
                             
@@ -963,8 +980,8 @@ box1<span class="token operator">?</span><span class="token punctuation">.</span
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TypeScript/">
-                        <span class="chip bg-color">TypeScript</span>
+                    <a href="/tags/%E5%B0%8F%E8%AA%AA/">
+                        <span class="chip bg-color">小說</span>
                     </a>
                     
                 </div>
@@ -1112,7 +1129,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
-                class="white-color">26.3k</span>&nbsp;字
+                class="white-color">28.4k</span>&nbsp;字
             
             
             
