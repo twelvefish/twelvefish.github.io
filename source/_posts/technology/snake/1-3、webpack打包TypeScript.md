@@ -1,5 +1,5 @@
 ---
-title: 03-webpack打包TypeScript
+title: 1-3、webpack打包TypeScript
 date: 2021-01-05 20:31:01
 author: twelvefish
 img:
@@ -18,7 +18,7 @@ tags:
 > 
 > 不經歷風雨，怎麼見彩虹。
 
-此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲                                                             
+此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲                                                             
 
 本系列前半部參考影片[尚硅谷TypeScript快速上手](https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw)，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本
 

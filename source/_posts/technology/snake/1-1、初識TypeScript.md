@@ -1,5 +1,5 @@
 ---
-title: 01-初識TypeScript
+title: 1-1、初識TypeScript
 date: 2021-01-02 22:35:33
 author: twelvefish
 img:
@@ -18,7 +18,7 @@ tags:
 > 
 > 夢想不付出行動，等於白扯。
 
-此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇蛇小遊戲        
+此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲        
 
 本系列前半部參考影片[尚硅谷TypeScript快速上手](https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw)，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本
 
