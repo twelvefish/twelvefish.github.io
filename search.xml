@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1-4、訊息鑑別碼與雜湊函數</title>
+    <url>/2021/01/19/technology/informationSecurity/1-4%E3%80%81%E8%A8%8A%E6%81%AF%E9%91%91%E5%88%A5%E7%A2%BC%E8%88%87%E9%9B%9C%E6%B9%8A%E5%87%BD%E6%95%B8/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>《每日一句》</strong>Youth will fade away, but my memories of you will not.</p>
+<p>青春都會蒼老，但記憶裡的你一直都好。</p>
+</blockquote>
+<h2 id="訊息鑑別碼"><a href="#訊息鑑別碼" class="headerlink" title="訊息鑑別碼"></a>訊息鑑別碼</h2><ul>
+<li>訊息鑑別碼(Message Authentication Code,MAC)</li>
+<li>利用<font color=red>對稱金鑰</font>加密機制鑑別資訊的完整性與來源身分識別</li>
+<li>流程<ul>
+<li>傳送方先將原文進行對稱加密，將<font color=red>最後8byte視為訊息鑑別碼</font>，將原文和訊息鑑別碼一起傳遞給接收方</li>
+<li>接收方將原文進行對稱加密，將最後8byte和傳送方傳來的訊息鑑別碼比對，能夠得知訊息是否遭竄改以及是誰傳遞的</li>
+</ul>
+</li>
+<li>完整性<ul>
+<li>訊息遭竄改則訊息鑑別碼不同</li>
+</ul>
+</li>
+<li>身分認證性<ul>
+<li>只有收雙方有對稱金鑰</li>
+</ul>
+</li>
+<li>可用來驗證一個經過網路傳送之訊息的完整性和身分認證性<br><img src="/images/technology/informationSecurity/02_%E8%A8%8A%E6%81%AF%E9%91%91%E5%88%A5%E7%A2%BC.PNG" alt=""></li>
+</ul>
+<h2 id="雜湊函式"><a href="#雜湊函式" class="headerlink" title="雜湊函式"></a>雜湊函式</h2><ul>
+<li>雜湊函式(Hashing Function)</li>
+<li>雜湊函式主要是將一串可變長度的訊息產生固定的訊息摘要(message digest)或稱為雜湊值(hashing value)</li>
+<li>特色<ul>
+<li>很難找到不同input，產生相同的雜湊值</li>
+<li>很難由雜湊值推算出input</li>
+<li>input只要更改一個位元，都會改變雜湊值</li>
+</ul>
+</li>
+<li>EX:<ul>
+<li>128位元 : MD2、MD4、<font color=red>MD5</font></li>
+<li>160位元 : <font color=red>SHA-1</font></li>
+</ul>
+</li>
+<li>用途:<ul>
+<li>資料傳送前後的雜湊值比對</li>
+<li>登入網站的密碼儲存機制</li>
+<li>病毒碼編碼驗證</li>
+<li>開源軟體驗證</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/technology/informationSecurity/03_%E9%9B%9C%E6%B9%8A%E5%87%BD%E5%BC%8F.PNG" alt=""></p>
+<h2 id="彩虹表"><a href="#彩虹表" class="headerlink" title="彩虹表"></a>彩虹表</h2><ul>
+<li>彩虹表(Rainbow table)</li>
+<li>針對可能的字母組合預先計算好雜湊值的集合，用來破解MD5、SHA-1等單項雜湊<br><img src="/images/technology/informationSecurity/04_%E5%BD%A9%E8%99%B9%E8%A1%A8.PNG" alt=""></li>
+</ul>
+<h2 id="加鹽"><a href="#加鹽" class="headerlink" title="加鹽"></a>加鹽</h2><ul>
+<li>加鹽(Salt)</li>
+<li>透過在原文任意位置插入特定字串，這些特定字串用亂數產生，讓雜湊後的結果與原始密碼的雜湊結果不同</li>
+<li>加鹽後的雜湊值，即使用彩虹表找出雜湊值對應的內容，也因為被插入了亂數字串擾亂真正的明文，不易被破解<br><img src="/images/technology/informationSecurity/05_%E5%8A%A0%E9%B9%BD.PNG" alt=""></li>
+</ul>
+]]></content>
+      <categories>
+        <category>資通安全</category>
+      </categories>
+      <tags>
+        <tag>密碼學</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>1-3、非對稱式加密</title>
     <url>/2021/01/17/technology/informationSecurity/1-3%E3%80%81%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/</url>
     <content><![CDATA[<blockquote>
@@ -8,35 +73,25 @@
 <p>每個人都有各自找到幸福的方式。</p>
 </blockquote>
 <h2 id="非對稱式加密"><a href="#非對稱式加密" class="headerlink" title="非對稱式加密"></a>非對稱式加密</h2><ul>
-<li><p>非對稱式加密 (Asymmetric Encryption)</p>
-</li>
-<li><p>兩把成對的金鑰，一把將資料加密，一把解密，又被稱為Public key 公鑰、Private key 私鑰</p>
-</li>
-<li><p>又稱為公開金鑰加密法</p>
-</li>
-<li><p>兩把中的任一把都可以拿來加密，而另一把則來解密</p>
-</li>
-<li><p>私鑰自己留存，公鑰任何人都可以取得</p>
-</li>
-<li><p>只知道演算法和加密金鑰，求出解密金鑰是不可能的</p>
-</li>
-<li><p>身分驗證、不可否認</p>
-<ul>
+<li>非對稱式加密 (Asymmetric Encryption)</li>
+<li>兩把成對的金鑰，一把將資料加密，一把解密，又被稱為Public key 公鑰、Private key 私鑰</li>
+<li>又稱為公開金鑰加密法</li>
+<li>兩把中的任一把都可以拿來加密，而另一把則來解密</li>
+<li>私鑰自己留存，公鑰任何人都可以取得</li>
+<li>只知道演算法和加密金鑰，求出解密金鑰是不可能的</li>
+<li>身分驗證、不可否認<ul>
 <li>將資料用私鑰加密，確保資訊只能由接收端用公鑰解密，能確保資料來源一定是從擁有私鑰的對像而來</li>
 </ul>
 </li>
-<li><p>機密性</p>
-<ul>
+<li>機密性<ul>
 <li>將資料用公鑰加密，只有擁有私鑰的人才能解密，確保資料只能傳遞給擁有私鑰的特殊對象</li>
 </ul>
 </li>
-<li><p>Bob要傳送一份機密文件給100人，使用非對稱方式要確保機密性，請問需要幾把金鑰?</p>
-<ul>
+<li>Bob要傳送一份機密文件給100人，使用非對稱方式要確保機密性，請問需要幾把金鑰?<ul>
 <li>100把公鑰</li>
 </ul>
 </li>
-<li><p>Bob要傳送一份機密文件給100人，使用非對稱方式要確保身分認證性，請問需要幾把金鑰?</p>
-<ul>
+<li>Bob要傳送一份機密文件給100人，使用非對稱方式要確保身分認證性，請問需要幾把金鑰?<ul>
 <li>1把私鑰</li>
 </ul>
 </li>
@@ -214,6 +269,9 @@
 <li>完整性 : 沒有授權的人無法修改或刪除該檔案 (Write)</li>
 <li>可用性 : 有獲得授權的可正常使用系統</li>
 </ul>
+<hr>
+<div style="font-size:200%;">一、密碼學</div>
+
 <h2 id="1-1、密碼學基礎"><a href="#1-1、密碼學基礎" class="headerlink" title="1-1、密碼學基礎"></a><a href="https://twelvefish.github.io/2021/01/16/technology/informationSecurity/1-1、密碼學基礎">1-1、密碼學基礎</a></h2>]]></content>
       <categories>
         <category>資通安全</category>
@@ -231,7 +289,11 @@
 </blockquote>
 <p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲        </p>
 <p>本系列前半部參考影片<a href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw" target="_blank" rel="noopener">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
-<h2 id="1-1、初識TypeScript"><a href="#1-1、初識TypeScript" class="headerlink" title="1-1、初識TypeScript"></a><a href="https://twelvefish.github.io/2021/01/02/technology/snake/1-1、初識TypeScript">1-1、初識TypeScript</a></h2><h2 id="1-2、編譯TypeScript"><a href="#1-2、編譯TypeScript" class="headerlink" title="1-2、編譯TypeScript"></a><a href="https://twelvefish.github.io/2021/01/04/technology/snake/1-2、編譯TypeScript">1-2、編譯TypeScript</a></h2><h2 id="1-3、webpack打包TypeScript"><a href="#1-3、webpack打包TypeScript" class="headerlink" title="1-3、webpack打包TypeScript"></a><a href="https://twelvefish.github.io/2021/01/05/technology/snake/1-3、webpack打包TypeScript">1-3、webpack打包TypeScript</a></h2><h2 id="1-4、物件導向觀念引入TypeScript"><a href="#1-4、物件導向觀念引入TypeScript" class="headerlink" title="1-4、物件導向觀念引入TypeScript"></a><a href="https://twelvefish.github.io/2021/01/09/technology/snake/1-4、物件導向觀念引入TypeScript">1-4、物件導向觀念引入TypeScript</a></h2>]]></content>
+<hr>
+<div style="font-size:200%;">一、TypeScript</div>
+
+<h2 id="1-1、初識TypeScript"><a href="#1-1、初識TypeScript" class="headerlink" title="1-1、初識TypeScript"></a><a href="https://twelvefish.github.io/2021/01/02/technology/snake/1-1、初識TypeScript">1-1、初識TypeScript</a></h2><h2 id="1-2、編譯TypeScript"><a href="#1-2、編譯TypeScript" class="headerlink" title="1-2、編譯TypeScript"></a><a href="https://twelvefish.github.io/2021/01/04/technology/snake/1-2、編譯TypeScript">1-2、編譯TypeScript</a></h2><h2 id="1-3、webpack打包TypeScript"><a href="#1-3、webpack打包TypeScript" class="headerlink" title="1-3、webpack打包TypeScript"></a><a href="https://twelvefish.github.io/2021/01/05/technology/snake/1-3、webpack打包TypeScript">1-3、webpack打包TypeScript</a></h2><h2 id="1-4、物件導向觀念引入TypeScript"><a href="#1-4、物件導向觀念引入TypeScript" class="headerlink" title="1-4、物件導向觀念引入TypeScript"></a><a href="https://twelvefish.github.io/2021/01/09/technology/snake/1-4、物件導向觀念引入TypeScript">1-4、物件導向觀念引入TypeScript</a></h2><hr>
+<div style="font-size:200%;">二、貪食蛇</div>]]></content>
       <categories>
         <category>TypeScript大戰貪食蛇</category>
       </categories>
