@@ -4,9 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第四章：武者世界, 程式,小說,遊戲製作">
-    <meta name="description" content="第四章：武者世界走進校門，映入眼簾的是百花盛開的景象，香氣隨著風兒蔓延開來，帶給人們神清氣爽的感覺，而我們主角跟平常一樣走進校園，卻發現校園和平時相比有種說不出的變化。
-一路上穿越各個門派，李余發現，平時傲氣逼人的學長姊，竟對他毫無壓迫感，">
+    <meta name="keywords" content="1-5、密碼學整合應用, 程式,小說,遊戲製作">
+    <meta name="description" content="
+《每日一句》Your heart is free.Have the courage to follow it.
+你的心是自由的，要有勇氣追隨它。
+
+數位簽章
+數位簽章(Digital Signature)
+利用非對稱加密(公開金鑰)的機制">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第四章：武者世界 | twelvefish</title>
+    <title>1-5、密碼學整合應用 | twelvefish</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/twelvefish.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -319,13 +324,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/novel/01/04.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第四章：武者世界
+                        1-5、密碼學整合應用
                     </div>
                 </div>
             </div>
@@ -336,10 +341,99 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #2828FF;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #2828FF;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #2828FF;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -348,8 +442,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%8F%E8%AA%AA/">
-                                <span class="chip bg-color">小說</span>
+                            <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/">
+                                <span class="chip bg-color">密碼學</span>
                             </a>
                         
                     </div>
@@ -360,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/" class="post-category">
-                                古之惡來者為王
+                            <a href="/categories/%E8%B3%87%E9%80%9A%E5%AE%89%E5%85%A8/" class="post-category">
+                                資通安全
                             </a>
                         
                     </div>
@@ -373,28 +467,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>發布日期:&nbsp;&nbsp;
-                    2019-11-20
+                    2021-01-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-02
+                    2021-01-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
-                    1.9k
+                    873
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
 				
@@ -410,48 +504,101 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第四章：武者世界"><a href="#第四章：武者世界" class="headerlink" title="第四章：武者世界"></a>第四章：武者世界</h2><p>走進校門，映入眼簾的是百花盛開的景象，香氣隨著風兒蔓延開來，帶給人們神清氣爽的感覺，而我們主角跟平常一樣走進校園，卻發現校園和平時相比有種說不出的變化。</p>
-<p>一路上穿越各個門派，李余發現，平時傲氣逼人的學長姊，竟對他毫無壓迫感，或許這就是境界上的不同吧！修練到一階的他，感受到目前能威脅到他的只剩各門的門主和那神龍不見尾的校長。</p>
-<p>想起和校長約好的時間，李余趕緊加快腳步，直至進入校園的最深處，一間緊靠著山的小木屋前。</p>
-<p>「咚〜咚〜咚〜八極拳李余。」李余在門外禮貌地打聲招呼。</p>
-<p>「哦，李余啊，進來吧，校長十分榮幸見到你的成長，武者和普通人最大的不同，就是世俗的法律已經無法再拘束武者，所以武者世界自有一套規則，而最基本的就是不能依靠武力去欺負普通人。」</p>
-<p>「除非你能凌駕於規則之上」校長嘴角上揚心中竊笑著。</p>
-<p>接著校長打開與山壁緊連接的門，對著李余笑道，「歡迎進入武者世界」說完一個用力就把未有防備的李余推進無底的深淵。</p>
-<p>被摔進地洞中的李余翻了好幾個跟斗，在地洞中跌跌撞撞，碰！好大一聲，撞上一塊大石頭，暈了過去，在昏迷前，只隱隱約約看見有人朝他的方向走來嘴中還低估著，「這個死老頭每次送人下來都這麼暴力，真是增加我們的困擾。」</p>
-<p>「頭好痛，這個死校長，真是陰險」李余坐起來看看四周環境，發現這是一間樸素的小木屋，房內只有幾個蒲墊和現在躺的這張床，而牆上掛著一幅「武」的字畫。</p>
-<p>盯著字畫，李余腦筋一陣疼痛，眼睛竟不由自主地跟著「武」字的一筆一畫，一勾一勒，一撇一捺移動，「惡來心法」也不由自主地運轉起來，隨著時間的流失，李余的功力悄悄增加，但也因為負荷不了「武」字的影響而再度暈眩。</p>
-<p>隨著李余的再度清醒，發現蒲墊上已有一名男子坐在上面，而牆上的字畫卻不見蹤影。</p>
-<p>「小子，你清醒啦！」這名男子一臉猥笑地對著李余說話。</p>
-<p>看見這名男子的笑容，自戀感極重的李余當下的反應是看看自己的衣物有無短缺之處，且拿起棉被，趕緊躲到牆角，身為傑出青好少年，李余可想把第一次留給心目中的女神。</p>
-<p>「你這是啥麼眼神，我又不會吃了你」說完這名男子，「呵呵」地笑了幾聲，慢慢地靠近床邊。</p>
-<p>「你不要過來，我不嗜好男男戀！再過來我要喊救命囉！」李余驚恐的縮在牆角叫著。</p>
-<p>依照狗血劇情的安排，現在的男子應該會回應，「就算你叫破喉嚨也不會有人來救你的〜」但事與願違，這名男子只是走回門邊，對著門外的另一名男子說道，「天啊，我無法應付，這是一位自戀狂，快來幫我。」</p>
-<p>「哈哈，我賭贏了，誰叫你一臉猥褻樣，趕緊結束工作，晚上請客啊！」又一名男子走了進來，只不過長了一張英俊的帥臉。</p>
-<p>「先自我介紹一下，敝人趙峰，而這猥褻笑容的是我弟趙谷，我們屬形意拳一派，而我們的任務是幫你介紹武者世界。」李余感覺看著帥哥解說就是不一樣。</p>
-<p>「恩？介紹需要兩個人嗎？那位噁心笑容的可以閃一邊嗎？」李余還是對於那位男子感到反感。</p>
-<p>「哈哈，小子，人不可貌相啊，我弟他可是一階七品高手，對付你這種剛進一階的菜鳥可是手到擒來，雖然他長相真的令人作噁，哈哈」</p>
-<p>「臭老哥，再講揍你喔！」弟弟也不甘示弱地回嘴。</p>
-<p>這雙人組的組合真是令人提笑生非，竟然彼此就鬥嘴起來了。</p>
-<p>「那個，不好意思，打岔一下，能和我詳細說明武者階品制度的判別方式嗎？」</p>
-<p>「痾〜忘記你了！武者共分九階，每階各分九品，每三品為一個分水嶺，每次的分水嶺都是一次質的變化，所以師弟對上高出你境界的對手要多多注意唷！」</p>
-<p>「至於如何得知對手階級和品級，一般來說只能感應到低於自己階層品級的，所以當你無法感受到對方，你就必須注小心行事，以免惹到不該惹的人。」</p>
-<p>「師兄，你講解的好清楚」李余眼睛發亮的看著趙峰。</p>
-<p>「這沒啥麼啦，竟然接了任務當然就要盡心講解，畢竟評價影響報酬。」趙峰慢慢地退後兩步，拉開距離。</p>
-<p>「啥麼任務？啥麼評價？」又出現奇怪名詞，李余不解地問。</p>
-<p>「哦，本校是靠接受任務來獲得晶石，而晶石是武者世界的貨幣，這不僅是貨幣也能拿來修煉功法，也是恢復真氣的消耗品，而至於評價就是依照任務完成度來得到多少晶石的依據。」</p>
-<p>「接下來帶李余師弟出去外面見識一下吧！」</p>
-<p>武上尊明面上為一所武術學校，而實際上為武者世界的入口，匯集百家所長，武術大同，校內有四大學院，拳、刀、槍、劍，每位學員分別以自身突破的武術對應至各個學院、門派，而校園也分為幾大區域，交易、教學、競技以及試煉之塔，校園內禁止私鬥，發現一律被關禁閉處分。</p>
-<p>「試煉之塔？？」</p>
-<p>「每一位菜鳥都對試煉之塔感到好奇啊〜我只能跟你說，在試煉之塔中危機重重，但進去回來的，實力都會是跨幅度的成長。」</p>
-<p>「好啦，這裡是交易區，凡關繳交任務、領取報酬、買賣都在此地，這次介紹工作就在此告一段落，這兒有隻手錶帶上他表示你身為武上尊武者的身份，有不懂的，手錶內有說明，再慢慢閱讀，我們先去繳交任務。」說完趙氏兄弟倆轉身就走。</p>
-<p>「等等，不知師兄是否知道我睡醒時房內掛的那幅字畫跑去哪了？」</p>
-<p>「字畫！」趙氏兄弟倆轉頭看著彼此，一臉疑惑的表情。</p>
-<p>「就是一幅「武」字的字畫」李余著急的問道。</p>
-<p>「這我們還真不清楚呢？記憶中，房間內應該是無任何擺設，畢竟這是給你們這些菜鳥休息用的」</p>
-<p>「或許是我看錯了吧！」第一天來到武者世界，李余還是不想惹出太多麻煩，摸摸鼻子說道。</p>
-<p>遠處一名女子看著疑惑的李余，自言自語的道，「看見「武」字的字畫，難道師傅他老人家，又看見中意的苗子嗎？」</p>
-<p>※苗子：新出現的人才。</p>
-<p>Photo by <a href="https://unsplash.com/@h4x0r3" target="_blank" rel="noopener">Thao Le Hoang</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
+                <blockquote>
+<p><strong>《每日一句》</strong>Your heart is free.Have the courage to follow it.</p>
+<p>你的心是自由的，要有勇氣追隨它。</p>
+</blockquote>
+<h2 id="數位簽章"><a href="#數位簽章" class="headerlink" title="數位簽章"></a>數位簽章</h2><ul>
+<li>數位簽章(Digital Signature)</li>
+<li>利用<font color=red>非對稱加密(公開金鑰)</font>的機制來保護資料的完整性、身分認證性與不可否認性</li>
+<li>流程<ul>
+<li>Alice將本文用雜湊函式後產生的雜湊值，用自己的私鑰加密，產生數位簽章</li>
+<li>Alice將數位簽章和本文一起傳送給Bob</li>
+<li>Bob接受到後，將數位簽章用Alice的公鑰解密出雜湊值1，另外將本文用雜湊函式加密後產生的雜湊值2</li>
+<li>比對兩雜湊值是否相同，就能驗證傳輸期間本文是否被人竄改</li>
+</ul>
+</li>
+<li>完整性<ul>
+<li>透過雜湊函數驗證，資料若被修改則雜湊值改變，即能被驗證是否被人竄改</li>
+</ul>
+</li>
+<li>身分認證性、不可否認性<ul>
+<li>傳遞者的私鑰加密，只能用傳遞者公鑰解密，因此能代表傳遞者本人<br><img src="/images/technology/informationSecurity/06_%E6%95%B8%E4%BD%8D%E7%B0%BD%E7%AB%A0.PNG" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="S-MIME"><a href="#S-MIME" class="headerlink" title="S/MIME"></a>S/MIME</h2><ul>
+<li>安全的多用途網際網路郵件擴展(Secure Multipurpose Internet Mail Extensions,S/MIME)</li>
+<li>主要是將MIME封裝成安全對象，提供電子郵件或其他MIME傳輸機制機密性、完整性、身分認證性、不可否認性</li>
+<li>流程<ul>
+<li>Alice對信件進行數位簽章</li>
+<li>若有機密性需求，再<font color=red>使用Bob的數位憑證裡的公鑰</font>對信件和數位簽章加密</li>
+<li>Bob收到後，使用自己的私鑰解密，確保機密性</li>
+<li>Bob驗證數位簽章，確保信件的完整性、身分認證性、不可否認性</li>
+</ul>
+</li>
+<li>限制<ul>
+<li>Alice、Bob都必須要有數位憑證</li>
+<li>數位憑證會過期，因此需要一段時間後就要更新<br><img src="/images/technology/informationSecurity/07_SMIME.PNG" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h2><ul>
+<li>SSL (Secure Sockets Layers)</li>
+<li>主要功能是建立使用者瀏覽器與網頁伺服器資料傳遞的安全通道</li>
+<li>HTTPS = HTTP + SSL</li>
+<li>SSL3.1 = TLS (Transport Layer Security) 傳輸層通訊協定</li>
+<li>數位信封<ul>
+<li>傳輸方法使用<font color=red>非對稱金鑰</font>確保傳輸安全</li>
+<li>而加密方法使用<font color=red>對稱金鑰</font>，此對稱金鑰稱為Session Key，用來實際將原文加密</li>
+<li>為了傳輸安全，所以使用非對稱金鑰</li>
+<li>為了速度快、效率，使用對稱金鑰</li>
+</ul>
+</li>
+<li>協定<ul>
+<li><font color=red>握手協定</font><ul>
+<li>協議雙方安全通訊的參數，包括身分認證、演算法和金鑰</li>
+</ul>
+</li>
+<li>變更加密規格協定<ul>
+<li>通知對方改變加密規格</li>
+</ul>
+</li>
+<li>警告協定<ul>
+<li>負責意外狀況的警告訊息</li>
+</ul>
+</li>
+<li><font color=red>紀錄協定</font><ul>
+<li>雙方達成安全協議後，利用紀錄協定<font color=red>進行通訊</font>，主要為將上層的資料分析壓縮後，加入<font color=red>訊息驗證碼和加密</font>，再傳遞給<font color=red>TCP</font>層</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>流程<ul>
+<li>瀏覽器發出ClientHello給SSL網站伺服器<ul>
+<li>告知伺服器，瀏覽器可以使用的SSL加密及演算法版本號</li>
+</ul>
+</li>
+<li>SSL伺服器回應ServerHello<ul>
+<li>裡面包含了伺服器的數位頻證(伺服器公鑰、伺服器身分認證訊息)，以及雙方約定的演算法</li>
+</ul>
+</li>
+<li>瀏覽器傳送加密後的對稱金鑰給伺服器<ul>
+<li>瀏覽器依照規定好的演算法產生對稱金鑰(Session Key)，僅使用於本次加密</li>
+<li>並使用伺服器提供的公鑰加密，只有伺服器有私鑰可以解開，因此保證機密性</li>
+</ul>
+</li>
+<li>伺服器使用私鑰解開<ul>
+<li>伺服器取出對稱金鑰後，用於往後互傳的資訊加密<br><img src="/images/technology/informationSecurity/08_SSL.PNG" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="IPSec"><a href="#IPSec" class="headerlink" title="IPSec"></a>IPSec</h2><ul>
+<li>IPSec (IP Security)</li>
+<li></li>
+</ul>
 
             </div>
             <hr/>
@@ -477,7 +624,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://twelvefish.github.io/2019/11/20/novel/01/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E6%AD%A6%E8%80%85%E4%B8%96%E7%95%8C/">http://twelvefish.github.io/2019/11/20/novel/01/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E6%AD%A6%E8%80%85%E4%B8%96%E7%95%8C/</a>
+                    <a href="http://twelvefish.github.io/2021/01/23/technology/informationSecurity/1-5%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E6%95%B4%E5%90%88%E6%87%89%E7%94%A8/">http://twelvefish.github.io/2021/01/23/technology/informationSecurity/1-5%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E6%95%B4%E5%90%88%E6%87%89%E7%94%A8/</a>
                 </span>
             </div> -->
             <div class="reprint__notice">
@@ -515,8 +662,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%8F%E8%AA%AA/">
-                                    <span class="chip bg-color">小說</span>
+                                <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/">
+                                    <span class="chip bg-color">密碼學</span>
                                 </a>
                             
                         </div>
@@ -557,46 +704,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m4" data-aos="fade-up">
+        <div class="article col s12 m4" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/02/technology/snake/1-1%E3%80%81%E5%88%9D%E8%AD%98TypeScript/">
+                <a href="/2021/01/23/technology/informationSecurity/1-5%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E6%95%B4%E5%90%88%E6%87%89%E7%94%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-1、初識TypeScript">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-5、密碼學整合應用">
                         
-                        <span class="card-title">1-1、初識TypeScript</span>
+                        <span class="card-title">1-5、密碼學整合應用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            學習TypeScript和JavaScript的差異及型別
+                            數位簽章、S/MIME、SSL、IPSec
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TypeScript%E5%A4%A7%E6%88%B0%E8%B2%AA%E9%A3%9F%E8%9B%87/" class="post-category">
-                                    TypeScript大戰貪食蛇
+                            <a href="/categories/%E8%B3%87%E9%80%9A%E5%AE%89%E5%85%A8/" class="post-category">
+                                    資通安全
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TypeScript/">
-                        <span class="chip bg-color">TypeScript</span>
+                    <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/">
+                        <span class="chip bg-color">密碼學</span>
                     </a>
                     
                 </div>
@@ -609,30 +758,31 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/11/20/novel/01/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E6%AD%A6%E8%80%85%E4%B8%96%E7%95%8C/">
+                <a href="/2021/01/23/technology/informationSecurity/1-5%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E6%95%B4%E5%90%88%E6%87%89%E7%94%A8/">
                     <div class="card-image">
                         
-                        <img src="/images/novel/01/04.jpg" class="responsive-img" alt="第四章：武者世界">
                         
-                        <span class="card-title">第四章：武者世界</span>
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-5、密碼學整合應用">
+                        
+                        <span class="card-title">1-5、密碼學整合應用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            走進校門，映入眼簾的是百花盛開的景象，...
+                            數位簽章、S/MIME、SSL、IPSec
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/" class="post-category">
-                                    古之惡來者為王
+                            <a href="/categories/%E8%B3%87%E9%80%9A%E5%AE%89%E5%85%A8/" class="post-category">
+                                    資通安全
                                 </a>
                             
                             
@@ -643,8 +793,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E8%AA%AA/">
-                        <span class="chip bg-color">小說</span>
+                    <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/">
+                        <span class="chip bg-color">密碼學</span>
                     </a>
                     
                 </div>
@@ -658,30 +808,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/20/novel/01/%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E4%B8%89%E9%AD%82%E4%B8%83%E9%AD%84/">
+                <a href="/2021/01/19/technology/informationSecurity/1-4%E3%80%81%E8%A8%8A%E6%81%AF%E9%91%91%E5%88%A5%E7%A2%BC%E8%88%87%E9%9B%9C%E6%B9%8A%E5%87%BD%E6%95%B8/">
                     <div class="card-image">
                         
-                        <img src="/images/novel/01/03.jpg" class="responsive-img" alt="第三章：三魂七魄">
                         
-                        <span class="card-title">第三章：三魂七魄</span>
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1-4、訊息鑑別碼與雜湊函數">
+                        
+                        <span class="card-title">1-4、訊息鑑別碼與雜湊函數</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            早晨的陽光，照射著大地，樹枝上的小鳥，...
+                            訊息鑑別碼、雜湊函數、彩虹表和加鹽..
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/" class="post-category">
-                                    古之惡來者為王
+                            <a href="/categories/%E8%B3%87%E9%80%9A%E5%AE%89%E5%85%A8/" class="post-category">
+                                    資通安全
                                 </a>
                             
                             
@@ -691,8 +842,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E8%AA%AA/">
-                        <span class="chip bg-color">小說</span>
+                    <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/">
+                        <span class="chip bg-color">密碼學</span>
                     </a>
                     
                 </div>
@@ -767,6 +918,59 @@
 <style type="text/css">
 code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
 </style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目錄</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (i++));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (i++));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+    });
+</script>
 
     
 

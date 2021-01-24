@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://twelvefish.github.io/"/>
-  <updated>2021-01-22T14:25:21.167Z</updated>
+  <updated>2021-01-24T06:12:22.088Z</updated>
   <id>http://twelvefish.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1-5、密碼學整合應用</title>
+    <link href="http://twelvefish.github.io/2021/01/23/technology/informationSecurity/1-5%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E6%95%B4%E5%90%88%E6%87%89%E7%94%A8/"/>
+    <id>http://twelvefish.github.io/2021/01/23/technology/informationSecurity/1-5%E3%80%81%E5%AF%86%E7%A2%BC%E5%AD%B8%E6%95%B4%E5%90%88%E6%87%89%E7%94%A8/</id>
+    <published>2021-01-23T02:46:41.000Z</published>
+    <updated>2021-01-24T06:12:22.088Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;《每日一句》&lt;/strong&gt;Your heart is free.Have the courage to follow it.&lt;/p&gt;
+&lt;p&gt;你的心是自由的，要有勇氣追隨它。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="資通安全" scheme="http://twelvefish.github.io/categories/%E8%B3%87%E9%80%9A%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="密碼學" scheme="http://twelvefish.github.io/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>1-4、訊息鑑別碼與雜湊函數</title>
