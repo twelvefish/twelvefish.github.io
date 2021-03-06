@@ -1,0 +1,91 @@
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本部落格由&nbsp;&copy;
+            <a href="<%- config.url %>" target="_blank"><%- config.author %></a>
+            基於
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 網誌框架的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            主題所搭建而成
+            <br>
+
+            <% if (theme.wordCount.totalCount) { %>
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
+                class="white-color"><%= totalcount(site) %></span>&nbsp;字
+            <% } %>
+            <% let socialClass = '' %>
+            <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+            <% socialClass = 'social-statis' %>
+            <% } %>
+            <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;總訪問量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            <% } %>
+            <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalNumberOfvisitors) { %>
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;總訪問人數:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <% } %>
+            <br>
+            <span id="year" style="display:none">年份</span> 
+            <% if (theme.time.enable) { %>
+            <span id="sitetime">載入運行時間...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "<%- theme.time.year %>";
+                    var startMonth = "<%- theme.time.month %>";
+                    var startDate = "<%- theme.time.date %>";
+                    var startHour = "<%- theme.time.hour %>";
+                    var startMinute = "<%- theme.time.minute %>";
+                    var startSecond = "<%- theme.time.second %>";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "部落格已安全運行 " + diffDays + " 天 " + diffHours +
+                            " 小時 " + diffMinutes + " 分鐘 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全運行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小時 " + diffMinutes + " 分鐘 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            <% } %>
+            <br>
+            <% if (theme.icp.enable) { %>
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="<%- theme.icp.url %>" target="_blank"><%- theme.icp.text %></a>
+            </span>
+            <% } %>
+        </div>
+        <div class="col s12 m4 l4 social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
