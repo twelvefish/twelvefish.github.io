@@ -60,7 +60,10 @@
 @font-face{
     font-family: 'myFont';
     /* src: url('../font/setofont.ttf'); */
-    src: url('../font/TaipeiSansTCBeta-Bold.ttf');
+    /* src: url('../font/TaipeiSansTCBeta-Bold.ttf'); */
+    /* src: url('../font/TaipeiSansTCBeta-Light.ttf'); */
+    src: url('../font/TaipeiSansTCBeta-Regular.ttf');
+    
 }
 
 body{

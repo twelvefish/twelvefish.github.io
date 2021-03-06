@@ -99,11 +99,20 @@
     <ul class="sub-nav menus_item_child ">
       
       <li>
-        <a href="/2019/11/19/novel/01/%E7%9B%AE%E9%8C%84/">
+        <a href="/2019/11/19/novel/01/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/">
           
           <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>古之惡來者為王</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/2021/03/06/novel/02/%E5%96%9D%E6%9D%AF%E9%85%92%EF%BC%8C%E8%AA%AA%E5%80%8B%E6%95%85%E4%BA%8B/">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>喝杯酒，說個故事</span>
         </a>
       </li>
       
@@ -231,11 +240,21 @@
               
                 <li>   
 				
-                  <a href="/2019/11/19/novel/01/%E7%9B%AE%E9%8C%84/ " style="margin-left:75px";>
+                  <a href="/2019/11/19/novel/01/%E5%8F%A4%E4%B9%8B%E6%83%A1%E4%BE%86%E8%80%85%E7%82%BA%E7%8E%8B/ " style="margin-left:75px";>
 				  
 				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
 			      
 		          <span>古之惡來者為王</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/2021/03/06/novel/02/%E5%96%9D%E6%9D%AF%E9%85%92%EF%BC%8C%E8%AA%AA%E5%80%8B%E6%95%85%E4%BA%8B/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>喝杯酒，說個故事</span>
                   </a>
                 </li>
               
@@ -473,21 +492,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-01-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字數:&nbsp;&nbsp;
-                    351
+                    867
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>閲讀時長:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 				
@@ -551,14 +570,44 @@
 </ul>
 </li>
 <li>擴散 (Diffusion)<ul>
-<li>當明文有細微差別，可造成密文巨大差異<h2 id="凱薩加密"><a href="#凱薩加密" class="headerlink" title="凱薩加密"></a>凱薩加密</h2></li>
+<li>當明文有細微差別，可造成密文巨大差異</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p><img src="/images/technology/informationSecurity/01_%E5%87%B1%E8%96%A9%E5%8A%A0%E5%AF%86.PNG" alt=""></p>
-<h2 id="Monoalphabetic-替換式密碼"><a href="#Monoalphabetic-替換式密碼" class="headerlink" title="Monoalphabetic 替換式密碼"></a>Monoalphabetic 替換式密碼</h2><h2 id="Playfair-加密"><a href="#Playfair-加密" class="headerlink" title="Playfair 加密"></a>Playfair 加密</h2><h2 id="柵欄加密"><a href="#柵欄加密" class="headerlink" title="柵欄加密"></a>柵欄加密</h2><h2 id="CBC-密碼塊連結"><a href="#CBC-密碼塊連結" class="headerlink" title="CBC 密碼塊連結"></a>CBC 密碼塊連結</h2><ul>
+<hr>
+<h2 id="凱薩加密"><a href="#凱薩加密" class="headerlink" title="凱薩加密"></a>凱薩加密</h2><ul>
+<li>明文中的所有字母都在字母表上向後（或向前）按照一個固定數目進行偏移後被替換成密文。例如，當偏移量是3的時候，所有的字母A將被替換成D，B變成E，以此類推<br><img src="/images/technology/informationSecurity/01_%E5%87%B1%E8%96%A9%E5%8A%A0%E5%AF%86.PNG" alt=""></li>
+</ul>
+<hr>
+<h2 id="替換式密碼"><a href="#替換式密碼" class="headerlink" title="替換式密碼"></a>替換式密碼</h2><ul>
+<li>替換式密碼 (Monoalphabetic)</li>
+<li>替換式密碼中可以用不同字母數為一單元，例如每一個或兩個字母為一單元，然後再作加密。密文接收者解密時需用原加密方式解碼才可取得明文</li>
+<li>簡易替換密碼<br><img src="/images/technology/informationSecurity/09_%E6%9B%BF%E6%8F%9B%E5%BC%8F%E5%AF%86%E7%A2%BC.PNG" alt=""></li>
+</ul>
+<hr>
+<h2 id="Playfair-加密"><a href="#Playfair-加密" class="headerlink" title="Playfair 加密"></a>Playfair 加密</h2><ul>
+<li>流程<ul>
+<li>選取一個英文字作密鑰。除去重覆出現的字母。將密鑰的字母逐個加入5×5的矩陣內，剩下的空間將未加入的英文字母依a-z的順序加入（或將I和J視作同一字）</li>
+<li>將要加密的訊息分成兩個一組。若組內的字母相同，將X插入兩字母之間，重新分組（例如 HELLO 將分成 HE LX LO），若剩下一個字，也加入X字</li>
+<li>在每組中，找出兩個字母在矩陣中的地方。<ul>
+<li>若兩個字母不在同一直行或同一橫列，在矩陣中找出另外兩個字母，使這四個字母成為一個長方形的四個角</li>
+<li>若兩個字母在同一橫列，取這兩個字母右方的字母（若字母在最右方則取最左方的字母）</li>
+<li>若兩個字母在同一直行，取這兩個字母下方的字母（若字母在最下方則取最上方的字母）</li>
+</ul>
+</li>
+<li>新找到的兩個字母就是原本的兩個字母加密的結果。<br><img src="/images/technology/informationSecurity/10_Playfair.PNG" alt=""></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="柵欄加密"><a href="#柵欄加密" class="headerlink" title="柵欄加密"></a>柵欄加密</h2><ul>
+<li>柵欄密碼是一種簡單的移動字符位置的加密方法，規則簡單，容易破解</li>
+<li>柵欄密碼的加密方式：把文本按照一定的字數分成多個組，取每組第一個字連起來得到密文1，再取每組第二個字連起來得到密文2……最後把密文1、密文2……連成整段密文<br><img src="/images/technology/informationSecurity/11_%E6%9F%B5%E6%AC%84%E5%8A%A0%E5%AF%86.PNG" alt=""></li>
+</ul>
+<hr>
+<h2 id="CBC-密碼塊連結"><a href="#CBC-密碼塊連結" class="headerlink" title="CBC 密碼塊連結"></a>CBC 密碼塊連結</h2><ul>
 <li>CBC 密碼塊連結 (Cipher-block chaining)</li>
 </ul>
 <h2 id="DES-加密演算法"><a href="#DES-加密演算法" class="headerlink" title="DES 加密演算法"></a>DES 加密演算法</h2><ul>
@@ -957,7 +1006,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;部落格總字數:&nbsp;<span
-                class="white-color">30.5k</span>&nbsp;字
+                class="white-color">22.1k</span>&nbsp;字
             
             
             
