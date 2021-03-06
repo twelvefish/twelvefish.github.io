@@ -24,7 +24,7 @@ tags:
 
 ## TypeScript 介紹
 
-- TypeScript(TS) 為強型別的 javaScript(JS)，主要增加類型class的概念
+- TypeScript(TS) 為強型別的 javaScript(JS)，<font color=red>主要增加類型class的概念</font>
 - 瀏覽器只看得懂JS，因此撰寫完TS還是必須通過編譯成JS，才能執行
 - 任何的JS語法都可在TS使用
 - 由於TS有類別型態，因此可以在編譯前完成程式的語法檢查，減少JS出錯的機率
@@ -34,7 +34,7 @@ tags:
 
 ## TypeScript 開發環境
 
-- 安裝Node.js是為了去使用TypeScript的編譯器
+- 安裝Node.js是為了去使用TypeScript的編譯器typeScript
 - 官網下載 [Node.js](https://nodejs.org/en/)，下載左邊當前LTS穩定版本，至於右邊則是最新、但有可能有bug的版本
 ![](/images/technology/snake/01_nodejs.PNG)
 - 安裝 Node.js，一直下一步...
@@ -53,7 +53,7 @@ typescript : 想安裝的套件名稱
 - 創建一個副檔名為.ts的文件，輸入console.log("hello");
 PS: JS語法能完全相容於TS文件
 ![](/images/technology/snake/05_hello.PNG)
-- 瀏覽器只能解析js文件，因此將ts進行編譯，在相對應的資料夾目錄打開cmd，輸入tsc xxx.ts
+- 瀏覽器只能解析js文件，因此將ts進行編譯，在相對應的資料夾目錄打開cmd，<font color=red>輸入tsc xxx.ts</font>
 ![](/images/technology/snake/06_complier.PNG)
 - 在相同路徑下，產生相同檔名的 xxx.js，即編譯成功
 ![](/images/technology/snake/07_newJS.PNG)
@@ -85,7 +85,7 @@ type myType = {
 |  型別   |       例子        |              描述              |
 | :-----: | :---------------: | :----------------------------: |
 | number  |    1, -33, 2.5    |            任意數字            |
-| string  | 'hi', "hi", `hi`  |           任意字串             |
+| string  | 'hi', "hi", \`hi\`  |           任意字串             |
 | boolean |    true、false    |       布林值true或false        |
 |  常數   |      其本身       |         限制變數的值           |
 |   any   |         *         |            任意型別            |
@@ -127,6 +127,7 @@ let e: unknown;
 let s:string;
 e = 10;
 e = "hello";
+// s = e; 未判斷型別時會出錯
 // 判斷e為string型別時，才將e賦值給s
 if(typeof e === "string"){
     s = e;
@@ -202,12 +203,13 @@ enum Gender{
 let i: {name: string, gender: Gender};
 i = {
     name: '孫悟空',
-    gender: Gender.Male // 'male'
+    gender: Gender.Male
 }
 ```
 - 別名
     - 可以將類型另外取別名，讓多個變數共用類型，type XXX = 類別
 ```typescript
+// 假設一種類型為 1 | 2 | 3 | 4 | 5
 type myType = 1 | 2 | 3 | 4 | 5;
 let k: myType;
 let l: myType;

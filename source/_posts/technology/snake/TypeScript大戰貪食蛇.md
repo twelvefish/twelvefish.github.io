@@ -23,6 +23,9 @@ tags:
 
 本系列前半部參考影片[尚硅谷TypeScript快速上手](https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw)，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本
 
+---
+#  一、TypeScript
+
 ## [1-1、初識TypeScript](https://twelvefish.github.io/2021/01/02/technology/snake/1-1、初識TypeScript)
 
 ## [1-2、編譯TypeScript](https://twelvefish.github.io/2021/01/04/technology/snake/1-2、編譯TypeScript)
@@ -30,3 +33,6 @@ tags:
 ## [1-3、webpack打包TypeScript](https://twelvefish.github.io/2021/01/05/technology/snake/1-3、webpack打包TypeScript)
 
 ## [1-4、物件導向觀念引入TypeScript](https://twelvefish.github.io/2021/01/09/technology/snake/1-4、物件導向觀念引入TypeScript)
+
+---
+<div style="font-size:200%;">二、貪食蛇</div>

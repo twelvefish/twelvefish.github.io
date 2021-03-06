@@ -85,7 +85,7 @@ module.exports = {
             }
         ]
     },
-    // 配置Webpack插建
+    // 配置Webpack套件
     plugins: [
         new CleanWebpackPlugin(),
         // 自動生成html文件
@@ -206,7 +206,7 @@ module.exports = {
     ...略...
 }
 ```
-- 配置規則中如果targets寫兼容於"chrome":"87"，那轉換出來後的JS依舊是ES6，因為chrome87版本支援ES6，而如果額外有寫"ie":"11"則因為IE11只支援ES3，就會轉換為ES3語法
+- 配置規則中如果targets寫兼容於"chrome":"88"，那轉換出來後的JS依舊是ES6，因為chrome87版本支援ES6，而如果額外有寫"ie":"11"則因為IE11只支援ES3，就會轉換為ES3語法
 ![](/images/technology/snake/20_babelES6.PNG)
 ![](/images/technology/snake/21_babelES3.PNG)
 
