@@ -1185,9 +1185,9 @@ article .article-tags .chip {
 }
 
 #articleContent p {
-    margin: 2px 2px 10px;
+    margin: 2px 2px 20px;
     font-size: 1.3rem;
-    line-height: 2.5rem;
+    line-height: 2rem;
 }
 
 #articleContent blockquote p {
