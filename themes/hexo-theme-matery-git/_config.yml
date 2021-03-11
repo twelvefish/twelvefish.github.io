@@ -20,14 +20,14 @@ menu:
      - name: 喝杯酒，說個故事
        url: /2021/03/06/novel/02/喝杯酒，說個故事/
        icon: fas fa-book      
-     - name: 三國依舊如此精采
-       url: /novel/02
-       icon: fas fa-book
      - name: 末日之勇者勝
        url: /novel/03
        icon: fas fa-book
      - name: 莫名的愛
        url: /novel/04
+       icon: fas fa-book
+     - name: 三國依舊如此精采
+       url: /novel/02
        icon: fas fa-book
   # 遊戲:
   #   url: /games
