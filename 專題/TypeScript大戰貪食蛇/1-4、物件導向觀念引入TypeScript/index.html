@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/twelvefish.png" />
+    
+
+    <title>
+        
+          1-4、物件導向觀念引入TypeScript - twelvefish
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/twelvefish.png">
+    <span>twelvefish</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="技術"><a href="#技術" class="headerlink" title="技術"></a>技術</h1><!-- ## ElasticSearch實戰 -->
+<!-- - <a href="/技術/ElasticSearch實戰" class="current-tab">簡介</a> -->
+
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="專題"><a href="#專題" class="headerlink" title="專題"></a>專題</h1><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="小說"><a href="#小說" class="headerlink" title="小說"></a>小說</h1><h2 id="古之惡來者為王"><a href="#古之惡來者為王" class="headerlink" title="古之惡來者為王"></a>古之惡來者為王</h2><ul>
+<li><a href="/小說/古之惡來者為王" class="current-tab">簡介</a></li>
+<li><a href="/小說/古之惡來者為王/1-1、歷史引言" class="current-tab">1-1、歷史引言</a></li>
+<li><a href="/小說/古之惡來者為王/1-2、拍攝三國" class="current-tab">1-2、拍攝三國</a></li>
+<li><a href="/小說/古之惡來者為王/1-3、武術學校" class="current-tab">1-3、武術學校</a></li>
+<li><a href="/小說/古之惡來者為王/1-4、三魂七魄" class="current-tab">1-4、三魂七魄</a></li>
+<li><a href="/小說/古之惡來者為王/1-5、武者世界" class="current-tab">1-5、武者世界</a></li>
+</ul>
+<h2 id="喝杯酒，說個故事"><a href="#喝杯酒，說個故事" class="headerlink" title="喝杯酒，說個故事"></a>喝杯酒，說個故事</h2><ul>
+<li><a href="/小說/喝杯酒，說個故事" class="current-tab">簡介</a></li>
+<li><a href="/小說/喝杯酒，說個故事/1-1、陰陽酒館" class="current-tab">1-1、陰陽酒館</a></li>
+</ul>
+<h2 id="莫名的愛"><a href="#莫名的愛" class="headerlink" title="莫名的愛"></a>莫名的愛</h2><ul>
+<li><a href="/小說/莫名的愛" class="current-tab">簡介</a></li>
+<li><a href="/小說/莫名的愛/1-1、初來乍到" class="current-tab">1-1、初來乍到</a></li>
+<li><a href="/小說/莫名的愛/1-2、能力顯現" class="current-tab">1-2、能力顯現</a></li>
+</ul>
+<h2 id="末日之勇者勝"><a href="#末日之勇者勝" class="headerlink" title="末日之勇者勝"></a>末日之勇者勝</h2><ul>
+<li><a href="/小說/末日之勇者勝" class="current-tab">簡介</a></li>
+<li><a href="/小說/末日之勇者勝/1-1、疫變" class="current-tab">1-1、疫變</a></li>
+<li><a href="/小說/末日之勇者勝/1-2、鼠疫" class="current-tab">1-2、鼠疫</a></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><a href="/版主履歷" class="current-tab">版主履歷</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <blockquote>
+<p><strong>《每日一句》</strong>if you want something done,do it yourself.</p>
+<p>靠誰都不如靠自己。</p>
+</blockquote>
+<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲                                                             </p>
+<p>本系列前半部參考影片<a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
+<h2 id="物件導向簡介"><a href="#物件導向簡介" class="headerlink" title="物件導向簡介"></a>物件導向簡介</h2><ul>
+<li><p>物件導向是程式設計中一個重要思想，簡單而言就是程式中所有的操作都是需要透過物件來完成。</p>
+<ul>
+<li>操作瀏覽器要使用window物件</li>
+<li>操作網頁要使用document物件</li>
+<li>操作控制台要使用console物件</li>
+</ul>
+</li>
+<li><p>所以物件到底是什麽呢？程式的本質就是對現實事物的抽象，現實事物是具體的，而程式是抽象的，現實中的一個人、一條狗、一把槍、一顆子彈等等所有的事物，在抽象的程式中就變成了一個個物件。</p>
+</li>
+<li><p>程式中所有的物件都被分成了兩個部分，數據和功能，以人為例，人的姓名、性別、年齡、身高、體重等屬於數據，人可以說話、走路、吃飯、睡覺這些屬於人的功能。數據在物件中被稱為<font color=red>屬性</font>，而功能就被稱為<font color=red>方法</font>。所以簡而言之，在程式中<font color=red>萬物皆物件</font>。</p>
+</li>
+</ul>
+<h2 id="class-類"><a href="#class-類" class="headerlink" title="class 類"></a>class 類</h2><ul>
+<li>在操作物件之前，要先擁有他，要如何擁有它呢? 必須先創建他，要創建物件必須<font color=red>要先定義類(class)</font></li>
+<li>類(class)可以理解為物件的模型，根據class創建指定的物件，不同的類可以用來創建不同的物件。<ul>
+<li>通過Person類來創建人的物件</li>
+<li>通過Dog類創建狗的物件</li>
+<li>通過Car類來創建汽車的對象</li>
+</ul>
+</li>
+<li>物件主要包含了兩個部分：<ul>
+<li>屬性</li>
+<li>方法</li>
+</ul>
+</li>
+<li>使用static開頭的屬性是靜態屬性（類屬性），無需創建物件，可以直接通過類去訪問<ul>
+<li>static age: number &#x3D; 18;</li>
+<li>Person.age</li>
+</ul>
+</li>
+<li>使用readonly開頭的屬性表示為只能讀取的屬性無法修改<ul>
+<li>readonly sex: string &#x3D; “男”;       <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">    <span class="comment">// readonly name: string = &#x27;大帥哥&#x27;;</span></span><br><span class="line">    name = <span class="string">&#x27;大帥哥&#x27;</span>;</span><br><span class="line">    <span class="comment">// static開頭的屬性是靜態屬性（類屬性），可以直接通過類去訪問</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="attr">age</span>: <span class="built_in">number</span> = <span class="number">18</span>;</span><br><span class="line">    <span class="comment">// readonly開頭的屬性表示為只能讀取的屬性無法修改</span></span><br><span class="line">    <span class="keyword">readonly</span> <span class="attr">sex</span>: <span class="built_in">string</span> = <span class="string">&quot;男&quot;</span>;           </span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello 大家好！&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> per = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(per.<span class="property">name</span>, per.<span class="property">sex</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Person</span>.<span class="property">age</span>);</span><br><span class="line">per.<span class="title function_">sayHello</span>();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="constructor-構造器"><a href="#constructor-構造器" class="headerlink" title="constructor 構造器"></a>constructor 構造器</h2><ul>
+<li>由於一個class不會只創建一個物件，因此可以使用Constructor來創建不同屬性的物件</li>
+<li>new XXX()意味著Constructor 功能被調用</li>
+<li>創建物件時，可以將參數藉由Constructor傳進去，在方法中可以通過this來表示當前調用方法的物件<ul>
+<li>const p &#x3D; new Person(‘大帥哥’, 18);</li>
+<li>const p1 &#x3D; new Person(‘大美女’, 17);  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 構造器會在物件創建時調用</span></span><br><span class="line"><span class="keyword">class</span> 類名 &#123;</span><br><span class="line">	屬性名: 類別;    	</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">參數: 類別</span>)&#123;</span><br><span class="line">        <span class="comment">// 在物件方法中，this就表示當前要新建的物件</span></span><br><span class="line">        <span class="comment">// 可以通過this向新建的物件中添加屬性</span></span><br><span class="line">		<span class="variable language_">this</span>.屬姓名 = 參數;</span><br><span class="line">	&#125;    	</span><br><span class="line">	方法名()&#123;</span><br><span class="line">		<span class="comment">// 在方法中可以通過this來表示當前調用方法的物件</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.屬性名);</span><br><span class="line">	&#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">    <span class="comment">// 將參數藉由Constructor傳進去，賦予屬性</span></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`大家好，我是<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 創建物件時，在將參數藉由Constructor傳進去</span></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;大帥哥&#x27;</span>, <span class="number">18</span>);</span><br><span class="line">p.<span class="title function_">sayHello</span>();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="extends-繼承"><a href="#extends-繼承" class="headerlink" title="extends 繼承"></a>extends 繼承</h2><ul>
+<li>通過繼承可以將其他class中的屬性和方法引入到當前class中</li>
+<li>通過繼承可以在不修改類的情況下完成對類的擴展</li>
+<li>繼承的關鍵字 extends，class 子類別 extends 父類別</li>
+<li>重寫<ul>
+<li>發生繼承時，如果子類中的方法會替換掉父類中的同名方法，這就稱為方法的重寫</li>
+</ul>
+</li>
+<li>Dog extends Animal<ul>
+<li>此時，Animal被稱為父類，Dog被稱為子類</li>
+<li>使用繼承後，子類將會擁有父類所有的方法和屬性</li>
+<li>通過繼承可以將多個類中共有的代碼寫在一個父類中，這樣只需要寫一次即可讓所有的子類都同時擁有父類中的屬性和方法</li>
+<li>如果希望在子類中添加一些父類中沒有的屬性或方法直接加就行</li>
+<li>如果在子類中添加了和父類相同的方法，則子類方法會覆蓋掉父類的方法，這種子類覆蓋掉父類方法的形式，我們稱為方法重寫  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父類別，將相同的屬性、方法抽出來放在父類別中 </span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;動物在叫~&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子類別繼承父類別，屬性、方法皆會被繼承</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Animal</span>&#123;</span><br><span class="line">    <span class="comment">// 可以額外增加子類別沒有的方法</span></span><br><span class="line">    <span class="title function_">run</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>在跑~~~`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 可以重寫父類別的方法</span></span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;汪汪汪汪！&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">// 定義一個表示貓的類</span></span><br><span class="line">    <span class="comment">// 使Cat類繼承Animal類</span></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Animal</span>&#123;</span><br><span class="line">        <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;喵喵喵喵！&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 調用使用到的類別</span></span><br><span class="line"><span class="keyword">const</span> dog = <span class="keyword">new</span> <span class="title class_">Dog</span>(<span class="string">&#x27;小白&#x27;</span>, <span class="number">5</span>);</span><br><span class="line"><span class="keyword">const</span> cat = <span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&#x27;咪咪&#x27;</span>, <span class="number">3</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(dog);</span><br><span class="line">dog.<span class="title function_">sayHello</span>();</span><br><span class="line">dog.<span class="title function_">run</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cat);</span><br><span class="line">cat.<span class="title function_">sayHello</span>();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="super-關鍵字"><a href="#super-關鍵字" class="headerlink" title="super 關鍵字"></a>super 關鍵字</h2><ul>
+<li>在類的方法中 super就表示當前類的父類，可以調用父類別的方法，也可以額外增加方法裡的功能</li>
+<li>如果在子類中寫了構造器，在子類構造器中必須對父類的構造器進行調用，反之，如果子類別沒寫構造器，則會自動繼承父類別的<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">...略...</span><br><span class="line"><span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    <span class="comment">// 如果在子類中寫了構造函數，在子類構造函數中必須對父類的構造函數進行調用</span></span><br><span class="line">    <span class="variable language_">super</span>(name); <span class="comment">// 調用父類的構造函數</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 在類的方法中 super就表示當前類的父類</span></span><br><span class="line">    <span class="variable language_">super</span>.<span class="title function_">sayHello</span>();</span><br><span class="line">&#125;</span><br><span class="line">...略...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="abstract-抽象"><a href="#abstract-抽象" class="headerlink" title="abstract 抽象"></a>abstract 抽象</h2><ul>
+<li>主要用來禁止一個類被用來創建物件，專門用在被繼承的class上</li>
+<li>以 abstract開頭的類是抽象類，抽象類和其他類區別不大，只是不能用來創建對象</li>
+<li>抽象類添加抽象方法，使用 abstract開頭，沒有方法體</li>
+<li>在抽象類中還有抽象方法，抽象方法只能定義在抽象類中，子類必須對抽象方法進行實現，否則會出錯<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象Animal class</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定義一個抽象方法</span></span><br><span class="line">    <span class="comment">// 抽象方法使用 abstract開頭，沒有方法體</span></span><br><span class="line">    <span class="comment">// 抽象方法只能定義在抽象類中，子類必須對抽象方法進行重寫</span></span><br><span class="line">    <span class="keyword">abstract</span> <span class="title function_">sayHello</span>():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Animal</span>&#123;</span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;汪汪汪汪！&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Animal</span>&#123;</span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;喵喵喵喵！&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="interface-接口"><a href="#interface-接口" class="headerlink" title="interface 接口"></a>interface 接口</h2><ul>
+<li>interface 主要是對於class 去定義規範</li>
+<li>interface 用來定義一個類的結構，用來定義一個類中應該包含哪些屬性和方法，同時接口也可以當成類型聲明去使用<ul>
+<li>type 和 interface 都可以拿來當作一個class的類別宣告</li>
+<li>type XXX 只能寫一次，interface XXX 可以合併多組屬性  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 描述一個物件的類型</span></span><br><span class="line"><span class="keyword">type</span> myType = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">interface</span> myInterface &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">interface</span> myInterface &#123;</span><br><span class="line">    <span class="attr">gender</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 調用interface 的class時，必須寫上所有屬性</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">obj</span>: myInterface = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;sss&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">111</span>,</span><br><span class="line">    <span class="attr">gender</span>: <span class="string">&#x27;男&#x27;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>接口只定義對象的結構，而不考慮實際值</li>
+<li>在接口中所有的方法都是抽象方法，而接口本身就是抽象類</li>
+<li>定義類時，可以使類去實現一個接口，實現接口就是使類滿足接口的要求<ul>
+<li>class去實現接口，必須實現接口裡面定義的屬性和方法</li>
+<li>class 類 implements 接口  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> myInter&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="title function_">sayHello</span>():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// class去實現接口，必須實現接口裡面定義的屬性和方法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> <span class="keyword">implements</span> myInter&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;大家好~~&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="封裝"><a href="#封裝" class="headerlink" title="封裝"></a>封裝</h2><ul>
+<li><p>上述範例，屬性或方法可以任意的被修改，如果可以任意被修改將會導致物件中的參數和方法變得非常不安全</p>
+</li>
+<li><p>TS可以在屬性和方法前添加修飾符</p>
+<ul>
+<li>public 修飾的屬性可以在任意位置操作，沒寫修飾符 public 為默認值</li>
+<li>private 私有屬性，私有屬性只能在類內部進行操作，可以通過在類中添加get、set方法使得私有屬性可以被外部訪問</li>
+<li>protected 受包含的屬性，只能在當前類和當前類的子類中操作</li>
+</ul>
+</li>
+<li><p>屬性的存取器</p>
+<ul>
+<li>getter方法用來讀取屬性</li>
+<li>setter方法用來設置屬性，利用set來控制傳入的參數是否合理 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">    <span class="comment">// private私有參數，外部類無法直接調用此屬性參數</span></span><br><span class="line">    <span class="keyword">private</span> <span class="attr">_name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="attr">_age</span>: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">_age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">getName</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_name</span>;</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="comment">// 定義方法，用來設置name屬性</span></span><br><span class="line">    <span class="title function_">setName</span>(<span class="params">value: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">_name</span> = value;</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="title function_">getAge</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_age</span>;</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="title function_">setAge</span>(<span class="params">value: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="comment">// 判斷年齡是否合法</span></span><br><span class="line">        <span class="keyword">if</span>(value &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">_age</span> = value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 給name屬性賦值</span></span><br><span class="line">per.<span class="title function_">setName</span>(<span class="string">&#x27;大美女&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(per.<span class="title function_">getName</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>但其實在TS中有更簡單的方法設置get、set</p>
+<ul>
+<li>利用get XXX、set XXX，而變數呼叫時只需要<font color=red>物件變數.XXX</font>，系統自動判斷是呼叫get還是set<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="attr">_name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="attr">_age</span>: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">_age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// TS中設置getter方法的方式</span></span><br><span class="line">    <span class="keyword">get</span> <span class="title function_">name</span>()&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;get name()執行了！！&#x27;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> <span class="title function_">name</span>(<span class="params">value</span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">_name</span> = value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">get</span> <span class="title function_">age</span>()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_age</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> <span class="title function_">age</span>(<span class="params">value</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(value &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">_age</span> = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> per = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;大帥哥&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="comment">// per.name 等同於去調用 set name的方法，給name屬性賦值</span></span><br><span class="line">per.<span class="property">name</span> = <span class="string">&#x27;大美女&#x27;</span>;</span><br><span class="line"><span class="comment">// 同理調用 set age的方法</span></span><br><span class="line">per.<span class="property">age</span> = -<span class="number">33</span>;</span><br><span class="line"><span class="comment">// 調用get name方法，去讀取name屬性的值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(per.<span class="property">name</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>可以將屬性定義於構造器中，省去些程式碼</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 這兩個class的例子功能相同</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line"></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>&#123;</span><br><span class="line">    <span class="comment">// 可以將屬性修是符定義於構造器中</span></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="keyword">public</span> name: <span class="built_in">string</span>, <span class="keyword">public</span> age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>protected 為受包含的屬性，只能在當前類和當前類的子類中操作，否則會報錯<br><img src="/images/technology/snake/22_protected.PNG"></p>
+</li>
+</ul>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ul>
+<li>在定義函數或是類時，如果遇到類型不明確就可以使用泛型，如果使用any反而會關閉TS的類型檢查</li>
+<li>泛型可以用大寫英文字母代替，設置泛型後即可在函數中使用此大寫英文字母來表示該類型<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 泛型</span></span><br><span class="line"><span class="keyword">function</span> fn&lt;T&gt;(<span class="attr">a</span>: T): T&#123;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以直接調用具有泛型的函數</span></span><br><span class="line"><span class="keyword">let</span> result = <span class="title function_">fn</span>(<span class="number">10</span>); <span class="comment">// 不指定泛型，TS可以自動對類型進行推斷</span></span><br><span class="line"><span class="keyword">let</span> result2 = fn&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;hello&#x27;</span>); <span class="comment">// 指定泛型</span></span><br><span class="line"><span class="comment">// 泛型可以同時指定多個參數</span></span><br><span class="line"><span class="keyword">function</span> fn2&lt;T, K&gt;(<span class="attr">a</span>: T, <span class="attr">b</span>: K):T&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line">fn2&lt;<span class="built_in">number</span>, <span class="built_in">string</span>&gt;(<span class="number">123</span>, <span class="string">&#x27;hello&#x27;</span>);</span><br><span class="line"><span class="comment">// 宣告接口</span></span><br><span class="line"><span class="keyword">interface</span>  <span class="title class_">Inter</span>&#123;</span><br><span class="line">    <span class="attr">length</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// T extends Inter 表示泛型T必須是Inter實現類（子類）</span></span><br><span class="line"><span class="keyword">function</span> fn3&lt;T <span class="keyword">extends</span> <span class="title class_">Inter</span>&gt;(<span class="attr">a</span>: T): <span class="built_in">number</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.<span class="property">length</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 類中同樣可以使用泛型</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span>&lt;T&gt;&#123;</span><br><span class="line">    <span class="attr">name</span>: T;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: T</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> mc = <span class="keyword">new</span> <span class="title class_">MyClass</span>&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;大帥哥&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    
+  
+
+  <!-- <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+ -->
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

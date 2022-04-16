@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/twelvefish.png" />
+    
+
+    <title>
+        
+          1-3、webpack打包TypeScript - twelvefish
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/twelvefish.png">
+    <span>twelvefish</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="技術"><a href="#技術" class="headerlink" title="技術"></a>技術</h1><!-- ## ElasticSearch實戰 -->
+<!-- - <a href="/技術/ElasticSearch實戰" class="current-tab">簡介</a> -->
+
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="專題"><a href="#專題" class="headerlink" title="專題"></a>專題</h1><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="小說"><a href="#小說" class="headerlink" title="小說"></a>小說</h1><h2 id="古之惡來者為王"><a href="#古之惡來者為王" class="headerlink" title="古之惡來者為王"></a>古之惡來者為王</h2><ul>
+<li><a href="/小說/古之惡來者為王" class="current-tab">簡介</a></li>
+<li><a href="/小說/古之惡來者為王/1-1、歷史引言" class="current-tab">1-1、歷史引言</a></li>
+<li><a href="/小說/古之惡來者為王/1-2、拍攝三國" class="current-tab">1-2、拍攝三國</a></li>
+<li><a href="/小說/古之惡來者為王/1-3、武術學校" class="current-tab">1-3、武術學校</a></li>
+<li><a href="/小說/古之惡來者為王/1-4、三魂七魄" class="current-tab">1-4、三魂七魄</a></li>
+<li><a href="/小說/古之惡來者為王/1-5、武者世界" class="current-tab">1-5、武者世界</a></li>
+</ul>
+<h2 id="喝杯酒，說個故事"><a href="#喝杯酒，說個故事" class="headerlink" title="喝杯酒，說個故事"></a>喝杯酒，說個故事</h2><ul>
+<li><a href="/小說/喝杯酒，說個故事" class="current-tab">簡介</a></li>
+<li><a href="/小說/喝杯酒，說個故事/1-1、陰陽酒館" class="current-tab">1-1、陰陽酒館</a></li>
+</ul>
+<h2 id="莫名的愛"><a href="#莫名的愛" class="headerlink" title="莫名的愛"></a>莫名的愛</h2><ul>
+<li><a href="/小說/莫名的愛" class="current-tab">簡介</a></li>
+<li><a href="/小說/莫名的愛/1-1、初來乍到" class="current-tab">1-1、初來乍到</a></li>
+<li><a href="/小說/莫名的愛/1-2、能力顯現" class="current-tab">1-2、能力顯現</a></li>
+</ul>
+<h2 id="末日之勇者勝"><a href="#末日之勇者勝" class="headerlink" title="末日之勇者勝"></a>末日之勇者勝</h2><ul>
+<li><a href="/小說/末日之勇者勝" class="current-tab">簡介</a></li>
+<li><a href="/小說/末日之勇者勝/1-1、疫變" class="current-tab">1-1、疫變</a></li>
+<li><a href="/小說/末日之勇者勝/1-2、鼠疫" class="current-tab">1-2、鼠疫</a></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><a href="/版主履歷" class="current-tab">版主履歷</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <blockquote>
+<p><strong>《每日一句》</strong>No cross,no crown.</p>
+<p>不經歷風雨，怎麼見彩虹。</p>
+</blockquote>
+<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲                                                             </p>
+<p>本系列前半部參考影片<a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
+<h2 id="生成-package-json"><a href="#生成-package-json" class="headerlink" title="生成 package.json"></a>生成 package.json</h2><ul>
+<li>實際工作中，都是使用整合工具進行打包編譯，在此介紹如何使用webpacke進行打包編譯</li>
+<li>使用webpack，需要使用npm去管理我們的套件，因此要先生成package.json，打開cmd，輸入<font color=red>npm init -y</font><br><img src="/images/technology/snake/15_npm_init.PNG"></li>
+<li>安裝使用webpack所需要的套件<ul>
+<li><font color=red>npm i --save-dev webpack webpack-cli typescript ts-loader</font></li>
+<li><font color=red>npm i --save-dev html-webpack-plugin clean-webpack-plugin</font></li>
+<li><font color=red>npm i --save-dev webpack-dev-server</font></li>
+<li>--save-dev : 開發模式</li>
+<li>webpack、webpack-cli : 打包工具、命令行工具</li>
+<li>ts-loader : 將 webpack、typescript 整合</li>
+<li>html-webpack-plugin : 打包時自動生成html文件</li>
+<li>clean-webpack-plugin : 先將舊有檔案刪除，確保編譯後的檔案都是最新版本的</li>
+<li>webpack-dev-server : 設置webpack內建服務器，當程式碼有修改時，修改內容會藉由服務器隨時顯示在html頁面上</li>
+<li>會看到剛剛所安裝的套件都出現在package.json中，由於是開發模式，會出現在devDependencies底下<br><img src="/images/technology/snake/16_npm_package.PNG"></li>
+</ul>
+</li>
+</ul>
+<h2 id="webpack配置文件"><a href="#webpack配置文件" class="headerlink" title="webpack配置文件"></a>webpack配置文件</h2><ul>
+<li><p>編寫webpack配置文件，webpack.config.js</p>
+</li>
+<li><p>引入套件 HTMLWebpackPlugin，由webpack直接幫我們生成html文件</p>
+</li>
+<li><p>引入套件 CleanWebpackPlugin，確保編譯後的檔案是最新版本</p>
+</li>
+<li><p>webpack後生成的JS，如果不想使用箭頭函數，要將arrowFunction設為false</p>
+<figure class="highlight js"><figcaption><span>webpack.config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入path package</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="comment">// 引入html package</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">HTMLWebpackPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>);</span><br><span class="line"><span class="comment">// 引入clean package</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">CleanWebpackPlugin</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;clean-webpack-plugin&#x27;</span>);</span><br><span class="line"><span class="comment">// webpack中的所有配置都應該寫在module.exports中</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="comment">// 指定入口文件，通常放在src資料夾下</span></span><br><span class="line">    <span class="attr">entry</span>: <span class="string">&quot;./src/index.ts&quot;</span>,</span><br><span class="line">    <span class="comment">// 指定打包文件所在目錄</span></span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="comment">// 指定打包文件的路徑，通常存放在dist資料夾下 </span></span><br><span class="line">        <span class="comment">// path:&quot;./dist&quot;</span></span><br><span class="line">        <span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;dist&#x27;</span>),</span><br><span class="line">        <span class="comment">// 打包後文件的名字</span></span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&quot;bundle.js&quot;</span>,</span><br><span class="line">        <span class="comment">// 告訴webpack打包後的js文件不使用箭頭符號</span></span><br><span class="line">        <span class="attr">environment</span>:&#123;</span><br><span class="line">            <span class="attr">arrowFunction</span>: <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 指定webpack打包時要使用的模組</span></span><br><span class="line">    <span class="attr">module</span>: &#123;</span><br><span class="line">        <span class="comment">// 指定要加載的規則，因為可能打包的各文件類型有ts、img、sas.....</span></span><br><span class="line">        <span class="attr">rules</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// test表示對哪些文件規則生效</span></span><br><span class="line">                <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>,  <span class="comment">//匹配所有ts結尾的文件</span></span><br><span class="line">                <span class="comment">// 要使用的loader</span></span><br><span class="line">                <span class="attr">use</span>: [</span><br><span class="line">                    <span class="string">&#x27;ts-loader&#x27;</span></span><br><span class="line">                ],</span><br><span class="line">                <span class="comment">// 要排除的文件</span></span><br><span class="line">                <span class="attr">exclude</span>: <span class="regexp">/node-modules/</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 配置Webpack套件</span></span><br><span class="line">    <span class="attr">plugins</span>: [</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">CleanWebpackPlugin</span>(),</span><br><span class="line">        <span class="comment">// 自動生成html文件</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">HTMLWebpackPlugin</span>(&#123;</span><br><span class="line">            <span class="attr">title</span>: <span class="string">&quot;自定義html文件title&quot;</span>,</span><br><span class="line">            <span class="comment">// 指定生成出來的html都依照對應的模板</span></span><br><span class="line">            <span class="attr">template</span>: <span class="string">&quot;./src/index.html&quot;</span></span><br><span class="line">        &#125;),</span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">// 設置引入模組的檔案類型</span></span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">        <span class="attr">extensions</span>: [<span class="string">&#x27;.ts&#x27;</span>, <span class="string">&#x27;.js&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>光配置webpack.config.js之外，還需要配置tsconfig.json，用於對ts文件進行編譯，參考上一章節</p>
+</li>
+<li><p>可藉由在package.json中scripts語法配置dev命令直接執行webpack  --mode development (開發模式) ，輸入指令<font color=red>npm run dev</font></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack_test&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;index.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack  --mode development&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;keywords&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;license&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ISC&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ts-loader&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^8.0.13&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typescript&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^4.1.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;webpack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.11.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;webpack-cli&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^4.3.1&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>由於我們設定打包後的文件設置在dist資料夾下，因此出現dist資料夾和bundle.js，及成功<br><img src="/images/technology/snake/17_wepackbuild.gif"></p>
+</li>
+<li><p>而如果有設定套用html模板，也會一起生成，並且自動幫你引入打包後文件的名字bundle.js<br><img src="/images/technology/snake/18_htmltemplate.PNG"></p>
+</li>
+<li><p>可藉由在package.json中scripts語法配置start命令，<font color=red>npm start</font>運行webpack serve</p>
+</li>
+<li><p>webpack serve為webpack內建服務器，當程式碼有修改時，修改內容會藉由服務器隨時顯示在html頁面上</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    ...略...</span><br><span class="line">    <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack  --mode development&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack serve --open chrome.exe&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    ...略...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/technology/snake/19_webpack_servr.PNG"></p>
+</li>
+</ul>
+<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><ul>
+<li><p>主要用於生成不同JS的版本，以利於兼容不同版本的瀏覽器，ex: let 是ES6的語法，經過babel轉換為var</p>
+</li>
+<li><p>安裝套件：</p>
+<ul>
+<li><font color=red>npm i --save -dev @babel&#x2F;core @babel&#x2F;preset-env babel-loader core-js</font><ul>
+<li>@babel&#x2F;core<ul>
+<li>babel的核心工具</li>
+</ul>
+</li>
+<li>@babel&#x2F;preset-env<ul>
+<li>babel的預定義環境，兼容不同瀏覽器</li>
+</ul>
+</li>
+<li>@babel-loader<ul>
+<li>babel在webpack中的加載器</li>
+</ul>
+</li>
+<li>core-js<ul>
+<li>core-js用來使舊版本的瀏覽器支援新版ES語法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在webpack.config.js配置babel-loader，先使用ts-loader把TS代碼轉成JS，再用babel-loader把新版JS轉換成舊版JS</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ...略...</span><br><span class="line">    <span class="attr">module</span>: &#123;</span><br><span class="line">        <span class="comment">// 指定要加載的規則，因為可能打包的各文件類型有ts、img、sas.....</span></span><br><span class="line">        <span class="attr">rules</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// test表示對哪些文件規則生效</span></span><br><span class="line">                <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>,  <span class="comment">//匹配所有ts結尾的文件</span></span><br><span class="line">                <span class="comment">// 要使用的loader</span></span><br><span class="line">                <span class="attr">use</span>: [</span><br><span class="line">                    <span class="comment">// 配置babel</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="comment">// 指定加載器</span></span><br><span class="line">                        <span class="attr">loader</span>:<span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">                        <span class="comment">// 設置babel</span></span><br><span class="line">                        <span class="attr">options</span>: &#123;</span><br><span class="line">                            <span class="comment">// 設置預定義環境</span></span><br><span class="line">                            <span class="attr">presets</span>:[</span><br><span class="line">                                [</span><br><span class="line">                                    <span class="comment">// 指定環境插件</span></span><br><span class="line">                                    <span class="string">&quot;@babel/preset-env&quot;</span>,</span><br><span class="line">                                    <span class="comment">// 配置信息</span></span><br><span class="line">                                    &#123;</span><br><span class="line">                                        <span class="comment">// 要兼容的目標瀏覽器版本</span></span><br><span class="line">                                        <span class="attr">targets</span>:&#123;</span><br><span class="line">                                            <span class="string">&quot;chrome&quot;</span>:<span class="string">&quot;87&quot;</span>,</span><br><span class="line">                                            <span class="string">&quot;ie&quot;</span>:<span class="string">&quot;11&quot;</span></span><br><span class="line">                                        &#125;,</span><br><span class="line">                                        <span class="comment">// 指定corejs的版本</span></span><br><span class="line">                                        <span class="string">&quot;corejs&quot;</span>:<span class="string">&quot;3&quot;</span>,</span><br><span class="line">                                        <span class="comment">// 使用corejs的方式 &quot;usage&quot; 表示按需加載，有使用到的才加載</span></span><br><span class="line">                                        <span class="string">&quot;useBuiltIns&quot;</span>:<span class="string">&quot;usage&quot;</span></span><br><span class="line">                                    &#125;</span><br><span class="line">                                ]</span><br><span class="line">                            ]</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">&#x27;ts-loader&#x27;</span></span><br><span class="line">                ],</span><br><span class="line">                <span class="comment">// 要排除的文件</span></span><br><span class="line">                <span class="attr">exclude</span>: <span class="regexp">/node-modules/</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    ...略...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>配置規則中如果targets寫兼容於”chrome”:”88”，那轉換出來後的JS依舊是ES6，因為chrome87版本支援ES6，而如果額外有寫”ie”:”11”則因為IE11只支援ES3，就會轉換為ES3語法<br><img src="/images/technology/snake/20_babelES6.PNG"><br><img src="/images/technology/snake/21_babelES3.PNG"></p>
+</li>
+<li><p>至於corejs則是用來處理些不兼容的語法，ex: Promise，將Promise語法從ES6轉換為IE11可以支援的版本代碼</p>
+</li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    
+  
+
+  <!-- <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+ -->
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

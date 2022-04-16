@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/twelvefish.png" />
+    
+
+    <title>
+        
+          1-1、初識TypeScript - twelvefish
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/twelvefish.png">
+    <span>twelvefish</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="技術"><a href="#技術" class="headerlink" title="技術"></a>技術</h1><!-- ## ElasticSearch實戰 -->
+<!-- - <a href="/技術/ElasticSearch實戰" class="current-tab">簡介</a> -->
+
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="專題"><a href="#專題" class="headerlink" title="專題"></a>專題</h1><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="小說"><a href="#小說" class="headerlink" title="小說"></a>小說</h1><h2 id="古之惡來者為王"><a href="#古之惡來者為王" class="headerlink" title="古之惡來者為王"></a>古之惡來者為王</h2><ul>
+<li><a href="/小說/古之惡來者為王" class="current-tab">簡介</a></li>
+<li><a href="/小說/古之惡來者為王/1-1、歷史引言" class="current-tab">1-1、歷史引言</a></li>
+<li><a href="/小說/古之惡來者為王/1-2、拍攝三國" class="current-tab">1-2、拍攝三國</a></li>
+<li><a href="/小說/古之惡來者為王/1-3、武術學校" class="current-tab">1-3、武術學校</a></li>
+<li><a href="/小說/古之惡來者為王/1-4、三魂七魄" class="current-tab">1-4、三魂七魄</a></li>
+<li><a href="/小說/古之惡來者為王/1-5、武者世界" class="current-tab">1-5、武者世界</a></li>
+</ul>
+<h2 id="喝杯酒，說個故事"><a href="#喝杯酒，說個故事" class="headerlink" title="喝杯酒，說個故事"></a>喝杯酒，說個故事</h2><ul>
+<li><a href="/小說/喝杯酒，說個故事" class="current-tab">簡介</a></li>
+<li><a href="/小說/喝杯酒，說個故事/1-1、陰陽酒館" class="current-tab">1-1、陰陽酒館</a></li>
+</ul>
+<h2 id="莫名的愛"><a href="#莫名的愛" class="headerlink" title="莫名的愛"></a>莫名的愛</h2><ul>
+<li><a href="/小說/莫名的愛" class="current-tab">簡介</a></li>
+<li><a href="/小說/莫名的愛/1-1、初來乍到" class="current-tab">1-1、初來乍到</a></li>
+<li><a href="/小說/莫名的愛/1-2、能力顯現" class="current-tab">1-2、能力顯現</a></li>
+</ul>
+<h2 id="末日之勇者勝"><a href="#末日之勇者勝" class="headerlink" title="末日之勇者勝"></a>末日之勇者勝</h2><ul>
+<li><a href="/小說/末日之勇者勝" class="current-tab">簡介</a></li>
+<li><a href="/小說/末日之勇者勝/1-1、疫變" class="current-tab">1-1、疫變</a></li>
+<li><a href="/小說/末日之勇者勝/1-2、鼠疫" class="current-tab">1-2、鼠疫</a></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><a href="/版主履歷" class="current-tab">版主履歷</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <blockquote>
+<p><strong>《每日一句》</strong>Dreams without execution are nothing.</p>
+<p>夢想不付出行動，等於白扯。</p>
+</blockquote>
+<p>此系列文章介紹如何使用TypeScript撰寫自動化貪食蛇小遊戲        </p>
+<p>本系列前半部參考影片<a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLmOn9nNkQxJGwOhSsQ5H9JTPmiXGmy8Zw">尚硅谷TypeScript快速上手</a>，後半部則是筆者將貪食蛇遊戲更進一步改為自動覓食版本</p>
+<h2 id="TypeScript-介紹"><a href="#TypeScript-介紹" class="headerlink" title="TypeScript 介紹"></a>TypeScript 介紹</h2><ul>
+<li>TypeScript(TS) 為強型別的 javaScript(JS)，<font color=red>主要增加類型class的概念</font></li>
+<li>瀏覽器只看得懂JS，因此撰寫完TS還是必須通過編譯成JS，才能執行</li>
+<li>任何的JS語法都可在TS使用</li>
+<li>由於TS有類別型態，因此可以在編譯前完成程式的語法檢查，減少JS出錯的機率</li>
+<li>TS可以編譯成任何版本的JS，解決不同JS環境的兼容問題</li>
+<li>由於TS有類別型態，相較於JS的程式碼在後期更加容易維護</li>
+<li>可藉由config配置檔，對於TS的語法嚴格性進行控制</li>
+</ul>
+<h2 id="TypeScript-開發環境"><a href="#TypeScript-開發環境" class="headerlink" title="TypeScript 開發環境"></a>TypeScript 開發環境</h2><ul>
+<li>安裝Node.js是為了去使用TypeScript的編譯器typeScript</li>
+<li>官網下載 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>，下載左邊當前LTS穩定版本，至於右邊則是最新、但有可能有bug的版本<br><img src="/images/technology/snake/01_nodejs.PNG"></li>
+<li>安裝 Node.js，一直下一步…</li>
+<li>打開cmd，<font color=red>輸入node -v 指令確認安裝成功</font>，如果先前已安裝過，可自由選擇是否升級到最新穩定版本<br>PS. 由於網上找到的升級nodejs版本屢試不成，筆者建議直接將當初安裝的nodejs資料夾直接刪除，重新安裝，當然要記得將之前安裝在全域的package.json套件記錄下來，重新安裝<br><img src="/images/technology/snake/02_version.PNG"></li>
+<li>npm 是 Node.js 裡面package管理器，使用npm可以去安裝node下面各種套件</li>
+<li>而要安裝TypeScript的編譯器，打開cmd，輸入 <font color=red>npm install -g typescript</font>，沒有錯誤訊息即正確安裝<br>npm        : 使用npm套件指令開頭<br>install    : 安裝，可用i簡寫，npm i<br>g         : 使用全域安裝，沒添加的話就是在當前專案安裝<br>typescript : 想安裝的套件名稱<br><img src="/images/technology/snake/03_typescript%E6%AD%A3%E7%A2%BA%E5%AE%89%E8%A3%9D.PNG"></li>
+<li>在cmd中輸入 <font color=red>tsc</font>，確認TypeScript編譯器安裝成功，如下圖出現tsc相關指令<br><img src="/images/technology/snake/04_tsc.PNG"></li>
+<li>創建一個副檔名為.ts的文件，輸入console.log(“hello”);<br>PS: JS語法能完全相容於TS文件<br><img src="/images/technology/snake/05_hello.PNG"></li>
+<li>瀏覽器只能解析js文件，因此將ts進行編譯，在相對應的資料夾目錄打開cmd，<font color=red>輸入tsc xxx.ts</font><br><img src="/images/technology/snake/06_complier.PNG"></li>
+<li>在相同路徑下，產生相同檔名的 xxx.js，即編譯成功<br><img src="/images/technology/snake/07_newJS.PNG"></li>
+</ul>
+<h2 id="TypeScript-語法說明"><a href="#TypeScript-語法說明" class="headerlink" title="TypeScript 語法說明"></a>TypeScript 語法說明</h2><ul>
+<li>在變數後面增加宣告型別，可讓編譯器自動檢測出型別正確與否<br><img src="/images/technology/snake/08_errorType.PNG"></li>
+<li>同時對變數宣告和賦值，則TS可以自動對變數進行類型檢測，所以有時可以省略掉類型宣告<br><img src="/images/technology/snake/09_errorType1.PNG"></li>
+<li>可對function的傳入參數和輸出參數給與型別<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="built_in">number</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//語法</span></span><br><span class="line"><span class="keyword">let</span> 變數: 型別;</span><br><span class="line"><span class="keyword">let</span> 變數: 型別 = 值;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">參數: 型別, 參數: 型別</span>): 傳回型別&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> myType = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="TypeScript-類別型態"><a href="#TypeScript-類別型態" class="headerlink" title="TypeScript 類別型態"></a>TypeScript 類別型態</h2><table>
+<thead>
+<tr>
+<th align="center">型別</th>
+<th align="center">例子</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">number</td>
+<td align="center">1, -33, 2.5</td>
+<td align="center">任意數字</td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">‘hi’, “hi”, `hi`</td>
+<td align="center">任意字串</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">true、false</td>
+<td align="center">布林值true或false</td>
+</tr>
+<tr>
+<td align="center">常數</td>
+<td align="center">其本身</td>
+<td align="center">限制變數的值</td>
+</tr>
+<tr>
+<td align="center">any</td>
+<td align="center">*</td>
+<td align="center">任意型別</td>
+</tr>
+<tr>
+<td align="center">unknown</td>
+<td align="center">*</td>
+<td align="center">型別安全的any</td>
+</tr>
+<tr>
+<td align="center">void</td>
+<td align="center">空值（undefined）</td>
+<td align="center">沒有值（或undefined）</td>
+</tr>
+<tr>
+<td align="center">never</td>
+<td align="center">沒有值</td>
+<td align="center">不能是任何值</td>
+</tr>
+<tr>
+<td align="center">object</td>
+<td align="center">{name:’豬八戒’}</td>
+<td align="center">任意的JS物件</td>
+</tr>
+<tr>
+<td align="center">array</td>
+<td align="center">[1,2,3]</td>
+<td align="center">任意JS陣列</td>
+</tr>
+<tr>
+<td align="center">tuple</td>
+<td align="center">[4,5]</td>
+<td align="center">TS新增類型，固定長度陣列</td>
+</tr>
+<tr>
+<td align="center">enum</td>
+<td align="center">enum{A, B}</td>
+<td align="center">枚舉，TS中新增型別</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>常數</p>
+<ul>
+<li>可以藉由數值去決定變數的類型<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">a</span>: <span class="number">10</span>;</span><br><span class="line"><span class="comment">// b被宣告只能給與male或是female的值，給於其他值會出錯，| or的意思</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">b</span>: <span class="string">&quot;male&quot;</span> | <span class="string">&quot;female&quot;</span>;</span><br><span class="line">b = <span class="string">&quot;male&quot;</span>;</span><br><span class="line">b = <span class="string">&quot;female&quot;</span>;</span><br><span class="line"><span class="comment">// c被宣告為可以賦予boolean型別或是string型別</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">c</span>: <span class="built_in">boolean</span> | <span class="built_in">string</span>;</span><br><span class="line">c = <span class="literal">true</span>;</span><br><span class="line">c = <span class="string">&#x27;hello&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>any</p>
+<ul>
+<li>為任意型別，當變數設置型別為any或是未設置型別，代表此變數關閉了TS類型檢測<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不建議使用any型別</span></span><br><span class="line"><span class="keyword">let</span> d;</span><br><span class="line">d = <span class="number">10</span>;</span><br><span class="line">d = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line">d = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>unknown</p>
+<ul>
+<li>表示未知型別的值，不能直接赋值给其他變數，可藉由判斷式將值賦予其餘變數<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">e</span>: <span class="built_in">unknown</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">s</span>:<span class="built_in">string</span>;</span><br><span class="line">e = <span class="number">10</span>;</span><br><span class="line">e = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"><span class="comment">// s = e; 未判斷型別時會出錯</span></span><br><span class="line"><span class="comment">// 判斷e為string型別時，才將e賦值給s</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> e === <span class="string">&quot;string&quot;</span>)&#123;</span><br><span class="line">    s = e;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 類型斷言，可以用來告訴解析器變數的實際型別</span></span><br><span class="line">s = e <span class="keyword">as</span> <span class="built_in">string</span>;</span><br><span class="line">s = &lt;<span class="built_in">string</span>&gt;e;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>void</p>
+<ul>
+<li>用來表示空值，以function為例，表示回傳值為null或undefined<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>): <span class="built_in">void</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>never</p>
+<ul>
+<li>表示永遠不會有回傳值，使用時機為exception拋出例外<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn2</span>(<span class="params"></span>): <span class="built_in">never</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;拋出例外！&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>object</p>
+<ul>
+<li>表示為任意JS物件<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通常不會直接給予object型別，因為在JS中萬物皆物件</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">a</span>: <span class="built_in">object</span>;</span><br><span class="line">a = &#123;&#125;;</span><br><span class="line">a = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 可以使用&#123;&#125;來指定物件必須包含哪些屬性，此案例表示必須要有name變數且string型別</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">b</span>: &#123;<span class="attr">name</span>: <span class="built_in">string</span>&#125;;</span><br><span class="line">b = &#123;<span class="attr">name</span>: <span class="string">&#x27;孫悟空&#x27;</span>&#125;;</span><br><span class="line"><span class="comment">// 使用?表示此屬性是可選的</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">b1</span>: &#123;age?: <span class="built_in">number</span>&#125;;</span><br><span class="line">b1 = &#123;<span class="attr">age</span>: <span class="number">18</span>&#125;;</span><br><span class="line"><span class="comment">// [propName: string]: any，表示後面可填入任意個數、任意型別的參數</span></span><br><span class="line"><span class="comment">// propName 純粹一個變數名稱，可替換為其他字串</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">c</span>: &#123;<span class="attr">name</span>: <span class="built_in">string</span>, [<span class="attr">propName</span>: <span class="built_in">string</span>]: <span class="built_in">any</span>&#125;;</span><br><span class="line">c = &#123;<span class="attr">name</span>: <span class="string">&#x27;豬八戒&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">gender</span>: <span class="string">&#x27;男&#x27;</span>&#125;;</span><br><span class="line"><span class="comment">// 設置function的類別宣告：</span></span><br><span class="line"><span class="comment">// 語法：(變數:型別, 變數:型別 ...) =&gt; 回傳值</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">d</span>: <span class="function">(<span class="params">a: <span class="built_in">number</span> ,b: <span class="built_in">number</span></span>)=&gt;</span><span class="built_in">number</span>;</span><br><span class="line">d = <span class="keyword">function</span> (<span class="params">n1: <span class="built_in">number</span>, n2: <span class="built_in">number</span></span>): <span class="built_in">number</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>array陣列</p>
+<ul>
+<li>有兩種宣告方式，型別[]、Array&lt;型別&gt;<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">e</span>: <span class="built_in">string</span>[];</span><br><span class="line">e = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> <span class="attr">g</span>: <span class="title class_">Array</span>&lt;<span class="built_in">number</span>&gt;;</span><br><span class="line">g = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>tuple</p>
+<ul>
+<li>固定長度的陣列，此例就只能有兩個數值且第一個必須為string，另一個為number<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">h</span>: [<span class="built_in">string</span>, <span class="built_in">number</span>];</span><br><span class="line">h = [<span class="string">&#x27;hello&#x27;</span>, <span class="number">123</span>];</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>enum</p>
+<ul>
+<li>枚舉，管理多個同系列的常數<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Gender</span>&#123;</span><br><span class="line">    <span class="title class_">Male</span>,</span><br><span class="line">    <span class="title class_">Female</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">i</span>: &#123;<span class="attr">name</span>: <span class="built_in">string</span>, <span class="attr">gender</span>: <span class="title class_">Gender</span>&#125;;</span><br><span class="line">i = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;孫悟空&#x27;</span>,</span><br><span class="line">    <span class="attr">gender</span>: <span class="title class_">Gender</span>.<span class="property">Male</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>別名</p>
+<ul>
+<li>可以將類型另外取別名，讓多個變數共用類型，type XXX &#x3D; 類別<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假設一種類型為 1 | 2 | 3 | 4 | 5</span></span><br><span class="line"><span class="keyword">type</span> myType = <span class="number">1</span> | <span class="number">2</span> | <span class="number">3</span> | <span class="number">4</span> | <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">k</span>: myType;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">l</span>: myType;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">m</span>: myType;</span><br><span class="line">k = <span class="number">2</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    
+  
+
+  <!-- <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+ -->
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/twelvefish.png" />
+    
+
+    <title>
+        
+          01-資料庫概論 - twelvefish
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/twelvefish.png">
+    <span>twelvefish</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="技術"><a href="#技術" class="headerlink" title="技術"></a>技術</h1><!-- ## ElasticSearch實戰 -->
+<!-- - <a href="/技術/ElasticSearch實戰" class="current-tab">簡介</a> -->
+
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="專題"><a href="#專題" class="headerlink" title="專題"></a>專題</h1><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="小說"><a href="#小說" class="headerlink" title="小說"></a>小說</h1><h2 id="古之惡來者為王"><a href="#古之惡來者為王" class="headerlink" title="古之惡來者為王"></a>古之惡來者為王</h2><ul>
+<li><a href="/小說/古之惡來者為王" class="current-tab">簡介</a></li>
+<li><a href="/小說/古之惡來者為王/1-1、歷史引言" class="current-tab">1-1、歷史引言</a></li>
+<li><a href="/小說/古之惡來者為王/1-2、拍攝三國" class="current-tab">1-2、拍攝三國</a></li>
+<li><a href="/小說/古之惡來者為王/1-3、武術學校" class="current-tab">1-3、武術學校</a></li>
+<li><a href="/小說/古之惡來者為王/1-4、三魂七魄" class="current-tab">1-4、三魂七魄</a></li>
+<li><a href="/小說/古之惡來者為王/1-5、武者世界" class="current-tab">1-5、武者世界</a></li>
+</ul>
+<h2 id="喝杯酒，說個故事"><a href="#喝杯酒，說個故事" class="headerlink" title="喝杯酒，說個故事"></a>喝杯酒，說個故事</h2><ul>
+<li><a href="/小說/喝杯酒，說個故事" class="current-tab">簡介</a></li>
+<li><a href="/小說/喝杯酒，說個故事/1-1、陰陽酒館" class="current-tab">1-1、陰陽酒館</a></li>
+</ul>
+<h2 id="莫名的愛"><a href="#莫名的愛" class="headerlink" title="莫名的愛"></a>莫名的愛</h2><ul>
+<li><a href="/小說/莫名的愛" class="current-tab">簡介</a></li>
+<li><a href="/小說/莫名的愛/1-1、初來乍到" class="current-tab">1-1、初來乍到</a></li>
+<li><a href="/小說/莫名的愛/1-2、能力顯現" class="current-tab">1-2、能力顯現</a></li>
+</ul>
+<h2 id="末日之勇者勝"><a href="#末日之勇者勝" class="headerlink" title="末日之勇者勝"></a>末日之勇者勝</h2><ul>
+<li><a href="/小說/末日之勇者勝" class="current-tab">簡介</a></li>
+<li><a href="/小說/末日之勇者勝/1-1、疫變" class="current-tab">1-1、疫變</a></li>
+<li><a href="/小說/末日之勇者勝/1-2、鼠疫" class="current-tab">1-2、鼠疫</a></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><a href="/版主履歷" class="current-tab">版主履歷</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <blockquote>
+<p><strong>《每日一句》</strong>Sometimes love is not a feeling but a choice.</p>
+<p>有時候，愛不是一種感覺，而是一種選擇。</p>
+</blockquote>
+<p>此系列文章為觀看<a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLpbuzGqDFzkjVESK1m9zElyCER2xCiHU-">【杰哥數位教室】資料庫系統管理課程</a>影片的學習筆記</p>
+<p><a target="_blank" rel="noopener" href="http://debussy.im.nuu.edu.tw/sjchen/DataBaseMan_Final.html">【杰哥數位教室】課堂教材</a> </p>
+<h2 id="使用資料庫系統的優點"><a href="#使用資料庫系統的優點" class="headerlink" title="使用資料庫系統的優點"></a>使用資料庫系統的優點</h2><ul>
+<li>避免資料重覆存放 (Data Redundancy)<ul>
+<li>透過資料集中化，避免資料重複存放</li>
+</ul>
+</li>
+<li>避免資料不一致 (Inconsistency)<ul>
+<li>確保任何更新的動作會自動地更新到其它重複的資料，以減少不一致現象</li>
+</ul>
+</li>
+<li>限制未授權的存取 Restricting Unauthorized Access<ul>
+<li>提供適當的安全性與認証機制，針對資料庫的帳密存取權限</li>
+</ul>
+</li>
+<li>提供備份與回復功能 Providing Backup and Recovery<ul>
+<li>確保資料能回到之前的狀態</li>
+</ul>
+</li>
+<li>安全性與完整性控制 (Security Constraints and Integrity Constraints)<ul>
+<li>資料庫的集中控制讓DBA更容易從事安全性(Security)與完整性(Integrity)的限制</li>
+</ul>
+</li>
+<li>資料獨立性 (Data Independence)<ul>
+<li>儲存方式的改變或資料庫結構的改變不會影響到上一層次的應用</li>
+</ul>
+</li>
+</ul>
+<h2 id="View-觀點、景觀"><a href="#View-觀點、景觀" class="headerlink" title="View (觀點、景觀)"></a>View (觀點、景觀)</h2><ul>
+<li>實際存在於資料庫的表格所衍生出來的關聯表格</li>
+<li>不需以實體的形式存在，為一個虛擬表格 (Virtual Table)</li>
+</ul>
+<h2 id="Meta-data"><a href="#Meta-data" class="headerlink" title="Meta-data"></a>Meta-data</h2><ul>
+<li>用來描述資料的資料，稱之為中繼資料 (Meta-data)</li>
+<li>資料庫系統具有自我描述(Self-Description)的特性<ul>
+<li>包含資料的型態、儲存格式、關係及各種限制、實際儲存結構，ex: 循序檔、索引檔</li>
+</ul>
+</li>
+</ul>
+<h2 id="ANSI-x2F-SPARC-三層式架構"><a href="#ANSI-x2F-SPARC-三層式架構" class="headerlink" title="ANSI&#x2F;SPARC 三層式架構"></a>ANSI&#x2F;SPARC 三層式架構</h2><ul>
+<li>外部層 (External Level)<ul>
+<li>資料庫的部份資料，資料於不同使用者有不同的呈現</li>
+</ul>
+</li>
+<li>概念層 (Conceptual Level)<ul>
+<li>是資料庫儲存的整體性資料</li>
+</ul>
+</li>
+<li>內部層 (Internal Level)<ul>
+<li>資料實際儲存方式</li>
+<li>create table command</li>
+</ul>
+</li>
+</ul>
+<h2 id="資料獨立性-Data-Independence"><a href="#資料獨立性-Data-Independence" class="headerlink" title="資料獨立性 Data Independence"></a>資料獨立性 Data Independence</h2><ul>
+<li>目的 : 修改資料庫的某一層架構時，不影響到較高層式架構<ul>
+<li>邏輯資料獨立性 (Logical Data Independence)<ul>
+<li>改變概念綱要時，不需要跟著改變外部綱要及其應用程式</li>
+</ul>
+</li>
+<li>實體資料獨立性 (Physical Data Independence)<ul>
+<li>改變內部綱要時，不需要跟著改變概念綱要和外部綱要</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="資料庫架構"><a href="#資料庫架構" class="headerlink" title="資料庫架構"></a>資料庫架構</h2><ul>
+<li>主從式架構 Client&#x2F;Server<ul>
+<li>可藉由Client端本身的運算能力，分擔Server端處理資料的負荷。</li>
+<li>當Server種類變多，Client也需因此而安裝多個介面</li>
+<li>當Client增多時，Server的負荷也會變重</li>
+</ul>
+</li>
+<li>多層式架構 Multi-Tier Architecture( 3-tier architecture)<ul>
+<li>將應用程式代理者 (Application agent) 置於Client與Server中間，存放企業應用邏輯 (Business logic)，以處理Client與Server間往來的業務</li>
+<li>若規模不斷擴大，中間端將成為瓶頸</li>
+</ul>
+</li>
+<li>分散式資料庫系統 Distributed Database System<ul>
+<li>可視為單一資料庫系統，但實際上資料卻是分散在網路的多個地方</li>
+<li>透通性 (Transparency)：不需要了解細節，即可正常運作的特性<ul>
+<li>存取透通性</li>
+<li>位置透通性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ODBC"><a href="#ODBC" class="headerlink" title="ODBC"></a>ODBC</h2><ul>
+<li>Server端資料庫系統與Client端應用程式之間的介面</li>
+<li>ODBC是一種讓各種資料庫都具有相同的存取資料介面的程式<ul>
+<li>ODBC如何在 Client  Side 和 Server Side 之間運作?</li>
+</ul>
+</li>
+</ul>
+<h2 id="資料冗餘"><a href="#資料冗餘" class="headerlink" title="資料冗餘"></a>資料冗餘</h2><ul>
+<li>資料冗餘帶來的問題?</li>
+<li>何謂控制冗餘，為何有控制冗餘的發生?</li>
+</ul>
+<h2 id="資料模型"><a href="#資料模型" class="headerlink" title="資料模型"></a>資料模型</h2><ul>
+<li>階層式 (hierarchical)</li>
+<li>網路式 (network)</li>
+<li>關聯式 (relation)</li>
+<li>物件導向 (object-oriented)</li>
+</ul>
+<p>四種比較表格圖</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    
+  
+
+  <!-- <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+ -->
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
