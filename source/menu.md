@@ -14,25 +14,25 @@
 
 ## 古之惡來者為王
 - <a href="/小說/古之惡來者為王" class="current-tab">簡介</a>
-- <a href="/小說/古之惡來者為王/1-1、歷史引言" class="current-tab">1-1、歷史引言</a>
-- <a href="/小說/古之惡來者為王/1-2、拍攝三國" class="current-tab">1-2、拍攝三國</a>
-- <a href="/小說/古之惡來者為王/1-3、武術學校" class="current-tab">1-3、武術學校</a>
-- <a href="/小說/古之惡來者為王/1-4、三魂七魄" class="current-tab">1-4、三魂七魄</a>
-- <a href="/小說/古之惡來者為王/1-5、武者世界" class="current-tab">1-5、武者世界</a>
+- <a href="/小說/古之惡來者為王/第1章、歷史引言" class="current-tab">第1章、歷史引言</a>
+- <a href="/小說/古之惡來者為王/第2章、拍攝三國" class="current-tab">第2章、拍攝三國</a>
+- <a href="/小說/古之惡來者為王/第3章、武術學校" class="current-tab">第3章、武術學校</a>
+- <a href="/小說/古之惡來者為王/第4章、三魂七魄" class="current-tab">第4章、三魂七魄</a>
+- <a href="/小說/古之惡來者為王/第5章、武者世界" class="current-tab">第5章、武者世界</a>
 
 ## 喝杯酒，說個故事
 - <a href="/小說/喝杯酒，說個故事" class="current-tab">簡介</a>
-- <a href="/小說/喝杯酒，說個故事/1-1、陰陽酒館" class="current-tab">1-1、陰陽酒館</a>
+- <a href="/小說/喝杯酒，說個故事/第1章、陰陽酒館" class="current-tab">第1章、陰陽酒館</a>
 
 ## 莫名的愛
 - <a href="/小說/莫名的愛" class="current-tab">簡介</a>
-- <a href="/小說/莫名的愛/1-1、初來乍到" class="current-tab">1-1、初來乍到</a>
-- <a href="/小說/莫名的愛/1-2、能力顯現" class="current-tab">1-2、能力顯現</a>
+- <a href="/小說/莫名的愛/第1章、初來乍到" class="current-tab">第1章、初來乍到</a>
+- <a href="/小說/莫名的愛/第2章、能力顯現" class="current-tab">第2章、能力顯現</a>
 
 ## 末日之勇者勝
 - <a href="/小說/末日之勇者勝" class="current-tab">簡介</a>
-- <a href="/小說/末日之勇者勝/1-1、疫變" class="current-tab">1-1、疫變</a>
-- <a href="/小說/末日之勇者勝/1-2、鼠疫" class="current-tab">1-2、鼠疫</a>
+- <a href="/小說/末日之勇者勝/第1章、疫變" class="current-tab">第1章、疫變</a>
+- <a href="/小說/末日之勇者勝/第2章、鼠疫" class="current-tab">第2章、鼠疫</a>
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
