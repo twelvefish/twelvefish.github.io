@@ -1,12 +1,12 @@
 # 文章目錄
 
-- <a href="/技術" class="current-tab">技術</a>
+- 技術
     
 
-- <a href="/專題" class="current-tab">專題</a>
+- 專題
     <!-- - <a href="/專題/ElasticSearch實戰" class="current-tab">ElasticSearch實戰</a> -->
 
-- <a href="/小說" class="current-tab">小說</a>
+- 小說
     - <a href="/小說/古之惡來者為王" class="current-tab">古之惡來者為王</a>
     - <a href="/小說/喝杯酒，說個故事" class="current-tab">喝杯酒，說個故事</a>
     - <a href="/小說/末日之勇者勝" class="current-tab">末日之勇者勝</a>
