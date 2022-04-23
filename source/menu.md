@@ -1,24 +1,23 @@
 # 技術
-<!-- ## ElasticSearch實戰 -->
-<!-- - <a href="/技術/ElasticSearch實戰" class="current-tab">簡介</a> -->
+## 資料庫管理
+- <a href="/技術/資料庫管理" class="current-tab">簡介</a>
+- <a href="/技術/資料庫管理/01、資料庫概論" class="current-tab">01、資料庫概論</a>
+- <a href="/技術/資料庫管理/02、關聯式資料庫" class="current-tab">02、關聯式資料庫</a>
 
+## 資通網路
+- <a href="/技術/資通網路" class="current-tab">簡介</a>
+- <a href="/技術/資通網路/01、網路基礎" class="current-tab">01、網路基礎</a>
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # 專題
-
+<!-- ## ElasticSearch實戰 -->
+<!-- - <a href="/技術/ElasticSearch實戰" class="current-tab">簡介</a> -->
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-# 小說
-
-## 古之惡來者為王
-- <a href="/小說/古之惡來者為王" class="current-tab">簡介</a>
-- <a href="/小說/古之惡來者為王/第1章、歷史引言" class="current-tab">第1章、歷史引言</a>
-- <a href="/小說/古之惡來者為王/第2章、拍攝三國" class="current-tab">第2章、拍攝三國</a>
-- <a href="/小說/古之惡來者為王/第3章、武術學校" class="current-tab">第3章、武術學校</a>
-- <a href="/小說/古之惡來者為王/第4章、三魂七魄" class="current-tab">第4章、三魂七魄</a>
-- <a href="/小說/古之惡來者為王/第5章、武者世界" class="current-tab">第5章、武者世界</a>
+## 小說
+- <a href="/小說/古之惡來者為王" class="current-tab">古之惡來者為王</a>
 
 ## 喝杯酒，說個故事
 - <a href="/小說/喝杯酒，說個故事" class="current-tab">簡介</a>
