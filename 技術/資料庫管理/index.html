@@ -671,7 +671,185 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="版主履歷"><a href="#版主履歷" class="headerlink" title="版主履歷"></a>版主履歷</h1>
+  <h1 id="資料庫管理"><a href="#資料庫管理" class="headerlink" title="資料庫管理"></a>資料庫管理</h1><h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>此系列文章為觀看<a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLpbuzGqDFzkjVESK1m9zElyCER2xCiHU-">【杰哥數位教室】資料庫系統管理課程</a>影片的學習筆記</p>
+<p><a target="_blank" rel="noopener" href="http://debussy.im.nuu.edu.tw/sjchen/DataBaseMan_Final.html">【杰哥數位教室】課堂教材</a> </p>
+<h2 id="第1章、資料庫概論"><a href="#第1章、資料庫概論" class="headerlink" title="第1章、資料庫概論"></a>第1章、資料庫概論</h2><h3 id="使用資料庫系統的優點"><a href="#使用資料庫系統的優點" class="headerlink" title="使用資料庫系統的優點"></a>使用資料庫系統的優點</h3><ul>
+<li>避免資料重覆存放 (Data Redundancy)<ul>
+<li>透過資料集中化，避免資料重複存放</li>
+</ul>
+</li>
+<li>避免資料不一致 (Inconsistency)<ul>
+<li>確保任何更新的動作會自動地更新到其它重複的資料，以減少不一致現象</li>
+</ul>
+</li>
+<li>限制未授權的存取 Restricting Unauthorized Access<ul>
+<li>提供適當的安全性與認証機制，針對資料庫的帳密存取權限</li>
+</ul>
+</li>
+<li>提供備份與回復功能 Providing Backup and Recovery<ul>
+<li>確保資料能回到之前的狀態</li>
+</ul>
+</li>
+<li>安全性與完整性控制 (Security Constraints and Integrity Constraints)<ul>
+<li>資料庫的集中控制讓DBA更容易從事安全性(Security)與完整性(Integrity)的限制</li>
+</ul>
+</li>
+<li>資料獨立性 (Data Independence)<ul>
+<li>儲存方式的改變或資料庫結構的改變不會影響到上一層次的應用</li>
+</ul>
+</li>
+</ul>
+<h3 id="View-觀點、景觀"><a href="#View-觀點、景觀" class="headerlink" title="View (觀點、景觀)"></a>View (觀點、景觀)</h3><ul>
+<li>實際存在於資料庫的表格所衍生出來的關聯表格</li>
+<li>不需以實體的形式存在，為一個虛擬表格 (Virtual Table)</li>
+</ul>
+<h3 id="Meta-data"><a href="#Meta-data" class="headerlink" title="Meta-data"></a>Meta-data</h3><ul>
+<li>用來描述資料的資料，稱之為中繼資料 (Meta-data)</li>
+<li>資料庫系統具有自我描述(Self-Description)的特性<ul>
+<li>包含資料的型態、儲存格式、關係及各種限制、實際儲存結構，ex: 循序檔、索引檔</li>
+</ul>
+</li>
+</ul>
+<h3 id="ANSI-x2F-SPARC-三層式架構"><a href="#ANSI-x2F-SPARC-三層式架構" class="headerlink" title="ANSI&#x2F;SPARC 三層式架構"></a>ANSI&#x2F;SPARC 三層式架構</h3><ul>
+<li>外部層 (External Level)<ul>
+<li>資料庫的部份資料，資料於不同使用者有不同的呈現</li>
+</ul>
+</li>
+<li>概念層 (Conceptual Level)<ul>
+<li>是資料庫儲存的整體性資料</li>
+</ul>
+</li>
+<li>內部層 (Internal Level)<ul>
+<li>資料實際儲存方式</li>
+<li>create table command</li>
+</ul>
+</li>
+</ul>
+<h3 id="資料獨立性-Data-Independence"><a href="#資料獨立性-Data-Independence" class="headerlink" title="資料獨立性 Data Independence"></a>資料獨立性 Data Independence</h3><ul>
+<li>目的 : 修改資料庫的某一層架構時，不影響到較高層式架構<ul>
+<li>邏輯資料獨立性 (Logical Data Independence)<ul>
+<li>改變概念綱要時，不需要跟著改變外部綱要及其應用程式</li>
+</ul>
+</li>
+<li>實體資料獨立性 (Physical Data Independence)<ul>
+<li>改變內部綱要時，不需要跟著改變概念綱要和外部綱要</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="資料庫架構"><a href="#資料庫架構" class="headerlink" title="資料庫架構"></a>資料庫架構</h3><ul>
+<li>主從式架構 Client&#x2F;Server<ul>
+<li>可藉由Client端本身的運算能力，分擔Server端處理資料的負荷。</li>
+<li>當Server種類變多，Client也需因此而安裝多個介面</li>
+<li>當Client增多時，Server的負荷也會變重</li>
+</ul>
+</li>
+<li>多層式架構 Multi-Tier Architecture( 3-tier architecture)<ul>
+<li>將應用程式代理者 (Application agent) 置於Client與Server中間，存放企業應用邏輯 (Business logic)，以處理Client與Server間往來的業務</li>
+<li>若規模不斷擴大，中間端將成為瓶頸</li>
+</ul>
+</li>
+<li>分散式資料庫系統 Distributed Database System<ul>
+<li>可視為單一資料庫系統，但實際上資料卻是分散在網路的多個地方</li>
+<li>透通性 (Transparency)：不需要了解細節，即可正常運作的特性<ul>
+<li>存取透通性</li>
+<li>位置透通性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ODBC"><a href="#ODBC" class="headerlink" title="ODBC"></a>ODBC</h3><ul>
+<li>Server端資料庫系統與Client端應用程式之間的介面</li>
+<li>ODBC是一種讓各種資料庫都具有相同的存取資料介面的程式<ul>
+<li>ODBC如何在 Client  Side 和 Server Side 之間運作?</li>
+</ul>
+</li>
+</ul>
+<h3 id="資料冗餘"><a href="#資料冗餘" class="headerlink" title="資料冗餘"></a>資料冗餘</h3><ul>
+<li>資料冗餘帶來的問題?</li>
+<li>何謂控制冗餘，為何有控制冗餘的發生?</li>
+</ul>
+<h3 id="資料模型"><a href="#資料模型" class="headerlink" title="資料模型"></a>資料模型</h3><ul>
+<li>階層式 (hierarchical)</li>
+<li>網路式 (network)</li>
+<li>關聯式 (relation)</li>
+<li>物件導向 (object-oriented)</li>
+</ul>
+<p>四種比較表格圖</p>
+<h2 id="第2章、關聯式資料庫"><a href="#第2章、關聯式資料庫" class="headerlink" title="第2章、關聯式資料庫"></a>第2章、關聯式資料庫</h2><h3 id="關聯"><a href="#關聯" class="headerlink" title="關聯"></a>關聯</h3><p>R (A1,A2,A3)</p>
+<h3 id="關聯的特性"><a href="#關聯的特性" class="headerlink" title="關聯的特性"></a>關聯的特性</h3><ul>
+<li>Tuple之間沒有次序性</li>
+<li>Attribute之間沒有次序性</li>
+<li>Attribute值皆為基元值 </li>
+<li>關聯中，不含重複的Tuple</li>
+</ul>
+<h3 id="鍵值-Key-Value"><a href="#鍵值-Key-Value" class="headerlink" title="鍵值 (Key Value)"></a>鍵值 (Key Value)</h3><ul>
+<li>超鍵(Super key)<ul>
+<li>由關聯中的一個或多個的屬性所構成、具有唯一識別性的屬性集合即為超鍵<ul>
+<li>最小的超鍵可能僅為單一屬性</li>
+<li>最大的超鍵為所有屬性的集合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>候選鍵(Candidate Key)<ul>
+<li>具有最少屬性集合的超鍵</li>
+<li>能唯一識別表格中各不同Tuple資料的最少屬性集合</li>
+<li>具備唯一性和最小性</li>
+</ul>
+</li>
+<li>主鍵(Primary Key)<ul>
+<li>選鍵中選出其一，用來代表資料的唯一值</li>
+<li>主鍵不可為空值(Null Value)</li>
+<li>畫一條實底線表示</li>
+</ul>
+</li>
+<li>替代鍵(Alternate Key)<ul>
+<li>除了主鍵之外的其他候選鍵</li>
+</ul>
+</li>
+<li>外來鍵(Foreign Key)<ul>
+<li>外來鍵是一個關聯中的屬性集合，而此集合在其它關聯中扮演主鍵 (候選鍵) 的角色</li>
+<li>外來鍵不具唯一性</li>
+<li>外來鍵的內含值可以為空值</li>
+</ul>
+</li>
+</ul>
+<h3 id="完整性限制-Integrity-Constraint"><a href="#完整性限制-Integrity-Constraint" class="headerlink" title="完整性限制 Integrity Constraint"></a>完整性限制 Integrity Constraint</h3><ul>
+<li>個體完整性限制 Entity integrity constraint<ul>
+<li>主鍵不可為空值，也不可以重覆出現</li>
+</ul>
+</li>
+<li>參考完整性限制 Referential integrity constraint<ul>
+<li>外來鍵可以是空值，或是一個相匹配於其它關聯之主鍵(候選鍵)的值</li>
+</ul>
+</li>
+<li>定義域完整性限制 Domain Integrity Constraints<ul>
+<li>屬性值需合乎該屬性之定義域範圍</li>
+<li>屬性值需為基元值</li>
+</ul>
+</li>
+</ul>
+<h3 id="資料操作必須考慮到資料完整性限制"><a href="#資料操作必須考慮到資料完整性限制" class="headerlink" title="資料操作必須考慮到資料完整性限制"></a>資料操作必須考慮到資料完整性限制</h3><ul>
+<li>Insert、Update、Delete不可違反完整性限制，如若違反，可採下列三種方式之一<ul>
+<li>限制 Restricted<ul>
+<li>若欲XX之資料有被參考到，則不允許XX</li>
+</ul>
+</li>
+<li>連帶 Cascade<ul>
+<li>若欲XX之資料有被參考到，則同時XX帶有相同參考外來鍵值的記錄</li>
+</ul>
+</li>
+<li>空值化 Nullify<ul>
+<li>若欲XX之資料有被參考到，則同時將該參考外來鍵值空值化</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 </div>
 
 
@@ -708,7 +886,7 @@ function sidebar_toggle() {
       <!-- Author title -->
       <div class="author-title">
         <div>十鱷魚</div>
-        <!-- <div>2022-04-16</div> -->
+        <!-- <div>2022-04-23</div> -->
       </div>
     </div>
   

@@ -365,10 +365,6 @@ img {
         color: #3b4351; }
       .off-canvas-content .book-post-info .book-post-meta .link a:hover {
         color: gray; }
-      .off-canvas-content .book-post-info .book-post-meta.hide {
-        opacity: 0;
-        max-height: 0;
-        transition: max-height 0.15s ease-out; }
     .off-canvas-content .book-post-info .book-tocbot {
       overflow: auto;
       position: relative;

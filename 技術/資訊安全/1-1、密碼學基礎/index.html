@@ -11,7 +11,7 @@
 
     <title>
         
-          twelvefish
+          1-1、密碼學基礎 - twelvefish
         
     </title>
 
@@ -671,7 +671,96 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="版主履歷"><a href="#版主履歷" class="headerlink" title="版主履歷"></a>版主履歷</h1>
+  <blockquote>
+<p><strong>《每日一句》</strong>There are so many beautiful reasons to be happy.</p>
+<p>有太多太美好的理由讓你笑對生活。</p>
+</blockquote>
+<h2 id="資安三要素"><a href="#資安三要素" class="headerlink" title="資安三要素"></a>資安三要素</h2><ul>
+<li>機密性 : 未授權無法看到資訊 (Read)</li>
+<li>完整性 : 沒有授權的人無法修改或刪除該檔案 (Write)</li>
+<li>可用性 : 有獲得授權的可正常使用系統</li>
+</ul>
+<h2 id="密碼學-Cryptography"><a href="#密碼學-Cryptography" class="headerlink" title="密碼學 (Cryptography)"></a>密碼學 (Cryptography)</h2><p>利用數學方法對資料加密和解密的科學</p>
+<ul>
+<li>明文 (Plaintext)<ul>
+<li>加密前的原始資料，為加密演算法的輸入端</li>
+</ul>
+</li>
+<li>密文 (Ciphertext)<ul>
+<li>加密之後的資料，為加密演算法的輸出端</li>
+</ul>
+</li>
+<li>加密 (Encryption)<ul>
+<li>使用金鑰將明文轉換成密文，唯有使用解密的金鑰才能讀出原文</li>
+<li>目的<ul>
+<li>避免未授權的人檢視內容<font color=red>(機密性)</font>或竄改<font color=red>(完整性)</font>資訊內容，只有獲得授權<font color=red>(擁有金鑰)</font>的人才能看見</li>
+</ul>
+</li>
+<li>強度<ul>
+<li>破解所需花費的時間資源取決於<ul>
+<li>演算法強度</li>
+<li>金鑰保護機制</li>
+<li>金鑰的長度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>解密 (Decipher)<ul>
+<li>將密文還原為明文的過程</li>
+</ul>
+</li>
+<li>金鑰 (Key)<ul>
+<li>一組相當長度的數字或字串，通常以位元(bit)為單位，通常金鑰長度越長，密文越安全</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="破解方法"><a href="#破解方法" class="headerlink" title="破解方法"></a>破解方法</h2><p>不須經過加密金鑰將密文還原為明文</p>
+<ul>
+<li>密碼破解法<ul>
+<li>利用演算法、明文、密文，其中之一或二，來推算出規則金鑰來破解</li>
+</ul>
+</li>
+<li>暴力攻擊法<ul>
+<li>利用所有可能的金鑰來推斷出有意義的明文，破解成本與金鑰長度成正比，金鑰愈長，越不容易經由暴力攻擊法破解</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="CAPTCHA技術"><a href="#CAPTCHA技術" class="headerlink" title="CAPTCHA技術"></a>CAPTCHA技術</h2><ul>
+<li>CAPTCHA，俗稱驗證碼，是一種區分用戶是電腦或人的全自動程式</li>
+<li>常見的CAPTCHA 測試，是讓用戶在扭曲變形的圖片上輸入顯示的文字，扭曲變形的目的是為了避免被光學字元識別OCR之類的電腦程式自動辨識出圖片上的數字而失去效果</li>
+<li>而現在新的 CAPTCHA技術，讓使用者移動滑鼠，打勾確認，就能辨識你是不是人類，因為如果是電腦的話，就不會有滑鼠移動的軌跡，而是直接瞬移</li>
+</ul>
+<hr>
+<h2 id="reCAPTCHA技術"><a href="#reCAPTCHA技術" class="headerlink" title="reCAPTCHA技術"></a>reCAPTCHA技術</h2><ul>
+<li>和CAPTCHA技術相同，只不過分為兩部分</li>
+<li>第一部分和傳統驗證碼一樣，是自動生成並經過變形處理的文字，用來檢驗你是不是真人</li>
+<li>第二部分，則是從無法辨識的文字檔截取出來的詞</li>
+<li>藉由混搭方式，讓真人來幫電腦判斷無法辨識的文字，進行學習，電腦也會派發給多個用戶交叉驗證，確保正確性</li>
+</ul>
+<hr>
+<h2 id="資料隱藏"><a href="#資料隱藏" class="headerlink" title="資料隱藏"></a>資料隱藏</h2><ul>
+<li>基於目的，讓傳送方和接收方約定好之規則，資料才能被解析</li>
+<li>資料隱藏可以使用圖片、音檔、文字..作為載體，避免資料被未授權人檢視、修改</li>
+<li>EX :<ul>
+<li>隱寫<ul>
+<li>簡單來說就是把訊息藏起來</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="隱寫術-Steganography"><a href="#隱寫術-Steganography" class="headerlink" title="隱寫術 (Steganography)"></a>隱寫術 (Steganography)</h2><ul>
+<li>圖片隱寫術<ul>
+<li>將資訊隱藏在圖片中，藉由RGB三原色可以組成其他各種顏色，在 PNG 圖片的儲存中，每個顏色會有 8bit，隱寫術就是修改了像素中的最低的 1bit，因為用人眼是看不出被修改的，藉此將信息隱藏起來</li>
+</ul>
+</li>
+</ul>
+
 </div>
 
 
@@ -707,11 +796,18 @@ function sidebar_toggle() {
   
       <!-- Author title -->
       <div class="author-title">
-        <div>十鱷魚</div>
-        <!-- <div>2022-04-16</div> -->
+        <div>twelvefish</div>
+        <!-- <div>2021-01-16</div> -->
       </div>
     </div>
   
+    
+      <div class="divider"></div>
+      <div class="link">
+        <a class="category-link" href="/categories/%E8%B3%87%E9%80%9A%E5%AE%89%E5%85%A8/">資通安全</a>
+        <a class="tag-none-link" href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/" rel="tag">#密碼學</a>
+      </div>
+      
     
   
     <div class="divider"></div>
