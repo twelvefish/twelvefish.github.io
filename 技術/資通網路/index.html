@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <h2 id="技術"><a href="#技術" class="headerlink" title="技術"></a>技術</h2><ul>
 <li><a href="/技術/資料庫管理" class="current-tab">資料庫管理</a></li>
 <li><a href="/技術/資通網路" class="current-tab">資通網路</a></li>
+<li><a href="/技術/Linux&Shell" class="current-tab">Linux &amp; Shell</a></li>
 </ul>
 <blockquote>
 <blockquote>
@@ -671,7 +672,8 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h2 id="資通網路"><a href="#資通網路" class="headerlink" title="資通網路"></a>資通網路</h2><h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><h2 id="第1章、網路基礎"><a href="#第1章、網路基礎" class="headerlink" title="第1章、網路基礎"></a>第1章、網路基礎</h2><h3 id="網路分類"><a href="#網路分類" class="headerlink" title="網路分類"></a>網路分類</h3><p>1、涵蓋範圍分類</p>
+  <h2 id="資通網路"><a href="#資通網路" class="headerlink" title="資通網路"></a>資通網路</h2><h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>資通網路的學習筆記</p>
+<h2 id="第1章、網路基礎"><a href="#第1章、網路基礎" class="headerlink" title="第1章、網路基礎"></a>第1章、網路基礎</h2><h3 id="網路分類"><a href="#網路分類" class="headerlink" title="網路分類"></a>網路分類</h3><p>1、涵蓋範圍分類</p>
 <ul>
 <li>個人區域網路 (Personal Area Network，PAN) : 數公尺之內網路</li>
 <li>區域網路 (Local Area Network，LAN) : 數公里之網路，如辦公室、校園…</li>
@@ -680,19 +682,335 @@ function sidebar_toggle() {
 <p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/01.PNG" alt="網路分類比較表格"></p>
 <p>2、架構分類</p>
 <ul>
-<li>伺服器基礎網路 (Server-based Network) : Server 主要負責資料存取、運算、UI 等工作，Client 端幾乎沒有運算能力</li>
+<li>伺服器基礎網路 (Server-based Network)<ul>
+<li>Server 主要負責資料存取、運算、UI 等工作，Client 端幾乎沒有運算能力</li>
+</ul>
+</li>
 </ul>
 <p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/02.PNG" alt="伺服器基礎網路"></p>
 <ul>
-<li>主從式網路 (Client-server Network) : Client 具有少量運算能力，但資料存取等工作還是 Server 為主要核心</li>
+<li>主從式網路 (Client-server Network)<ul>
+<li>Client 具有少量運算能力，但資料存取等工作還是 Server 為主要核心</li>
+</ul>
+</li>
 </ul>
 <p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/03.PNG" alt="主從式網路"></p>
 <ul>
-<li>用戶端基礎網路 (Client-based Network) : 也被稱之為點對點 (Peer-to-peer，P2P) 網路，每台主機同時是 Server 也是 Client，沒有集中式的資源儲存與管理系統</li>
+<li>用戶端基礎網路 (Client-based Network)<ul>
+<li>也被稱之為點對點 (Peer-to-peer，P2P) 網路，每台主機同時是 Server 也是 Client，沒有集中式的資源儲存與管理系統</li>
+</ul>
+</li>
 </ul>
 <p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/04.PNG" alt="用戶端基礎網路"></p>
-<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/05.PNG" alt="網路架構比較表格"></p>
-<h3 id="網路拓樸"><a href="#網路拓樸" class="headerlink" title="網路拓樸"></a>網路拓樸</h3>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/05.PNG" alt="網路架構比較表"></p>
+<h3 id="網路拓樸"><a href="#網路拓樸" class="headerlink" title="網路拓樸"></a>網路拓樸</h3><ul>
+<li>網狀拓樸 (Mesh Topology)<ul>
+<li>網路中任兩個節點，大部分皆有鏈結 (Link) 相連，若任兩個節點都有鏈結相連，則稱完全連結 (Full Connected)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/06.PNG" alt="網狀拓樸"></p>
+<ul>
+<li>星狀拓樸 (Star Topology)<ul>
+<li>所有節點皆與中央節點相連，中央集權式</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/07.PNG" alt="星狀拓樸"></p>
+<ul>
+<li>匯流排拓樸 (Bus Topology)<ul>
+<li>有一主幹網路，各節點連在上面，採廣播 (Broadcast) 方式來進行通訊</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/08.PNG" alt="匯流排拓樸"></p>
+<ul>
+<li>環狀拓樸 (Ring Topology)<ul>
+<li>各節點以環狀方式連結於單一網路上，透過 Token 才有存取傳輸媒體機會，採分權式的網路管理</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/09.PNG" alt="環狀拓樸"></p>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/10.PNG" alt="網路拓樸比較表"></p>
+<h3 id="網路模型"><a href="#網路模型" class="headerlink" title="網路模型"></a>網路模型</h3><p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/11.PNG" alt="OSI 參考模型"></p>
+<p>1、OSI 參考模型 (OSI Reference Model)</p>
+<ul>
+<li>訂定了7個層次之功能標準、通訊協定及服務類型</li>
+<li>資料由上層傳遞至下層，下層會將上層資料加上該層表頭 (head)，稱為封裝 (Encapsulation)</li>
+<li>反之拆裝 (Decapsulation) 回上層資料</li>
+</ul>
+<p>以下七層 : </p>
+<ul>
+<li><p>應用層 (Application Layer)</p>
+<ul>
+<li>定義使用者與通訊軟體之間的介面</li>
+<li>FTP、HTTP、POP3、SMTP、IMAP</li>
+</ul>
+</li>
+<li><p>展現層 (Presentation Layer)</p>
+<ul>
+<li>資料格式與轉譯</li>
+<li>檔案格式轉換、資料壓縮、資料加解密</li>
+</ul>
+</li>
+<li><p>會議層 (Session Layer)</p>
+<ul>
+<li>不同機器上雙方會議的建立與中止</li>
+<li>定義如何開始、控制和結束一個會話</li>
+<li>單工、雙工、半雙工傳送方式</li>
+</ul>
+</li>
+<li><p>傳輸層 (Transport Layer)</p>
+<ul>
+<li>發送端 (Sender) 與接收端 (Receiver)，端對端 (End-to-End) 的連線技術</li>
+<li>主要是資料傳送及流程控制</li>
+<li>TCP、UDP、SCTP</li>
+</ul>
+</li>
+<li><p>網路層 (Network Layer)</p>
+<ul>
+<li>決定封包(Packet)、路由(Routing)</li>
+<li>給予邏輯位址 (Logical Address)</li>
+<li>提供網路的服務品質 (Quality of Service, QOS)</li>
+<li>IP</li>
+</ul>
+</li>
+<li><p>資料連結層 (Data-Link Layer)</p>
+<ul>
+<li>將資料切割成訊框 (Frame)</li>
+<li>在網路之間建立邏輯連結，讓資料傳送與接收更穩定</li>
+<li>MAC Address、ARP</li>
+</ul>
+</li>
+<li><p>實體層 (Physical Layer)</p>
+<ul>
+<li>定義網路系統中實際連線，ex: 同軸電纜、雙絞線、光纖</li>
+</ul>
+</li>
+</ul>
+<p>2、TCP&#x2F;IP 參考模型</p>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/12.PNG" alt="TCP/IP 參考模型"></p>
+<h3 id="網路延伸觀念"><a href="#網路延伸觀念" class="headerlink" title="網路延伸觀念"></a>網路延伸觀念</h3><p>1、單位量詞計量標準</p>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/13.PNG" alt="單位量詞計量標準"></p>
+<p>EX: 2MB 的檔案經由 1Mbps 傳輸，請問傳輸速率是多少 ?</p>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/14.PNG"></p>
+<p>2、多工方法</p>
+<ul>
+<li>將多個設備連結一起，傳送端透過多工器(Multiplexer)傳輸資料，當資料抵達接收端時，透過反多工器 (Demultiplexer) 還原</li>
+</ul>
+<p>各種多工 :</p>
+<ul>
+<li>分時多工 (Time Division Multiplexing)<ul>
+<li>切割時間讓封包輪流使用完整頻寬</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/15.PNG" alt="分時多工"></p>
+<ul>
+<li>分類多工 (Frequency Division Multiplexing)<ul>
+<li>切割頻寬讓封包隨時都可以使用</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/16.PNG" alt="分類多工"></p>
+<ul>
+<li>統計多工 (Statistical Multiplexing)<ul>
+<li>依照際需求，給予頻寬</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/17.PNG" alt="統計多工"></p>
+<ul>
+<li>分碼多工 (Code Division Multiplexing)<ul>
+<li>任何時刻都可以使用所有頻寬</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/18.PNG" alt="分碼多工"></p>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/19.PNG" alt="各種多工比較表"></p>
+<p>3、交換機制</p>
+<ul>
+<li>電路交換 (Circuit Switching)</li>
+<li>訊息交換 (Message Switching)</li>
+<li>封包交換 (Packet Switching) &#x3D; Datagram</li>
+<li>虛擬路徑交換 (Virtual Circuit)</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/20.PNG" alt="交換機制比較表"></p>
+<p>4、延遲 (Delay)</p>
+<ul>
+<li>利用率 &#x3D; 傳輸延遲 &#x2F; 往返延遲</li>
+<li>有效頻寬 &#x3D; 資料 &#x2F; 往返延遲</li>
+<li>回程大小ACK不計 &#x3D; 回程不計算 Transmission Delay</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/21.PNG" alt="延遲機制比較表"></p>
+<p>EX : 1024*768像素圖片，每個像素3位元組，則使用 56kbps 傳輸遲延為何?</p>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/22.PNG"></p>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/23.PNG" alt="106調查局考題"></p>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/24.PNG"></p>
+<h2 id="第2章、實體層"><a href="#第2章、實體層" class="headerlink" title="第2章、實體層"></a>第2章、實體層</h2><h3 id="資料傳輸理論"><a href="#資料傳輸理論" class="headerlink" title="資料傳輸理論"></a>資料傳輸理論</h3><p>1、傳輸定理</p>
+<ul>
+<li>奈奎斯特定理 (Nyquist Theorem)<ul>
+<li><p>無雜訊的完美頻道</p>
+</li>
+<li><p>B 表示頻寬、V 表示包含 V 個不連續階的訊號</p>
+</li>
+<li><p>最大資料傳輸率 (Maximum Data Rate) &#x3D; 2Blog₂V</p>
+</li>
+<li><p>需 2B 的取樣頻率，才可將訊號完整重建</p>
+</li>
+<li><p>EX : 試求一無雜訊之 3kHZ 頻道傳輸一個二元訊號之最大資料傳輸率?</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/25.PNG"></p>
+<ul>
+<li>雪隆定理 (Shannon Theorem)<ul>
+<li><p>S 表示訊號能量值，N 表示雜訊能量值，則訊號雜訊比表示為 S&#x2F;N</p>
+</li>
+<li><p>訊號雜訊比使用分貝 (dB) 表示，dB &#x3D; 10logS&#x2F;N</p>
+</li>
+<li><p>在一個有雜訊且頻寬為 B Hz 的頻道，最大資料傳輸率 &#x3D; Blog₂(1+S&#x2F;N)</p>
+</li>
+<li><p>EX : 一條有雜訊的 6kHZ 通話頻道，在訊號雜訊比為 9dB的情況下，理論上，最大的傳輸速率為何?</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/26.PNG"></p>
+<p>2、各種外線比較</p>
+<ul>
+<li>光速為 3*10的八次方</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/27.PNG" alt="各種外線比較"></p>
+<p>3、實體層可能發生錯誤的原因、解決方法</p>
+<ul>
+<li>串音<ul>
+<li>原因 : 兩條線路太靠近而產生</li>
+<li>解決方法 : 增加線路的間距</li>
+</ul>
+</li>
+<li>回音<ul>
+<li>原因 : 連線設備品質不良</li>
+<li>解決方法 : 修復連線設備</li>
+</ul>
+</li>
+<li>熱雜訊<ul>
+<li>原因 : 線路上電子隨機移動</li>
+<li>解決方法 : 增加訊號強度</li>
+</ul>
+</li>
+<li>訊號衰減<ul>
+<li>原因 : 訊號能量隨著傳輸距離而減弱</li>
+<li>解決方法 : 使用中繼器</li>
+</ul>
+</li>
+<li>互調式雜訊<ul>
+<li>原因 : 不同頻率訊號在同一介質中傳送，可能產生雜波與原訊號干擾</li>
+<li>解決方法 : 調整傳輸頻率</li>
+</ul>
+</li>
+<li>線路突然停止傳輸<ul>
+<li>原因 : 意外事故</li>
+<li>解決方法 : 安裝不斷電系統 (UPS)</li>
+</ul>
+</li>
+<li>延遲失真<ul>
+<li>原因 : 信號中不同頻率的成分，在傳輸介質中傳送時產生不均勻的傳送速度，而造成失真</li>
+<li>解決方法 : 調整傳輸介質</li>
+</ul>
+</li>
+</ul>
+<h3 id="數位編碼"><a href="#數位編碼" class="headerlink" title="數位編碼"></a>數位編碼</h3><ul>
+<li>將資料轉換為數位訊號傳輸，需進行數位編碼</li>
+</ul>
+<p>1、數位編碼方式</p>
+<ul>
+<li><p>NRZ 不回歸零 (Non-Return to Zero)</p>
+<ul>
+<li>以高電位代表 1 ， 低電位代表 0</li>
+<li>優點 : 容易設計、有效利用頻寬</li>
+<li>缺點 : 接收端面對連續 0 或連續 1 時可能無法解碼</li>
+</ul>
+</li>
+<li><p>Manchester 曼徹斯特</p>
+<ul>
+<li>由低至高電位為 1 ，由高至低電位為 0</li>
+<li>優點 : 接收端面對連續 0 或連續 1 時可正常解碼</li>
+<li>缺點 : 相同頻寬可傳送的資料量僅為 NRZ 的一半</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/28.PNG" alt="數位編碼"></p>
+<p>2、T1的資料傳輸率</p>
+<ul>
+<li>使用八位元的取樣來傳送每條電話訊號，</li>
+<li>可同時傳送24條電話訊號</li>
+<li>8*24&#x3D; 192位元，再加上一個同步位元，因此實際傳輸的碼框大小為 193 位元</li>
+<li>碼框傳送的速率是 8KHz（意即每秒傳送 8000次），所以一秒鐘資料的傳輸量為193*8000&#x3D;1544000&#x3D;1.544 Mbps</li>
+</ul>
+<h3 id="類比調變"><a href="#類比調變" class="headerlink" title="類比調變"></a>類比調變</h3><ul>
+<li>將數位資料以類比訊號表示</li>
+</ul>
+<p>1、類比調變種類</p>
+<ul>
+<li><p>頻率位移調變 (Frequency Shift Keying, FSK)</p>
+<ul>
+<li>以頻率高低來表示二進位的 0&#x2F;1</li>
+</ul>
+</li>
+<li><p>振幅位移調變 (Amplitude Shift Keying, ASK)</p>
+<ul>
+<li>以振幅大小來表示二進位的 0&#x2F;1</li>
+</ul>
+</li>
+<li><p>相位位移調變 (Phase Shift Keying, PSK)</p>
+<ul>
+<li>以角度來表示二進位的 0&#x2F;1</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/29.PNG" alt="類比調變"></p>
+<h3 id="展頻技術"><a href="#展頻技術" class="headerlink" title="展頻技術"></a>展頻技術</h3><ul>
+<li>一般情況，傳輸都採用較窄頻寬，以獲得較佳接收效果</li>
+<li>展頻技術為將較窄的頻寬延展成較寬的頻段，目的是避免通訊被干擾或攔截</li>
+<li>通訊雙方利用私有頻道編碼表，來決定傳送、接收順序，駭客方無此編碼方式，無法從中解譯</li>
+<li>展頻技術將訊號和 PNS 重新編碼，調變成較大頻率</li>
+</ul>
+<p>1、展頻方法</p>
+<ul>
+<li>跳頻展頻 (Frequency Hopping Spread Spectrum, FHSS)<ul>
+<li>將頻段分為N個小頻段，傳送端於小頻道變換傳送，接收端也在相同小頻道跳躍接收訊號，達成雙方通訊</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/31.PNG" alt="跳頻展頻"></p>
+<ul>
+<li>直接序列展頻 (Direct Sequence Spread Spectrum, DSSS)<ul>
+<li>將頻段窄的訊號，經由PNS互斥或運算子，將高能量的頻率分布到較大頻段</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/32.PNG" alt="直接序列展頻"></p>
+<ul>
+<li><p>正交分頻多工 (Orthogonal Frequency Division Multiplexing, OFDM)</p>
+</li>
+<li><p>多重路徑衰減 (Multipath Fading)</p>
+<ul>
+<li>傳送端發送訊號後，訊號經由空中發散方式傳播，可能經由折射、散射..不同路徑到達接收端，由於訊號強度、抵達時間…都不同，接收端收到的多筆訊號可能都為同一訊號，產生干擾現象</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/33.PNG" alt="多重路徑衰減"></p>
+<p>2、展頻優點如下</p>
+<ul>
+<li>提供通訊保密</li>
+<li>對抗同類干擾</li>
+<li>同一頻段多人共享</li>
+<li>抵抗多重路徑衰減</li>
+</ul>
+<p><img src="/img/%E8%B3%87%E9%80%9A%E7%B6%B2%E8%B7%AF/30.PNG" alt="展頻技術"></p>
+
 </div>
 
 
