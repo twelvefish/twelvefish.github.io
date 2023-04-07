@@ -2,9 +2,11 @@
 
 - 技術
     - <a href="/技術/Linux&Shell" class="current-tab">Linux&Shell</a>
+    - <a href="/技術/MyBatisPlus" class="current-tab">MyBatisPlus</a>
+    <!-- - <a href="/技術/谷粒商城" class="current-tab">谷粒商城</a> -->
 
 - 專題
-    - <a href="/專題/谷粒商城" class="current-tab">谷粒商城</a>
+
     
 
 - 小說
