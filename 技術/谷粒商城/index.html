@@ -670,63 +670,162 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class='book-archive'>
-  <!-- Title -->
-  
-    <h1>Category - TypeScript大戰貪食蛇</h1>
-  
+          <div class="book-post">
+  <h2 id="谷粒商城"><a href="#谷粒商城" class="headerlink" title="谷粒商城"></a>谷粒商城</h2><h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><h2 id="第1章、環境搭建"><a href="#第1章、環境搭建" class="headerlink" title="第1章、環境搭建"></a>第1章、環境搭建</h2><p>1、使用vagrant快速安裝Linux虛擬機</p>
+<ul>
+<li>這裡採用安裝VM Virtualbox</li>
+<li>項目中 redis、MySQL、RabbitMQ都是安裝在linux裡面</li>
+<li>使用vagrant進行虛擬機建置</li>
+<li>安装Centos7<ul>
+<li>vagrant init centos&#x2F;7</li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/01.PNG"></li>
+</ul>
+</li>
+<li>啟動虛擬機<ul>
+<li>vagrant up</li>
+</ul>
+</li>
+<li>連線到虛擬機<ul>
+<li>vagrant ssh</li>
+</ul>
+</li>
+<li>重啟虛擬機<ul>
+<li>vagrant reload</li>
+</ul>
+</li>
+<li>修改網路配置<ul>
+<li>C槽:使用者，路徑下的 Vagrantfile</li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/04.PNG"></li>
+<li>Ip位置參考網路連線VirtualBox配到的IP，前三碼要一致，最後一碼不用</li>
+<li>將 config.vm.network “private_network”, ip: “192.168.56.XX”</li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/02.PNG"></li>
+<li>測試本機和虛擬機互相ping是否能打通，確保網路能向虛擬機內部溝通</li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/03.PNG"></li>
+</ul>
+</li>
+<li>可直接切換root權限，密碼預設 vagrant<ul>
+<li>su root</li>
+</ul>
+</li>
+</ul>
+<p>2、安裝Docker</p>
+<ul>
+<li>官方Docker於CentOS安裝教學<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></li>
+</ul>
+</li>
+<li>將docker打開<ul>
+<li>sudo systemctl start docker</li>
+</ul>
+</li>
+<li>docker版本<ul>
+<li>docker -v</li>
+</ul>
+</li>
+<li>docker開機自啟<ul>
+<li>sudo systemctl enable docker</li>
+</ul>
+</li>
+<li>docker裡面有哪些鏡像<ul>
+<li>sudo docker images</li>
+</ul>
+</li>
+</ul>
+<p>3、安裝mysql 5.7</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/_/mysql">https://hub.docker.com/_/mysql</a></li>
+<li>指定版本指令 sudo docker pull mysql:5.7</li>
+<li>映射 mysql 路徑和 啟動 mysql<ul>
+<li>sudo docker run -p 3306:3306 –name mysql \</li>
+</ul>
+<p>  -v &#x2F;mydata&#x2F;mysql&#x2F;log:&#x2F;var&#x2F;log&#x2F;mysql <br>  -v &#x2F;mydata&#x2F;mysql&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql <br>  -v &#x2F;mydata&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql&#x2F;conf.d <br>  -e MYSQL_ROOT_PASSWORD&#x3D;root <br>  -d mysql:5.7 </p>
+<ul>
+<li>docker的3306端口和linux的3306端口對映</li>
+<li>linux底下的資料夾&#x2F;mydata&#x2F;mysql 對映到 docker底下的對映路徑，用於方便看log等docker底下的資源</li>
+</ul>
+</li>
+<li>修改mysql配置，用於設定utf8，vi my.cnf<ul>
+<li>指令<br>  [client]<br>  default-character-set&#x3D;utf8<br>  [mysql]<br>  default-character-set&#x3D;utf8<br>  [mysqld]<br>  init_connect&#x3D;’SET collation_connection &#x3D; utf8_unicode_ci’<br>  init_connect&#x3D;’SET NAMES utf8’<br>  character-set-server&#x3D;utf8<br>  collation-server&#x3D;utf8_unicode_ci<br>  skip-character-set-client-handshake<br>  skip-name-resolve</li>
+</ul>
+</li>
+<li>重啟mysql<ul>
+<li>docker restart mysql</li>
+</ul>
+</li>
+<li>目前開啟的鏡像<ul>
+<li>docker ps</li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/05.PNG"></li>
+</ul>
+</li>
+</ul>
+<p>4、安裝 redis</p>
+<ul>
+<li>和 mysql大同小異</li>
+<li>docker pull redis         </li>
+<li>docker run -p 6379:6379 –name redis <br>  -v &#x2F;mydata&#x2F;redis&#x2F;data:&#x2F;data <br>  -v &#x2F;mydata&#x2F;redis&#x2F;conf&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf <br>  -d redis redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf</li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/06.PNG"></li>
+<li>持久化redis，否則每次重啟資料就清空了<ul>
+<li>echo “appendonly yes”  &gt;&gt; &#x2F;mydata&#x2F;redis&#x2F;conf&#x2F;redis.conf</li>
+</ul>
+</li>
+<li>使用redis cli<ul>
+<li>docker exec -it redis redis-cli</li>
+</ul>
+</li>
+<li>設置持久化後，就算重啟redis，原本存放資料依然存在<ul>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/07.PNG"></li>
+</ul>
+</li>
+</ul>
+<p>5、用UI介面確認安裝的mysql和redis能夠訪問</p>
+<ul>
+<li>每次重起虛擬機，docker會自動將mysql、redis啟動<ul>
+<li>sudo docker update redis –restart&#x3D;always</li>
+<li>sudo docker update mysql –restart&#x3D;always</li>
+</ul>
+</li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/08.PNG"></li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/09.PNG"></li>
+<li><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/10.PNG"></li>
+</ul>
+<p>6、異常狀況</p>
+<ul>
+<li><p>磁碟空間被 vagrant 占滿了</p>
+<ul>
+<li>解決方法 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/nio-nio/p/13616415.html">https://www.cnblogs.com/nio-nio/p/13616415.html</a><h2 id="第2章、微服務搭建"><a href="#第2章、微服務搭建" class="headerlink" title="第2章、微服務搭建"></a>第2章、微服務搭建</h2></li>
+</ul>
+</li>
+<li><p>商品服務 product</p>
+</li>
+<li><p>倉儲服務 ware</p>
+</li>
+<li><p>訂單服務 order</p>
+</li>
+<li><p>優惠卷服務 coupon</p>
+</li>
+<li><p>用戶服務 member</p>
+</li>
+<li><p><img src="/img/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/11.PNG"></p>
+</li>
+<li><p>lombok @Data 增加get set方法</p>
+</li>
+</ul>
 
-  
-    <!-- Split post by year -->
-    
-  
-
-  
-      <div class="years">
-          <h2>2021</h2>
-          <ul class="archive-list-item">
-          
-              <li>
-                <span>2021-01-16</span>
-                <a href="/專題/TypeScript大戰貪食蛇/TypeScript大戰貪食蛇/">
-                  TypeScript大戰貪食蛇
-                </a>
-              </li>
-          
-              <li>
-                <span>2021-01-09</span>
-                <a href="/專題/TypeScript大戰貪食蛇/1-4、物件導向觀念引入TypeScript/">
-                  1-4、物件導向觀念引入TypeScript
-                </a>
-              </li>
-          
-              <li>
-                <span>2021-01-05</span>
-                <a href="/專題/TypeScript大戰貪食蛇/1-3、webpack打包TypeScript/">
-                  1-3、webpack打包TypeScript
-                </a>
-              </li>
-          
-              <li>
-                <span>2021-01-04</span>
-                <a href="/專題/TypeScript大戰貪食蛇/1-2、編譯TypeScript/">
-                  1-2、編譯TypeScript
-                </a>
-              </li>
-          
-              <li>
-                <span>2021-01-02</span>
-                <a href="/專題/TypeScript大戰貪食蛇/1-1、初識TypeScript/">
-                  1-1、初識TypeScript
-                </a>
-              </li>
-          
-          </ul>
-      </div>
-  
-
-  
 </div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
         </div>
       </div>
       <div class="column col-2 hide-lg">
@@ -748,7 +847,7 @@ function sidebar_toggle() {
       <!-- Author title -->
       <div class="author-title">
         <div>十鱷魚</div>
-        <!-- <div></div> -->
+        <!-- <div>2023-04-03</div> -->
       </div>
     </div>
   
