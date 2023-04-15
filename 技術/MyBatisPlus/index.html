@@ -671,14 +671,14 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h2 id="MyBatisPlus"><a href="#MyBatisPlus" class="headerlink" title="MyBatisPlus"></a>MyBatisPlus</h2><h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><h2 id="1、引入依賴"><a href="#1、引入依賴" class="headerlink" title="1、引入依賴"></a>1、引入依賴</h2><p><img src="/img/MyBatisPlus/06.PNG"></p>
+  <h2 id="MyBatisPlus"><a href="#MyBatisPlus" class="headerlink" title="MyBatisPlus"></a>MyBatisPlus</h2><h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><h2 id="1、引入依賴"><a href="#1、引入依賴" class="headerlink" title="1、引入依賴"></a>1、引入依賴</h2><p><img src="/img/MyBatisPlus+/06.PNG"></p>
 <h2 id="2、application-yml配置"><a href="#2、application-yml配置" class="headerlink" title="2、application.yml配置"></a>2、application.yml配置</h2><ul>
 <li>spring boot 2.1及以上（内置jdbc8驅動），驅動類使用 driver-class-name: com.mysql.cj.jdbc.Driver</li>
 <li>spring boot 2.0（内置jdbc5驅動），驅動類使用：driver-class-name: com.mysql.jdbc.Driver</li>
 <li>MySQL5.7版本的url : jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mybatis_plus?characterEncoding&#x3D;utf-8&amp;useSSL&#x3D;false</li>
 <li>MySQL8.0版本的url：jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mybatis_plus?serverTimezone&#x3D;GMT%2B8&amp;characterEncoding&#x3D;utf-8&amp;useSSL&#x3D;false</li>
 <li>於MyBatisPlus中配置log-impl會於日誌中自動產生使用的SQL語法<ul>
-<li>mybatis-plus.configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl<br><img src="/img/MyBatisPlus/07.PNG"></li>
+<li>mybatis-plus.configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl<br><img src="/img/MyBatisPlus+/07.PNG"></li>
 </ul>
 </li>
 </ul>
@@ -688,25 +688,25 @@ function sidebar_toggle() {
 <li>@Getter，會自動生成getter</li>
 <li>@Setter，會自動生成setter</li>
 <li>@EqualsAndHashCode，會自動生成equal和HashCode</li>
-<li>以上全部可以用一個 @Data替代，但是無有參構造<br><img src="/img/MyBatisPlus/01.PNG"><br><img src="/img/MyBatisPlus/02.PNG"></li>
+<li>以上全部可以用一個 @Data替代，但是無有參構造<br><img src="/img/MyBatisPlus+/01.PNG"><br><img src="/img/MyBatisPlus+/02.PNG"></li>
 </ul>
 <h2 id="4、BaseMapper"><a href="#4、BaseMapper" class="headerlink" title="4、BaseMapper"></a>4、BaseMapper</h2><ul>
 <li>掃描mapper接口所在的包，在Spring Boot啟動類中添加@MapperScan(“com.twelvefish.MyBatisPlus.mapper”)</li>
 <li>藉由繼承BaseMapper來使用MyBatisPlus所提供的各種方法，而泛型能夠映射資料庫，將對應的表資料結構取出</li>
 <li>BaseMapper是MyBatisPlus提供的模板mapper，其中包含了基本的CRUD方法，泛型為操作的實體類型</li>
 <li>IDEA在 userMapper 報錯，因為找不到注入的對象，因为類是動態創建，但是編譯可以正常執行，但想避免報錯，可以在mapper接口上添加 @Repository 注解</li>
-<li>下述截圖範例為使用UserMapper去查詢資料庫中的資料，並query全部資料回來，通過條件構造器查詢一個list集合，若沒有條件，則可設置為null<br><img src="/img/MyBatisPlus/03.PNG"><br><img src="/img/MyBatisPlus/04.PNG"><br><img src="/img/MyBatisPlus/05.PNG"></li>
+<li>下述截圖範例為使用UserMapper去查詢資料庫中的資料，並query全部資料回來，通過條件構造器查詢一個list集合，若沒有條件，則可設置為null<br><img src="/img/MyBatisPlus+/03.PNG"><br><img src="/img/MyBatisPlus+/04.PNG"><br><img src="/img/MyBatisPlus+/05.PNG"></li>
 </ul>
 <h2 id="5、多表查詢"><a href="#5、多表查詢" class="headerlink" title="5、多表查詢"></a>5、多表查詢</h2><ul>
-<li>自定義的SQL語句預設放在resources&#x2F;mapper底下的xml，或是在yml中自定義路徑<br><img src="/img/MyBatisPlus/08.PNG"></li>
-<li>在繼承BaseMapper的類下增加自定義方法<br><img src="/img/MyBatisPlus/09.PNG"></li>
-<li>自定義方法可自己撰寫SQL語法，搭配xml的id匹配對應的方法名稱<br><img src="/img/MyBatisPlus/10.PNG"></li>
+<li>自定義的SQL語句預設放在resources&#x2F;mapper底下的xml，或是在yml中自定義路徑<br><img src="/img/MyBatisPlus+/08.PNG"></li>
+<li>在繼承BaseMapper的類下增加自定義方法<br><img src="/img/MyBatisPlus+/09.PNG"></li>
+<li>自定義方法可自己撰寫SQL語法，搭配xml的id匹配對應的方法名稱<br><img src="/img/MyBatisPlus+/10.PNG"></li>
 </ul>
 <h2 id="6、Service"><a href="#6、Service" class="headerlink" title="6、Service"></a>6、Service</h2><ul>
 <li>MyBatis-Plus中有一個接口 IService和實現類 ServiceImpl，封裝了常見的業務層邏輯</li>
 <li>UserService繼承IService模板提供的基礎功能</li>
 <li>ServiceImpl實現了IService，提供了IService中基礎功能的實現</li>
-<li>若ServiceImpl無法滿足業務需求，則可以使用自定的UserService定義方法，並在實現類中實現<br><img src="/img/MyBatisPlus/11.PNG"><br><img src="/img/MyBatisPlus/12.PNG"></li>
+<li>若ServiceImpl無法滿足業務需求，則可以使用自定的UserService定義方法，並在實現類中實現<br><img src="/img/MyBatisPlus+/11.PNG"><br><img src="/img/MyBatisPlus+/12.PNG"></li>
 </ul>
 <h2 id="7、常用註解"><a href="#7、常用註解" class="headerlink" title="7、常用註解"></a>7、常用註解</h2><ul>
 <li>@TableName<ul>
@@ -729,11 +729,12 @@ function sidebar_toggle() {
 </li>
 <li>@TableLogic<ul>
 <li>邏輯刪除，針對某個欄位設定為0、1，在select時，針對這欄位去判斷，來讓資料感覺上被刪除了，但實際上資料還存在</li>
-<li>呼叫查詢方法時，會只查詢此欄位為0的資料，呼叫刪除方法時，只會將此欄位從0變成1，不會真的將資料刪除<br><img src="/img/MyBatisPlus/13.PNG"><br><img src="/img/MyBatisPlus/15.PNG"><br><img src="/img/MyBatisPlus/14.PNG"></li>
+<li>呼叫查詢方法時，會只查詢此欄位為0的資料，呼叫刪除方法時，只會將此欄位從0變成1，不會真的將資料刪除<br><img src="/img/MyBatisPlus+/13.PNG"><br><img src="/img/MyBatisPlus+/15.PNG"><br><img src="/img/MyBatisPlus+/14.PNG"></li>
 </ul>
 </li>
 </ul>
-<h2 id="8、條件構造器-Wrapper"><a href="#8、條件構造器-Wrapper" class="headerlink" title="8、條件構造器 Wrapper"></a>8、條件構造器 Wrapper</h2>
+<h2 id="8、條件構造器-Wrapper"><a href="#8、條件構造器-Wrapper" class="headerlink" title="8、條件構造器 Wrapper"></a>8、條件構造器 Wrapper</h2><p><img src="/img/MyBatisPlus+/16.PNG"></p>
+
 </div>
 
 
