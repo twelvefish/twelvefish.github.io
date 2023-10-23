@@ -58,10 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
   </a>
 </div>
     <div id="menu" class="book-menu hide">
-  <h2 id="技術"><a href="#技術" class="headerlink" title="技術"></a>技術</h2><ul>
-<li><a href="/技術/Linux&Shell" class="current-tab">Linux &amp; Shell</a></li>
-<li><a href="/技術/MyBatisPlus" class="current-tab">MyBatisPlus</a><!-- - <a href="/技術/谷粒商城" class="current-tab">谷粒商城</a> --></li>
-</ul>
+  <!-- ## 技術
+- <a href="/技術/Linux&Shell" class="current-tab">Linux & Shell</a>
+- <a href="/技術/MyBatisPlus" class="current-tab">MyBatisPlus</a> -->
+<!-- - <a href="/技術/谷粒商城" class="current-tab">谷粒商城</a> -->
+
 <blockquote>
 <blockquote>
 <blockquote>
@@ -278,7 +279,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </blockquote>
 </blockquote>
 </blockquote>
-<h2 id="專題"><a href="#專題" class="headerlink" title="專題"></a>專題</h2><!-- - <a href="/技術/ElasticSearch實戰" class="current-tab">ElasticSearch實戰</a> -->
+<!-- ## 專題 -->
+<!-- - <a href="/技術/ElasticSearch實戰" class="current-tab">ElasticSearch實戰</a> -->
 <!-- - <a href="/技術/TypeScript大戰貪食蛇" class="current-tab">TypeScript大戰貪食蛇</a> -->
 
 <blockquote>
@@ -614,7 +616,11 @@ document.addEventListener('DOMContentLoaded', function () {
 </blockquote>
 </blockquote>
 </blockquote>
-<h1 id="版主履歷"><a href="#版主履歷" class="headerlink" title="版主履歷"></a><a href="/版主履歷" class="current-tab">版主履歷</a></h1>
+<!-- # <a href="/版主履歷" class="current-tab">版主履歷</a> -->
+
+
+
+
 </div>
 
 
@@ -691,7 +697,10 @@ function sidebar_toggle() {
 <li>以上全部可以用一個 @Data替代，但是無有參構造<br><img src="/img/MyBatisPlus+/01.PNG"><br><img src="/img/MyBatisPlus+/02.PNG"></li>
 </ul>
 <h2 id="4、BaseMapper"><a href="#4、BaseMapper" class="headerlink" title="4、BaseMapper"></a>4、BaseMapper</h2><ul>
-<li>掃描mapper接口所在的包，在Spring Boot啟動類中添加@MapperScan(“com.twelvefish.MyBatisPlus.mapper”)</li>
+<li>掃描mapper接口所在的包，在Spring Boot啟動類中添加@MapperScan(“com.twelvefish.MyBatisPlus.mapper”)<ul>
+<li>或是放置於@Configuration配置類中</li>
+</ul>
+</li>
 <li>藉由繼承BaseMapper來使用MyBatisPlus所提供的各種方法，而泛型能夠映射資料庫，將對應的表資料結構取出</li>
 <li>BaseMapper是MyBatisPlus提供的模板mapper，其中包含了基本的CRUD方法，泛型為操作的實體類型</li>
 <li>IDEA在 userMapper 報錯，因為找不到注入的對象，因为類是動態創建，但是編譯可以正常執行，但想避免報錯，可以在mapper接口上添加 @Repository 注解</li>
@@ -784,6 +793,32 @@ function sidebar_toggle() {
 </li>
 <li><p>LambdaUpdateWrapper，避免再填寫表的字串名時打錯，可用Lambda來替代</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test10() &#123;</span><br><span class="line">    //組裝set子句</span><br><span class="line">    //lambda，表達式內的邏輯優先運算</span><br><span class="line">    LambdaUpdateWrapper&lt;User&gt; updateWrapper = new LambdaUpdateWrapper&lt;&gt;();</span><br><span class="line">    updateWrapper.set(User::getAge, 18)</span><br><span class="line">                 .set(User::getEmail, &quot;user@gmail.com&quot;)</span><br><span class="line">                 .like(User::getName, &quot;a&quot;)</span><br><span class="line">                 .and(i -&gt; i.lt(User::getAge, 24).or().isNull(User::getEmail)); </span><br><span class="line">    User user = new User();</span><br><span class="line">    int result = userMapper.update(user, updateWrapper);</span><br><span class="line">    System.out.println(&quot;受影響的行數：&quot; + result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="9、分頁插件"><a href="#9、分頁插件" class="headerlink" title="9、分頁插件"></a>9、分頁插件</h2><ul>
+<li>MyBatisPlus自帶分頁插件，配置後可實現分頁功能</li>
+<li>插件的原理是藉由先將對應的資料查詢出來，再藉由攔截器去過濾資料，攔截器中可配置多個插件</li>
+<li>分頁插件就是將查詢出來的數據藉由limit去過濾每頁顯示的數據</li>
+<li>Page<User> page &#x3D; new Page(1,3);<ul>
+<li>第一個參數為第幾頁，第二個參數為一頁顯示幾個</li>
+<li>(頁數-1)*3 &#x3D;&gt; 每頁的起始index</li>
+</ul>
+</li>
+<li>添加配置類<ul>
+<li>建立一個MyBatisPlus攔截器，並設定分頁插件</li>
+<li>interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));<br><img src="/img/MyBatisPlus+/17.PNG"><br><img src="/img/MyBatisPlus+/18.PNG"></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test()&#123;</span><br><span class="line">    Page&lt;User&gt; page = new Page(1,3);</span><br><span class="line">    userMapper.selectPage(page, null);</span><br><span class="line">    System.out.println(&quot;當前頁的資料: &quot; + page.getRecords());</span><br><span class="line">    System.out.println(&quot;當前第幾頁: &quot; + page.getCurrent());</span><br><span class="line">    System.out.println(&quot;顯示筆數: &quot; + page.getSize());</span><br><span class="line">    System.out.println(&quot;總共幾頁: &quot; + page.getPages());</span><br><span class="line">    System.out.println(&quot;總紀錄數: &quot; + page.getTotal());</span><br><span class="line">    System.out.println(&quot;有無上一頁: &quot; + page.hasPrevious());</span><br><span class="line">    System.out.println(&quot;有無下一頁: &quot; + page.hasNext());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自定義方法的分頁插件<ul>
+<li>自定義方法的返回類型必須是Page</li>
+<li>自定義方法的第一個參數必須是Page</li>
+<li>於XML配置SQL語法</li>
+<li>在mapper.xml檔中的resultMap的type或者parameterType會用到自定義的POJO</li>
+<li>用mybatis.type-aliases-package來指定POJO掃描包來讓mybatis自動掃描到自定義的POJO<br><img src="/img/MyBatisPlus+/21.PNG"><br><img src="/img/MyBatisPlus+/19.PNG"><br><img src="/img/MyBatisPlus+/20.PNG"></li>
+</ul>
+</li>
 </ul>
 
 </div>
